@@ -1,0 +1,502 @@
+.main-section {
+  background-color: #fff;
+  z-index         : 1;
+}
+
+.webPage {
+  display: block;
+}
+
+.Mob {
+  display: none;
+}
+
+.container-block {
+  position: relative;
+  bottom  : 32px;
+}
+
+.profile-sidebar {
+  width        : 285px !important;
+  background   : #F4F4F4;
+  margin-right : 32px;
+  height       : 585px;
+  border-radius: 16px;
+}
+
+.profile-img {
+  padding: 10px;
+}
+
+ul {
+  padding: 10px !important;
+}
+
+.file-upload-button {
+  border-radius   : 50%;
+  cursor          : pointer;
+  position        : relative;
+  top             : 125px;
+  left            : 160px;
+  background-color: #fff;
+  color           : #000000;
+  padding         : 5px 8px;
+  border          : 2px solid #0057B9;
+
+  input[type="file"] {
+    opacity       : 0;
+    position      : absolute;
+    width         : 100%;
+    top           : 0;
+    left          : 0;
+    padding-bottom: 7px;
+  }
+}
+
+.username {
+  font-family   : 'Roboto';
+  font-style    : normal;
+  font-weight   : 500;
+  font-size     : 20px;
+  color         : #000000;
+  padding-bottom: 11px;
+}
+
+.personal-profile {
+  font-family: 'Roboto';
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 12px;
+  color      : #000000;
+}
+
+.userDetail {
+  padding-bottom: 33px;
+  text-align    : center;
+
+  p {
+    margin: unset;
+  }
+}
+
+.profile-tabs {
+  li {
+    list-style: none;
+    text-align: justify;
+    padding   : 10px 27px 10px;
+    ;
+    cursor       : pointer;
+    border-radius: 6px;
+  }
+}
+
+.active {
+  background-color: #0057B9;
+  color           : #fff;
+}
+
+.main-container {
+  width: 100%;
+}
+
+.progress {
+  border-radius: 10px;
+  width        : 40%;
+}
+
+.progress-label {
+  width         : 40%;
+  padding-bottom: 6px;
+
+  .complete-profile {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 14px;
+  }
+
+  .percent {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 14px;
+    color      : #000000;
+  }
+}
+
+.progressbar-container {
+  padding-bottom: 14px;
+}
+
+.wadiia-text {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 14px;
+}
+
+.complete-process,
+.inComplete-process {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 18px;
+}
+
+.verified-process {
+  margin-top: 8px;
+  padding   : 0 25px;
+  margin    : 0 -32px;
+  background: #F4F4F4;
+}
+
+.basic-info-plus {
+  border-radius   : 50%;
+  background-color: #0057B9;
+  color           : #fff;
+  margin-right    : 10px;
+  padding         : 1px 5px;
+  font-size       : 12px;
+}
+
+.complete-process {
+  color: #0057B9;
+}
+
+.icon-b-red {
+  width        : 2px;
+  border-radius: 50%;
+  font-size    : 16px;
+  padding      : 3px 2px;
+  position     : relative;
+  top          : 2px;
+}
+
+.card-container {
+  background   : #FFFFFF;
+  box-shadow   : 0px 1px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  padding      : 20px 32px;
+}
+
+.card-containerM{
+  background   : #FFFFFF;
+  box-shadow   : 0px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+::ng-deep{
+    .Mob .mat-expansion-panel-body {
+      padding: 0; 
+  }
+  .Mob .mat-expansion-panel-header.mat-expanded{
+    background: #0057B9 !important;
+    color: #fff !important;
+  }
+  .mat-expanded .mat-expansion-indicator::after{
+    color: #fff !important;
+}
+.mat-expanded .mat-expansion-panel-header-title{
+  color: #fff !important;
+}
+}
+
+.profile-header {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 24px;
+  color      : #000000;
+}
+
+.booking-exp {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 14px;
+}
+
+.info-label {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 18px;
+}
+
+.info-value {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 1.1rem;
+}
+
+.edit-profile {
+  position: relative;
+  top     : 34px;
+}
+
+.edit-icon-space {
+  padding-right: 10px;
+}
+
+.table-space {
+  width: 30%;
+}
+
+.info-table {
+  hr {
+    border: 1px solid #C6C6C6;
+  }
+}
+
+.verified {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 18px;
+  color      : #22BD09;
+}
+
+.add-traveller {
+  color: #0057B9;
+}
+
+.proIcon {
+  border-radius: 50%;
+  color        : #fff;
+}
+
+::ng-deep .mat-dialog-container {
+  border-radius: 16px !important;
+}
+
+.editForm {
+  button {
+    color      : #0057B9;
+    font-weight: 500;
+  }
+}
+
+.editTraveller {
+  button {
+    background-color: #0057B9;
+    color           : #fff;
+    font-weight     : 500;
+  }
+}
+
+.travellerDivider {
+  border: 2px solid #C6C6C6;
+}
+
+::ng-neep.dropdown-menu.show {
+  display: block;
+  width  : 234px;
+}
+
+.dateRange::placeholder {
+  padding-left: 8px;
+  padding-top : 5px;
+  font-size   : 13px;
+  color       : #7e7e7e;
+  opacity     : 1;
+}
+
+.Mob ::ng-deep {
+  @media (min-width:764px) and (max-width:1024px) {
+    .mat-expansion-panel-header:focus {
+      background: #0057B9 !important;
+
+      .mat-expansion-panel-header-title {
+        color: #fff !important;
+      }
+
+      .mat-expansion-indicator::after {
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+@media (min-width:764px) and (max-width:1024px) {
+  .logout {
+    box-sizing   : border-box;
+    padding      : 10px 24px;
+    border       : 1px solid #C4C4C4;
+    border-radius: 6px;
+    width        : 240px;
+    margin       : 66px auto 0px auto;
+
+    p {
+      margin    : 0;
+      text-align: center;
+    }
+  }
+
+  .container-block {
+    position: relative;
+    bottom  : 10px;
+  }
+
+  .Mob {
+    display: block;
+  }
+
+  .shodws {
+    background-color: #fff;
+    border-radius   : 5px;
+    margin-bottom   : 195px;
+  }
+
+  .webPage {
+    display: none;
+  }
+
+  .profilePic {
+    margin: auto;
+  }
+
+  .profile {
+    margin-top: 40px;
+  }
+
+  .info-value {
+    font-family: "Poppins";
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 1em;
+  }
+
+  .complete-process,
+  .inComplete-process {
+    font-family: "Poppins";
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 1.1em;
+  }
+
+  .icon-ic_outline-logout:before {
+    content : "\e944";
+    position: relative;
+    top     : 3px;
+  }
+
+  .material-icons {
+    position                     : relative;
+    right                        : 2px;
+    font-size                    : 18px;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing       : antialiased;
+  }
+
+  .icon-group:before {
+    content  : "\e93f";
+    font-size: 18px;
+  }
+  .profileN{
+    margin-right: 360px !important;
+  }
+  .profileG,.profileB{
+    margin-right: 390px !important;
+  }
+}
+
+@media (max-width:600px) {
+  .logout {
+    box-sizing   : border-box;
+    padding      : 10px 24px;
+    border       : 1px solid #C4C4C4;
+    border-radius: 6px;
+    width        : 240px;
+    margin       : 66px auto 0px auto;
+
+    p {
+      margin    : 0;
+      text-align: center;
+    }
+  }
+
+  .container-block {
+    position: relative;
+    bottom  : 10px;
+  }
+
+  .Mob {
+    display: block;
+  }
+
+  .shodws {
+    background-color: #fff;
+    border-radius   : 5px;
+    margin-bottom   : 155px;
+  }
+
+  .webPage {
+    display: none;
+  }
+
+  .profilePic {
+    margin: auto;
+  }
+
+  .profile {
+    margin-top: 40px;
+  }
+
+  .info-value {
+    font-family: "Poppins";
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 1em;
+    word-break : break-all;
+  }
+
+  .complete-process,
+  .inComplete-process {
+    font-family: "Poppins";
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 1.1em;
+  }
+
+  .icon-ic_outline-logout:before {
+    content : "\e944";
+    position: relative;
+    top     : 3px;
+  }
+
+  .material-icons {
+    position                     : relative;
+    right                        : 2px;
+    font-size                    : 18px;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing       : antialiased;
+  }
+
+  .icon-group:before {
+    content  : "\e93f";
+    font-size: 18px;
+  }
+
+  .file-upload-button {
+    position: relative;
+    top     : 75px;
+    left    : 55px;
+  }
+
+  // .userDetail {
+  //   width: 88px;
+  // }
+  .editForm {
+    button {
+      color      : #0057B9;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      gap: 4px;
+      width: 113px;
+    }
+  }
+}

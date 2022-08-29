@@ -1,0 +1,432 @@
+section {
+  background-color: #ffffff;
+}
+
+.main-container {
+  position       : relative;
+  bottom         : 35px;
+  display        : flex;
+  justify-content: space-between;
+}
+
+.left-panel {
+  margin-right: 30px;
+  width       : 100%;
+}
+
+.card-container {
+  background   : #FFFFFF;
+  box-shadow   : 0px 1px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width        : 100%;
+}
+
+.trip-heading {
+  font-family   : "Poppins";
+  font-style    : normal;
+  font-weight   : 600;
+  font-size     : 24px;
+  color         : #ffffff;
+  padding-bottom: 15px;
+}
+
+.card-heading {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 20px;
+  color      : #0057B9;
+  line-height: 30px;
+  text-align: left;
+}
+
+.right-tick .icon-check:before {
+  font-size: 18px;
+  color    : #0057B9;
+  position : relative;
+  top      : 2px;
+}
+
+.service-context {
+  margin-left: 50px;
+}
+
+.service-info {
+  font-family : 'Poppins';
+  font-style  : normal;
+  font-weight : 400;
+  font-size   : 14px;
+  color       : #000000;
+  padding-left: 5px;
+  text-align  : justify;
+}
+
+::ng-deep .radio-part .mat-radio-group {
+  display        : flex;
+  justify-content: space-between;
+  font-family    : 'Poppins';
+  font-style     : normal;
+  font-weight    : 500;
+  font-size      : 14px;
+  color          : #000000;
+}
+
+.radio-part {
+  width : 140px;
+  margin: 0 auto;
+}
+
+.terms a {
+  margin  : 0 20px;
+  position: relative;
+  bottom  : 5px;
+}
+
+.support-pkg-text {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 14px;
+  color      : #000000;
+  text-align : justify;
+}
+
+.green-tick .icon-check:before {
+  font-size   : 18px;
+  position    : relative;
+  top         : 2px;
+  padding-left: 20px;
+}
+
+.icon-cross:before {
+  content     : "\e99b";
+  color       : #eb2533;
+  font-size   : 14px;
+  position    : relative;
+  top         : 2px;
+  padding-left: 21px;
+}
+
+.support-card {
+  width: 240px;
+}
+
+.support-cards {
+  width  : 240px;
+  padding: 0;
+}
+
+.support-container mat-card {
+  padding: unset;
+}
+
+.support-context {
+  padding      : 0 20px 0 0;
+  // text-align: justify;
+  position     : relative;
+  bottom       : 30px;
+}
+
+.manageSpace {
+  bottom: 40px;
+}
+
+.standard {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 700;
+  font-size  : 20px;
+  color      : #FFFFFF;
+}
+
+.included {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 700;
+  font-size  : 24px;
+  color      : #000000;
+  padding-top: 5px;
+}
+
+.price-header {
+  position: relative;
+  bottom  : 145px;
+}
+
+.support-text {
+  font-family : 'Poppins';
+  font-style  : normal;
+  font-weight : 400;
+  font-size   : 12px;
+  color       : #000000;
+  padding-left: 8px;
+}
+
+.support-container mat-card {
+  background   : #FFFFFF;
+  box-shadow   : 0px 1px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+.read-more-text {
+  padding-left: 24px;
+}
+
+.read-more-text p {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 14px;
+  color      : #000000;
+}
+
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #0057B9;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #0057B9;
+}
+
+.add-service {
+  width: 100%;
+}
+
+.btnBack {
+  padding      : 17px 46px !important;
+  font-family  : "Poppins";
+  font-style   : normal;
+  font-weight  : bold;
+  font-size    : 16px;
+  line-height  : 24px;
+  text-align   : center;
+  color        : #000000;
+  background   : #f4f4f4;
+  border-radius: 5px;
+  border       : none;
+}
+
+.btnContinu {
+  padding      : 17px 25px !important;
+  font-family  : "Poppins";
+  font-style   : normal;
+  font-weight  : bold;
+  font-size    : 16px;
+  line-height  : 24px;
+  background   : #eb2533;
+  border-radius: 5px;
+  color        : #ffffff;
+  border       : none;
+}
+
+.stickyPosition {
+  position  : sticky;
+  top       : 0px;
+  align-self: flex-start;
+}
+
+.recommaded {
+  background-color: #0057B9;
+  position        : absolute;
+  left            : 50px;
+  z-index         : 999;
+  padding         : 10px;
+  color           : #fff;
+  top             : -21px;
+  border-radius   : 6px;
+
+  p {
+    margin     : 0;
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 14px;
+  }
+}
+
+.recommadedMob {
+  background-color: #0057B9;
+  position        : relative;
+  width           : 130px;
+  left            : 58px;
+  z-index         : 999;
+  padding         : 10px;
+  color           : #fff;
+  top             : 0px;
+  border-radius   : 6px;
+  text-align      : center;
+
+  p {
+    margin     : 0;
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 14px;
+  }
+}
+
+.mobileFloat {
+  position: fixed;
+  top     : 80vh;
+  right   : 32px;
+  z-index : 10000;
+}
+
+@media (max-width:600px) {
+  .support-card {
+    min-width: 233px !important;
+  }
+
+  .support-container {
+    overflow-x: scroll;
+    gap       : 8px !important;
+  }
+
+  .add-service {
+    width: auto;
+  }
+
+  .left-panel {
+    margin: auto;
+    width : 100%;
+    margin-top: 32px;
+  }
+
+  .cardDirectionM {
+    flex-direction: column !important;
+  }
+
+  .textCImg {
+    text-align: center;
+  }
+
+  .cardHeaderValue {
+    display: none;
+  }
+
+  .service-context {
+    margin-left: 0px;
+  }
+
+  .radio-part {
+    width          : unset;
+    margin         : unset;
+    justify-content: space-between;
+    display        : flex;
+    margin-bottom  : 50px;
+  }
+
+  .RadioBtn {
+    margin-left: 40px;
+  }
+
+  .recommaded {
+    display: none;
+  }
+}
+
+.slider {
+  padding   : 85px;
+  background: #f1f6ff;
+
+  .slideText {
+    margin    : 0 15px;
+    padding   : 16px;
+    background: #FFF7AE;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .slide {
+    padding: 0;
+    margin : 0;
+
+    img {
+      width : 100%;
+      height: 100%;
+    }
+
+    img:hover {
+      overflow: hidden;
+    }
+
+    img:hover {
+      transition: transform .5s ease;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.carousel-cells .carousel-cell img {
+  width     : 100%;
+  height    : 100%;
+  position  : relative;
+  object-fit: contain;
+}
+
+.carousel-cells .carousel-cell img:hover {
+  width     : 101%;
+  height    : 101%;
+  position  : relative;
+  object-fit: contain;
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+  .left-panel {
+    margin-right: 0px;
+    width       : 100%;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  .main-container {
+    position: relative;
+    bottom  : 0px;
+    margin  : auto;
+  }
+}
+
+@media (min-width:1024px) and (max-width:1365px) {
+
+  .recommaded {
+    background-color: #0057B9;
+    position        : absolute;
+    left            : 56px;
+    z-index         : 999;
+    padding         : 10px;
+    color           : #fff;
+    top             : -21px;
+    border-radius   : 6px;
+  }
+
+  .scrollmenu {
+    overflow   : auto;
+    white-space: nowrap;
+  }
+
+  .left-panel {
+    margin-right: 0px;
+    width       : 65%;
+    padding     : 0 0 33px 0;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  .main-container {
+    position: relative;
+    bottom  : 0px;
+    margin  : auto;
+  }
+}

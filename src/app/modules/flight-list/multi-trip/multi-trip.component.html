@@ -1,0 +1,171 @@
+<mat-accordion>
+  <div class="w-filters-details-wprapper " *ngIf="flightData === null">
+    <div class="no-result container">
+      <a class="logo" href="/"><img src="https://newdemo.wadiia.com/images/icon_no_result.png" width="200" /></a>
+      <h1 class="no-result__heading text-danger">
+        There were no flights found for this route and date combination
+      </h1>
+      <p>We suggest you modify your search and try again.</p>
+    </div>
+    <div class="text-center seachBtn">
+      <a routerLink="/" class="btn btn-danger subscr-btn"><i class="icon-search_24px_outlined"></i> <span id="seachAgain">SEARCH AGAIN</span></a>
+    </div>
+  </div>
+  <div class="" *ngIf="flightData !== null">
+  <mat-expansion-panel *ngFor="let item of flightData; let i=index let lastItem = last;"
+    (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="jumbotron d-flex align-items-center min-vh-10">
+              <h3>
+                <strong>{{ item.currency }}
+                  {{ item.totalPrice | number }}</strong>
+              </h3>
+            </div>
+            <span>Total price incl. {{ item.currency }}
+              {{ item.totalTax | number }}</span>
+          </div>
+          <div class="col-md-2">
+            <div class="col-md-1">
+              <span class="luggage-cart" *ngIf="item.fareHeader.fareHasFreeBaggage">
+                <mat-icon class="check-circle" fontSet="fa" fontIcon="fa-check-circle"></mat-icon>
+                <mat-icon fontSet="fa" fontIcon="fa-luggage-cart"
+                  matTooltip="This fare has free baggage allowance for atleast one connection."></mat-icon>
+              </span>
+              <span class="luggage-cart" *ngIf="!item.fareHeader.fareHasFreeBaggage">
+                <mat-icon class="fas fa-times-circle" fontSet="fas" fontIcon="fa-times-circle"></mat-icon>
+                <mat-icon fontSet="fa" fontIcon="fa-luggage-cart" matTooltip="This fare has no free baggage allowance.">
+                </mat-icon>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="jumbotron
+                d-flex
+                align-items-center
+                min-vh-10">
+              <div *ngFor="let legsObj of item.legs; let j=index">
+                <img src="{{H_URL}}/publicservices/images/airline/{{
+                    legsObj.platingCarrier.code
+                    }}" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card-content class="flightsDetails" *ngFor="let legsObj of item.legs; let lastItem = last; let k = index;">
+      <div class="d-flex w-100">
+        <div class="flight-outerContainer" *ngIf="legsObj">
+          <div class="row pb-3 flight-container">
+            <div class="images col-md-3">
+              <div class="jumbotron d-flex flex-column align-items-center min-vh-10">
+                <img src="{{H_URL}}/publicservices/images/airline/{{
+                      legsObj.platingCarrier.code
+                    }}" alt="" />
+              </div>
+              <span>{{ legsObj.platingCarrier.hint }}</span><br />
+              <span>
+                <strong>
+                  {{ legsObj.platingCarrier.code }}
+                  {{ legsObj.connections[0].segments[0].flightNumber }}</strong></span>
+            </div>
+            <div class="departure col-md-2">
+              <div class="jumbotron d-flex align-items-center min-vh-10">
+                <h4>
+                  <strong>{{
+                    legsObj.connections[0].connectionHeader.departureDisplayTime
+                    }}</strong>
+                </h4>
+                &nbsp;
+                <p>
+                  {{
+                  legsObj.connections[0].segments[0].departureAirport.cityName
+                  }}
+                </p>
+              </div>
+              <p>
+                {{
+                  legsObj.connections[0]?.connectionHeader?.departureDate
+                }}
+              </p>
+            </div>
+            <div class="arival col-md-2">
+              <div class="jumbotron d-flex align-items-center min-vh-10">
+                <h4>
+                  <strong>{{
+                    legsObj.connections[0].connectionHeader.arrivalDisplayTime
+                    }}</strong>
+                </h4>
+                &nbsp;
+                <p>
+                  {{
+                  legsObj.connections[0].segments[
+                  legsObj.connections[0].segments.length - 1
+                  ].arrivalAirport.cityName
+                  }}
+                </p>
+              </div>
+              <p>
+                {{ legsObj.connections[0].connectionHeader.arrivalDate }}
+              </p>
+            </div>
+            <div class="travelTime col-md-2">
+              <div class="jumbotron d-flex align-items-center min-vh-10">
+                <strong>{{
+                  updateNumber(
+                  legsObj.connections[0].connectionHeader.legTravelTime.addHours
+                  )
+                  }}
+                  h
+                  {{
+                  updateNumber(
+                  legsObj.connections[0].connectionHeader.legTravelTime
+                  .minutes
+                  )
+                  }}
+                  m
+                </strong>
+              </div>
+              <span *ngIf="legsObj.connections[0].connectionHeader.via.length">{{
+                legsObj.connections[0].connectionHeader.travelStopps }}
+                stop via
+                {{
+                legsObj.connections[0].connectionHeader.via[0].cityName
+                }}</span>
+            </div>
+            <div class="price col-md-3">
+              <div class="jumbotron d-flex align-items-center min-vh-10">
+                <h3>
+                  <strong>{{ item.currency }} {{ item.totalPrice | number }}</strong>
+                </h3>
+              </div>
+              <span>Total price incl. {{ item.currency }}
+                {{ item.totalTax | number }}</span>
+            </div>
+          </div>
+          
+        </div>
+        <div class="bookFlight jumbotron d-flex align-items-center min-vh-10" *ngIf="legsObj">
+          <button mat-raised-button color="primary" class="mt-2" (click)="toggleFlightDetailPanel(i,k)">Flight
+            Details</button>
+        </div>
+      </div>
+      <div class="container" *ngIf="flightDetailLegsPanel[k]">
+        <app-multi-trip-flight-details [item]="item" [flightDetailIndex]="i" [flightDetailInnerIndex]="k"
+          [flightData]="flightData">
+        </app-multi-trip-flight-details>
+      </div>
+      <div *ngIf="!lastItem" class="w-75 separator pt-4">Multi Trip</div>
+    </mat-card-content>
+    
+    <mat-card-content>
+      <div class="bookFlight jumbotron d-flex align-items-center min-vh-10">
+        <button mat-raised-button color="warn">Book Now</button>
+      </div>
+    </mat-card-content>
+  </mat-expansion-panel>
+</div>
+</mat-accordion>

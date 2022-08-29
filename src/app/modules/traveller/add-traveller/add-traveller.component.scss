@@ -1,0 +1,201 @@
+h2 {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 24px;
+}
+
+.traveller-input {
+
+    // .input-col {
+    //     padding: 2px;
+    // }
+
+    .space-right {
+        padding-right: 25px !important;
+    }
+
+    .space-left {
+        padding-left: 25px !important;
+    }
+}
+
+hr {
+    border: 2px solid #D9D9D9;
+    margin: 0;
+}
+
+.passport_details {
+    padding-top: 24px;
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 16px;
+    color      : #000000;
+}
+
+.booking_experience {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 16px;
+    color      : #000000;
+}
+
+.submitBtn {
+    background-color: #0057B9;
+    border-radius   : 6px;
+    color           : #fff;
+    float           : right;
+}
+
+.deleteBtn {
+    background-color: #fff;
+    border-radius   : 6px;
+    color           : #EB2533;
+    float           : right;
+}
+
+.close-icon {
+    margin: 10px 15px 0 0;
+    cursor: pointer;
+}
+
+.popUp::ng-deep {
+    .country-dropdown {
+        width: 285px !important;
+    }
+
+    .iti--allow-dropdown input {
+        height: 50px;
+    }
+
+    .mat-tab-header-pagination {
+        display: none !important;
+    }
+
+    .mat-tab-label {
+        height         : 48px;
+        padding        : 0 10px;
+        cursor         : pointer;
+        box-sizing     : border-box;
+        opacity        : 1 !important;
+        min-width      : 150px;
+        text-align     : center;
+        display        : inline-flex;
+        justify-content: center;
+        align-items    : center;
+        white-space    : nowrap;
+        position       : relative;
+        color          : #000000;
+    }
+
+    .mat-tab-label-active {
+        background-color       : white !important;
+        text-align             : center;
+        color                  : #0057B9 !important;
+        border-top-left-radius : 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .mat-tab-label .mat-tab-label-content {
+        opacity        : 1;
+        display        : inline-flex;
+        justify-content: center;
+        align-items    : center;
+        white-space    : nowrap;
+        font-family    : 'Poppins';
+        font-style     : normal;
+        font-weight    : 600;
+        font-size      : 16px;
+        line-height    : 28px;
+
+    }
+
+    .mat-tab-label:focus:not(.mat-tab-disabled) {
+        opacity    : 1;
+        font-family: 'Poppins';
+        font-style : normal;
+        font-weight: 600;
+        font-size  : 16px;
+        line-height: 28px;
+
+    }
+
+    .mat-tab-group.mat-primary .mat-ink-bar,
+    .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+        background-color: #0057B9;
+    }
+
+    .iti.separate-dial-code input,
+    .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-2 input,
+    .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-3 input,
+    .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-4 input {
+        padding-left : 93px !important;
+        border       : 1px solid lightgray;
+        border-radius: 5px;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+        width  : 279px !important;
+    }
+
+    .iti__country-list {
+        position: relative;
+        border  : none;
+        height  : 100px;
+    }
+
+    .iti {
+        position: relative;
+        top     : 8px;
+    }
+
+    .iti--allow-dropdown input,
+    .iti--allow-dropdown input[type=text],
+    .iti--allow-dropdown input[type=tel],
+    .iti--separate-dial-code input,
+    .iti--separate-dial-code input[type=text],
+    .iti--separate-dial-code input[type=tel] {
+        padding-right: 6px;
+        padding-left : 52px;
+        margin-left  : 0;
+        width        : 295px;
+    }
+}
+
+.dateRange {
+    height: 50px !important;
+}
+
+.popUp::ng-deep {
+    .mat-tab-body-content {
+        height  : 100%;
+        overflow: hidden;
+    }
+}
+
+::ng-deep {
+    .passportExpiry .md-drppicker.drops-down-auto.ltr.shown {
+        top  : 450px !important;
+        right: auto;
+    }
+}
+
+.popUp::ng-deep {
+    @media(min-width:375px) and (max-width:999px) {
+
+        .iti--allow-dropdown input,
+        .iti--allow-dropdown input[type=text],
+        .iti--allow-dropdown input[type=tel],
+        .iti--separate-dial-code input,
+        .iti--separate-dial-code input[type=text],
+        .iti--separate-dial-code input[type=tel] {
+            padding-right: 6px;
+            padding-left : 52px;
+            margin-left  : 0;
+            width        : 284px;
+        }
+    }
+}

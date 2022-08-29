@@ -1,0 +1,130 @@
+mat-accordion {
+  margin          : 30px !important;
+  background-color: #f6f9fe !important;
+}
+
+.flightLoader {
+  background-color: #e5e5e5 !important;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.cards {
+  padding: 10px;
+  margin : 0px auto;
+}
+
+mat-card {
+  width    : auto;
+  margin   : 25px 0px;
+  font-size: 14px !important;
+}
+
+
+h4 strong,
+strong {
+  font-weight: bolder;
+  margin-top : 10px;
+}
+
+
+h4 {
+  margin       : 0px;
+  // margin-top: 5px;
+}
+
+.flight-outerContainer {
+  width: 100%;
+}
+
+.bookFlight {
+  width: auto;
+}
+
+p,
+h3 {
+  margin: 0;
+}
+
+.images {
+  width     : 170px;
+  text-align: center;
+}
+
+hr:not([size]) {
+  height: 1px;
+  color : rgb(90, 109, 131);
+  width : 80%;
+  height: 3px;
+  margin: 20px auto;
+}
+
+.separator {
+  display    : flex;
+  align-items: center;
+  text-align : center;
+  margin     : 0px auto;
+  color      : #336699;
+  font-weight: 500;
+}
+
+.separator::before,
+.separator::after {
+  content      : "";
+  flex         : 1;
+  border-bottom: 1px solid #336699;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.25em;
+}
+
+.no-result {
+  border       : 1px solid #f34e5e;
+  padding      : 15px;
+  border-radius: 5px;
+  text-align   : center;
+  margin-top   : 50px;
+  margin-bottom: 50px;
+}
+
+img {
+  vertical-align: middle;
+  border-style  : none;
+}
+
+.no-result .logo {
+  display      : inline-block;
+  margin-bottom: 20px;
+  position     : relative;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.no-result h1.no-result__heading {
+  font-size     : 1.6rem;
+  font-weight   : 500;
+  text-transform: uppercase;
+}
+
+.row {
+  justify-content: space-around;
+}
+
+// ANCILLARIES
+
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex : 0 0 auto;
+    width: 0%;
+  }
+}

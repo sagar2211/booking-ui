@@ -1,0 +1,262 @@
+.main-section {
+    background     : linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/assets/images/travel-hist-bg.png");
+    background-size: cover;
+}
+
+
+
+
+.payment-success {
+    font-family   : 'Poppins';
+    font-style    : normal;
+    font-weight   : 400;
+    font-size     : 24px;
+    line-height   : 40px;
+    text-align    : center;
+    text-transform: uppercase;
+}
+
+.thankYou {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 40px;
+    line-height: 32px;
+    text-align : center;
+    color      : rgba(0, 0, 0, 0.9);
+
+    .redWadiia {
+        color      : #EB2533;
+        font-weight: 700;
+    }
+}
+
+.confirm {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 28px;
+    line-height: 42px;
+    align-items: center;
+    text-align : center;
+    color      : #000000;
+
+    span {
+        font-weight: 400;
+    }
+
+    .greenConfirm {
+        color      : #F16F06;
+        font-weight: 500;
+    }
+}
+
+.ticket {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 28px;
+    line-height: 42px;
+    text-align : center;
+    color      : #008037;
+}
+
+.refrence {
+    margin       : 0 auto;
+    width        : 477px;
+    height       : 88px;
+    box-sizing   : border-box;
+    border       : 2px solid #C6C6C6;
+    border-radius: 8px;
+
+    h3 {
+        font-family: 'Poppins';
+        font-style : normal;
+        font-weight: 400;
+        font-size  : 20px;
+        line-height: 40px;
+        color      : #000000;
+        margin     : 0;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    p {
+        font-family: 'Poppins';
+        font-style : normal;
+        font-weight: 400;
+        font-size  : 24px;
+        line-height: 40px;
+        color      : #000000;
+    }
+}
+
+
+.services {
+    margin: 0 auto;
+    width : 533px;
+    height: 63px;
+
+    p {
+        font-size  : 14px;
+        font-family: 'Poppins';
+        font-style : normal;
+        font-weight: 400;
+        color      : #000000;
+        text-align : left;
+
+        span {
+            font-weight: 600;
+            font-size  : 14px;
+            color      : #F16F06;
+        }
+    }
+}
+
+
+.icon-sentiment-dissatisfied::before {
+    font-size: 48px;
+}
+
+.icon-sentiment-satisfied::before {
+    position: relative;
+    top     : 3px;
+}
+
+.main-container {
+    width   : 1200px;
+    position: relative;
+    bottom  : 25px;
+}
+
+.left-panel {
+    width   : 791px;
+    position: relative;
+    top     : 5px;
+}
+
+.right-panel {
+    width : 1200px;
+    margin: 0 auto;
+}
+
+.flight-heading {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 18px;
+    color      : #000000;
+}
+
+::ng-deep {
+    .ngucarousel .ngucarousel-items {
+        position: relative;
+        display : flex;
+        height  : 100%;
+        width   : 1144px;
+    }
+}
+
+// carosoul css 
+.item {
+    background   : #EDF2F7;
+    box-sizing   : border-box;
+    box-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    height       : auto !important;
+}
+
+.leftRs {
+    position        : relative;
+    top             : 750px;
+    bottom          : 0;
+    width           : 30px;
+    height          : 30px;
+    box-shadow      : 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius   : 999px;
+    left            : 150px;
+    z-index         : 1;
+    background-color: #FFFFFF;
+}
+
+.rightRs {
+    position        : absolute;
+    margin          : auto;
+    top             : 0px;
+    bottom          : 750px;
+    width           : 30px;
+    height          : 30px;
+    box-shadow      : 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius   : 999px;
+    left            : 150px;
+    background-color: #FFFFFF;
+}
+
+.heading {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 18px;
+    text-align : center;
+}
+
+.content {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 12px;
+    text-align : center;
+}
+
+// cancelled tab css
+.total-pay {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 18px;
+    color      : #525252;
+}
+
+.cancel-price {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 16px;
+    color      : #208467;
+}
+
+.initiated-btn {
+    position     : relative;
+    top          : 20px;
+    background   : #0057B9;
+    border-radius: 20px;
+}
+
+.getStarted {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 12px;
+    line-height: 18px;
+    color      : #EB2533;
+}
+
+@media (max-width:600px) {
+
+    .refrence {
+        width: 80%;
+    }
+
+    .services {
+        width     : 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width:768px) {
+    .main-section {
+        margin-bottom: 29%;
+    }
+}

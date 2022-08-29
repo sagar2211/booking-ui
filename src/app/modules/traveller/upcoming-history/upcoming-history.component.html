@@ -1,0 +1,806 @@
+<div *ngIf="bookingHistory?.length > 0">
+    <mat-card class="single-card mt-3 mb-2" *ngFor="let flight of bookingHistory; let i = index">
+        <div  class="upper-card-shadow" *ngIf="flight.bookingObj.result.bookings[0].bookingResponse !== null && !isBelowSm">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="flight-heading">
+                        <span>{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityName}}</span>
+                        <span><i class="icon-arrowStroke"></i></span>
+                        <span>{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments.length
+                            - 1].arrival.cityName}}</span>
+                    </p>
+                    <p>
+                        <!-- <span class="trip-type"> Round Trip Flight </span> -->
+                        <span class="trip-type"> One Way Trip Flight </span>
+                    </p>
+                    <p><span class="booking-id">Booking ID -
+                            {{flight.bookingObj.result.bookings[0].bookingResponse.bookingItemID}}</span></p>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary" class="resend-print-btn"><span><i
+                                class="icon-email"></i></span>&nbsp;&nbsp;Resend E-Mail</button>
+                </div>
+                <div>
+                    <button [useExistingCss]="true" printSectionId="print-section{{i}}" ngxPrint mat-raised-button
+                        color="primary" class="resend-print-btn"><span><i class="icon-print"></i></span>Print
+                        Trip</button>
+                </div>
+            </div>
+        </div>
+        <div  class="upper-card-shadow" *ngIf="flight.bookingObj.result.bookings[0].bookingResponse !== null && isBelowSm">
+            <div style="flex-direction: column;" class="d-flex justify-content-between">
+                <div>
+                    <p class="flight-heading">
+                        <span>{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityName}}</span>
+                        <span><i class="icon-arrowStroke"></i></span>
+                        <span>{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments.length
+                            - 1].arrival.cityName}}</span>
+                    </p>
+                    <div style="display: flex;">
+                        <p class="tripTypeText">
+                            <!-- <span class="trip-type"> Round Trip Flight </span> -->
+                            <span  class="trip-type"> One Way Trip Flight | </span>
+                        </p>
+                        <p><span class="booking-id">  Booking ID -
+                                {{flight.bookingObj.result.bookings[0].bookingResponse.bookingItemID}}</span>
+                        </p>
+                    </div>
+                </div>
+                <div style="display: flex;justify-content: space-between;
+                width: 80%;
+                margin-bottom: 16px;
+                margin-top: 2px;">
+                    <div>
+                        <button mat-raised-button color="primary" class="resend-print-btn"><span><i
+                                    class="icon-email"></i></span>&nbsp;&nbsp;Resend E-Mail</button>
+                    </div>
+                    <div>
+                        <button [useExistingCss]="true" printSectionId="print-section{{i}}" ngxPrint mat-raised-button
+                            color="primary" class="resend-print-btn"><span><i class="icon-print"></i></span>Print
+                            Trip</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-card-shadow" *ngIf="flight.bookingObj.result.bookings[0].bookingResponse !== null && !isBelowSm">
+            <p class="pt-3">
+                <span class="depart-flight">DEPARTURE FLIGHT -
+                    {{updateDate(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}
+                </span>&nbsp;
+                <span class="in-days">In 10 Days </span>
+            </p>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <div>
+                        <span
+                            class="depart-date">{{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}</span>
+                        &nbsp;
+                        <span
+                            class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}</span>
+                    </div>
+                    <div class="depart-flname">
+                        {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityCode
+                        + " - " +
+                        flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityName}}
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <span class="depart-date">
+                            {{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrivalDate)}}
+                        </span>
+                        <span
+                            class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrivalDate)}}</span>
+                    </div>
+                    <div class="depart-flname">
+                        {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrival.cityCode +
+                        " - " +
+                        flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrival.cityName}}
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <span class=""><i class="icon-flight iconSize12"></i></span>
+                        <span
+                            class="fl-name">{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].carrier.hint}}</span>
+                    </div>
+                    <div class="pt-2">
+                        <span class=""><i class="icon-group iconSize12"></i></span>
+                        <span class="fl-name">Suraj + 2</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="/assets/airlineLogos/Rectangular/{{
+                    flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].carrier.code
+                  }}.png" width="100px" alt="" />
+                </div>
+            </div>
+            <p style="padding-top: 26px;" *ngIf="flight.bookingObj.result.bookings[0].bookingResponse.legs.length > 1">
+                <span class="depart-flight">RETURN FLIGHT &nbsp;-Sat,28 Mar </span>&nbsp;
+                <span class="in-days">In 14 Days </span>
+            </p>
+
+            <div class="d-flex justify-content-between"
+                *ngIf="flight.bookingObj.result.bookings[0].bookingResponse.legs.length > 1">
+                <div>
+                    <div>
+                        <span
+                            class="depart-date">{{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].departureDate)}}</span>
+                        <span
+                            class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].departureDate)}}</span>
+                    </div>
+                    <div class="depart-flname">
+                        {{flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].departure.cityCode
+                        + " - " +
+                        flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].departure.cityName}}
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <span
+                            class="depart-date">{{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].arrivalDate)}}</span>
+                        <span
+                            class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].arrivalDate)}}</span>
+                    </div>
+                    <div class="depart-flname">
+                        {{flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].arrival.cityCode +
+                        " - " +
+                        flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].arrival.cityName}}
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <span class=""><i class="icon-flight iconSize12"></i></span>
+                        <span
+                            class="fl-name">{{flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].carrier.hint}}</span>
+                    </div>
+                    <div class="pt-2">
+                        <span class=""><i class="icon-group iconSize12"></i></span>
+                        <span class="fl-name">Suraj + 2</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="/assets/airlineLogos/Rectangular/{{
+                    flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].carrier.code
+                  }}.png" width="100px" alt="" />
+                </div>
+            </div>
+            <p class="cancellation-note">Ticket cancellation subjected to penalty </p>
+        </div>
+        <div class="lower-card-shadow" *ngIf="flight.bookingObj.result.bookings[0].bookingResponse !== null && isBelowSm">
+            <p class="pt-3">
+                <span class="depart-flight">DEPARTURE FLIGHT -
+                    {{updateDate(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}
+                </span>&nbsp;
+                <span class="in-days">In 10 Days </span>
+            </p>
+            <div style="flex-direction:column;" class="d-flex justify-content-between">
+                <div style="display: flex;
+                justify-content: space-between;">
+                    <div>
+                        <div>
+                            <span
+                                class="depart-date">{{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}</span>
+                            &nbsp;
+                            <span
+                                class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}</span>
+                        </div>
+                        <div class="depart-flname">
+                            {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityCode
+                            + " - " +
+                            flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityName}}
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="depart-date">
+                                {{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrivalDate)}}
+                            </span>
+                            <span
+                                class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrivalDate)}}</span>
+                        </div>
+                        <div class="depart-flname">
+                            {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrival.cityCode +
+                            " - " +
+                            flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrival.cityName}}
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex;
+                justify-content: space-between;margin-top: 14px;margin-bottom: 8px;">
+                    <div>
+                        <div>
+                            <span class=""><i class="icon-flight iconSize12"></i></span>
+                            <span
+                                class="fl-name">{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].carrier.hint}}</span>
+                        </div>
+                        <div class="pt-2">
+                            <span class=""><i class="icon-group iconSize12"></i></span>
+                            <span class="fl-name">Suraj + 2</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/assets/airlineLogos/Rectangular/{{
+                        flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].carrier.code
+                      }}.png" width="100px" alt="" />
+                    </div>
+                </div>
+            </div>
+            <p style="padding-top: 26px;" *ngIf="flight.bookingObj.result.bookings[0].bookingResponse.legs.length > 1">
+                <span class="depart-flight">RETURN FLIGHT &nbsp;-Sat,28 Mar </span>&nbsp;
+                <span class="in-days">In 14 Days </span>
+            </p>
+
+            <div class="d-flex justify-content-between"
+                *ngIf="flight.bookingObj.result.bookings[0].bookingResponse.legs.length > 1">
+                <div>
+                    <div>
+                        <span
+                            class="depart-date">{{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].departureDate)}}</span>
+                        <span
+                            class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].departureDate)}}</span>
+                    </div>
+                    <div class="depart-flname">
+                        {{flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].departure.cityCode
+                        + " - " +
+                        flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].departure.cityName}}
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <span
+                            class="depart-date">{{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].arrivalDate)}}</span>
+                        <span
+                            class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].arrivalDate)}}</span>
+                    </div>
+                    <div class="depart-flname">
+                        {{flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].arrival.cityCode +
+                        " - " +
+                        flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].arrival.cityName}}
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <span class=""><i class="icon-flight iconSize12"></i></span>
+                        <span
+                            class="fl-name">{{flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].carrier.hint}}</span>
+                    </div>
+                    <div class="pt-2">
+                        <span class=""><i class="icon-group iconSize12"></i></span>
+                        <span class="fl-name">Suraj + 2</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="/assets/airlineLogos/Rectangular/{{
+                    flight.bookingObj.result.bookings[0].bookingResponse.legs[1].segments[0].carrier.code
+                  }}.png" width="100px" alt="" />
+                </div>
+            </div>
+            <p class="cancellation-note">Ticket cancellation subjected to penalty </p>
+        </div>
+        <!-- ticket -->
+        <div style="display:none" id="print-section{{i}}" class="mt-5"
+            *ngIf="flight.bookingObj.result.bookings[0].bookingResponse !== null">
+            <section class="print">
+                <div class="page-header m-1" style="text-align: center">
+                    <header class="d-flex justify-content-between top">
+                        <div>
+                            <img src="/assets/images/logo-03.svg" width="62.34px" height="" alt="wadiiaLogo">
+                        </div>
+                        <div>
+                            <p>Wadiia Booking ID W09238493759</p>
+                        </div>
+                    </header>
+                </div>
+                <div class="page-footer m-1">
+                    <footer class="top">
+                        <h3>Africa’s Trusted Travel Brand</h3>
+                    </footer>
+                </div>
+                <table class="m-1">
+                    <thead>
+                        <tr>
+                            <td>
+                                <!--place holder for the fixed-position header-->
+                                <div class="page-header-space"></div>
+                            </td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <!--*** CONTENT GOES HERE ***-->
+                                <div class="page pt-1 m-1">
+
+                                    <p class="topText">
+                                        Proof of cittizenship is required for international travel. be sure to bring
+                                        necessary
+                                        documentation (e.g.passport, visa, transit permit). To learn more visit our Visa
+                                        and
+                                        passport page.
+                                    </p>
+
+                                    <!-- TICKET - Confirm -->
+                                    <mat-card class="mt-2">
+                                        <h3 class="head">TICKET - Confirm</h3>
+                                        <div class="confirmTicket d-flex justify-content-between fentBlue mt-1">
+                                            <p>{{updateDate1(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}
+                                            </p>
+                                            <p>{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityName}}
+                                                TO
+                                                {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments.length-1].arrival.cityName}}
+                                            </p>
+                                            <p>{{flight.flightdata.legs[0].connections[0].connectionHeader.legTravelTime.addHours}}h
+                                                {{flight.flightdata.legs[0].connections[0].connectionHeader.legTravelTime.minutes}}
+                                                m</p>
+                                        </div>
+                                        <div class="d-flex rute mt-3">
+                                            <div class="airlineImg">
+                                                <img src="../../../../assets/airlineLogos/Rectangular/{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].carrier.code}}.png"
+                                                    width="87px" alt="">
+                                                <p class="airlineName">
+                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].carrier.hint}}
+                                                </p>
+                                                <p class="airlineNo">
+                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].carrier.code}}-{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].flightNumber}}
+                                                </p>
+                                            </div>
+                                            <div class="depart">
+                                                <h2>{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityCode}}
+                                                </h2>
+                                                <p class="cityName">
+                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityName}}
+                                                </p>
+                                                <p class="time">
+                                                    <span
+                                                        class="depart-time">{{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}</span>,
+                                                    <span
+                                                        class="">{{updateDate2(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departureDate)}}</span>
+                                                </p>
+                                                <p class="airport">
+                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.name}}
+                                                </p>
+                                                <p class="terminal">Terminal 1</p>
+                                            </div>
+                                            <div class="cabinSection">
+                                                <p class="dur">
+                                                    {{flight.flightdata.legs[0].connections[0].connectionHeader.legTravelTime.addHours}}h
+                                                    {{flight.flightdata.legs[0].connections[0].connectionHeader.legTravelTime.minutes}}
+                                                    m
+                                                </p>
+                                                <div class="line"></div>
+                                                <p class="cabin">
+                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.pnr.segments[0].cabinClass}}
+                                                </p>
+                                            </div>
+                                            <div class="return">
+                                                <h2>
+                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments.length-1].arrival.cityCode}}
+                                                </h2>
+                                                <p class="cityName">
+                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments.length-1].arrival.cityName}}
+                                                </p>
+                                                <p class="time">
+                                                    <span class="depart-time">
+                                                        {{updateTime(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrivalDate)}}
+                                                    </span>,
+                                                    <span
+                                                        class="">{{updateDate2(flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].arrivalDate)}}</span>
+                                                </p>
+                                                <p class="airport">
+                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments.length-1].arrival.name}}
+                                                </p>
+                                                <p class="terminal">Terminal 2</p>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+
+                                    <!-- PASSENGER  DETAILS -->
+                                    <mat-card class="passenger mt-3">
+                                        <h3 class="head">PASSENGER DETAILS</h3>
+                                        <table class="table underTable">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">PASSENGER NAME</th>
+                                                    <th scope="col">PNR</th>
+                                                    <th scope="col">E-TICKET NO</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr
+                                                    *ngFor="let passanger of flight.bookingObj.result.bookings[0].bookingResponse.pnr.passengers; let k= index">
+                                                    <td> {{k+1}}. <strong>{{passanger.firstName}}
+                                                            {{passanger.name}}</strong> {{passanger.passengerTypeName}}
+                                                    </td>
+                                                    <td>{{flight.bookingObj.result.bookings[0].bookingResponse.pnr.infos[0].recordLocator}}
+                                                    </td>
+                                                    <td>{{flight.bookingObj.result.bookings[0].bookingResponse.pnr.infos[0].recordLocator}}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>Seat assigments, Special meals, and special assistance request should be
+                                            confirmed with the airline.</p>
+                                    </mat-card>
+
+                                    <!-- BAGGAGE INFORMATION -->
+                                    <mat-card class="baggage mt-3">
+                                        <h3 class="head">BAGGAGE INFORMATION </h3>
+                                        <table class="table underTable">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">PASSENGER NAME</th>
+                                                    <th scope="col">SECTOR</th>
+                                                    <th scope="col">CABIN</th>
+                                                    <th scope="col">CHECK-IN</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr
+                                                    *ngFor="let passanger of flight.bookingObj.result.bookings[0].bookingResponse.pnr.passengers; let l= index">
+                                                    <td> {{l+1}}. <strong>{{passanger.firstName}}
+                                                            {{passanger.name}}</strong> {{passanger.passengerTypeName}}
+                                                    </td>
+                                                    <td>{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityCode}}-{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments.length-1].arrival.cityCode}}
+                                                    </td>
+                                                    <td>{{flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedFares[0].ticketingSegments[0].freeBaggageAllowance}}
+                                                    </td>
+                                                    <td>{{flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedFares[0].ticketingSegments[0].fareBase}}
+                                                    </td>
+                                                    <table class="w-100">
+                                                        <tbody class="w-100">
+                                                            <tr class="d-flex justify-content-between w-100"
+                                                                *ngFor="let baggage of flight.bookingObj.result.bookings[0].bookingResponse.pnr.passengers[0].specialServiceRequests; let m = index">
+                                                                <td *ngIf="baggage.chargeable">
+                                                                    <strong>{{passanger.firstName}}
+                                                                        {{passanger.name}}</strong> EXTRA BAG {{m}}
+                                                                </td>
+                                                                <td *ngIf="baggage.chargeable">
+                                                                    {{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[0].departure.cityCode}}-{{flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments[flight.bookingObj.result.bookings[0].bookingResponse.legs[0].segments.length-1].arrival.cityCode}}
+                                                                </td>
+                                                                <td *ngIf="baggage.chargeable">{{baggage.code}}</td>
+                                                                <td *ngIf="baggage.chargeable">{{baggage.text}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </mat-card>
+
+                                    <!-- EXTRA CONVENIENCE -->
+                                    <mat-card class="baggage extra mt-3 p-3">
+                                        <h3 class="head">EXTRA CONVENIENCE </h3>
+                                        <table class="table underTable">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                        Additional Services Purchase
+                                                    </td>
+                                                    <td>
+                                                        Price
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let service of flight.extraService.hepstarServices">
+                                                    <td>{{service.name}}</td>
+                                                    <td>{{service.currency}} {{service.price}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </mat-card>
+
+                                    <!-- FARE DETAILS  -->
+                                    <mat-card class="baggage mt-3 p-3">
+                                        <h3 class="head">FARE DETAILS</h3>
+                                        <table class="table underTable">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Purchase Description</th>
+                                                    <th scope="col">Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Base Fare (1 Traveller)</td>
+                                                    <td>{{flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedFares[0].fareDetails.equivalentBaseFare.currencyCode}}
+                                                        &nbsp;&nbsp;{{flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedFares[0].fareDetails.equivalentBaseFare.value
+                                                        | number}}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fee & Surcharges</td>
+                                                    <td>{{flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedFares[0].fareDetails.totalTax.currencyCode}}
+                                                        &nbsp;&nbsp;
+                                                        {{flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedFares[0].fareDetails.totalTax.value
+                                                        | number}}
+                                                    </td>
+                                                </tr>
+                                                <!-- <tr *ngFor="let baggage of flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedServices; let i = index">
+                                                <td>Extras (Baggage)</td>
+                                                <td id="bagPrice{{baggage.servicePrice.value}}" [(ngModel)]="bagPrice[baggage.servicePrice.value]">
+                                                    {{baggage.servicePrice.currencyCode}}
+                                                    &nbsp;&nbsp;
+                                                    {{baggage.servicePrice.value}}
+                                                </td>
+                                            </tr> -->
+                                                <tr>
+                                                    <td>Extras (Baggage)</td>
+                                                    <td>
+                                                        <span>{{getbaggagePrice(flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedServices).currency}}</span>&nbsp;
+                                                        &nbsp;<span>{{getbaggagePrice(flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedServices).price
+                                                            | number}}</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Add-Ons</td>
+                                                    <td>
+
+                                                        {{getAddOnsPrice(flight.extraService).currency}}
+                                                        {{getAddOnsPrice(flight.extraService).price | number}}
+                                                    </td>
+                                                </tr>
+                                                <!-- <tr>
+                                                <td>Flight Delay Compensation</td>
+                                                <td>MAS &nbsp;&nbsp; 252.00</td>
+                                            </tr> -->
+                                                <tr class="total">
+                                                    <td><strong>TOTAL AMOUNT PAID</strong></td>
+                                                    <td>{{flight.bookingObj.result.bookings[0].bookingResponse.totalPrice.currencyCode}}
+                                                        &nbsp;&nbsp;
+                                                        {{
+                                                        flight.bookingObj.result.bookings[0].bookingResponse.totalPrice.value
+                                                        +
+                                                        flight.bookingObj.result.bookings[0].bookingResponse.tax.value
+                                                        +
+                                                        getbaggagePrice(flight.bookingObj.result.bookings[0].bookingResponse.pnr.storedServices).price
+                                                        +
+                                                        getAddOnsPrice(flight.extraService).price | number}}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </mat-card>
+
+                                    <!-- 24 x 7 CUSTOMER SUPPORT -->
+                                    <mat-card class="baggage mt-3 p-3">
+                                        <h3 class="head">24 x 7 CUSTOMER SUPPORT</h3>
+                                        <table class="table underTable">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Wadiia Support</th>
+                                                    <th scope="col">Airline Support</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>E-Mail</strong> &nbsp;&nbsp;&nbsp;
+                                                        wadiiasupport@gmail.com
+                                                    </td>
+                                                    <td> <strong> KLM Airline</strong> &nbsp;&nbsp;&nbsp; +91 9898989898
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Tel</strong>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +91
+                                                        9898989898 (South Africa) <br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91
+                                                        9898989898 (South Africa)</td>
+                                                </tr>
+                                                <tr>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </mat-card>
+                                    <mat-card class="baggage mt-3 p-3">
+                                        <h3 class="head">24 x 7 CUSTOMER SUPPORT</h3>
+                                        <ul>
+                                            <li>Please be informed that tickets are non-transferable. Also note that not
+                                                all
+                                                tickets are refundable. Kindly read carefully all fare rules on your
+                                                ticket.
+                                            </li>
+                                            <li>Please see your attached e-ticket for your exact baggage allowance.</li>
+                                            <li>You may also need a visa to visit your destination country. For visa
+                                                requirements, please check this page for more information about visa
+                                                requirements. If your final destination requires an E-Visa, you can
+                                                apply
+                                                here.</li>
+                                            <li>We understand that your plans may change at any time. While we do not
+                                                charge
+                                                a cancellation or change fee, please be aware that the airline may do so
+                                                depending on their policies. As a result, you may be charged for any
+                                                changes
+                                                or cancellations. The penalty regulations for changes and cancellations
+                                                can
+                                                be found here.</li>
+                                            <li>For all flights check-in, every passenger must present a valid form of
+                                                identification. For domestic flights, you’ll need either your National
+                                                ID or
+                                                a passport. For international flights, only a passport will suffice. If
+                                                you
+                                                fail to show acceptable proof of identification that matches the names
+                                                on
+                                                your reservation, you may be denied check-in without a refund.</li>
+                                        </ul>
+                                    </mat-card>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <!--place holder for the fixed-position footer-->
+                                <div class="page-footer-space"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </section>
+        </div>
+    </mat-card>
+</div>
+<div *ngIf="bookingHistory?.length == 0">
+    <mat-card>
+        <h1>No upcoming-flights available</h1>
+    </mat-card>
+</div>
+<!-- <mat-card class="single-card mt-3">
+    <div class="upper-card-shadow">
+        <div class="d-flex justify-content-between">
+            <div>
+                <p class="flight-heading">
+                    <span>London</span> 
+                    <span><i class="icon-arrowStroke"></i></span> 
+                    <span>Bangkok</span> 
+                    
+                </p>
+                <p>
+                    <span class="trip-type"> Round Trip Flight  | </span>
+                    <span class="booking-id">Booking ID - WA8734687</span> 
+                </p>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" class="resend-print-btn"><span><i class="icon-email"></i></span>&nbsp;&nbsp;Resend E-Mail</button>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" class="resend-print-btn" (click)="printHistory()"><span><i class="icon-print"></i></span>&nbsp;&nbsp;Print Trip</button>
+            </div>
+        </div>
+    </div>
+    <div class="lower-card-shadow">
+        <p class="pt-3">
+            <span class="depart-flight">DEPARTURE FLIGHT &nbsp;-Sat,28 Mar </span>&nbsp;
+            <span class="in-days">In 10 Days </span>
+        </p>
+        <div class="d-flex justify-content-between">
+            <div>
+                <div>
+                    <span class="depart-date">28 Mar ‘22</span>
+                    <span class="depart-time">11:00 PM</span>
+                </div>
+                <div class="depart-flname">LHR - LONDON</div>
+            </div>
+            <div>
+                <div>
+                    <span class="depart-date">28 Mar ‘22</span>
+                    <span class="depart-time">04:40 AM</span>
+                </div>
+                <div class="depart-flname">BKK -  BANGKOK</div>
+            </div>
+            <div>
+                <div>
+                    <span class=""><i class="icon-flight iconSize12"></i></span>
+                    <span class="fl-name">JET BLUE</span>
+                </div>
+                <div class="pt-2">
+                    <span class=""><i class="icon-group iconSize12"></i></span>
+                    <span class="fl-name">Suraj + 2</span>
+                </div>
+            </div>
+            <div>
+                <img src="/assets/airlineLogos/Rectangular/2U.png" width="120px" height="39px" alt="">
+            </div>
+        </div>
+        <p class="cancellation-note">Ticket cancellation subjected to penalty </p>
+    </div>
+</mat-card>
+
+<mat-card class="single-card mt-3">
+    <div class="upper-card-shadow">
+        <div class="d-flex justify-content-between">
+            <div>
+                <p class="flight-heading">
+                    <span>London</span> 
+                    <span><i class="icon-arrowStroke"></i></span> 
+                    <span>Bangkok</span> 
+                    
+                </p>
+                <p>
+                    <span class="trip-type"> Round Trip Flight  | </span>
+                    <span class="booking-id">Booking ID - WA8734687</span> 
+                </p>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" class="resend-print-btn"><span><i class="icon-email"></i></span>&nbsp;&nbsp;Resend E-Mail</button>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" class="resend-print-btn" (click)="printHistory()"><span><i class="icon-print"></i></span>&nbsp;&nbsp;Print Trip</button>
+            </div>
+        </div>
+    </div>
+    <div class="lower-card-shadow">
+        <p class="pt-3">
+            <span class="depart-flight">DEPARTURE FLIGHT &nbsp;-Sat,28 Mar </span>&nbsp;
+            <span class="in-days">In 10 Days </span>
+        </p>
+        <div class="d-flex justify-content-between">
+            <div>
+                <div>
+                    <span class="depart-date">28 Mar ‘22</span>
+                    <span class="depart-time">11:00 PM</span>
+                </div>
+                <div class="depart-flname">LHR - LONDON</div>
+            </div>
+            <div>
+                <div>
+                    <span class="depart-date">28 Mar ‘22</span>
+                    <span class="depart-time">04:40 AM</span>
+                </div>
+                <div class="depart-flname">BKK -  BANGKOK</div>
+            </div>
+            <div>
+                <div>
+                    <span class=""><i class="icon-flight iconSize12"></i></span>
+                    <span class="fl-name">JET BLUE</span>
+                </div>
+                <div class="pt-2">
+                    <span class=""><i class="icon-group iconSize12"></i></span>
+                    <span class="fl-name">Suraj + 2</span>
+                </div>
+            </div>
+            <div>
+                <img src="/assets/airlineLogos/Rectangular/2U.png" width="120px" height="39px" alt="">
+            </div>
+        </div>
+        <p class="pt-3">
+            <span class="depart-flight">RETURN FLIGHT &nbsp;-Sat,28 Mar </span>&nbsp;
+            <span class="in-days">In 14 Days </span>
+        </p>
+        <div class="d-flex justify-content-between">
+            <div>
+                <div>
+                    <span class="depart-date">28 Mar ‘22</span>
+                    <span class="depart-time">11:00 PM</span>
+                </div>
+                <div class="depart-flname">LHR - LONDON</div>
+            </div>
+            <div>
+                <div>
+                    <span class="depart-date">28 Mar ‘22</span>
+                    <span class="depart-time">04:40 AM</span>
+                </div>
+                <div class="depart-flname">BKK -  BANGKOK</div>
+            </div>
+            <div class="pt-2">
+                <div>
+                    <span class=""><i class="icon-flight iconSize12"></i></span>
+                    <span class="fl-name">JET BLUE</span>
+                </div>
+                <div>
+                    <span class=""><i class="icon-group iconSize12"></i></span>
+                    <span class="fl-name">Suraj + 2</span>
+                </div>
+            </div>
+            <div>
+                <img src="/assets/airlineLogos/Rectangular/2U.png" width="120px" height="39px" alt="">
+            </div>
+        </div>
+        <p class="cancellation-note">Ticket cancellation subjected to penalty </p>
+    </div>
+</mat-card> -->

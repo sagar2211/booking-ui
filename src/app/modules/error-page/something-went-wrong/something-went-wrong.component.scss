@@ -1,0 +1,39 @@
+.error-bg {
+    // background-image: linear-gradient(90deg, white 55%, #d1d1d16b 100%), url('/assets/images/sky.png');
+    background-image: url("/assets/images/something-went-wrong.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 214px 0;
+
+}
+.error-404{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    color: #000000;
+}
+.error-content{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+    padding-top: 30px;
+}
+.main-container{
+    position: relative;
+    top: 120px;
+}
+.btnBack{
+    padding      : 15px 24px !important;
+    font-family  : "Poppins";
+    font-style   : normal;
+    font-weight  : bold;
+    font-size    : 18px;
+    background   : #eb2533;
+    border-radius: 5px;
+    color        : #ffffff;
+    border       : none;
+    margin-top: 43px;
+}

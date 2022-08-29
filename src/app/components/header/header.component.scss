@@ -1,0 +1,340 @@
+.theme1 {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgb(40 35 1 / 40%)),
+    url("/assets/images/banner-image2.png");
+  background-blend-mode: multiply;
+  background-size      : cover;
+  background-position  : center;
+  width                : 100%;
+  height               : 676px;
+  left                 : 0px;
+  top                  : 0px;
+}
+
+.theme2 {
+  background-color: #0057b9;
+}
+
+.theme3 {
+  background-image: url("/assets/images/airplane-wing.png");
+  height          : 660px;
+}
+
+.icon-ic_outline-logout {
+  font-size: 22px;
+  position : relative;
+  left     : 2px;
+  top      : 5px;
+}
+
+.hrLine {
+  height       : 2px;
+  color        : white;
+  margin       : 0%;
+  margin-bottom: 60px;
+}
+
+.wad-column-head a {
+  font-size      : 16px;
+  font-weight    : 500;
+  text-decoration: none;
+  color          : #ffffff;
+}
+
+.wad-column-head-account {
+  margin-top: 0px;
+  color     : #336699;
+}
+
+
+.desinationInput {
+  height: 20px;
+  color : white;
+}
+
+.desinationInput::placeholder {
+  color: white;
+}
+
+.breadcrum {
+  color: white;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      display        : block;
+      color          : white;
+      text-align     : center;
+      text-decoration: none;
+    }
+  }
+}
+
+.icon-search_24px_outlined:before {
+  content  : "\e952";
+  color    : #fff;
+  position : absolute;
+  left     : 230px;
+  top      : 15px;
+  font-size: 16px;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.signBtn {
+  display        : flex;
+  justify-content: end;
+  align-items    : center;
+}
+
+.socialMedia {
+  display        : flex;
+  justify-content: right;
+  margin-right   : -5px;
+}
+
+.pipe {
+  border  : 1px solid #ffffff;
+  height  : 25px;
+  margin  : 0px 12px;
+  position: relative;
+  top     : 0px;
+}
+
+.manu-bar {
+  display        : flex;
+  justify-content: space-between;
+  margin-top     : -50px;
+}
+
+.personIcon {
+  position: relative;
+  top     : 7px;
+}
+
+.profile-btn {
+  background-color: transparent;
+  color           : white !important;
+}
+
+.profile-btn2 {
+  background-color: transparent;
+  color           : black;
+}
+
+
+::ng-deep {
+  .mat-menu-panel {
+    margin-top: 4px;
+  }
+
+  .mat-menu-content:not(:empty) {
+    padding-top   : 8px;
+    padding-bottom: 8px;
+    width         : 180px;
+  }
+
+  .mat-menu-item .mat-icon {
+    margin-right: 3px;
+  }
+}
+
+button .mat-menu-item:hover {
+  background-color: #eb2533;
+  color           : #fff !important;
+}
+
+.flightList {
+  text-align : center;
+  font-size  : 60px;
+  font-weight: 500;
+  color      : white;
+  padding    : 40px 0 65px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+// bredcrumb
+ul.breadcrumb {
+  padding   : 10px 16px 100px;
+  list-style: none;
+  color     : white;
+}
+
+ul.breadcrumb li {
+  display  : inline;
+  font-size: 18px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color  : white;
+  content: ">\00a0";
+}
+
+ul.breadcrumb li a {
+  color          : white;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color          : #01447e;
+  text-decoration: underline;
+}
+
+.placeholder::placeholder {
+  opacity    : 1;
+  color      : white !important;
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 15px;
+  width      : 230px;
+}
+
+.placeholder {
+  display         : inline-block !important;
+  min-height      : 1em !important;
+  vertical-align  : middle !important;
+  cursor          : pointer !important;
+  background-color: transparent !important;
+  opacity         : 1 !important;
+}
+
+input[type="text"],
+select {
+  width           : 100%;
+  display         : inline-block;
+  border          : none;
+  border-radius   : 4px;
+  background-color: transparent;
+}
+
+.whiteBG {
+  background-color: #fff;
+}
+
+.breadcrumbs {
+  display: block;
+
+  li {
+    display     : inline-block;
+    padding-left: 15px !important;
+
+    a {
+      position       : relative;
+      font-size      : 19px;
+      color          : #fff;
+      text-transform : uppercase;
+      padding-right  : 15px;
+      margin-right   : 5px;
+      text-decoration: none;
+
+      &:after {
+        content     : "";
+        width       : 9px;
+        height      : 8px;
+        border-top  : 2px solid rgb(255, 255, 255);
+        border-right: 2px solid rgb(255, 255, 255);
+        position    : absolute;
+        top         : 10px;
+        right       : 0;
+        transform   : rotate(45deg);
+        display     : block;
+      }
+    }
+
+    &:last-of-type a {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.activeStep {
+  color      : #eb2533;
+  font-weight: bold;
+
+  a {
+    color      : #eb2533 !important;
+    font-weight: bold;
+
+    span {
+      background-color: #eb2533;
+      color           : #fff;
+    }
+  }
+}
+
+ol,
+ul {
+  padding-left : 0rem;
+  margin-bottom: 0rem;
+}
+
+
+.circle {
+  padding      : 2px;
+  display      : inline-block;
+  width        : 10px;
+  border-radius: 50px;
+  text-align   : center;
+  background   : #cccccc;
+  width        : 24px !important;
+  height       : 24px;
+}
+
+.icon-group {
+  font-size: 22px;
+  position : relative;
+  left     : 2px;
+  top      : 5px;
+}
+
+.logout {
+  margin-left: 23px;
+}
+
+.icon-group:before {
+  content: "\e93f";
+  color  : rgba(0, 0, 0, .54);
+}
+
+
+@media (max-width:1000px) {
+  .theme1 {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgb(40 35 1 / 40%)),
+      url("/assets/images/banner-image2.png");
+    background-blend-mode: multiply;
+    background-size      : cover;
+    background-position  : center;
+    width                : 100%;
+    height               : 676px;
+    left                 : 0px;
+    top                  : 0px;
+  }
+
+  .profile-btn {
+    background-color: transparent;
+    color           : white;
+  }
+
+  .theme3 {
+    height: auto;
+  }
+}
+
+@media (max-width:600px) {
+  .theme1 {
+    background           : white;
+    background-blend-mode: multiply;
+    background-size      : cover;
+    background-position  : center;
+    width                : 100%;
+    height               : auto;
+    left                 : 0px;
+    top                  : 0px;
+  }
+}

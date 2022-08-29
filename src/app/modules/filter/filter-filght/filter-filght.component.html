@@ -1,0 +1,308 @@
+<div class="w-filter-wrap filterContainerRelative">
+  <img class="closeModalImg" mat-dialog-close src="../../../../assets/images/cross.svg" alt="close" >
+  <div class="card">
+    <div id="collapse1" class="p-3 collapse show" aria-labelledby="accodion1" data-parent="#accordionExample">
+      <span class="card-title">POPULAR FILTERS</span>
+      <button mat-raised-button class="reset-btn" (click)="resetFilter()">Reset</button>
+      <div class="card-body">
+
+        <mat-expansion-panel class="filter-spacing" [expanded]="stopExpPanel" (opened)="stopExpPanel = true"
+          (closed)="stopExpPanel = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <div class="w-filter__heading">
+                <span> <strong>STOPS</strong> </span>
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="w-filters__stops filter-box">
+            <div class="w-filters__sec">
+              <div class="w-filters__options">
+                <mat-list-item *ngFor="let item of stopValues">
+                  <mat-checkbox [(ngModel)]="item.checked" (change)="getSelectedStops()">{{ item.name }}</mat-checkbox>
+                </mat-list-item>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="filter-spacing" [expanded]="dtExpPanel" (opened)="dtExpPanel = true"
+          (closed)="dtExpPanel = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <div class="w-filter__heading">
+                <span> <strong> DEPARTURE TIME </strong></span>
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="departure-flex filter-box" *ngIf="flightData && flightData.length">
+            <div class="w-filters__departure">
+              <div class="w-filters__sec">
+                <div class="w-filters__options">
+                  <div class="filter-timing-section">
+                    <mat-list-item *ngFor="let item of departureStartTimeValues">
+                      <div class="d-flex justify-content-between">
+                        <mat-checkbox [(ngModel)]="item.checked" (change)="getDepartsStart()">{{ item.minValue }}-{{
+                          item.maxValue }}</mat-checkbox>
+                        <i style="padding-right: 3px;" class="icon-Before-6-AM" *ngIf="item.minValue === '07:00'"></i>
+                        <i class="icon-wb-sunny light-icon" *ngIf="item.minValue === '12:00'"></i>
+                        <i class="icon-nights-stay light-icon"
+                          *ngIf="item.minValue === '00:00' || item.minValue === '19:00'"></i>
+                      </div>
+                    </mat-list-item>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="sliderPrice" [expanded]="priceExpPanel" (opened)="priceExpPanel = true"
+          (closed)="priceExpPanel = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <div _ngcontent-umo-c212="" class="w-filter__heading">
+                <span _ngcontent-umo-c212=""><strong _ngcontent-umo-c212="">PRICE</strong></span>
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div _ngcontent-umo-c212="" class="w-filters__sec filter-box">
+            <div _ngcontent-umo-c212="" class="w-filters__options">
+              <div _ngcontent-umo-c212="" class="input-range-wrapper">
+                <div class="custom-slider">
+                  <ngx-slider [(value)]="minValue" (mouseup)="getAirlinePrice()" (valueChange)="getAirlinePrice()"
+                    [(highValue)]="maxValue" [options]="options"></ngx-slider>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="filter-spacing" [expanded]="atExpPanel" *ngIf="arrivalFilterFlag"
+          (opened)="atExpPanel = true" (closed)="atExpPanel = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <div class="w-filter__heading">
+                <span> <strong> ARRIVAL TIME </strong></span>
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="arrival-flex filter-box">
+            <div class="w-filters__arrival">
+              <div class="w-filters__sec">
+                <!-- <h4 class="filter-title-h4">Arrival</h4> -->
+                <div class="w-filters__options">
+                  <div class="filter-timing-section">
+                    <mat-list-item *ngFor="let item of departureEndTimeValues">
+                      <div class="d-flex justify-content-between">
+                        <mat-checkbox [(ngModel)]="item.checked" (change)="getDepartsEnd()">{{ item.minValue }}-{{
+                          item.maxValue }}</mat-checkbox>
+                        <i style="padding-right: 3px;" class="icon-Before-6-AM light-icon"
+                          *ngIf="item.minValue === '07:00'"></i>
+                        <i class="icon-wb-sunny light-icon" *ngIf="item.minValue === '12:00'"></i>
+                        <i class="icon-nights-stay light-icon"
+                          *ngIf=" item.minValue === '00:00' || item.minValue === '19:00'"></i>
+                      </div>
+                    </mat-list-item>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="filter-spacing" [expanded]="alExpPanel" (opened)="alExpPanel = true"
+          (closed)="alExpPanel = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <div class="w-filter__heading">
+                <span>
+                  <strong>AIRLINES</strong>
+                  <!-- <a>+{{ includeAirline.length }} airlines</a> -->
+                </span>
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="w-filter-airlines filter-box">
+            <div class="w-filters__sec">
+              <div class="w-filters__options airline-list">
+                <mat-list-item *ngFor="let item of includeAirline">
+                  <div class="d-flex justify-content-between py-1">
+                    <div class="w-25">
+                      <mat-checkbox [(ngModel)]="item.checked" (change)="getAirlines()"></mat-checkbox>
+                    </div>
+                    <div class="w-50">
+                      <img src="/assets/airlineLogos/Rectangular/{{
+                        item.airlineCode
+                      }}.png" width="50px" alt="" />
+                    </div>
+                    <div class="w-100">
+                      <span class="airline-text">{{ item.airline }}-{{ item.airlineCode }}</span>
+                    </div>
+                    <div class="w-50">
+                      <span class="airline-text classPrice">{{ item.currency }} {{ item.price | number}}</span>
+                    </div>
+                  </div>
+                </mat-list-item>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="filter-spacing" [expanded]="cabinExpPanel" (opened)="cabinExpPanel = true"
+          (closed)="cabinExpPanel = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <div class="w-filter__heading">
+                <span> <strong>CABIN CLASSES</strong> </span>
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="w-filters__stops filter-box">
+            <div class="w-filters__sec">
+              <div class="w-filters__options">
+                <mat-list-item *ngFor="let item of cabinValues">
+                  <mat-checkbox [(ngModel)]="item.checked" (change)="getSelectedCabin()">
+                    <div style="width: 220px; height: 25px;" class="d-flex justify-content-between">
+                      <div class="">
+                        <span>{{ item.name }}</span>
+                      </div>
+                      <div class="">
+                        <p class="classPrice" *ngIf="item.name === economyObj?.class">
+                          {{ this.flightData[0]?.currency }}
+                          {{ economyObj?.price | number}}
+                        </p>
+                        <p class="classPrice" *ngIf="item.name === primumEconomyObj?.class">
+                          {{ this.flightData[0]?.currency }}
+                          {{ primumEconomyObj?.price | number }}
+                        </p>
+                        <p class="classPrice" *ngIf="item.name === businessObj?.class">
+                          {{ this.flightData[0]?.currency }}
+                          {{ businessObj?.price | number }}
+                        </p>
+                        <p class="classPrice" *ngIf="item.name === combainCabObj[0]?.class">
+                          {{ this.flightData[0]?.currency }}  {{ combainCabObj[0]?.price | number }}
+                        </p>
+                      </div>
+                    </div>
+                  </mat-checkbox>
+                </mat-list-item>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="filter-spacing" [expanded]="airportExpPanel" (opened)="airportExpPanel = true"
+          (closed)="airportExpPanel = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <div class="w-filter__heading">
+                <span> <strong>AIRPORTS</strong> </span>
+              </div>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="w-filters__stops filter-box">
+            <div class="w-filters__sec">
+              <div class="w-filters__options">
+                <mat-list-item>
+                  <div class="d-flex flex-column mb-2">
+                    <span class="airport_header">{{ departureCityName }}</span>
+                    <mat-list-item *ngFor="let item of airportDepartValues">
+                      <mat-checkbox [(ngModel)]="item.checked" (change)="getdepartAirPort()">
+                        {{ item.name }}
+                      </mat-checkbox>
+                    </mat-list-item>
+                  </div>
+                </mat-list-item>
+
+                <mat-list-item>
+                  <div class="d-flex flex-column mb-2">
+                    <span class="airport_header">{{ arrivalCityName }}</span>
+                    <mat-list-item *ngFor="let item of airportArivalValues">
+                      <mat-checkbox [(ngModel)]="item.checked" (change)="getarivalAirport()">{{ item.name }}
+                      </mat-checkbox>
+                    </mat-list-item>
+                  </div>
+                </mat-list-item>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <div *ngIf="flightData[0].legs.length > 1" class="w-75 separator">
+        Return Flight
+      </div>
+      <mat-expansion-panel class="filter-spacing" [expanded]="retDtExpPanel" *ngIf="flightData[0].legs.length > 1"
+        (opened)="retDtExpPanel = true" (closed)="retDtExpPanel = false">
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            <div class="w-filter__heading">
+              <span> <strong> Departure Time </strong></span>
+            </div>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="departure-flex">
+          <div class="w-filters__departure">
+            <div class="w-filters__sec">
+              <div class="w-filters__options">
+                <div class="filter-timing-section">
+                  <mat-list-item *ngFor="let item of arrivalStartTimeValues">
+                    <div class="d-flex justify-content-between">
+                      <mat-checkbox [(ngModel)]="item.checked" (change)="getArivalStart()">{{ item.minValue }}-{{
+                        item.maxValue }}</mat-checkbox>
+                      <i style="padding-right: 3px;" class="icon-Before-6-AM" *ngIf="item.minValue === '07:00'"></i>
+                      <i class="icon-wb-sunny light-icon" *ngIf="item.minValue === '12:00'"></i>
+                      <i class="icon-nights-stay light-icon"
+                        *ngIf="item.minValue === '00:00' || item.minValue === '19:00'"></i>
+                    </div>
+                  </mat-list-item>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel class="filter-spacing" [expanded]="retAtExpPanel" *ngIf="flightData[0].legs.length > 1"
+        (opened)="retAtExpPanel = true" (closed)="retAtExpPanel = false">
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            <div class="w-filter__heading">
+              <span> <strong> Arrival Time </strong></span>
+            </div>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="arrival-flex" *ngIf="arrivalFilterFlag">
+          <div class="w-filters__arrival">
+            <div class="w-filters__sec">
+              <div class="w-filters__options">
+                <div class="filter-timing-section">
+                  <mat-list-item *ngFor="let item of arrivalEndTimeValues">
+                    <div class="d-flex justify-content-between">
+                      <mat-checkbox [(ngModel)]="item.checked" (change)="getArivalsEnd()">{{ item.minValue }}-{{
+                        item.maxValue }}</mat-checkbox>
+                        <i style="padding-right: 3px;" class="icon-Before-6-AM light-icon"
+                        *ngIf="item.minValue === '07:00'"></i>
+                      <i class="icon-wb-sunny light-icon" *ngIf="item.minValue === '12:00'"></i>
+                      <i class="icon-nights-stay light-icon"
+                        *ngIf=" item.minValue === '00:00' || item.minValue === '19:00'"></i>
+                    </div>
+                  </mat-list-item>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </div>
+</div>

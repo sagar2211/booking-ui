@@ -1,0 +1,295 @@
+.main-section{
+    background:linear-gradient(0deg, rgba(255,255,255, 0.3), rgba(255,255,255, 0.3)), url("/assets/images/travel-hist-bg.png");
+    background-size:cover;
+    height: 1070px;
+}
+.main-container{
+    width: 1200px;
+    position: relative;
+    bottom: 25px;
+}
+.left-panel{
+    width: 791px;
+    position: relative;
+    top: 5px;
+}
+.right-panel{
+    width: 387px;
+    margin-top: 23px;
+}
+.adjust-width{
+    width: 387px;
+}
+.flight-heading{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+}
+.single-card{
+    width: 790px;
+    padding: unset !important;
+}
+.upper-card-shadow{
+    padding: 20px 32px 8px 32px !important;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 8px 8px 0px 0px !important;
+}
+.lower-card-shadow{
+    padding: 20px 32px 8px 32px !important;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 0px 0px 8px 8px !important;
+}
+.booking-id{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+}
+.trip-type{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #525252;
+}
+.depart-flight{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #525252;
+}
+.in-days{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    padding: 4px;
+    background-color: #7CC2C0;
+    border-radius: 4px;
+}
+
+.depart-date{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+}
+.depart-time{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+}
+.depart-flname{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    padding-top: 8px;
+}
+.fl-name{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    padding-left: 10px;
+}
+.icon-email,.icon-print{
+    font-size: 14px;
+}
+.icon-arrowStroke{
+    margin: 0 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.icon-arrowStroke:before {
+    color: #000000;
+}
+.icon-email:before,.icon-print:before {
+    color: #FFFFFF;
+}
+.resend-print-btn{
+    background: #0057B9;
+    border-radius: 6px;
+    padding-right: 16px;
+}
+.cancellation-note{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #525252;
+    padding-top: 30px !important;
+    padding-bottom: 4px;
+}
+
+.single-card ::ng-deep{
+    .mat-tab-header {
+        border-bottom: 3px solid rgba(0,0,0,.12);
+        width: 61%;
+        margin: 0 32px;
+    }
+    .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+        color: #38A169;
+        background-color: #38A169;
+        height: 3px;
+    }
+}
+
+
+.more-of-wadiia{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+}
+.wadiia-color{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: #eb2533;
+}
+
+// carosoul css 
+.item {
+    background: #EDF2F7;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    height: auto !important;
+  }
+  
+.leftRs {
+        position: relative;
+        top: 750px;
+        bottom: 0;
+        width: 30px;
+        height: 30px;
+        box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
+        border-radius: 999px;
+        left: 160px;
+        z-index: 1;
+        background-color: #FFFFFF;
+    }
+
+.rightRs {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: 750px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius: 999px;
+    left: 160px;
+    background-color: #FFFFFF;
+}
+.heading{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+.content{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+}
+
+// cancelled tab css
+.total-pay{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #525252;
+}
+.cancel-price{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #208467;
+    margin-left: 18px !important;
+}
+.initiated-btn{
+    position: relative;
+    top: 20px;
+    background: #0057B9;
+    border-radius: 20px;
+}
+.iconSize12{
+    font-size: 12px;
+}
+.addSticky {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+  }
+  .addStatic {
+    position: fixed;
+    top: -150px;
+  }
+  
+  .innerDiv1,.innerDiv2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  //media Query
+
+    @media (min-width:1000px){
+        .innerDiv1,.innerDiv2{
+            gap: 80px;
+        }
+    }
+
+  @media(max-width:1000px){
+    .single-card{
+        width: 100% !important;
+    }
+
+    .innerDiv1,.innerDiv2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (min-width:780px) and (max-width:1000px){
+    .innerDiv1,.innerDiv2{
+        gap: 65px;
+    }
+}
+
+    @media (max-width:600px){
+        .cancelledCDiv{
+            flex-direction: column;
+        }
+        .innerDiv1,.innerDiv2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cancellation-note{
+            padding-top: 18px !important;
+        }
+    }

@@ -1,0 +1,968 @@
+.headings {
+  display : block;
+  position: relative;
+  z-index : 999;
+}
+
+.search {
+  padding-top: 55px;
+}
+
+.addDestination {
+  padding: 15px 25px;
+}
+
+// .multiTripDesk{
+//   background-color: red;
+// }
+
+// .multiTripMob{
+//   background-color: green;
+// }
+
+// .oneTripDesk{
+//   background-color: #1BFFFF;
+// }
+
+// .oneTripMob{
+//   background-color: yellow;
+// }
+
+.search h1,
+.search h2 {
+  font-family: 'Poppins';
+  color      : white;
+  text-align : center;
+  margin     : 0px auto;
+}
+
+.search h1 {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 55px;
+  line-height: 62px;
+}
+
+.search h2 {
+  font-size  : 35px;
+  width      : 40%;
+  font-weight: 300;
+  line-height: 60px;
+}
+
+.arrows {
+  position           : relative;
+  background-color   : white;
+  z-index            : 2;
+  padding            : 9px 11px;
+  border-radius      : 50px;
+  box-shadow         : 0px 0px 2px;
+  width              : 50px;
+  height             : 50px;
+  margin             : 5px;
+  top                : 15px;
+  border             : 0;
+  // left            : 395px;
+}
+
+.mobPad {
+  padding-top: 0;
+}
+
+.icon-clarity_two-way-arrows-line:before {
+  content  : "\e908";
+  color    : #eb2533;
+  font-size: 24px;
+  position : relative;
+  top      : 3px;
+}
+
+.icon-loginArrow:before {
+  content  : "\e90b";
+  color    : #fff;
+  font-size: 13px;
+}
+
+// sarfarazChanges
+.mat-form-feild-selectionTrip ::ng-deep {
+  .mat-form-field {
+    width: 100% !important;
+  }
+}
+
+// sarfarazChanges
+.oneWayChanges {
+  align-items: end;
+}
+
+.swapBtn {
+  width: unset !important;
+}
+
+.buttons {
+  display        : flex;
+  justify-content: space-between;
+}
+
+.multiWayStyle {
+  width: 100%;
+}
+
+.destinationBtn {
+  width           : 100%;
+  color           : #fff;
+  text-align      : center;
+  background-color: #208467;
+  padding         : 15px 10px;
+  margin          : 0px auto 16px;
+}
+
+.oneTripMob {
+  .deepArr {
+    height: 165px;
+  }
+}
+
+.oneTripDesk {
+  .deepArr {
+    height : auto;
+    padding: 15px 0px;
+  }
+}
+
+.multiTripDesk {
+  .deepArr {
+    height : auto;
+    padding: 10px 0px 15px;
+  }
+}
+
+.multiTripMob {
+  .deepArr {
+    height: 225px;
+  }
+}
+
+
+// .marginAdjust {
+//   margin     : 0px !important;
+//   margin-left: 50px !important;
+// }
+
+::ng-deep {
+  .datePlacement ngb-datepicker.dropdown-menu.show.ng-star-inserted {
+    inset    : unset !important;
+    transform: unset !important;
+    right    : -253px !important;
+    top      : 53px !important;
+  }
+}
+
+.onewayContainerDate {
+  // margin-top: -46px !important;
+  margin: 0%;
+}
+
+.OneWayDatePlacement {
+  width: 321px;
+}
+
+.OneWayDateContainer {
+  margin-top : 0px !important;
+  margin-left: 0px;
+}
+
+.marginAdjust {
+  margin     : 0%;
+  margin-left: 50px !important;
+}
+
+::ng-deep {
+  .OneWayDatePlacement ngb-datepicker.dropdown-menu.show.ng-star-inserted {
+    inset    : unset !important;
+    transform: unset !important;
+    right    : 0px !important;
+    top      : 52px !important;
+  }
+}
+
+
+.flight-Search ::ng-deep {
+  .mat-tab-body {
+    top          : 0;
+    left         : 0;
+    right        : 0;
+    bottom       : 0;
+    position     : absolute;
+    display      : block;
+    overflow     : hidden;
+    outline      : 0;
+    flex-basis   : 100%;
+    // z-index   : 1;
+  }
+
+  .mat-tab-body-wrapper {
+    position: static !important;
+    overflow: visible !important;
+  }
+
+  .mat-tab-body.mat-tab-body-active {
+    position: static !important;
+    overflow: visible !important;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mat-form-field-underline {
+    display: none !important;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius   : 2px;
+    padding         : 0.25em 0.45em 0 0.45em;
+    background-color: white;
+    height          : 50px;
+    border          : 1px solid #D9D9D9;
+  }
+
+  .mat-ink-bar {
+    background-color: transparent !important;
+  }
+
+  .mat-form-field-appearance-fill.mat-focused {
+    outline      : 1px solid #1BFFFF;
+    border-radius: 2px;
+  }
+
+  .mat-form-field-type-mat-native-select.mat-form-field-appearance-fill .mat-form-field-infix::after {
+    margin-top: -10px;
+    color     : red;
+  }
+
+  .removeBtn {
+    cursor   : pointer;
+    position : relative;
+    top      : 8px;
+    font-size: 32px;
+    color    : white;
+  }
+
+  .mat-tab-label {
+    opacity   : 1;
+    color     : white !important;
+    text-align: center;
+  }
+
+  .mat-tab-label:hover {
+    opacity: 0.9;
+  }
+
+  .mat-tab-label-active {
+    background-color       : #1A52B6;
+    opacity                : 1;
+    text-align             : center;
+    color                  : white !important;
+    border-top-left-radius : 16px;
+    border-top-right-radius: 16px;
+
+    fa-icon {
+      color: red;
+    }
+  }
+
+  .mat-tab-body-content {
+    background-color: #1A52B6;
+    opacity         : 1;
+    border-radius   : 24px;
+    padding         : 30px;
+  }
+
+  .mat-tab-body-wrapper {
+    position     : relative;
+    overflow     : hidden;
+    display      : flex;
+    transition   : height 500ms cubic-bezier(0.35, 0, 0.25, 1);
+    margin-top   : -5px;
+    border-radius: 24px;
+    box-shadow   : 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important
+  }
+
+  .mat-tab-labels {
+    display        : flex;
+    justify-content: center;
+  }
+
+  .mat-pseudo-checkbox {
+    display: none !important;
+  }
+
+  .searchInput {
+    width: 100%;
+
+    .spaceShift {
+      padding: 0px 12px;
+      margin : 0 2px 0 0px;
+      width  : 85%;
+    }
+  }
+
+  .muiltiDate {
+    width: 25.8px;
+  }
+
+  .showText {
+    display        : flex;
+    justify-content: space-between;
+  }
+
+  .hideText {
+    display   : none;
+    visibility: hidden;
+  }
+
+  .multiSearch {
+    width: 48% !important;
+  }
+
+  .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-datepicker-toggle-default-icon {
+    margin  : auto;
+    position: relative;
+    top     : 5px;
+  }
+
+  .mat-icon-button {
+    color: #EB2533;
+  }
+
+  .mat-icon-button.mat-button-disabled.mat-button-disabled {
+    color: #fa9198e1;
+  }
+
+  .mat-select-arrow {
+    color   : rgba(247, 18, 18, 0.54);
+    position: relative;
+    top     : 8px;
+  }
+
+  .disableLable {
+    color: rgba(255, 255, 255, 0.52)
+  }
+
+  .lable {
+    margin: 0%;
+    color : white;
+  }
+
+  .multi.icon-flight-land:before {
+    content  : "\e90c";
+    font-size: 18px;
+    color    : #EB2533;
+    position : absolute;
+    right    : 10px;
+    bottom   : 15px;
+  }
+
+  .multi.icon-flight-takeoff:before {
+    content  : "\e90e";
+    font-size: 18px;
+    color    : #EB2533;
+    position : absolute;
+    right    : 12px;
+    bottom   : 15px;
+  }
+
+  .oneWay.icon-flight-land:before {
+    content  : "\e90c";
+    font-size: 18px;
+    color    : #EB2533;
+    position : absolute;
+    right    : 12px;
+    bottom   : 18px;
+  }
+
+  .oneWay.icon-flight-takeoff:before {
+    content  : "\e90e";
+    font-size: 18px;
+    color    : #EB2533;
+    position : absolute;
+    right    : 12px;
+    bottom   : 18px;
+  }
+
+  .icon-event_24px:before {
+    content  : "\e934";
+    color    : red;
+    font-size: 22px;
+    position : absolute;
+    right    : 40px;
+    bottom   : 116px;
+  }
+}
+
+.multiTrip .dateRange {
+  width: 310px !important;
+}
+
+.marginAdjust {
+  margin-left: 50px !important;
+}
+
+.spaceShift {
+  padding-left: 12px;
+}
+
+::ng-deep.mat-pseudo-checkbox {
+  display: none !important;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color     : #000000;
+  background: #93C6FF;
+}
+
+::ng-deep ngx-daterangepicker-material {
+  position: fixed;
+  top     : 50px;
+  left    : 50px;
+
+  div {
+    // width: 300px;
+    position: relative !important;
+  }
+}
+
+.upRow {
+  padding: 0%;
+}
+
+.oneWayStyle {
+  width: 67%;
+
+  .dateRange {
+    border-radius   : 0px !important;
+    height          : 50px !important;
+    background-color: #fff;
+    margin          : 0;
+    width           : 30%;
+  }
+}
+
+.dateRange {
+  border-radius   : 0px !important;
+  height          : 50px !important;
+  background-color: #fff;
+  margin          : 0;
+}
+
+.flight-Search ::ng-deep {
+  .ngb-datepicker-month {
+    display   : block;
+    background: white;
+  }
+}
+
+.flight-Search ::ng-deep .dropdown-menu.show {
+  display: block;
+  width  : 474px !important;
+}
+
+
+::ng-deep {
+  .dp-hidden {
+    width  : 0;
+    margin : 0;
+    border : none;
+    padding: 0;
+  }
+
+  .custom-day {
+    text-align: center;
+    padding   : 0.185rem 0.25rem;
+    display   : inline-block;
+    height    : 2rem;
+    width     : 2rem;
+  }
+
+  .custom-day.focused {
+    background-color: #e6e6e6;
+  }
+
+  .custom-day.range,
+  .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color           : white;
+  }
+
+  .custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+  }
+
+  .btn-check:checked+.btn-light,
+  .btn-check:active+.btn-light,
+  .btn-light:active,
+  .btn-light.active,
+  .show>.btn-light.dropdown-toggle {
+    color           : #fff;
+    background-color: #0275d8;
+    border-color    : #f9fafb;
+  }
+}
+
+//sarfaraz Changes
+.toSearchf,
+.fromSearchf {
+  position: relative !important;
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .toSearchf {
+    width: 44.9% !important;
+  }
+
+  .fromSearchf {
+    width: 44.3% !important;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .flight-Search .oneWay.icon-flight-takeoff:before {
+    content  : "\e90e";
+    font-size: 18px;
+    color    : #EB2533;
+    position : absolute;
+    right    : 14px;
+    bottom   : 18px;
+  }
+
+  .flight-Search .oneWay.icon-flight-land:before {
+    content  : "\e90c";
+    font-size: 18px;
+    color    : #EB2533;
+    position : absolute;
+    right    : 14px;
+    bottom   : 18px;
+  }
+
+  .OneWayDatePlacement {
+    width: 315px;
+  }
+
+  .dates {
+    width : 32.8%;
+    height: 0%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+  .dates {
+    margin-left: -25px !important;
+    margin-top : -50px !important;
+  }
+
+  .dates {
+    width: 40.8%;
+  }
+
+  .toSearchf {
+    width   : 41.5% !important;
+    position: relative !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .dates {
+    margin-left: -38px !important;
+  }
+
+  .dates {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1365px) {
+  .marginAdjust {
+    margin-left: 32px !important;
+  }
+
+  .dates {
+    margin-top: 0%;
+  }
+}
+
+// sarfarazChanges
+@media (min-width:1401px) {
+  .toSearchf {
+    width: 46% !important;
+  }
+
+  .fromSearchf {
+    width: 44% !important;
+  }
+}
+
+@media (max-width:1024px) {
+
+  .twoWayChanges {
+    align-items: baseline;
+    align-self : end;
+    margin-top : 50px
+  }
+
+  .oneWayChanges {
+    align-items: end;
+  }
+
+  .oneWayStyle {
+    width: 77%;
+    top  : 0px;
+    left : 0px;
+  }
+
+  .col-md-5 {
+    flex : 0 0 auto;
+    width: 45%;
+  }
+
+  .multiTrip .dateRange {
+    width: 100% !important;
+  }
+
+  .flight-Search .removeBtn {
+    left: 10px;
+  }
+
+  .multiTrip .btnSize {
+    margin: 25px 0px 0px;
+  }
+}
+
+@media (max-width:768px) {
+  .twoWayChanges {
+    margin-top: 0px;
+  }
+
+  .flight-Search .removeBtn {
+    left: 230px;
+  }
+
+  .oneWayStyle {
+    width: 97%;
+    top  : 0px !important;
+    left : 0px !important;
+  }
+
+  .marginAdjust {
+    margin-left: 120px !important;
+  }
+
+  .mobPad {
+    padding-top: 20px;
+  }
+
+  .tabPad {
+    padding-top: 0px;
+  }
+
+  .search h1 {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 48px;
+    line-height: 72px;
+  }
+
+  .search h2 {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 31px;
+    line-height: 48px;
+  }
+
+  .arrows {
+    top: 36px;
+  }
+
+  .tabInput .col-md-5 {
+    flex : 0 0 auto;
+    width: 45.2%;
+  }
+
+  .multiTripDesk {
+    .deepArr {
+      height : 180px;
+      padding: 0px 0px 0px;
+    }
+  }
+}
+
+@media (max-width:600px) {
+  .twoWayChanges {
+    margin-top: 0px;
+  }
+
+  .buttons {
+    margin-top     : 15px;
+    gap            : 10px;
+    flex-direction : column;
+    justify-content: space-between;
+  }
+
+  .multiTrip {
+    width: 93%;
+  }
+
+  .oneWayStyle {
+    width: 93.5% !important;
+    top  : 0px !important;
+    left : 0px !important;
+
+    .dateRange {
+      border-radius   : 0px !important;
+      height          : 50px !important;
+      background-color: #fff;
+      margin          : 0;
+      width           : 30%;
+    }
+  }
+
+  .multiWayStyle {
+    width: 94%;
+  }
+
+  .multiTrip .dateRange {
+    width: 100% !important;
+  }
+
+  .multiTrip .btnSize {
+    margin: 25px 0px 0px;
+  }
+
+  .tabInput .col-md-5 {
+    flex : 0 0 auto;
+    width: 50% !important;
+  }
+
+  .mobPad {
+    padding-top: 15px;
+  }
+
+  .search h1 {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 48px;
+    line-height: 72px;
+  }
+
+  .mobForm {
+    padding: 0px;
+  }
+
+  .search {
+    padding-top: 0px;
+  }
+
+  .headings {
+    display: none;
+  }
+
+  .mat-form-feild-selectionTrip .col-6 {
+    width: 50% !important;
+  }
+
+  .btnSize {
+    width: 100% !important;
+  }
+
+  .onewayContainerDate {
+    margin-top: 0px !important;
+  }
+
+  .OneWayDatePlacement {
+    margin-top : 0px;
+    margin-left: 0px;
+  }
+
+  .marginAdjust {
+    margin-left: 62px !important;
+  }
+
+  .search {
+    padding-right: 0px !important;
+    padding-left : 0px !important;
+  }
+
+  .BtnOneWay {
+    margin-top: 50px;
+  }
+
+  .OneWayDatePlacement {
+    width: 324px;
+  }
+
+  .flight-Search .multiSearch {
+    width: 50% !important;
+  }
+
+  .multiTrip .dateRange {
+    width: 300px !important;
+  }
+
+}
+
+::ng-deep {
+  @media (min-width: 1366px) {
+    .datePlacement .ones ngb-datepicker.dropdown-menu.show.ng-star-inserted {
+      inset    : unset !important;
+      transform: unset !important;
+      right    : 0px !important;
+      top      : 53px !important;
+    }
+  }
+
+  @media (max-width:1024px) {
+    .datePlacement .ones ngb-datepicker.dropdown-menu.show.ng-star-inserted {
+      inset    : unset !important;
+      transform: unset !important;
+      right    : 0px !important;
+      top      : 53px !important;
+    }
+  }
+
+  @media (max-width:768px) and (min-width:1024px) {
+    .datePlacement .ones ngb-datepicker.dropdown-menu.show.ng-star-inserted {
+      inset    : unset !important;
+      transform: unset !important;
+      right    : 0px !important;
+      top      : 53px !important;
+    }
+
+    .oneWayChanges p {
+      padding-bottom: 6px;
+    }
+  }
+
+  @media (max-width:600px) {
+    .flight-Search .mat-tab-label {
+      opacity   : 1;
+      color     : #525252 !important;
+      text-align: center;
+    }
+
+    .flight-Search .mat-tab-body-content {
+      padding      : 40px 25px 25px 25px !important;
+      border-radius: 0px !important;
+    }
+
+    .arrows {
+      position: unset !important;
+    }
+
+    .flight-Search .mat-tab-body-wrapper {
+      border-radius: 0px !important;
+    }
+
+    .datePlacement ngb-datepicker.dropdown-menu.show.ng-star-inserted {
+      right: 0px !important;
+      width: 300px !important;
+    }
+
+    .ngb-dp-content.ngb-dp-months {
+      flex-direction: column !important;
+    }
+
+    .ngb-dp-week {
+      justify-content: space-between !important;
+    }
+
+    .datePlacement .ones ngb-datepicker.dropdown-menu.show.ng-star-inserted {
+      inset    : unset !important;
+      transform: unset !important;
+      right    : 28px !important;
+      top      : 53px !important;
+    }
+  }
+}
+
+.flight-Search ::ng-deep {
+  @media (max-width:600px) {
+    .mat-tab-label {
+      opacity   : 1;
+      color     : #525252 !important;
+      text-align: center;
+    }
+
+    .mat-tab-label-active {
+      background-color       : #1A52B6;
+      opacity                : 1;
+      text-align             : center;
+      color                  : white !important;
+      border-top-left-radius : 16px;
+      border-top-right-radius: 16px;
+    }
+  }
+}
+
+::ng-deep {
+  @media (max-width:1000px) {
+
+    .OneWayDatePlacement {
+      margin-top : 24px;
+      margin-left: 2px;
+    }
+
+    .BtnOneWay {
+      margin-top: 62px;
+    }
+
+    .onewayContainerDate {
+      margin-top: 25px !important;
+    }
+
+    .datePlacement ngb-datepicker.dropdown-menu.show.ng-star-inserted {
+      left: 0px !important;
+    }
+  }
+}
+
+::ng-deep {
+  @media (max-width:700px) {
+    .mat-tab-label {
+      opacity   : 1;
+      color     : white !important;
+      text-align: center;
+    }
+
+    .search h2 {
+      font-size  : 35px;
+      width      : 60% !important;
+      font-weight: 300;
+      line-height: 60px;
+    }
+  }
+}
+
+::ng-deep {
+  @media (max-width:1024px) {
+    .search h2 {
+      font-size  : 35px;
+      width      : 60% !important;
+      font-weight: 300;
+      line-height: 60px;
+    }
+  }
+}
+
+#dateSelect {
+  position: absolute;
+  z-index : 999 !important;
+
+  .form-control {
+    background: transparent;
+    border    : unset;
+  }
+}

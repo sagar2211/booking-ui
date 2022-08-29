@@ -1,0 +1,65 @@
+<div class="d-flex justify-content-between">
+    <h3 class="Pophead">Edit Profile </h3>
+    <div class="closeBtn" [mat-dialog-close]="true"><i class="icon-wrong"></i></div>
+</div>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" novalidate #profileId>
+    <div class="row my-3">
+        <div class="col-4 col-md-4 col-lg-3">
+            <mat-form-field style="width: 100%;" appearance="outline">
+                <mat-label>Prefix</mat-label>
+                <mat-select name="prefix" formControlName="prefix">
+                    <mat-option value="Mr">Mr</mat-option>
+                    <mat-option value="Mrs">Mrs</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-8 col-md-8 col-lg-3">
+            <mat-form-field style="width: 100%;" appearance="outline">
+                <mat-label>First Name </mat-label>
+                <input name="firstName" matInput placeholder="firstName" formControlName="firstName">
+            </mat-form-field>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+            <mat-form-field style="width: 100%;" appearance="outline">
+                <mat-label>Middle Name </mat-label>
+                <input name="middleName" matInput placeholder="middleName" formControlName="middleName">
+            </mat-form-field>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+            <mat-form-field style="width: 100%;" appearance="outline">
+                <mat-label>Last Name </mat-label>
+                <input name="lastName" matInput placeholder="lastName" formControlName="lastName">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-6 col-md-6 col-lg-3">
+            <mat-form-field style="width: 100%;" appearance="outline">
+                <mat-select class="gender" tabindex="1" name="gender" placeholder="Gender" formControlName="gender"
+                    #genderId>
+                    <mat-option value="Male">Male</mat-option>
+                    <mat-option value="Female">Female</mat-option>
+                    <mat-option value="Female">Transgender</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-6 col-md-6 col-lg-4">
+            <mat-form-field style="width: 100%;" appearance="outline">
+                <mat-select name="maritalStatus" placeholder="Marital Status" formControlName="maritalStatus">
+                    <mat-option value="Male">Single</mat-option>
+                    <mat-option value="Female">Marrid</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-12 col-lg-5">
+            <input type="text" name="daterange" formControlName="dateOfBirth" ngxDaterangepickerMd
+                [showDropdowns]="true" [(ngModel)]="selectedRange" [locale]="calendarLocale"
+                [placeholder]="calendarPlaceholder" class="form-control" [singleDatePicker]="true" />
+        </div>
+    </div>
+    <div class="d-flex justify-content-end">
+        <div>
+            <button type="submit" class="btn updateBtn py-2 px-3">Submit</button>
+        </div>
+    </div>
+</form>

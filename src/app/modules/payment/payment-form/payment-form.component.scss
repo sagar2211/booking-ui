@@ -1,0 +1,354 @@
+.main-container{
+    background-color: #fff;
+}
+.main-block{
+    position: relative;
+    bottom: 40px;
+}
+.first-block{
+    width: 100%;
+    padding-left: unset;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-right: 30px;
+}
+.second-block{
+    width: 40%;
+}
+
+// .forfix{
+//     position: fixed;
+//     width: 15.2%;
+//     z-index: 1;
+//   }
+  
+.payment-type{
+    background: #EFEBEB;
+    border-radius: 8px 0px 0px 8px;
+}
+.payment-type li{
+    padding: 15px 51px 15px 43px;
+    list-style: none;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: justify;
+}
+.active{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #FFFFFF;
+    background: #EB2533;
+}
+ul {
+    padding-left: unset
+}
+.card-heading{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #0057B9;
+    background-color: #fff;
+
+}
+.middle-block{
+    margin: 95px 0  80px 50px ;
+}
+.middle-block mat-form-field{
+    width: 60%;
+}
+.divide-bar{
+    border: 1px solid #838383;
+}
+.fareNote{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #0057B9;
+    padding-top: 16px !important;
+}
+.coupen mat-form-field{
+    width: 95%;
+}
+::ng-deep {
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 0.5em 0 1em 0;
+    }
+    .apply-btn .mat-raised-button, .mat-fab, .mat-mini-fab {
+        background: #C6C6C6;
+        color: #EB2533;
+        width: 90%;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin: 17px 0 !important;
+    }
+    .mat-form-field-wrapper {
+        padding-bottom: unset !important;
+    }
+}
+.apply-btn{
+    margin-bottom: 37px;
+}
+.booking-summary-card{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-top: 32px;
+}
+.summary-heading{
+    padding-top: 12px;
+    padding-bottom: 32px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #0057B9;
+}
+.flight-code{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #949494;
+    padding-top: 10px;
+    padding-left: 12px;
+
+}
+.city-name{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px !important;
+    color: #000000;
+    margin-bottom: unset;
+}
+.arrival-time{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    color: #000000;
+}
+.icon-flight{
+    color: #EFD912;
+}
+.leftbar{
+    width: 30px;
+    height: 2px;
+    background-color: #AEAEAE;
+    margin-top: 15px;
+}
+.leftbar::before{
+    content: '';
+    height: 5px;
+    width: 5px;
+    background-color: #AEAEAE;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: -11px;
+}
+.rightbar{
+    width: 30px;
+    height: 2px;
+    background-color: #AEAEAE;
+    margin-top: 15px;
+}
+.rightbar::after{
+    content: '';
+    height: 5px;
+    width: 5px;
+    background-color: #AEAEAE;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: -11px;
+    left: 25px;
+}
+.divider-bar p{
+    position: relative;
+    bottom: 5px;
+}
+.divider-bar .stop-count{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    color: #000000;
+}
+.stop-text{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    color: #000000;
+    position: relative;
+    bottom: 3px;
+    padding-left: 5px;
+}
+.email-heading,.phone-heading{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #949494;
+    margin: unset;
+}
+.email-addr,.phone{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    margin: unset;
+}
+.card-exp-text{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #414141;
+}
+.ccv-text{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #414141;
+}
+.fareSummary {
+    width: 99%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding-bottom: 7px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  }
+  .card-expiry{
+      width: 30%;
+      position: relative;
+        bottom: 10px;
+  }
+  .card-expiry mat-form-field{
+    margin-right: 20px;
+}
+
+  .total-price{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: #EB2533;
+    margin-right: 30px;
+    margin-top: 10px;
+  }
+  .pay-btn{
+      width: 20%;
+  }
+  .termandcond a{
+      text-decoration: underline;
+  }
+
+  .fareRefund{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #000000;
+  }
+  
+  .fareTax p {
+    padding: 0px 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .totalPrice p {
+    padding: 12px 15px 0px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .fareFooter {
+    background-color: #0057B9;
+    margin-bottom: 9px !important;
+  }
+  
+  .fareFooter p {
+    margin: 0px !important;
+    color: white;
+    padding: 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .fareFooter p {
+    margin: 0px !important;
+    color: white;
+    padding: 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .blueFont {
+    color: #0057b9;
+    padding: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .offers {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(40, 35, 1, 0.47)), url("/assets/images/deals1.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1035px;
+    display: inline-block;
+    border-radius: 8px;
+  }
+  
+  .offers h3 {
+    position: relative;
+    top: 40%;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+  }
+  
+  .offers button{
+    position: relative;
+    top: 40%;
+    left: 24%;
+  }
+  
+  .offersBtn {
+    padding: 15px 22px;
+    background: #eb2533;
+    border-radius: 5px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+  }
+  

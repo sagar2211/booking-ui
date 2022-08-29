@@ -1,0 +1,253 @@
+<div class="headings search">
+  <h1 *ngIf="isBelowLg ? false : true">Africa’s Trusted Travel Brand</h1>
+  <h2 *ngIf="isBelowLg ? false : true" class="pt-3 spacing">Our mission is to make travel easy, convenient and fun
+  </h2>
+</div>
+<section class="container mobForm">
+  <mat-tab-group class="flight-Search pt-2" animationDuration="0ms">
+    <mat-tab label="FLIGHTS">
+      <ng-template mat-tab-label>
+        <fa-icon [icon]="plane" class="icons"></fa-icon>
+        &nbsp; &nbsp;
+        <span>FLIGHTS</span>
+      </ng-template>
+      <form class="example-form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <div class="container upRow">
+          <div class="row g-0 mat-form-feild-selectionTrip">
+            <div class="col-6 col-sm-12 col-md-4 col-lg-2 w-manual">
+              <mat-form-field appearance="fill">
+                <mat-select class="spaceShift" matNativeControl required #mySelect formControlName="TripType"
+                  (selectionChange)="tripChange($event)">
+                  <mat-option value="One Way">One way</mat-option>
+                  <mat-option value="Round Trip">Round Trip</mat-option>
+                  <mat-option value="Multi Trip">Multi Trip</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-6 col-sm-12 col-md-4 col-lg-2 w-manual mat-FeildBox2">
+              <mat-form-field appearance="fill" class="cabin"
+                [ngStyle]="{'border': searchForm.value?.AirlineClass.length === 0 && submitted ? '1px solid red' : '' }">
+                <mat-select class="spaceShift" formControlName="AirlineClass" tabindex="6" multiple
+                  [(ngModel)]="selectedObjects" #airlineClass [compareWith]="comparer"
+                  placeholder="Select Airline Class">
+                  <mat-option *ngFor="let airline of Airlines" [value]="airline">
+                    {{airline.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-2 mobPad tabPad">
+              <mat-form-field appearance="fill">
+                <input class="airInput spaceShift" [(ngModel)]="Travellers" tabindex="5" matInput readonly
+                  (click)="openDialog()" #travellerPopup value="{{ updateNoOfTravellers() }}"
+                  formControlName="NoOfTravellers" />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div formArrayName="departureArray"
+          [ngClass]="{'multiTripDesk':selectedTrip === 'Multi Trip' && isBelowLg === false,'multiTripMob':selectedTrip === 'Multi Trip' && isBelowLg === true,'oneTripDesk':selectedTrip === 'One Way' && isBelowLg === false || selectedTrip === 'Round Trip' && isBelowLg === false, 'oneTripMob':selectedTrip === 'One Way' && isBelowLg === true || selectedTrip === 'Round Trip' && isBelowLg === true}">
+
+          <div class="d-lg-flex justify-content-evenly deepArr"
+            *ngFor="let departure of noOfDepartures().controls; let i = index" [formGroupName]="i">
+            <div class="container tabInput row g-0">
+              <div class="fromSearchf mobPad"
+                [ngClass]="{'multiSearch':selectedTrip === 'Multi Trip' && isBelowLg === false,'flightSearch':selectedTrip !== 'Multi Trip' && isBelowLg !== false, 'col-md-12':selectedTrip === 'Multi Trip' && isBelowLg === true,'col-md-5':selectedTrip !== 'Multi Trip' && isBelowLg === true || selectedTrip === 'One Way' || selectedTrip === 'Round Trip' }">
+                <div [ngClass]="selectedTrip === 'Multi Trip' && isBelowLg === true ? 'showText':'hideText'">
+                  <div>
+                    <p style="color: white;margin: 0px; margin-bottom: 3px;">Trip {{i+1}}</p>
+                  </div>
+                  <div *ngIf="selectedTrip === 'Multi Trip' && i !== 0 && i  !==1">
+                    <p style="margin-bottom: 4px;padding: 0;" (click)="removeDeparture(i)"><img
+                        src="../../../../assets/images/Close.svg" alt="">
+                    </p>
+                  </div>
+                </div>
+                <p class="lable" *ngIf="i == 0"
+                  [ngClass]="selectedTrip === 'Multi Trip' && isBelowLg === true ? 'hideText':'showText'">From
+                </p>
+                <mat-form-field class="searchInput" appearance="fill"
+                  [ngStyle]="{'border': (isValidData?.from === '' && submitted) || (isValidData?.from === null && submitted) ? '1px solid red' : '' }">
+                  <input class="pl-3 spaceShift" matInput min="3" aria-label="State" tabindex="1"
+                    [matAutocomplete]="auto" value="" formControlName="from" (keyup)="onSearch($event)"
+                    placeholder="Depart From" #departFrom />
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let state of filteredStates" [value]="
+                    '[' +
+                    state.iata +
+                    ']' +
+                    ' - ' +
+                    state.cityName +
+                    ' - ' +
+                    state.name
+                  " (click)="selectAirport(state,'departure')">
+                      <span>[{{ state.iata }}] - {{ state.cityName }} -
+                        {{ state.name }}</span>
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+                <i [ngClass]="selectedTrip === 'Multi Trip'  ? 'multi' : 'oneWay'"
+                  class="icon-flight-takeoff takeOff"></i>
+              </div>
+              <div *ngIf="isBelowLg ? false : true" class="swapBtn">
+                <button type="button" class="arrows col-12 col-md-1 col-lg-1" *ngIf="selectedTrip !== 'Multi Trip'"
+                  (click)="swapFlight()">
+                  <i class="icon-clarity_two-way-arrows-line"></i>
+                </button>
+              </div>
+              <div class="toSearchf mobPad"
+                [ngClass]="{'multiSearch':selectedTrip === 'Multi Trip' && isBelowLg === false,'flightSearch':selectedTrip !== 'Multi Trip' && isBelowLg !== false, 'col-md-12':selectedTrip === 'Multi Trip' && isBelowLg === true,'col-md-5':selectedTrip !== 'Multi Trip' && isBelowLg === true || selectedTrip === 'One Way' || selectedTrip === 'Round Trip' }">
+                <p class="lable" *ngIf="i == 0"
+                  [ngClass]="selectedTrip === 'Multi Trip' && isBelowLg === true ? 'hideText':'showText'">To</p>
+                <mat-form-field class="searchInput " appearance="fill"
+                  [ngStyle]="{'border': (isValidData?.to === '' && submitted) || (isValidData?.to === null && submitted) ? '1px solid red' : '' }">
+                  <input class="searchInput spaceShift" matInput min="3" aria-label="State" tabindex="2"
+                    [matAutocomplete]="autos" formControlName="to" (keyup)="onSearch($event)" placeholder="Arrival To"
+                    #arrivalTo />
+                  <mat-autocomplete #autos="matAutocomplete">
+                    <mat-option *ngFor="let state of filteredStates" [value]="
+                  '[' +
+                  state.iata +
+                  ']' +
+                  '-' +
+                  state.cityName +
+                  '-' +
+                  state.name
+                " (click)="selectAirport(state,'arrival')">
+                      <span> [{{ state.iata }}]-{{ state.cityName }}-{{state.name}}</span>
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+                <i [ngClass]="selectedTrip === 'Multi Trip'  ? 'multi' : 'oneWay'" class="icon-flight-land"></i>
+              </div>
+            </div>
+
+            <div class="dates datePlacement mobPad row g-0">
+              <div class="d-flex oneWayChanges">
+                <p class="lable" *ngIf="i == 0 && selectedTrip !== 'Round Trip' "
+                  [ngClass]="selectedTrip === 'Multi Trip' && isBelowLg === true ? 'hideText':'showText'">Departure Date
+                </p>
+                <p class="disableLable marginAdjust" *ngIf="i == 0 && selectedTrip === 'One Way'">
+                  Return Date</p>
+              </div>
+              <div class="d-flex twoWayChanges" *ngIf="selectedTrip === 'Round Trip'">
+                <p class="lable" *ngIf="selectedTrip === 'Round Trip'">Departure Date</p>
+                <p class="lable marginAdjust" *ngIf="selectedTrip === 'Round Trip'">Return Date</p>
+              </div>
+              <!-- oneWay-trip datepiker start-->
+              <div class="d-flex" *ngIf="selectedTrip === 'One Way'">
+                <div class="oneWayC">
+                  <div class="position-absolute">
+                    <div class="input-group oneWayStyle">
+                      <input style="visibility: hidden; width: 0; padding: 0;margin: 0;position: absolute;"
+                        class="form-control dateRange" placeholder="dd-mm-yyyy" name="dp"
+                        [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
+                        (dateSelect)="onDateSelection($event);onDateChange()" [showWeekNumbers]="showWeekNumbers"
+                        ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" [minDate]="minDate"
+                        formControlName="departureDate">
+
+                      <input placeholder="dd-mm-yyyy" class="form-control dateRange" name="dp" (click)="d.toggle()"
+                        type="text" [value]="renderFromDate" ngbDatepicker [displayMonths]="displayMonths"
+                        [navigation]="navigation" [outsideDays]="outsideDays" [showWeekNumbers]="showWeekNumbers"
+                        [minDate]="minDate">
+
+                      <input placeholder="dd-mm-yyyy" *ngIf="selectedTrip === 'One Way'" disabled
+                        class="form-control dateRange" placeholder="no return" name="dp" [displayMonths]="displayMonths"
+                        [navigation]="navigation" [outsideDays]="outsideDays" [showWeekNumbers]="showWeekNumbers"
+                        ngbDatepicker #d="ngbDatepicker">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- oneWay-trip datepiker end-->
+              <!-- round-trip datepiker start-->
+              <div class="d-flex RoundTripC" *ngIf="selectedTrip === 'Round Trip'">
+                <div>
+                  <div class="dp-hidden position-absolute">
+                    <div id="dateSelect" class="input-group">
+                      <input placeholder="dd-mm-yyyy" name="datepicker" class="form-control" ngbDatepicker
+                        #datepicker="ngbDatepicker" [autoClose]="'outside'"
+                        (dateSelect)="onDateSelection($event);onDateChange()" [displayMonths]="2" [dayTemplate]="t"
+                        outsideDays="hidden" [startDate]="fromDate!" [minDate]="minDate" tabindex="-1"
+                        formControlName="departureDate">
+                      <ng-template #t let-date let-focused="focused">
+                        <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                          [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                          (mouseleave)="hoveredDate = null">
+                          {{ date.day }}
+                        </span>
+                      </ng-template>
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <input #dpFromDate class="form-control dateRange" placeholder="dd-mm-yyyy" name="dpFromDate"
+                      [value]="formatter.format(fromDate) | date: 'dd-MM-yyyy'"
+                      (input)="fromDate = validateInput(fromDate, dpFromDate.value)" (click)="datepicker.toggle()">
+                  </div>
+                </div>
+                <div class="">
+                  <div class="input-group">
+                    <input #dpToDate class="form-control dateRange" placeholder="dd-mm-yyyy" name="dpToDate"
+                      [value]="formatter.format(toDate) | date: 'dd-MM-yyyy'"
+                      (input)="toDate = validateInput(toDate, dpToDate.value)" (click)="datepicker.toggle()"
+                      formControlName="arrivalDate">
+                  </div>
+                </div>
+              </div>
+              <!-- round-trip datepiker end-->
+              <!-- multi-trip datepiker start -->
+              <div class="d-flex ones" *ngIf="selectedTrip === 'Multi Trip'">
+                <div class="position-absolute" [ngClass]="selectedTrip === 'Multi Trip' ? 'multiTrip' : ''">
+                  <div class="input-group multiWayStyle">
+                    <input class="form-control dateRange" placeholder="dd-mm-yyyy" name="dp"
+                      [displayMonths]="displayMonths" [navigation]="navigation" [outsideDays]="outsideDays"
+                      (dateSelect)="onDateSelection($event); onDateChange()" [(ngModel)]="dateArr[i]"
+                      [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                      [minDate]="minDate" formControlName="departureDate">
+                  </div>
+                </div>
+              </div>
+              <!-- multi-trip datepiker end -->
+            </div>
+
+            <!-- btn space -->
+            <div style="width: 38px;" class="p-2" *ngIf="selectedTrip === 'Multi Trip'  && i == 0"></div>
+            <div style="width: 38px;" class="p-2" *ngIf="selectedTrip === 'Multi Trip'  && i == 1"></div>
+            <!-- btn space end -->
+            <!-- multi-trip -->
+            <div style="width: 34px;" id="wrap" *ngIf="selectedTrip === 'Multi Trip' && i !== 0 && i  !==1"
+              class="remove-multi-trip p-2">
+              <p class="removeBtn" (click)="removeDeparture(i)"><img src="../../../../assets/images/Close.svg" alt="">
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <div *ngIf="selectedTrip !== 'Multi Trip'"></div>
+          <button type="button" class="btn btn-success btnSize addDestination" *ngIf="selectedTrip === 'Multi Trip'"
+            (click)="addDeparture()">
+            Add Destination
+          </button>
+          <button type="submit" class="btn btn-danger btnSize" color="warn">
+            <span class="send-code-btn">
+              <span>BOOK NOW</span> &nbsp;
+              <i class="icon-loginArrow"></i>
+            </span>
+          </button>
+        </div>
+      </form>
+    </mat-tab>
+    <mat-tab label="HOTELS">
+      <ng-template mat-tab-label>
+        <fa-icon [icon]="hotel" class="icons"></fa-icon>
+        &nbsp; &nbsp;
+        <span>HOTELS</span>
+      </ng-template>
+      <h4 style="color: white; font-size: 16px;">Comming Soon...</h4>
+    </mat-tab>
+  </mat-tab-group>
+</section>

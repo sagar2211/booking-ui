@@ -1,0 +1,1024 @@
+* {
+  margin     : 0;
+  padding    : 0;
+  font-family: "Poppins";
+}
+
+.adultItemRow {
+  display        : flex !important;
+  gap            : 11px;
+  justify-content: space-between;
+}
+
+.tabs {
+  width: 180px;
+
+  div {
+    background: #CCCCCC;
+    margin    : 1px;
+    cursor    : pointer;
+
+    p {
+      margin-bottom: 5px;
+      font-weight  : 500;
+      font-size    : 18px;
+    }
+  }
+}
+
+.tabs div:nth-of-type(1) {
+  background-color: #0057b9;
+
+  p,
+  span {
+    color: #ffffff;
+  }
+}
+
+::ng-deep {
+  .invalidField.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #eb2533 !important;
+  }
+}
+
+::ng-deep .mat-form-field-invalid .mat-form-field-flex {
+  border       : none !important;
+  border-bottom: none;
+}
+
+.forms {
+  width: 1024px;
+}
+
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    border-radius: 0 !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border-radius: 0 !important;
+  }
+
+  .mat-form-field-underline {
+    display: none !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-select-arrow {
+    position: relative;
+    top     : 3px;
+    right   : 0px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 10px 0 10px 0;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0 !important;
+  }
+
+  .mat-option {
+    white-space                : nowrap;
+    overflow                   : hidden;
+    text-overflow              : ellipsis;
+    display                    : block;
+    line-height                : 48px;
+    height                     : 48px;
+    padding                    : 0 16px;
+    text-align                 : left;
+    text-decoration            : none;
+    max-width                  : 100%;
+    position                   : relative;
+    cursor                     : pointer;
+    outline                    : none;
+    display                    : flex;
+    flex-direction             : row;
+    max-width                  : 100%;
+    box-sizing                 : border-box;
+    align-items                : center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mat-select-panel {
+    min-width                 : 112px;
+    max-width                 : 262px;
+    overflow                  : auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top               : 16px !important;
+    padding-bottom            : 0;
+    max-height                : 229px !important;
+    min-width                 : 100%;
+    border-radius             : 4px;
+    outline                   : 0;
+    position                  : relative;
+    top                       : 40px;
+    left                      : 6px;
+  }
+}
+
+.prefixStyle {
+  width      : 125px !important;
+  margin-left: 6px;
+}
+
+.inputStyle {
+  width      : 90%;
+  margin-left: 6px;
+}
+
+.inputStyle2 {
+  width      : 85%;
+  margin-left: 6px;
+}
+
+.adultDetailsForm h3 {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 16px;
+  line-height: 24px;
+  display    : flex;
+  align-items: center;
+  color      : #0057b9;
+  margin     : 0;
+}
+
+.addTravellerBtn,
+.removeTravellerBtn {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 16px;
+  font-family: "Poppins";
+  align-items: center;
+  color      : #0057b9;
+}
+
+.fontSize18 {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 16px;
+  line-height: 24px;
+  display    : flex;
+  align-items: center;
+  color      : #0057b9;
+  margin     : 0;
+}
+
+.travellerLoginSection {
+  padding        : 10px;
+  border-radius  : 4px;
+  display        : flex;
+  justify-content: space-between;
+}
+
+.loginBtn {
+  border        : 0;
+  outline       : 0;
+  background    : transparent;
+  font-size     : 14px;
+  font-weight   : 700;
+  text-transform: uppercase;
+  color         : #008cff;
+}
+
+.adultDetailsHeading {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 12px;
+  line-height: 18px;
+  display    : flex;
+  align-items: center;
+  color      : #686060;
+}
+
+.adultDetailsForm h3 {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 16px;
+  line-height: 24px;
+  display    : flex;
+  align-items: center;
+  color      : #0057b9;
+  margin     : 0;
+}
+
+.adultDetailsForm span {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 10px;
+  line-height: 15px;
+  color      : #626161;
+}
+
+.btnBack {
+  padding      : 17px 46px !important;
+  font-family  : "Poppins";
+  font-style   : normal;
+  font-weight  : bold;
+  font-size    : 16px;
+  line-height  : 24px;
+  text-align   : center;
+  color        : #000000;
+  background   : #f4f4f4;
+  border-radius: 5px;
+  border       : none;
+}
+
+.btnContinu {
+  padding      : 17px 25px !important;
+  font-family  : "Poppins";
+  font-style   : normal;
+  font-weight  : bold;
+  font-size    : 16px;
+  line-height  : 24px;
+  background   : #eb2533;
+  border-radius: 5px;
+  color        : #ffffff;
+  border       : none;
+}
+
+.checkInput {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 10px;
+  line-height: 15px;
+  color      : #626161;
+}
+
+.view {
+  color: #008cff;
+}
+
+table ::ng-deep {
+
+
+
+  .iti.separate-dial-code input,
+  .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-2 input,
+  .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-3 input,
+  .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-4 input {
+    padding-left : 93px !important;
+    border       : 1px solid lightgray;
+    border-radius: 5px;
+    width        : 330px;
+  }
+
+  .iti--allow-dropdown input,
+  .iti--allow-dropdown input[type=text],
+  .iti--allow-dropdown input[type=tel],
+  .iti--separate-dial-code input,
+  .iti--separate-dial-code input[type=text],
+  .iti--separate-dial-code input[type=tel] {
+    padding-right: 6px;
+    padding-left : 52px;
+    margin-left  : 0;
+  }
+
+  .iti input,
+  .iti input[type=text],
+  .iti input[type=tel] {
+    position     : relative;
+    z-index      : 0;
+    margin-top   : 0 !important;
+    margin-bottom: 0 !important;
+    padding-right: 36px;
+    margin-right : 0;
+  }
+
+  .iti--allow-dropdown input {
+    height       : 44px;
+    border-radius: 0px !important;
+    width        : 425px;
+  }
+
+  .iti * {
+    box-sizing     : border-box;
+    -moz-box-sizing: border-box;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+    width  : 288px;
+  }
+
+  .country-dropdown {
+    width: 288px !important;
+  }
+
+  .iti__country-list {
+    overflow-x: hidden;
+  }
+
+  input[type=text],
+  select {
+    width           : 70px !important;
+    padding         : 0px;
+    margin          : 8px 0;
+    display         : inline-block;
+    border          : 0px;
+    border-radius   : 4px;
+    box-sizing      : border-box;
+    background-color: transparent;
+  }
+
+
+}
+
+.bag {
+  padding      : 10px 30px;
+  border       : 1px solid #0057b9;
+  border-radius: 8px;
+  font-family  : 'Poppins';
+  font-style   : normal;
+  height       : 235px;
+
+  h4 {
+    font-weight: 500;
+    font-size  : 18px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size  : 12px;
+  }
+
+  .amt {
+    color      : #0057B9;
+    font-weight: 500;
+    font-size  : 18px;
+  }
+
+  h4,
+  p {
+    margin: 0px;
+  }
+
+  .sbag {
+    margin-top: 35px;
+  }
+
+  .mbag {
+    margin-top: 12px;
+  }
+}
+
+table {
+  td {
+    p {
+      margin: 10px 0 0 0;
+    }
+  }
+}
+
+.tableSection {
+  width: 457px;
+
+  .tablePrice {
+    color      : #0057b9;
+    text-align : center;
+    font-weight: 500;
+    font-size  : 18px;
+  }
+
+  .table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: #e4e4e4;
+    color               : var(--bs-table-striped-color);
+  }
+
+  .table> :not(caption)>*>* {
+    padding            : 0rem 0.5rem;
+    background-color   : rgba(0, 87, 185, 0.2);
+    border-bottom-width: 1px;
+    box-shadow         : inset 0 0 0 9999px var(--bs-table-accent-bg);
+  }
+
+  .freeBaggage .table> :not(caption)>*>* {
+    padding            : 0rem 0.5rem;
+    background         : transparent;
+    border-bottom-width: 1px;
+    box-shadow         : inset 0 0 0 9999px var(--bs-table-accent-bg);
+
+  }
+
+  .freeBaggage tr {
+    background: rgba(34, 189, 9, 0.3);
+
+  }
+}
+
+.tips {
+  span {
+    color      : #0057b9;
+    font-weight: 500;
+    font-size  : 14px;
+  }
+}
+
+
+
+.amt {
+  color      : #0057B9;
+  font-weight: 500;
+  font-size  : 18px;
+}
+
+.lables {
+  position   : relative;
+  top        : 7px;
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 13px;
+  color      : rgba(0, 0, 0, 0.85);
+
+  span {
+    color: #eb2533;
+  }
+}
+
+.validationIcon {
+  position: relative;
+  top     : 9px;
+  right   : 5px;
+}
+
+.smallText {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 12px;
+  line-height: 24px;
+  text-align : center;
+}
+
+
+.travellData ::ng-deep {
+
+  .mat-tab-label-container {
+    display  : flex;
+    flex-grow: 1;
+    overflow : hidden;
+    z-index  : 1;
+    width    : 179px;
+  }
+
+  .mat-tab-header {
+    border-bottom: none;
+  }
+
+  .mat-tab-header-pagination {
+    display: none !important;
+  }
+
+  .mat-tab-labels {
+    flex-direction   : column;
+    // width         : 105px;
+  }
+
+  .mat-ink-bar {
+    height: 100%;
+    left  : 98% !important;
+  }
+
+  .mat-tab-body-wrapper {
+    flex: 1 1 auto;
+  }
+
+  .mat-tab-group {
+    display       : flex;
+    flex-direction: row;
+    max-width     : 100%;
+  }
+
+
+
+  .mat-tab-body-content {
+    overflow  : unset !important;
+    height    : auto !important;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .mat-tab-body.mat-tab-body-active {
+    position  : relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index   : 1;
+    flex-grow : 1;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .mat-tab-group.mat-primary .mat-ink-bar,
+  .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #673ab7;
+    display         : none;
+  }
+}
+
+.btns {
+  width : 100%;
+  margin: 5px auto;
+}
+
+.invalidTab {
+  background-color: red;
+  border-radius   : 50%;
+  padding         : 1px 7px;
+}
+
+.validTab {
+  background-color: greenyellow;
+  border-radius   : 50%;
+  padding         : 1px 7px;
+}
+
+// .invalidField {
+//   border: 1px solid red;
+// }
+
+.tabIcon {
+  position         : relative;
+  left             : 10px;
+  top              : 3px;
+  font-size        : 18px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  -ms-transform    : rotate(45deg);
+  -o-transform     : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+.disble.icon-remove-circle:before,
+.disble.icon-add-circle-outline:before {
+  color: #f09fa4;
+}
+
+::ng-deep.dropdown-menu.show {
+  display     : block;
+  width       : 234px !important;
+  // transform: unset !important;
+}
+
+::ng-deep .travellData .mat-tab-body#mat-tab-content-1-1 {
+  overflow  : unset !important;
+  overflow-x: unset !important;
+  overflow-y: unset !important;
+}
+
+.bigBag {
+  padding      : 10px 30px;
+  border       : 1px solid #0057b9;
+  border-radius: 8px;
+  font-family  : 'Poppins';
+  font-style   : normal;
+
+  h4,
+  p {
+    margin: 0px;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size  : 18px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size  : 12px;
+  }
+
+  .amt {
+    color      : #0057B9;
+    font-weight: 500;
+    font-size  : 18px;
+  }
+}
+
+.noBaggage {
+  border       : 1px solid #cfcfcf;
+  padding      : 10px 30px;
+  border-radius: 8px;
+  font-family  : 'Poppins';
+  font-style   : normal;
+
+  h4,
+  p {
+    margin: 0px;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size  : 18px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size  : 12px;
+  }
+
+  .amt {
+    color      : #0057B9;
+    font-weight: 500;
+    font-size  : 18px;
+  }
+}
+
+::ng-deep .dropdown-menu.show {
+  display: block;
+  width  : 234px !important;
+}
+
+::ng-deep {
+
+  .iti input,
+  .iti input[type=text],
+  .iti input[type=tel] {
+    position     : relative;
+    z-index      : 0;
+    margin-top   : 0 !important;
+    margin-bottom: 0 !important;
+    padding-right: 36px;
+    margin-right : 0;
+    padding      : 10px 0px;
+    border-color : 1px solid #afafaf !important;
+  }
+}
+
+.dateRange {
+  height       : 44px !important;
+  border-radius: 0px;
+  padding-left : 8px;
+  font-size    : 14px;
+  margin       : 0;
+}
+
+.dateRange::placeholder {
+  padding-left: 8px;
+  padding-top : 5px;
+  font-size   : 13px;
+  color       : #7e7e7e;
+  opacity     : 1;
+}
+
+.moreThan {
+  .dateRange {
+    height       : 44px !important;
+    border-radius: 0px;
+    padding-left : 8px;
+    font-size    : 14px;
+    margin       : 0;
+    border       : 1px solid red !important;
+  }
+}
+
+
+.form-control:focus {
+  color           : #212529;
+  background-color: #fff;
+  border-color    : rgba(0, 0, 0, .12);
+  outline         : 0;
+  box-shadow      : 0 0 0 0rem transparent !important;
+}
+
+::ng-deep.dropdown-menu.show {
+  display : block;
+  width   : 234px !important;
+  // inset: -6px auto auto 0px !important;
+}
+
+::ng-deep .travellData .mat-tab-body#mat-tab-content-1-1 {
+  overflow  : unset !important;
+  overflow-x: unset !important;
+  overflow-y: unset !important;
+  width     : 100%;
+}
+
+.tdText {
+  font-family : 'Poppins';
+  font-style  : normal;
+  font-weight : 600;
+  font-size   : 14px;
+  line-height : 20px;
+  color       : rgba(0, 0, 0, 0.85);
+  text-align  : left;
+  padding-left: 22px !important;
+}
+
+.tdPrice {
+  font-family  : 'Poppins';
+  font-style   : normal;
+  font-weight  : 600;
+  font-size    : 14px;
+  line-height  : 20px;
+  text-align   : right;
+  color        : #0057B9;
+  padding-right: 20px;
+}
+
+.tdBtn {
+  padding-right: 20px !important;
+}
+
+.freeBags {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 14px;
+  line-height: 20px;
+  text-align : right;
+  color      : rgba(0, 0, 0, 0.85);
+}
+
+::ng-deep {
+
+  .iti--allow-dropdown input,
+  .iti--allow-dropdown input[type=text],
+  .iti--allow-dropdown input[type=tel],
+  .iti--separate-dial-code input,
+  .iti--separate-dial-code input[type=text],
+  .iti--separate-dial-code input[type=tel] {
+    padding-right: 6px;
+    padding-left : 52px;
+    margin-left  : 0;
+    border       : .5px solid rgba(0, 0, 0, .12) !important;
+  }
+
+  .iti input,
+  .iti input[type=text],
+  .iti input[type=tel] {
+    position     : relative;
+    z-index      : 0;
+    margin-top   : 0 !important;
+    margin-bottom: 0 !important;
+    padding-right: 36px;
+    margin-right : 0;
+    padding      : 11px 0px;
+  }
+}
+
+// for birth-datecalender
+.birthdateCalender1 {
+  position: relative !important;
+}
+
+::ng-deep {
+  .birthdateCalender1 .calendar.right.ng-star-inserted {
+    z-index: 2 !important;
+  }
+
+  .birthdateCalender1 ngx-daterangepicker-material {
+    position: absolute !important;
+    left    : -76px !important;
+    top     : 94px !important;
+  }
+
+  .birthdateCalender1 .md-drppicker.drops-down-auto.ltr.shown {
+    top  : unset !important;
+    left : unset !important;
+    right: unset !important;
+  }
+}
+
+// for other any calender
+.birthdateCalender {
+  position: relative !important;
+}
+
+::ng-deep {
+  .birthdateCalender .calendar.right.ng-star-inserted {
+    z-index: 2 !important;
+  }
+
+  .birthdateCalender ngx-daterangepicker-material {
+    position: absolute !important;
+    left    : 0px !important;
+    top     : 94px !important;
+  }
+
+  .birthdateCalender .md-drppicker.drops-down-auto.ltr.shown {
+    top  : unset !important;
+    left : unset !important;
+    right: unset !important;
+  }
+}
+
+.bookFormDiv1 .mat-form-field {
+  display: block !important;
+}
+
+.contactDetilsContainer {
+  justify-content: flex-start !important;
+}
+
+
+
+::ng-deep {
+  .travellData .mat-expansion-panel-body {
+    padding: 0px 0px 0px !important;
+  }
+
+  .travellData .mat-expansion-panel-header:not(.mat-expanded) {
+    background-color: #CCCCCC !important;
+  }
+
+  .travellData .mat-expansion-panel-header.mat-expanded {
+    background-color: #1A52B6 !important;
+    color           : #fff !important;
+  }
+
+  .travellData .mat-expansion-panel-header.mat-expanded .expansionContainer {
+    color: #fff !important;
+  }
+
+  .travellData .mat-expanded .mat-expansion-indicator::after {
+    color: #fff !important;
+  }
+}
+
+
+.small-bagContainer {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+}
+
+
+//media Query
+//Ipad
+@media(min-width:1000px) {
+  .bookFormDiv1>.col-lg-2 {
+    width: 21.2%;
+  }
+
+  .adultItemRow .col-lg-4 {
+    flex : 0 0 auto;
+    width: 32.33333333%;
+  }
+
+  .bookFlightC {
+    min-height: 450px;
+  }
+}
+
+@media(max-width:1000px) {
+
+  .bookFormDiv1>.col-6 {
+    width: 48%;
+  }
+
+  .small-bagContainer {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    margin-top     : 16px;
+  }
+
+  .bagge1Container {
+    display       : flex;
+    flex-direction: column-reverse;
+  }
+
+  .tableSection {
+    width: 100%;
+  }
+
+  .bagge2Container {
+    display       : flex;
+    flex-direction: column-reverse;
+  }
+
+  .bag2Box {
+    margin-top: 16px;
+  }
+}
+
+@media (min-width:600px) and (max-width: 1000px) {
+  .adultItemRow .col-md-6 {
+    flex : 0 0 auto;
+    width: 48%;
+  }
+}
+
+@media(max-width:600px) {
+  .adultItemRow .col-6 {
+    flex : 0 0 auto;
+    width: 48%;
+  }
+
+  .bookFormDiv1>.col-6 {
+    width: 48%;
+  }
+
+  .bag {
+    height: 290px;
+  }
+
+  .detailsBelowFields {
+    margin-top: 16px;
+  }
+  .relMobile,.infantDateMobile{
+    position: relative;
+  }
+ 
+}
+
+::ng-deep {
+  @media(max-width:1000px) {
+
+    .separate-dial-code {
+      width: 100% !important;
+    }
+
+    .mobileExpansionPanelC .mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
+      display: block;
+    }
+    .birthdateCalender1 ngx-daterangepicker-material {
+      position: absolute !important;
+      left: 0px !important;
+      top  : 94px !important;
+    }
+
+    .infantDateMobile ngx-daterangepicker-material {
+      position: absolute !important;
+      left    : 0px !important;
+      top     : -80px !important;
+    }
+  }
+}
+
+::ng-deep {
+  @media(max-width:600px) {
+    .issuedDateMobile ngx-daterangepicker-material {
+      position: absolute !important;
+      left    : -115px !important;
+      top     : 94px !important;
+    }
+    .bithDateMobile ngx-daterangepicker-material {
+      position: absolute !important;
+      left    : 0px !important;
+      top     : 94px !important;
+    }
+    .infantDateMobile ngx-daterangepicker-material {
+      position: absolute !important;
+      left    : -8px !important;
+      top     : -80px !important;
+    }
+  }
+}
+
+
+.travellData ::ng-deep {
+
+  .mat-tab-label {
+    height          : 48px;
+    padding         : 0 0 0 8px !important;
+    margin          : 1px;
+    cursor          : pointer;
+    box-sizing      : border-box;
+    opacity         : 1 !important;
+    min-width       : 179px !important;
+    text-align      : left;
+    display         : inline-flex;
+    justify-content : flex-start !important;
+    align-items     : center;
+    background-color: #CCCCCC !important;
+  }
+
+  .mat-tab-label-active {
+    background-color: #1A52B6 !important;
+    opacity         : 1 !important;
+    text-align      : left;
+    color           : white !important;
+
+    fa-icon {
+      color: red;
+    }
+  }
+}
+
+// @media(min-width:375px) and (max-width:999px) {
+//   .validationIcon {
+//     position: relative;
+//     top     : 10px;
+//     left    : 150px;
+//   }
+// }
+
+::ng-deep {
+  @media(max-width:900px) {
+    .travellData .bookFlightTabg {
+      flex-direction: column !important;
+    }
+
+    .separate-dial-code input#phone {
+      width: 100% !important;
+    }
+  }
+}

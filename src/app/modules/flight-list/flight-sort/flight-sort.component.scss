@@ -1,0 +1,88 @@
+.sort p,
+.sort h3 {
+  padding:unset;
+  margin:unset;
+}
+
+.sort p {
+  font-style:normal;
+  font-weight:500;
+  font-size:16px;
+}
+
+.small {
+  font-style:normal;
+  font-weight:500;
+  font-size:12px !important;
+}
+
+.activeSort {
+  background-color: #0057B9 !important;
+  color: white !important;
+  h3{
+    color: white !important;
+  }
+  word-break: break-all;
+}
+
+.sort {
+  font-family: "Poppins", sans-serif;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #0057B9;
+  }
+} 
+
+.underSort {
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  p {
+    margin: 0px !important;
+    cursor: pointer;
+  }
+}
+
+.sortHeadline {
+  font-weight: 600;
+}
+
+.mat-icon {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 0px;
+  width: 0px;
+}
+
+
+@media(max-width:600px){
+  .sort {
+    h3 {
+      font-size: 18px;
+    }
+  } 
+  .small {
+    font-size:14px !important;
+  }
+  
+  .sort p {
+    font-style:normal;
+    font-weight:500;
+    font-size:12px;
+  }
+  .flightSort .p-3{
+    padding: 10px !important;
+  }
+}

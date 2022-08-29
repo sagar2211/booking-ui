@@ -1,0 +1,35 @@
+.updateBtn {
+    background-color: #0057B9;
+    color           : #fff;
+}
+
+.Pophead {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 24px;
+    line-height: 28px;
+    color      : #000000;
+}
+
+.closeBtn {
+    margin: 10px 15px 0 0;
+    cursor: pointer;
+}
+
+.dateRange {
+    height: 50px !important;
+}
+
+::ng-neep.dropdown-menu.show {
+    display: block;
+    width  : 234px !important;
+}
+
+.dateRange::placeholder {
+    padding-left: 8px;
+    padding-top : 5px;
+    font-size   : 13px;
+    color       : #7e7e7e;
+    opacity     : 1;
+  }

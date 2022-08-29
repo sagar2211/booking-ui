@@ -1,0 +1,130 @@
+<section class="pt-3" [ngClass]="isSpinner === true ? 'whiteBG' : currentTheme">
+  <div *ngIf="isSpinner == false">
+    <div style="position: relative; z-index: 1;" class="container d-flex justify-content-between pb-2">
+      <div style="width: 160px">
+        <a routerLink="/">
+          <img src="/assets/images/logo-03.svg" alt="" />
+        </a>
+      </div>
+      <div style="width: 100%;" class="signBtn">
+        <div *ngIf="isBelowLg ? false : true">
+          <div class="socialMedia" *ngIf="isSearchExists || isPofile">
+            <img src="/assets/images/facebook.png" width="10%" />
+            <img src="/assets/images/twitter.png" width="10%" />
+            <img src="/assets/images/linkedin.png" width="10%" />
+            <img src="/assets/images/insta.png" width="10%" />
+            <img src="/assets/images/pintrest.png" width="10%" />
+            <img src="/assets/images/youtube.png" width="10%" />
+          </div>
+        </div>
+        <div *ngIf="isGreatLg ? false : true">
+          <ul style="padding-right: 15px;" class="breadcrumbs"
+            *ngIf="isFlightBooking === true || isFlightListExists === true || isancillaries === true || isPayment === true ">
+            <li style="padding-left: 10px !important;" [ngClass]="isFlightListExists === true ? 'activeStep':'' "
+              (click)="gotoStep(1)"><a href="javascript:void(0)"><span class="circle">1</span> Flight list</a></li>
+            <li class="pl-2" [ngClass]="isFlightBooking === true ? 'activeStep':'' " (click)="gotoStep(2)"><a
+                href="javascript:void(0)"><span class="circle">2</span> Passenger Info</a></li>
+            <li class="pl-2" [ngClass]="isancillaries === true ? 'activeStep':'' " (click)="gotoStep(3)"><a
+                href="javascript:void(0)"><span class="circle">3</span> Select Add-ons</a></li>
+            <li class="pl-2" [ngClass]="isPayment === true ? 'activeStep':'' " (click)="gotoStep(4)"><a
+                href="javascript:void(0)"><span class="circle">4</span> Payment</a></li>
+          </ul>
+        </div>
+        <span *ngIf="isGreatLg ? false : true && !ischangePassword" class="pipe"></span>
+        <div class="wad-column-head-account dropdown">
+          <div class="profile-btn">
+            <span
+              [ngClass]="{'profile-btn2':ischangePassword === true || isSearchExists === true && isBelowLg === true,'profile-btn':isBelowLg === true && isPofile === true}"
+              *ngIf="isAuthenticated || isPofile">
+              <mat-icon class="personIcon">person icon</mat-icon>
+              Hello {{ userInfo?.firstName | titlecase}}
+            </span>
+            <button
+              [ngClass]="{'profile-btn2':ischangePassword === true || isSearchExists === true && isBelowLg === true,'profile-btn':isBelowLg === true && isPofile === true}"
+              *ngIf="isAuthenticated || isPofile" class="profile-btn" mat-icon-button [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+          <mat-menu #menu="matMenu">
+            <div>
+              <button mat-menu-item (click)="onSelectionChange('updateProfile')" *ngIf="token != null">
+                <span class="menuIcon">
+                  <mat-icon>person icon</mat-icon> Profile
+                </span>
+              </button>
+              <button mat-menu-item (click)="onSelectionChange('travelHistory')" *ngIf="token != null">
+                <span class="menuIcon"> <i class="icon-group"></i> <span class="logout">Travel History</span></span>
+              </button>
+              <button mat-menu-item (click)="onSelectionChange('changePassword')" *ngIf="token != null">
+                <span class="menuIcon">
+                  <mat-icon>notifications_off</mat-icon> Change Password
+                </span>
+              </button>
+              <button mat-menu-item (click)="onSelectionChange('logout')" *ngIf="token != null">
+                <span class="menuIcon"> <i class="icon-ic_outline-logout"></i> <span class="logout">Logout</span>
+                </span>
+              </button>
+
+            </div>
+          </mat-menu>
+          <button class="btn-danger" *ngIf="!isAuthenticated" (click)="onSelectionChange('login')" mat-raised-button>
+            <i class="icon-users icon"></i> SIGN IN/ SIGN UP
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isGreatLg ? true : false" style="margin: auto;width: 76%;" class="pb-3">
+      <div *ngIf="isBelowLg ? false : true">
+        <ul style="padding-right: 15px;" class="breadcrumbs"
+          *ngIf="isFlightBooking === true || isFlightListExists === true || isancillaries === true || isPayment === true">
+          <li style=" padding-left: 10px !important;" [ngClass]="isFlightListExists === true ? 'activeStep':'' "
+            (click)="gotoStep(1)"><a href="javascript:void(0)"><span class="circle">1</span> Flight list</a></li>
+          <li class="pl-2" [ngClass]="isFlightBooking === true ? 'activeStep':'' " (click)="gotoStep(2)"><a
+              href="javascript:void(0)"><span class="circle">2</span> Passenger Info</a></li>
+          <li class="pl-2" [ngClass]="isancillaries === true ? 'activeStep':'' " (click)="gotoStep(3)"><a
+              href="javascript:void(0)"><span class="circle">3</span> Select Add-ons</a></li>
+          <li class="pl-2" [ngClass]="isPayment === true ? 'activeStep':'' " (click)="gotoStep(4)"><a
+              href="javascript:void(0)"><span class="circle">4</span> Payment</a></li>
+        </ul>
+      </div>
+    </div>
+    <div *ngIf="isBelowLg ? false : true" class="container">
+      <hr class="hrLine" />
+    </div>
+    <div *ngIf="isBelowLg ? false : true" style="position: relative; z-index: 1;" class="container">
+      <div class="manu-bar">
+        <div class="wad-row w-25">
+          <div *ngIf="isSearchExists">
+            <i class="icon-search_24px_outlined"></i>
+            <input class="desinationInput" type="text" placeholder="Select Your Destination" name="" id="">
+          </div>
+          <div class="breadcrum pt-2 pb-5" *ngIf="!isSearchExists">
+            <ul class="d-flex justify-content-evenly">
+              <!-- <li>Home</li> > <li>Flight Routes</li> > <li>Flight Results</li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="d-flex justify-content-evenly align-items-center" *ngIf="isSearchExists">
+          <div></div>
+          <div class="wad-column-head">
+            <a href="#">
+              <span>Flights</span>
+            </a>
+            <span class="pipe"></span>
+            <a href="#">
+              <span>Deals</span>
+            </a>
+            <span class="pipe"></span>
+            <a href="#">
+              <span>Activities</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet class="mt-5"></router-outlet>
+</section>
+<app-middle></app-middle>
+<app-footer></app-footer>

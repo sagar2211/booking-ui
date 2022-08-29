@@ -1,0 +1,175 @@
+<div *ngIf="!isBelowLg" class="pageRightContainer" >
+    <div #forfix class="forfix">
+    <div style="padding: 0 1px 1px 1px;" id="FARE_SUMMARY">
+      <section class="fareSummary">
+        <div>
+          <p class="blueFont">Booking Details</p>
+        </div>
+        <div class="fareRow totalDivider">
+          <div class="d-flex justify-content-between fareTax">
+            <p class="fareHeader">Base Fare</p>
+            <p class="fontSize14 darkText">
+              {{ selectedFlight?.currency }} {{ selectedFlight?.totalPrice | number : '1.2-2' }}
+            </p>
+          </div>
+          <div class="fareTypeWrap">
+            <div class="d-flex justify-content-between fareTax">
+              <p class="fareHeader">Fee &amp; Subcharges</p>
+              <p class="fontSize14 darkText">
+                {{ selectedFlight?.currency }} {{ selectedFlight?.totalTax | number : '1.2-2' }}
+              </p>
+            </div>
+          </div>
+          <div class="fareTypeWrap">
+            <div class="d-flex justify-content-between fareTax">
+              <p class="fareHeader">Extras (Baggage) </p>
+              <p class="fontSize14 darkText">
+                {{ selectedFlight?.currency }} {{newBagPrice | number : '1.2-2'}}
+              </p>
+            </div>
+          </div>
+          
+          <div class="fareTypeWrap" *ngIf="ancillariesArray.length">
+            <div class="d-flex justify-content-between fareTax">
+              <p class="fareHeader">Add-Ons</p>
+            </div>
+          </div>
+          <div class="fareTypeWrap" *ngFor="let item of ancillariesArray">
+            <div class="d-flex justify-content-between fareTax">
+              <p class="fareRefund">{{item.name}} </p>
+              <p class="fareRefund">
+                {{item.currency+" "+item.price}}
+              </p>
+              
+            </div>
+          </div>
+          <div class="fareTypeWrap" *ngIf="wadiiaSupport">
+            <div class="d-flex justify-content-between fareTax">
+              <p class="fareRefund">{{wadiiaSupport.name}} </p>
+              <p class="fareRefund">
+                {{wadiiaSupport.currency+" "+wadiiaSupport.price}}
+              </p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between totalPrice">
+          <p class="fareHeader">Total Fare</p>
+          <p class="fontSize14 darkText">
+            {{ selectedFlight?.currency }}
+            {{ (serviceTotal + selectedFlight?.totalPrice + selectedFlight?.totalTax + newBagPrice).toFixed(2) }}
+          </p>
+        </div>
+        <p class="text-center pt-3"><a href="">More Details </a></p>
+        <div style="cursor: pointer;" (click)="gotoPayment()" class="d-flex justify-content-between fareFooter" *ngIf="isancillaries">
+          <p class="fareRow">Checkout</p>
+          <p class="checkout">
+            {{ selectedFlight?.currency }}
+            {{ (serviceTotal + selectedFlight?.totalPrice + selectedFlight?.totalTax + wadiiaSupport.price).toFixed(2) }}
+          </p>
+        </div>
+      </section>
+    </div>
+    <div style="width: 320px;" class="container offers mt-3" *ngIf="false">
+      <h3>Looking for the best deals and offers?</h3>
+      <button class="offersBtn">
+        <i class="icon-local_offer_24px"></i> BEST DEALS
+      </button>
+    </div>
+  </div>
+  </div>
+
+  <div *ngIf="isBelowLg" class="priceContainer"> 
+    <div [ngClass]="isFloatCardActive ? 'priceMarginT':'' " class="priceBAr">
+      <div #forfix class="forfix">
+        <div style="padding: 0 1px 1px 1px;" id="FARE_SUMMARY">
+          <section [ngClass]="isFloatCardActive ===true?'floatdetailBarCInA':'floatdetailBarCOutA'" class="fareSummary floatdetailBarC">
+            <button (click)="btnCardExchange()" class="positionBtnT" style="padding:12px;border:none;background: #0057B9;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 40px;"><img src="../../../../assets/images/downArrow.svg" alt="" srcset=""></button>
+            <div>
+              <p class="blueFont">Booking Details</p>
+            </div>
+            <div class="fareRow totalDivider">
+              <div class="d-flex justify-content-between fareTax">
+                <p class="fareHeader">Base Fare</p>
+                <p class="fontSize14 darkText">
+                  {{ selectedFlight?.currency }} {{ selectedFlight?.totalPrice | number : '1.2-2' }}
+                </p>
+              </div>
+              <div class="fareTypeWrap">
+                <div class="d-flex justify-content-between fareTax">
+                  <p class="fareHeader">Fee &amp; Subcharges</p>
+                  <p class="fontSize14 darkText">
+                    {{ selectedFlight?.currency }} {{ selectedFlight?.totalTax | number : '1.2-2' }}
+                  </p>
+                </div>
+              </div>
+              <div class="fareTypeWrap">
+                <div class="d-flex justify-content-between fareTax">
+                  <p class="fareHeader">Extras (Baggage) </p>
+                  <p class="fontSize14 darkText">
+                    {{ selectedFlight?.currency }} {{newBagPrice | number : '1.2-2'}}
+                  </p>
+                </div>
+              </div>
+              
+              <div class="fareTypeWrap" *ngIf="ancillariesArray.length">
+                <div class="d-flex justify-content-between fareTax">
+                  <p class="fareHeader">Add-Ons</p>
+                </div>
+              </div>
+              <div class="fareTypeWrap" *ngFor="let item of ancillariesArray">
+                <div class="d-flex justify-content-between fareTax">
+                  <p class="fareRefund">{{item.name}} </p>
+                  <p class="fareRefund">
+                    {{item.currency+" "+item.price}}
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="fareTypeWrap" *ngIf="wadiiaSupport">
+                <div class="d-flex justify-content-between fareTax">
+                  <p class="fareRefund">{{wadiiaSupport.name}} </p>
+                  <p class="fareRefund">
+                    {{wadiiaSupport.currency+" "+wadiiaSupport.price}}
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between totalPrice">
+              <p class="fareHeader">Total Fare</p>
+              <p class="fontSize14 darkText">
+                {{ selectedFlight?.currency }}
+                {{ (serviceTotal + selectedFlight?.totalPrice + selectedFlight?.totalTax + newBagPrice).toFixed(2) }}
+              </p>
+            </div>
+            <div style="cursor: pointer;background-color: transparent;" (click)="gotoPayment()" class="d-flex justify-content-between fareFooter" *ngIf="isancillaries">
+              <p class="fareRow">Checkout</p>
+              <p class="checkout">
+                {{ selectedFlight?.currency }}
+                {{ (serviceTotal + selectedFlight?.totalPrice + selectedFlight?.totalTax + wadiiaSupport.price).toFixed(2) }}
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div style="cursor: pointer;" (click)="gotoPayment()" class="d-flex justify-content-between fareFooter" *ngIf="isancillaries">
+      <p class="fareRow">Checkout</p>
+      <p class="checkout">
+        {{ selectedFlight?.currency }}
+        {{ (serviceTotal + selectedFlight?.totalPrice + selectedFlight?.totalTax + wadiiaSupport.price).toFixed(2) }}
+      </p>
+    </div> -->
+
+    <div [ngClass]="isFloatCardActive ? 'dNone':'' " >
+      <div class="btnPriceFloat" (click)="btnCardExchange()">
+        <img src="../../../../assets/images/btnPriceBar.svg" alt="" srcset="">
+        <p>
+          <!-- {{ selectedFlight?.currency }}
+          {{ (serviceTotal + selectedFlight?.totalPrice + selectedFlight?.totalTax + wadiiaSupport.price).toFixed(2) }} -->
+        </p>
+      </div>
+    </div>
+  </div>

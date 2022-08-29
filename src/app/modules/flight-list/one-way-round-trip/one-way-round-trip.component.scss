@@ -1,0 +1,991 @@
+* {
+  padding: 0px;
+  margin : 0px;
+}
+
+.container {
+  // max-width: 1200px;
+  margin: 0px auto;
+}
+
+mat-accordion {
+  margin          : 30px !important;
+  background-color: #f6f9fe !important;
+}
+
+.filter-filght {
+  margin-right: 16px;
+}
+
+.mat-card {
+  padding: 16px 5px !important;
+}
+
+.flights {
+  position: relative;
+  bottom  : 100px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.cards {
+  width  : 90%;
+  padding: 10px;
+  margin : 0px auto;
+}
+
+mat-card {
+  position : relative;
+  z-index  : 1;
+  width    : auto;
+  margin   : 7px 0px;
+  font-size: 14px !important;
+}
+
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: 0px 1px 20px rgb(0 0 0 / 25%);
+}
+
+.one-way-list {
+  padding         : 13px;
+  background-color: #ffff;
+  border-radius   : 8px;
+}
+
+.flightsDetails {
+  display        : flex;
+  justify-content: space-evenly;
+  font-size      : 14px !important;
+}
+
+h4 strong,
+strong {
+  font-weight: bolder;
+  margin-top : 10px;
+}
+
+.flight-details-header strong {
+  margin-top: unset;
+}
+
+h4 {
+  margin: 0px;
+}
+
+.flight-outerContainer {
+  width: 150%;
+}
+
+// .flight-outerContainer div {
+//   padding: 3px 0px;
+// }
+
+// .baggageSection {
+//   position: absolute;
+//   top: 5px;
+//   left: 5px;
+//   padding: 5px;
+// }
+
+.bookFlight {
+  display        : flex;
+  align-items    : stretch;
+  width          : 250px;
+  text-align     : center;
+  justify-content: center;
+  flex-wrap      : wrap;
+  flex-direction : column;
+  align-content  : center;
+}
+
+p,
+h3 {
+  margin: 0;
+}
+
+.price {
+  text-align: center;
+}
+
+.price h3 {
+  font-family: "Poppins", sans-serif;
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 16px;
+  text-align : center;
+  color      : #000000;
+}
+
+.images {
+  text-align: center;
+}
+
+.images h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size  : 12px;
+  line-height: 12px;
+}
+
+.images p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size  : 10px;
+}
+
+.travelTime {
+  color      : #000000;
+  font-family: "Poppins", sans-serif;
+  text-align : center;
+}
+
+.travelTime h2 {
+  font-style   : normal;
+  font-weight  : 600;
+  font-size    : 16px;
+  margin-bottom: -5px;
+}
+
+.travelTime span {
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 12px;
+  color      : #eb2533;
+}
+
+.cabin-class {
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 12px;
+  color      : #eb2533;
+  align-items: center;
+  text-align : center;
+  position   : relative;
+  bottom     : 5px;
+}
+
+.travelTime hr {
+  margin    : 0px auto !important;
+  width     : 37px;
+  height    : 2px;
+  background: rgba(15, 118, 234, 0.51);
+}
+
+.travelTime p {
+  font-weight: 500;
+  font-size  : 8px;
+}
+
+.arival,
+.departure {
+  color      : #000000;
+  text-align : center;
+  font-family: "Poppins", sans-serif;
+}
+
+.arival h4,
+.departure h4 {
+  font-weight: 600;
+  font-size  : 16px;
+}
+
+.arival p,
+.departure p {
+  margin-top   : -5px;
+  margin-bottom: -5px;
+  font-weight  : 500;
+  font-size    : 10px;
+}
+
+hr:not([size]) {
+  height: 1px;
+  color : rgb(90, 109, 131);
+  width : 100%;
+  height: 3px;
+  margin: 20px auto 5px auto;
+}
+
+.separator {
+  display    : flex;
+  align-items: center;
+  text-align : center;
+  margin     : 0px auto;
+  color      : black;
+  font-weight: 500;
+  position   : relative;
+  left       : 90px;
+}
+
+.separator::before,
+.separator::after {
+  content      : "";
+  flex         : 1;
+  border-bottom: 1px solid #336699;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.25em;
+}
+
+.flight-details-header {
+  background-color: #336699;
+}
+
+.flight-details-header strong {
+  margin-top: unset;
+}
+
+.flight-details-header .cityName {
+  font-weight: 500;
+  color      : #fff;
+  padding    : 5px;
+}
+
+.flight-details-header .duration {
+  font-weight: 500;
+  color      : #fff;
+  padding    : 5px;
+}
+
+.fli-list-fare_details__left {
+  width: 50%;
+}
+
+.fli-list-fare_details__left>div {
+  color        : #848484;
+  margin-bottom: 8px;
+}
+
+.fli-list-fare_details__left .fli-list-fare_details__left-heading {
+  border-bottom : 1px solid #ccc;
+  margin-bottom : 8px;
+  padding-bottom: 2px;
+}
+
+.fli-list-fare_details__left div {
+  color        : #848484;
+  margin-bottom: 8px;
+}
+
+.top-border {
+  border-top : 1px solid #ccc;
+  padding-top: 15px;
+}
+
+.no-result {
+  border       : 1px solid #f34e5e;
+  padding      : 15px;
+  border-radius: 5px;
+  text-align   : center;
+  margin-top   : 50px;
+  margin-bottom: 50px;
+}
+
+img {
+  margin-top    : 15px;
+  vertical-align: middle;
+  border-style  : none;
+}
+
+.no-result .logo {
+  display      : inline-block;
+  margin-bottom: 20px;
+  position     : relative;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.no-result h1.no-result__heading {
+  font-size     : 1.6rem;
+  font-weight   : 500;
+  text-transform: uppercase;
+}
+
+.row {
+  justify-content: space-around;
+  align-items    : center;
+}
+
+// cancellisation
+.airline-fare-rules {
+  max-height: 278px;
+  overflow-y: auto;
+}
+
+.airline-fare-rules>div {
+  font-weight   : 300;
+  text-transform: lowercase;
+}
+
+.ant-spin {
+  -webkit-box-sizing           : border-box;
+  box-sizing                   : border-box;
+  margin                       : 0;
+  padding                      : 0;
+  color                        : rgba(0, 0, 0, 0.65);
+  font-size                    : 14px;
+  font-variant                 : tabular-nums;
+  line-height                  : 1.5715;
+  list-style                   : none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings        : "tnum", "tnum";
+  position                     : absolute;
+  display                      : none;
+  color                        : #1890ff;
+  text-align                   : center;
+  vertical-align               : middle;
+  opacity                      : 0;
+  -webkit-transition           : -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  transition                   : -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  transition                   : transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  transition                   : transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86),
+    -webkit-transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+
+.airline-fare-rules .rules-heading .time-gap-cond {
+  background-color: #f5f5f5;
+  padding         : 8px 10px;
+}
+
+.airline-fare-rules .time-gap-cond {
+  width         : 50%;
+  vertical-align: middle;
+  padding       : 7px 9px;
+  border        : 1px solid #f2f2f2;
+  border-top    : 0;
+}
+
+.airline-fare-rules {
+  max-height: 278px;
+  overflow-y: auto;
+}
+
+.airline-fare-rules div {
+  font-weight   : 300;
+  text-transform: lowercase;
+}
+
+.detailBtn {
+  padding-top: 8px;
+  color      : #0765ce;
+  font-weight: 500;
+  font-size  : 12px;
+  text-align : center;
+  cursor     : pointer !important;
+  font-family: "Poppins", sans-serif;
+}
+
+.subscr-btn {
+  padding: 4px 15px !important;
+}
+
+// .subscr-btn {
+//   width: 88px;
+//   height: 26px;
+//   font-size: 12px;
+//   font-weight: 600;
+//   border-radius: 4px;
+//   background-color: #eb2533;
+//   font-family: "Poppins", sans-serif;
+// }
+// ANCILLARIES
+.accordion {
+  margin: 20px 0 40px;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+  box-sizing        : content-box;
+  height            : 0;
+  overflow          : visible;
+}
+
+.card-body-primary {
+  background-color: var(--theme-bg-color-4, #bbdefb);
+  color           : var(--theme-font-color-1, #232323);
+}
+
+.flight-outerContainer {
+  width: 150%;
+}
+
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid #dee2e6;
+}
+
+.clickme {
+  cursor: pointer !important;
+}
+
+.alert-info {
+  color           : #0c5460;
+  background-color: #d1ecf1 !important;
+  border-color    : #bee5eb;
+}
+
+.card-body-primary {
+  background-color: var(--theme-bg-color-4, #bbdefb);
+  color           : var(--theme-font-color-1, #232323);
+}
+
+.custom-control {
+  position                  : relative;
+  z-index                   : 1;
+  display                   : block;
+  min-height                : 1.5rem;
+  padding-left              : 1.5rem;
+  -webkit-print-color-adjust: exact;
+  color-adjust              : exact;
+}
+
+.custom-control-label {
+  position      : relative;
+  margin-bottom : 0;
+  vertical-align: top;
+}
+
+.bg-secondary {
+  background-color: var(--theme-bg-color-6, #e3f2fd) !important;
+}
+
+.card-body-primary {
+  background-color: var(--theme-bg-color-4, #bbdefb);
+  color           : var(--theme-font-color-1, #232323);
+}
+
+.spinner {
+  position        : fixed;
+  /* Sit on top of the page content */
+  width           : 100%;
+  /* Full width (cover the whole page) */
+  height          : 100%;
+  /* Full height (cover the whole page) */
+  top             : 0;
+  left            : 0;
+  right           : 0;
+  bottom          : 0;
+  background-color: rgb(233 224 224 / 50%);
+  /* Black background with opacity */
+  z-index         : 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.luggage-cart {
+  position: relative;
+}
+
+.luggage-cart .check-circle,
+.luggage-cart .check-circle {
+  position : absolute;
+  top      : 6px;
+  left     : 1px;
+  font-size: x-small;
+  color    : rgb(64 207 64);
+}
+
+.luggage-cart .fa-times-circle,
+.luggage-cart .fa-times-circle {
+  position : absolute;
+  top      : 6px;
+  left     : 1px;
+  font-size: x-small;
+  color    : rgb(241, 39, 39);
+}
+
+.fa-luggage-cart:before {
+  content  : "\f59d";
+  font-size: 14px;
+}
+
+.flight-details a {
+  color          : black;
+  text-decoration: none;
+  font-weight    : 500;
+}
+
+.services .fa-luggage-cart:before {
+  font-size: small;
+}
+
+// .atCenter {
+//   padding-left: 25px !important;
+// }
+
+.noBaggage {
+  border-left: 5px solid #f14336;
+}
+
+.Baggage {
+  border-left: 5px solid #22bd09;
+}
+
+.intro .icons img {
+  padding      : 10px;
+  border-radius: 50px;
+}
+
+.intro {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 14px;
+  align-items: center;
+  text-align : center;
+}
+
+.red {
+  border: 4px solid #eb2533;
+}
+
+.yellow {
+  border: 4px solid #efd912;
+}
+
+.green {
+  border: 4px solid #208467;
+}
+
+.blue {
+  border: 4px solid #0057b9;
+}
+
+.icons img {
+  max-width: 80px;
+}
+
+.divider {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  text-align     : center;
+}
+
+/* To show the lines on right 
+and left sides of the text */
+// .divider::after,
+// .divider::before {
+//   content: " ";
+//   border: 1px dashed #aeaeae;
+//   flex: 1;
+// }
+
+.stops {
+  font-family: "Poppins";
+  font-style : normal;
+  font-size  : 10px;
+  font-weight: 500;
+  text-align : center;
+  color      : #000000;
+}
+
+.stop {
+  color: #484848;
+}
+
+// .direct {
+//   color: #009da7;
+//   padding: 0px 5px;
+// }
+
+h3 {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 16px;
+  text-align : center;
+  color      : #000000;
+}
+
+.flight-Icon {
+  color    : #3e3d3d !important;
+  font-size: 16px;
+}
+
+//added by sagar
+.travel-time {
+  font-family: Poppins;
+  font-style : normal;
+  font-weight: 600;
+  font-size  : 16px;
+  line-height: 24px;
+  /* identical to box height */
+  display    : flex;
+  align-items: center;
+  color      : #000000;
+}
+
+.travelbar {
+  border-bottom: 2px solid #22bd09;
+}
+
+.travelbar1 {
+  border-bottom: 2px solid #efd912;
+}
+
+.travelbar2 {
+  border-bottom: 2px solid #eb2533;
+}
+
+.travelbar1::before {
+  content         : " ";
+  height          : 5px;
+  width           : 5px;
+  background-color: #efd912;
+  border-radius   : 50%;
+  display         : inline-block;
+  position        : relative;
+  top             : 10px;
+  left            : 40px;
+}
+
+.travelbar2::before {
+  content         : " ";
+  height          : 5px;
+  width           : 5px;
+  background-color: #eb2533;
+  border-radius   : 50%;
+  display         : inline-block;
+  position        : relative;
+  top             : 10px;
+  left            : 25px;
+}
+
+.travelbar2::after {
+  content         : " ";
+  height          : 5px;
+  width           : 5px;
+  background-color: #eb2533;
+  border-radius   : 50%;
+  display         : inline-block;
+  position        : relative;
+  top             : 10px;
+  right           : 25px;
+}
+
+.icon-baggage2 {
+  font-size: 23px;
+}
+
+.icon-b-red:before {
+  font-size: 10px;
+  content  : "\e903";
+  color    : #22bd09;
+  position : relative;
+  left     : -12px;
+}
+
+.icon-b-green:before {
+  font-size: 10px;
+  content  : "\e904";
+  color    : #f00;
+  position : relative;
+  left     : -14px;
+}
+
+.intro {
+  padding-top: 20px;
+  width      : 23%;
+  text-align : center;
+
+  .icons {
+    border-radius: 50px;
+  }
+
+  p {
+    padding-top: 20px;
+    line-height: 21px;
+    font-family: "Poppins";
+    font-style : normal;
+    font-weight: normal;
+    font-size  : 14px;
+    text-align : center;
+    color      : #000000;
+  }
+}
+
+.thumblue {
+  font-size: 25px;
+  position : relative;
+  top      : 4px;
+}
+
+.flightHead {
+  font-family: "Poppins";
+  font-style : normal;
+  font-weight: 500;
+  font-size  : 24px;
+  line-height: 36px;
+  text-align : center;
+  color      : #000000;
+
+  span {
+    color: #dc3545;
+  }
+}
+
+.iconSize {
+  width  : 30%;
+  margin : 0 auto;
+  padding: 16px 0px;
+}
+
+.dayIndicator {
+  color    : #eb2533;
+  font-size: 10px;
+  position : relative;
+  bottom   : 8px;
+}
+
+.icon-Union:before,
+.icon-doller:before,
+.icon-thumb:before,
+.icon-clockTime:before {
+  font-size: 72px;
+}
+
+::ng-deep mat-tooltip-component {
+  & .mat-tooltip {
+    text-align         : center;
+    // width           : 450px !important;
+    // height          : 96px;
+    background-color   : #EEEEEE;
+    color              : #000000; // your custom properties here.
+    font-family        : 'Poppins';
+    font-style         : normal;
+    font-weight        : 400;
+    font-size          : 13px;
+    line-height        : 20px;
+    box-shadow         : 0px 1px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+
+@media (min-width:1001px) and (max-width:1200px) {
+  .bookFlight {
+    width: 130px !important;
+  }
+
+  .separator {
+    display    : flex;
+    align-items: center;
+    text-align : center;
+    margin     : 0px auto;
+    color      : black;
+    font-weight: 500;
+    position   : relative;
+    left       : 78px;
+    width      : 65% !important;
+  }
+}
+
+::ng-deep {
+  @media (min-width:601px) and (max-width:780px) {
+    .bookFlight {
+      width: 130px !important;
+    }
+
+    .images,
+    .departure,
+    .stops,
+    .arival {
+      width: 25% !important;
+    }
+  }
+}
+
+@media (max-width:1000px) {
+  .oneWaycontainer {
+    margin-top  : 50px;
+    margin-right: 8px;
+  }
+
+}
+
+@media (max-width:780px) {
+  .images>img {
+    width: 75px !important;
+  }
+
+  .separator {
+    display    : flex;
+    align-items: center;
+    text-align : center;
+    margin     : 0px auto;
+    color      : black;
+    font-weight: 500;
+    position   : relative;
+    left       : 65px;
+  }
+
+}
+
+@media (min-width:780px) and (max-width:999px) {
+  .bookFlight {
+    width: 130px;
+  }
+
+  .separator {
+    display    : flex;
+    align-items: center;
+    text-align : center;
+    margin     : 0px auto;
+    color      : black;
+    font-weight: 500;
+    position   : relative;
+    left       : 65px;
+  }
+}
+
+@media (max-width:600px) {
+
+  .separator {
+    display    : flex;
+    align-items: center;
+    text-align : center;
+    margin     : 0px auto;
+    color      : black;
+    font-weight: 500;
+    position   : unset;
+    left       : unset;
+  }
+
+  .flight-outerContainer {
+    width: 100%;
+  }
+
+  .cardBottomContainer {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+  }
+
+  .bookFlight {
+    width: 33.33%;
+  }
+
+  .oneWay-flighttop-Container {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+  }
+
+  .baggageSec,
+  .cabin {
+    display: none;
+  }
+
+  .jumbotron>img {
+    width: 50px !important;
+  }
+
+  .arival,
+  .stops,
+  .images,
+  .departure {
+    width: 25% !important;
+  }
+
+  .twoWayChange {
+    flex-direction: column !important;
+  }
+
+  .twoWayChangeBtn {
+    margin-top: 8px;
+    width     : auto;
+  }
+
+  .arival h4,
+  .departure h4 {
+    font-size: 14px;
+  }
+
+  .travel-time {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 16px;
+    text-align : center;
+    color      : #000000;
+  }
+}
+
+::ng-deep {
+  @media (max-width:600px) {
+    .separator {
+      display    : flex;
+      align-items: center;
+      text-align : center;
+      margin     : 0px auto;
+      color      : black;
+      font-weight: 500;
+      position   : unset;
+      left       : unset;
+    }
+
+    .flight-outerContainer {
+      width: 100%;
+    }
+
+    .flightsDetails {
+      display       : flex;
+      flex-direction: column !important;
+    }
+
+    .cdk-overlay-pane {
+      max-width: 100% !important;
+    }
+
+    .baggageSec,
+    .cabin {
+      display: none;
+    }
+
+    .jumbotron>img {
+      width: 50px !important;
+    }
+
+    .arival,
+    .stops,
+    .images,
+    .departure {
+      width: 25% !important;
+    }
+  }
+}
+
+.filterBtn {
+  background-color: #0057B9;
+  color           : #fff;
+}
+
+.filterKeys {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 5px;
+  .filterName {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 12px;
+    line-height: 30px;
+    text-align : center;
+    color      : #000000;
+    background : rgba(237, 107, 107, 0.15);
+    padding    : 3px 5px;
+    margin     : 4px;
+  }
+}

@@ -1,0 +1,414 @@
+<mat-tab-group mat-align-tabs="center">
+    <!-- FLIGHT DETAILS -->
+    
+    <mat-tab label="FLIGHT DETAILS">
+        <div *ngFor="let legsObj of item.legs; let i = index">
+            <div class="container pt-1" *ngIf="i === flightDetailInnerIndex">
+                <div
+                  class="
+                    flight-details-header
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                    min-vh-10"
+                >
+                  <strong class="cityName"
+                    >{{
+                      legsObj.connections[0].segments[0].departureAirport.cityName
+                    }}
+                    to
+                    {{
+                      legsObj.connections[0].segments[
+                        legsObj.connections[0].segments.length - 1
+                      ].arrivalAirport.cityName
+                    }}
+                    {{
+                      ", " +
+                        displayDate(
+                          legsObj.connections[0].connectionHeader.departureDate
+                        )
+                    }}
+                  </strong>
+                  <strong class="duration">
+                    {{ legsObj.connections[0].connectionHeader.legTravelTime.addHours }}
+                    h
+                    {{
+                      legsObj.connections[0].connectionHeader.legTravelTime.minutes
+                    }}
+                    m
+                  </strong>
+                </div>
+                <div *ngFor="let flight of legsObj.connections[0].segments;
+                    let j = index; let lastItem = last;" >
+                  <div class="row pt-3 w-100" *ngIf="legsObj">
+                    <div class="images col-md-3">
+                      <div class="jumbotron d-flex flex-column align-items-center min-vh-10">
+                        <img src="{{H_URL}}/publicservices/images/airline/{{
+                            legsObj.platingCarrier.code
+                          }}"
+                          alt="" />
+                      </div>
+                      <span>{{ legsObj.platingCarrier.hint }}</span>
+                      <span
+                        ><strong
+                          >{{ flight.carrier.code }}{{ flight.flightNumber }}</strong
+                        ></span
+                      >
+                    </div>
+                    <div class="departure col-md-2">
+                      <div class="jumbotron">
+                        <h4>
+                          <strong>{{ updateFlightTime(flight.departureDate) }}</strong>
+                        </h4>
+                        <p>
+                          {{ updateDate(flight.departureDate) }}
+                        </p>
+                      </div>
+                      <p>
+                        {{ flight.departureAirport.cityName }},
+                        {{ flight.departureAirport.countryName }}
+                      </p>
+                    </div>
+                    <div class="arival col-md-2">
+                      <div class="jumbotron">
+                        <h4>
+                          <strong>{{ updateFlightTime(flight.arrivalDate) }}</strong>
+                        </h4>
+                        <p>
+                          {{ updateDate(flight.arrivalDate) }}
+                        </p>
+                      </div>
+                      <p>
+                        {{ flight.arrivalAirport.cityName }},
+                        {{ flight.arrivalAirport.countryName }}
+                      </p>
+                    </div>
+                    <div class="col-md-2">
+                      <span>Cabin: {{ flight.cabinClassName }}</span>
+                    </div>
+                    <div class="arival col-md-3">
+                      <span *ngIf="ancillariesData"
+                        >BAGGAGE: {{ ancillariesData?.services[0]?.text }}</span
+                      >
+                    </div>
+                  </div>
+                  <div class="w-75 separator" *ngIf="!lastItem">
+                    Change of Planes |
+                    {{
+                      legsObj.connections[0].connectionHeader.legTravelTime.addHours
+                    }}hrs{{
+                      legsObj.connections[0].connectionHeader.legTravelTime.minutes
+                    }}min layover in {{ flight.departureAirport.cityName }},{{
+                      flight.departureAirport.countryName
+                    }}
+                    {{ "(" + flight.departureAirport.iata + ")" }}
+                  </div>
+                </div>
+              </div>
+        </div>
+     
+    </mat-tab>
+    <!-- SUMMARY -->
+    <mat-tab label="FARE SUMMARY">
+      <div class="fli-list-fare_details__left">
+        <div class="fli-list-fare_details__left-heading m-b-15">Fare breakup</div>
+        <strong>{{ item.currency }} {{ item.totalPrice | number }}</strong>
+        <div class="d-flex align-items-start justify-content-between">
+          <span>Base Rate</span
+          ><span class="flight-list__summary"
+            ><span *ngIf="ancillariesData"
+              >{{ item.currency }} {{ item.totalPrice | number }} *
+              {{ ancillariesData.passengers.length }}
+              {{ ancillariesData.passengers.typeAbbr }} =
+              {{ item.currency }}
+              {{
+                item.totalPrice * ancillariesData.passengers.length | number
+              }}</span
+            ></span
+          >
+        </div>
+        <div class="d-flex align-items-start justify-content-between">
+          <span>Subcharges &amp; Tax</span
+          ><span class="flight-list__summary"
+            ><span *ngIf="ancillariesData"
+              >KES {{ item.totalTax | number }} *
+              {{ ancillariesData.passengers.length }}
+              {{ ancillariesData.passengers.typeAbbr }}={{ item.currency }}
+              {{
+                item.totalTax * ancillariesData.passengers.length | number
+              }}</span
+            ></span
+          >
+        </div>
+        <div class="d-flex align-items-center justify-content-between top-border">
+          <span><strong> TOTAL </strong>:</span>
+          <span *ngIf="ancillariesData"
+            >{{ item.currency }}
+            {{
+              item.totalPrice * ancillariesData.passengers.length +
+                item.totalTax * ancillariesData.passengers.length | number
+            }}
+            </span
+          >
+        </div>
+      </div>
+    </mat-tab>
+    <!-- CANCELLATION -->
+    
+    <mat-tab label="ANCILLARIES">
+      <div class="tab-pane active" id="ancillaries">
+        <div class="ancillaries-section">
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>How to manage ancillary services</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="collapse show">
+              <p>
+                You can add services by selecting a service in the "View and
+                select services" area per segment and passenger.<br />In the
+                "Overview" section, you can see all added services per segment and
+                passenger. You can view details and remove a service by selecting
+                a service in the overview.
+              </p>
+              <p class="font-weight-bold">
+                <strong>IMPORTANT</strong>
+              </p>
+              <ul>
+                <li>
+                  Changing a flight connection will reset ALL selected services.
+                </li>
+                <li>
+                  A service can be linked to 1 or more segments and applies per
+                  individual passenger. A service which is linked to more than 1
+                  segment (e.g. baggage, which is usually linked to all segments
+                  in a flight) can only be added and removed for all linked
+                  segments.
+                </li>
+              </ul>
+            </div>
+          </mat-expansion-panel>
+  
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> OVERVIEW </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <mat-card>
+              <div class="card-body card-body-primary">
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-description>
+                      <strong
+                        >Total price: {{ item.currency }}
+                        {{ item.totalPrice | number }}
+                      </strong>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div class="container">
+                    <table class="table table-sm table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Price</th>
+                          <th>Passenger</th>
+                          <th>Segments</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Base fare</td>
+                          <td>
+                            <span
+                              >{{ item.currency }}
+                              {{ item.totalPrice | number }}</span
+                            >
+                          </td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td class="font-weight-bold">Total</td>
+                          <td>
+                            <span
+                              >{{ item.currency }}
+                              {{ item.totalPrice | number }}</span
+                            >
+                          </td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </mat-expansion-panel>
+              </div>
+            </mat-card>
+  
+            <div>
+              <table class="table table-sm table-hover table-bordered">
+                <thead>
+                  <tr>
+                    <th class="w-auto"></th>
+                    <th>ADT 1</th>
+                    <th>ADT 2</th>
+                    <th>CHD 3</th>
+                    <th>INF 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="w-25">
+                      <div class="row">
+                        <div class="col-12 mb-2">
+                          <div class="row">
+                            <div class="col-12 mb-2">
+                              {{
+                                item.legs[0].connections[0].segments[0]
+                                  .departureAirport.name +
+                                  "(" +
+                                  item.legs[0].connections[0].segments[0]
+                                    .departureAirport.iata +
+                                  ")"
+                              }}
+                            </div>
+                            <div class="col-12 mb-2">
+                              <span>{{
+                                item.legs[0].connections[0].segments[0]
+                                  .departureDate
+                              }}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 mb-2">
+                          <div class="row">
+                            <div class="col-12 mb-2">
+                              {{
+                                item.legs[0].connections[0].segments[0]
+                                  .arrivalAirport.name +
+                                  "(" +
+                                  item.legs[0].connections[0].segments[0]
+                                    .arrivalAirport.iata +
+                                  ")"
+                              }}
+                            </div>
+                            <div class="col-12 mb-2">
+                              <span>{{
+                                item.legs[0].connections[0].segments[0]
+                                  .arrivalDate
+                              }}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </mat-expansion-panel>
+  
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <strong>VIEW AND SELECT SERVICES</strong>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="card-body card-body-primary">
+              <div class="row">
+                <div class="col-12 mb-2">
+                  <div class="row">
+                    <div class="col-12 mb-2">
+                      <div class="row">
+                        <div class="col-auto">
+                          <button
+                            class="btn btn-primary btn-sm"
+                            (click)="toggleGroup()"
+                          >
+                            Expand/Collapse all groups
+                          </button>
+                        </div>
+                        <div class="col-auto">
+                          <div class="custom-control custom-radio">
+                            <input type="checkbox" class="custom-control-input" />
+                            <label class="custom-control-label"
+                              >Show included services (0)</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 mb-2">
+                      <mat-expansion-panel [expanded]="collapseAllGroup">
+                        <mat-expansion-panel-header>
+                          <mat-panel-description>
+                            <div
+                              class="
+                                card-header card-header-primary
+                                bg-secondary
+                                px-3
+                                py-2
+                                d-flex
+                                clickme
+                                w-100
+                              "
+                            >
+                              <h6 class="w-100 text-center">
+                                <span> Baggage</span>
+                              </h6>
+                            </div>
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+  
+                        <div class="example-action-buttons">
+                          <!-- <button mat-button (click)="expandAllServices(); expandFlag ? accordion.closeAll() : accordion.openAll()">Expand/Collapse all services</button> -->
+                          <button mat-button (click)="accordion.openAll()">
+                            Expand All
+                          </button>
+                          <button mat-button (click)="accordion.closeAll()">
+                            Collapse All
+                          </button>
+                        </div>
+                        <mat-accordion class="example-headers-align" multi>
+                          <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                              <mat-panel-description>
+                                Type your name and age
+                                <mat-icon>account_circle</mat-icon>
+                              </mat-panel-description>
+                            </mat-expansion-panel-header>
+                          </mat-expansion-panel>
+  
+                          <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                              <mat-panel-description>
+                                Type the country name
+                                <mat-icon>map</mat-icon>
+                              </mat-panel-description>
+                            </mat-expansion-panel-header>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+                      </mat-expansion-panel>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  

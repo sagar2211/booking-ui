@@ -1,0 +1,146 @@
+mat-form-field {
+  width          : 50%;
+  text-align     : center;
+  color          : black;
+  -moz-appearance: textfield;
+}
+
+#list {
+  display        : flex;
+  justify-content: space-between;
+  padding        : 10px;
+  align-items    : center;
+  color          : black;
+}
+
+#list .mat-form-field-infix {
+  padding   : 0.5em 0;
+  border-top: 0px solid transparent;
+}
+
+#list .mat-form-field-flex {
+  display    : inline-flex;
+  align-items: center !important;
+  box-sizing : border-box;
+  width      : 100%;
+  color      : black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+#btns .mat-form-field-flex {
+  display    : inline-flex;
+  align-items: center;
+  box-sizing : border-box;
+  width      : 50%;
+  border     : 1px solid;
+}
+
+input[type="search"],
+input[type="number"] {
+  text-align   : center;
+  border-radius: 5px;
+  padding      : 10px;
+  height       : 17px;
+  color        : #666666;
+}
+
+::ng-deep .mat-dialog-container {
+  display      : block;
+  margin: 0;
+  padding      : 8px 10px;
+  border-radius: 4px;
+  box-sizing   : border-box;
+  overflow     : auto;
+  outline      : 0;
+  width        : 275px !important;
+  height       : 280px;
+  min-height   : inherit;
+  max-height   : inherit;
+  border-radius: 18px;
+}
+
+.btn-danger {
+  background: #eb2533 !important;
+  color     : #f2f3f6 !important;
+}
+
+img {
+  padding-right: 10px;
+  max-width    : 800px;
+}
+
+.row>* {
+  flex-shrink  : 0;
+  width        : auto;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left : calc(var(--bs-gutter-x) * 0.5);
+  margin-top   : var(--bs-gutter-y);
+}
+
+.input-group-prepend {
+  display: flex;
+}
+
+.input-group-prepend input {
+  text-align : center;
+  height     : 26px;
+  text-align : center;
+  font-weight: 600;
+}
+
+.dialog-button {
+  margin-top      : 8px;
+  width           : 20px;
+  height          : 20px;
+  border-radius   : 50px;
+  background-color: #EB2533;
+  color           : #fff !important;
+}
+
+.adult ,.child,.infant {
+  margin-top: 20px;
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+}
+
+.adult div,
+.child div,
+.infant div {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 400;
+  color: #525252;
+  width: 200px;
+  h3 {
+    margin: 0;
+    font-size  : 16px;
+  }
+  p {
+    margin: 0;
+    font-size  : 12px;
+  }
+}
+
+.rectangle {
+  width           : 225px;
+  // padding         : 5px 10px;
+  // background-color: #EEEEEE;
+}
+
+::ng-deep .mat-button .mat-button-wrapper>*,
+.mat-flat-button .mat-button-wrapper>*,
+.mat-stroked-button .mat-button-wrapper>*,
+.mat-raised-button .mat-button-wrapper>*,
+.mat-icon-button .mat-button-wrapper>*,
+.mat-fab .mat-button-wrapper>*,
+.mat-mini-fab .mat-button-wrapper>* {
+  vertical-align: middle;
+  font-size     : 16px;
+  margin-top    : -19px;
+  margin-left   : -1px;
+}

@@ -1,0 +1,15 @@
+<section class="flightLoader" *ngIf="!isSpinner">
+  <div class="cards">
+    <div>
+      <div *ngIf="currentTripType !== 'Multi Trip'">
+        <app-one-way-round-trip [flightData]="flightData">
+        </app-one-way-round-trip>
+      </div>
+      <div *ngIf="currentTripType === 'Multi Trip'">
+        <app-multi-trip [flightData]="flightData"></app-multi-trip>
+      </div>
+    </div>
+  </div>
+</section>
+<app-loader *ngIf="isSpinner"></app-loader>
+

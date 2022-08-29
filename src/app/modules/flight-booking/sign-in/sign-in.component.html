@@ -1,0 +1,51 @@
+  <section class="container">
+    <h2>Sign In</h2>
+      <form class="example-form pt-3 w-60" [formGroup]="user_form" (ngSubmit)="onSubmit()">
+        <div class="flight">
+            <mat-form-field class="example-full-width p-2" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+              type="email"
+                matInput
+                aria-label="firstName"
+                formControlName="email"/>
+            </mat-form-field>
+            <p style="color:red;font-size:12px;text-align:left;" *ngIf="userEmail && userEmail.invalid && userEmail.touched">Invalid email id</p>
+          </div>
+          <div class="flight">
+            <mat-form-field class="example-full-width p-2" appearance="outline">
+              <mat-label>password</mat-label>
+              <input type="password"
+                matInput
+                aria-label="middleName"
+                formControlName="password"/>
+            </mat-form-field>
+            <p *ngIf="user_form.value.password.length > 3 && user_form.value.password.length < 6 " style="color: red;font-size: 10px;">Password length must be greater than or equal 6.</p>
+          </div>
+        <div class="p-2">
+        <button class="mt-1 btn btn-danger">
+          <span class="send-code-btn"><i class="icon-user-plus"></i>
+          <span>SIGN IN</span>
+        </span>
+        </button>
+        </div>
+        <div class="container pt-3">
+          <div class="separator">
+            or continue with
+          </div>
+          <div class="d-flex justify-content-evenly pt-4">
+            <div class="icon">
+              <img src="/assets/images/google.png" width="30%" alt="">
+            </div>
+            <div class="icon">
+              <img src="/assets/images/facebook1.png" width="30%" alt="">
+            </div>
+            <div class="icon">
+              <img src="/assets/images/img4.png" width="30%" alt="">
+            </div>
+          </div>
+          <!-- <p class="pt-3 text-center signIn">Already A Member? <a class="text-danger" routerLink="/user/signUp">Sign Up</a></p> -->
+        </div>
+      </form>
+  </section>
+          <!-- <a routerLink="/user/forgotPassword">Forgot Password</a> -->

@@ -1,0 +1,63 @@
+<section class="">
+  <div class="container">
+    <div class="adult">
+      <div>
+        <h3>Adult</h3>
+        <p>Age over 12</p>
+      </div>
+      <div class="d-flex justify-content-around rectangle">
+        <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove" [color]="getColor()"
+          (click)="decrementValue(-_step,'adult')" [disabled]="shouldDisableDecrementAdult(adult)">
+          <!-- <mat-icon>remove</mat-icon> -->
+          <i class="icon-remove-circle"></i>
+        </button>
+
+        <input matInput type="number" [(ngModel)]="adult" (focus)="setColor('primary')" (blur)="setColor('default')" />
+
+        <button class="w-25" mat-button mat-icon-button matSuffix aria-label="Add" [color]="getColor()"
+          (click)="incrementValue(_step,'adult')" [disabled]="shouldDisableIncrement(adult)">
+          <!-- <mat-icon>add</mat-icon> -->
+          <i class="icon-add-circle-outline"></i>
+        </button>
+      </div>
+    </div>
+    <div class="child">
+      <div>
+        <h3>Child</h3>
+        <p>Age 2-12</p>
+      </div>
+      <div class="d-flex justify-content-around rectangle">
+        <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove" [color]="getColor()"
+          (click)="decrementValue(-_step,'child')" [disabled]="shouldDisableDecrement(child)">
+          <i class="icon-remove-circle"></i>
+        </button>
+        <input matInput type="number" [(ngModel)]="child" (focus)="setColor('primary')" (blur)="setColor('default')" />
+        <button class="w-25" mat-button mat-icon-button matSuffix aria-label="Add" [color]="getColor()"
+          (click)="incrementValue(_step,'child')" [disabled]="shouldDisableIncrement(child)">
+          <i class="icon-add-circle-outline"></i>
+        </button>
+      </div>
+    </div>
+    <div class="infant">
+      <div>
+        <h3>Infant</h3>
+        <p>Age up to 2 </p>
+      </div>
+      <div class="d-flex justify-content-around rectangle">
+        <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove" [color]="getColor()"
+          (click)="decrementValue(-_step,'infant')" [disabled]="shouldDisableDecrement(infant)">
+          <i class="icon-remove-circle"></i>
+        </button>
+        <input matInput type="number" [(ngModel)]="infant" (focus)="setColor('primary')" (blur)="setColor('default')" />
+        <button class="w-25" mat-button mat-icon-button matSuffix aria-label="Add" [color]="getColor()"
+          (click)="incrementValue(_step,'infant')" [disabled]="shouldDisableIncrement(infant)">
+          <i class="icon-add-circle-outline"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-3">
+    <button class="btn btn-danger p-2" (click)="addValue()"> Done</button>
+  </div>
+</section>
+

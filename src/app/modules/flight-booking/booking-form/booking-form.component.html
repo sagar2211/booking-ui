@@ -1,0 +1,1870 @@
+<div class="travellerLoginSection">
+  <h2 class="fontSize18">Traveller Details</h2>
+  <button style="padding: 0px 10px;" class="btn-danger" *ngIf="!isLoggedIn" (click)="openPopup()" mat-raised-button>
+    <i class="icon-users icon"></i> SIGN IN/ SIGN UP
+  </button>
+  <button class="loginBtn" *ngIf="isLoggedIn">{{ userName }}</button>
+</div>
+<div class="adultDetailsHeading mt-2 mb-2">
+  <p>
+    <strong> Important Note :</strong> Please ensure that the name of
+    passengers on the travel document is the same as on their passport.
+    <span class="view">View More</span>
+  </p>
+</div>
+<div class="travellData" *ngIf="!isBelowLg">
+  <mat-tab-group class="bookFlightTabg bookFlightC" animationDuration="0ms" [selectedIndex]="selectedIndex">
+    <form [formGroup]="travellerForm" (ngSubmit)="onSubmit()">
+      <div formArrayName="adultArray" [ngClass]="updatedWidth">
+        <mat-tab [style.border]="adult.controls[i].status === 'INVALID' ? '1px solid red' : null"
+          *ngFor="let traveller of adultTravellers().controls; let i = index" (click)="onAdultClick(i);">
+          <!-- {{adult.controls[i].status === 'INVALID'}} -->
+          <ng-template mat-tab-label *ngIf="!isBelowLg">
+            <div style="width: 170px;" class="d-flex justify-content-between">
+              <div>
+                <p style="margin: 0;">{{(adult.value[i].firstName ? adult.value[i].firstName : 'Name '+(i+1)) |
+                  titlecase}}</p>
+                <span class="smallText">Adult {{i+1}} </span>
+              </div>
+              <img class="validationIcon" *ngIf="adult.controls[i].status === 'VALID'"
+                src="../../../../assets/images/rightIcon.png" width="26px" height="26" alt="">
+              <img class="validationIcon" *ngIf="adult.controls[i].status === 'INVALID'"
+                src="../../../../assets/images/crossIcon.png" width="26px" height="26" alt="">
+            </div>
+
+          </ng-template>
+          <mat-card *ngIf="!isBelowLg" style="margin: 1px 2px;" [formGroupName]="i">
+            <div class="container p-2">
+              <div class="adultListWrapper">
+                <div class="container">
+                  <div class="AdultFormWrapper collapse show">
+                    <div class="adultDetailsForm">
+                      <div class="adultDetailsInnner">
+                        <div>
+                          <mat-form-field style="margin-left: 8px;" appearance="outline"
+                            *ngIf="isLoggedIn && savedTraveller.length">
+                            <mat-select class="spaceShift" matNativeControl required #mySelect
+                              placeholder="Select Traveller" (selectionChange)="patchSavedTraveller($event,i,'adult')">
+                              <mat-option [value]="m" *ngFor="let item of savedTraveller; let m = index">
+                                {{item.firstName + ' ' + item.lastName}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <div class="mt-3">
+                            <div class="container row justify-content-between bookFormDiv1">
+                              <div class="col-3 col-lg-1">
+                                <p class="lables w-100"><span>*</span> Prefix</p>
+                                <mat-form-field #mrmsIdBookingForm class="w-100" appearance="outline">
+                                  <mat-select #mrmsSelectBookingForm placeholder="Select Document"
+                                    formControlName="prefix"
+                                    [ngClass]="{'invalidField': adult.controls[i].get('prefix')?.status === 'INVALID' && submitted}">
+                                    <mat-option value="Mr">Mr</mat-option>
+                                    <mat-option value="Mrs">Mrs</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-8 col-lg-2">
+                                <p class="lables"><span>*</span> First Name</p>
+                                <mat-form-field appearance="outline"
+                                  [ngClass]="{'invalidField': adult.controls[i].get('firstName')?.status === 'INVALID' && submitted}">
+                                  <input #NameBookingForm matInput placeholder="First Name"
+                                    formControlName="firstName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-6 ml-sm-2 col-lg-2">
+                                <p class="lables"> &nbsp; Middle Name</p>
+                                <mat-form-field appearance="outline">
+                                  <input #middleNameBookingForm matInput placeholder="Middle Name"
+                                    formControlName="middleName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-6 col-lg-2">
+                                <p class="lables"><span>*</span> Last Name</p>
+                                <mat-form-field appearance="outline"
+                                  [ngClass]="{'invalidField': adult.controls[i].get('lastName')?.status === 'INVALID' && submitted}">
+                                  <input #LastNameBookingForm matInput placeholder="Last Name"
+                                    formControlName="lastName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-6 birthdateCalender1 col-lg-3" [ngClass]="{'moreThan': adultAge < 18}">
+                                <p class="lables"><span>*</span> Birth Date</p>
+
+                                <input #BirthDateBookingForm type="text" name="daterange" ngxDaterangepickerMd
+                                  formControlName="dateOfBirth" [showDropdowns]="true" [locale]="calendarLocale1"
+                                  [placeholder]="calendarPlaceholder" class="form-control dateRange"
+                                  [singleDatePicker]="true" />
+                                <span style="color: red;"
+                                  [ngStyle]="{'display': adultAge >= 18 ? 'none' : 'inline'}">Adult age is greter than
+                                  18 yrs old
+                                </span>
+                              </div>
+                            </div>
+                            <!-- identification end -->
+                          </div>
+                          <!-- simple info end -->
+                          <!-- identification start -->
+                          <h3 class="my-3 p-2">Form of Identification</h3>
+                          <div class="adultItemRow row">
+                            <div class=" col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Document Type</p>
+                              <mat-form-field class="w-100" appearance="outline"
+                                [ngClass]="{'invalidField': adult.controls[i].get('documentType')?.status === 'INVALID' && submitted}">
+                                <mat-select #DocumentTypeBookingForm placeholder="Select Document"
+                                  formControlName="documentType">
+                                  <mat-option value="Passport">Passport</mat-option>
+                                  <mat-option value="Personal ID">Personal ID</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
+                            <div class=" col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Document ID</p>
+                              <mat-form-field class="w-100" appearance="outline"
+                                [ngClass]="{'invalidField': adult.controls[i].get('documentId')?.status === 'INVALID' && submitted}">
+                                <input #DocumentIdBookingForm matInput placeholder="Document Id"
+                                  formControlName="documentId" />
+                              </mat-form-field>
+                            </div>
+                            <div class=" col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Country of Issuing </p>
+                              <mat-form-field class="w-100" appearance="outline"
+                                [ngClass]="{'invalidField': adult.controls[i].get('country')?.status === 'INVALID' && submitted}">
+                                <mat-select #CountryOfIssuongBookingForm placeholder="Country" #singleSelect
+                                  formControlName="country">
+                                  <mat-option>
+                                    <ngx-mat-select-search placeholderLabel="Search country..."
+                                      (keyup)="showCountryResult($event)"></ngx-mat-select-search>
+                                  </mat-option>
+                                  <mat-option *ngFor="let country of allCountry" [value]="country.name">
+                                    {{country.name}}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
+                          </div>
+                          <div class="adultItemRow row">
+                            <div class="col-lg-4 col-md-6 col-6 birthdateCalender">
+                              <p class="lables"><span>*</span> Issued Date</p>
+
+
+                              <input #IssuesDateBookingForm type="text" ngxDaterangepickerMd
+                                formControlName="issuedDate" class="form-control dateRange" name="daterange"
+                                [showDropdowns]="true" [locale]="{
+                                    customRangeLabel: 'Pick a date...',
+                                    applyLabel: 'Apply',
+                                    clearLabel: 'Clear',
+                                    format: 'DD-MM-YYYY',
+                                    firstDay: 1 }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-6 birthdateCalender">
+                              <p class="lables"><span>*</span> Valid Till</p>
+
+                              <input #ValidDateBookingForm type="text" ngxDaterangepickerMd formControlName="validTill"
+                                class="form-control dateRange" name="daterange" [showDropdowns]="true" [locale]="{
+                                    customRangeLabel: 'Pick a date...',
+                                    applyLabel: 'Apply',
+                                    clearLabel: 'Clear',
+                                    format: 'DD-MM-YYYY',
+                                    firstDay: 1
+                                  }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Nationality</p>
+                              <mat-form-field class="w-100" appearance="outline"
+                                [ngClass]="{'invalidField': adult.controls[i].get('nationality')?.status === 'INVALID' && submitted}">
+                                <mat-select #NationalityBookingForm placeholder="Nationality" #singleSelect
+                                  formControlName="nationality">
+                                  <mat-option>
+                                    <ngx-mat-select-search placeholderLabel="Search country..."
+                                      (keyup)="showNationalityResult($event)"></ngx-mat-select-search>
+                                  </mat-option>
+                                  <mat-option *ngFor="let nationality of nationality" [value]="nationality.name">
+                                    {{nationality.name}}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
+                          </div>
+                          <!-- identification end -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="otherList mt-3">
+                </div>
+              </div>
+            </div>
+            <div class="container p-2">
+              <div class="container p-2">
+                <h3 class="mt-2 mb-2 amt p-2">Contact Details</h3>
+                <div class="adultDetailsForm">
+                  <div class="adultItemRow row contactDetilsContainer">
+                    <div class="col-lg-4 col-md-6 col-12">
+                      <p class="lables"><span>*</span> E-Mail</p>
+                      <mat-form-field class="w-100" appearance="outline">
+                        <input #EMailBookingForm matInput placeholder="Email" formControlName="email" />
+                      </mat-form-field>
+                    </div>
+                    <div class="col-lg-4  col-md-6 col-12">
+                      <p class="lables"><span>*</span> Phone no</p>
+                      <ngx-intl-tel-input #PhoneNoBookingForm [cssClass]="''" formControlName="phone"
+                        [enableAutoCountrySelect]="true" (ngModelChange)="countryChange($event)"
+                        [enablePlaceholder]="true" [searchCountryFlag]="true" [phoneValidation]="true"
+                        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                        [selectFirstCountry]="true" [phoneValidation]="true" [separateDialCode]="true" name="phone">
+                      </ngx-intl-tel-input>
+                    </div>
+
+                  </div>
+                </div>
+                <span class="p-2">Your booking details will send to this email address and mobile
+                  number.</span>
+                <div style="border-bottom: 2px dashed #000000; padding-bottom: 30px !important;" class="p-2">
+                  <div class="d-flex row">
+                    <mat-checkbox class="checkInput col-lg-4 col-12" formControlName="Newsletter">
+                      Subscribe
+                      to Wadiia Newsletter</mat-checkbox>
+                    <mat-checkbox class="checkInput col-lg-4 col-12" formControlName="Newsletter">
+                      Save
+                      this
+                      information for next booking</mat-checkbox>
+                    <mat-checkbox class="checkInput col-lg-4 col-12" formControlName="termAndCondition">I agree to the
+                      terms &
+                      conditions
+                      of
+                      Wadiia
+                    </mat-checkbox>
+                  </div>
+                </div>
+              </div>
+              <div class="container baggage p-2">
+                <h3 class="mt-3 mb-2 amt p-2">Cabin or carry-on baggage</h3>
+                <p style="padding-left: 10px;">Includes smaller bags that can be taken into the cabin and stored in the
+                  overhead locker or under
+                  your seat. The personal item’s weight can be up to 10 kg.</p>
+
+                <div class="d-flex justify-content-between mt-5 p-2">
+                  <div class="small-bag align-item-center" *ngIf="freeAdultBaggageArray.length != 0">
+                    <div class="text-center bag">
+                      <h4>1x Personal Item</h4>
+                      <p>Must fit under front seat </p>
+                      <p class="amt">ZAR 0</p>
+                      <img class="sbag" src="/assets/images/small-bag.png" width="64px" alt="">
+                    </div>
+                  </div>
+                  <div class="mediam-bag" *ngIf="freeAdultBaggageArray.length != 0 || adultBaggageArray.length != 0">
+                    <div class="text-center bag ">
+                      <h4 *ngIf="getCabinCount() === 0">{{getCarryBaggageTypeCount(i)}} x Cabin Bag</h4>
+                      <h4 *ngIf="getCabinCount() === 1"> {{getCarryBaggageTypeCount(i) + 1 }} x Cabin Bag</h4>
+                      <p>Must fit under front seat </p>
+                      <p *ngIf="!getCarryBaggageCount(i)" class="amt">ZAR 0</p>
+                      <p *ngIf="getCarryBaggageCount(i)" class="amt">{{baggage[0]?.bagInfo.currencyCode + '
+                        '}}{{getAllCarryOnBagPrice(i)}}</p>
+                      <img class="mbag" src="/assets/images/mediam-bag.png" width="75px" alt="">
+                      <!-- {{getAllCarryOnBagPrice(i)}} -->
+                    </div>
+                  </div>
+                  <div style="background: rgba(189, 9, 9, 0.3);margin: 0 auto;" class="noBaggage p-3"
+                    *ngIf="freeAdultBaggageArray.length == 0">
+                    <p>No-cabin-bag itineraries................................. for Cabin Bag</p>
+                  </div>
+                  <!-- adult free baggage code start -->
+                  <div class="tableSection">
+                    <!-- <h3 *ngIf="freeAdultBaggageArray.length != 0" class="text-center mb-1">Free Baggage</h3> -->
+                    <table class="table text-center freeBaggage">
+                      <tbody>
+                        <tr class="trColor" *ngFor="let bag of freeAdultBaggageArray;">
+                          <td class="tdText">
+                            <!-- <p title="{{bag.serviceDescription}}"
+                              title="{{bag.serviceDescription}}"> CARRYON HAND BAGGAGE </p> -->
+                            <p title="{{bag.serviceDescription}}" *ngIf="checkBag(bag.text) == 'cabin'"> CABIN BAGGAGE
+                            </p>
+                            <p title="{{bag.serviceDescription}}"> {{bag.text}}
+                            </p>
+                            <!-- <p title="{{bag.serviceDescription}}"> {{bag.DESCRIPTION1 ? bag.DESCRIPTION1 : bag.COMMERCIAL_NAME}} </p> -->
+                          </td>
+                          <td class="freeBags">
+                            <p>ZAR 0 </p>
+                          </td>
+                          <td>
+                            <div class="d-flex justify-content-around rectangle">
+                              <input style="font-weight: 500;" readonly matInput type="text" value="1" />
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- adult baggage code start -->
+                    <table class="table table-striped text-center">
+                      <tbody>
+                        <tr class="trColor" *ngFor="let bag of adultBaggageArray; let j = index">
+                          <td>
+                            <p> {{bag.bookingCode}}</p>
+                          </td>
+                          <td>
+                            <p> {{bag.currencyCode}} {{bag.price}} </p>
+                          </td>
+                          <td>
+                            <div class="d-flex justify-content-around rectangle">
+                              <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove"
+                                (click)="decreseCarryOnBag(carryOnBag.value,j, bag,i);">
+                                <i class="icon-remove-circle"></i>
+                              </button>
+                              <input style="font-weight: 700;" matInput readonly type="text"
+                                [value]="getCarryBaggageVal(i,j)" #carryOnBag />
+                              <button class="w-25" mat-button mat-icon-button matSuffix aria-label="Add"
+                                (click)="increseCarryOnBag(carryOnBag.value,j, bag,i)">
+                                <i class="icon-add-circle-outline"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <!-- <h4 class="tablePrice mt-2">MAS 2300.30</h4> -->
+                    <h4 *ngIf="adultBaggageArray.length != 0" class="tablePrice mt-2">
+                      {{baggage[0]?.bagInfo.currencyCode + ' '}}{{getAllCarryOnBagPrice(i)}}
+                    </h4>
+                  </div>
+                  <!-- adult free baggage code end -->
+                </div>
+
+                <div class="mt-3" *ngIf="freeAdultBaggageArray.length != 0 || adultBaggageArray.length != 0">
+                  <p><i class="icon-Vector"></i>&nbsp;&nbsp;Tip: 1)Travel safely by adding a checked bag instead. You
+                    can take less on board and avoid moving around the cabin.</p>
+                  <div class="px-5">
+                    <p class="tips">2) Due to trvelling regulation we only allow <span>One</span>
+                      cabin baggage per passenger. If you need an extra cabin
+                      baggage please contact our <span>customer Services</span></p>
+                  </div>
+                </div>
+                <!-- adult luggage code start -->
+                <div class="checkedBaggage mt-5 p-2">
+                  <h3 class="amt">Checked Baggage</h3>
+                  <p>Includes larger baggage items that you must deposit at the airline check-in counter before going
+                    through security at the airport.</p>
+                  <div class="d-flex justify-content-between mt-3">
+                    <div class="text-center" [ngClass]="getLuggageCount(i) == 0 ? 'noBaggage' :'bigBag' ">
+                      <h4>{{getLuggageCount(i)}} × checked bags</h4>
+                      <p>2xbag 1- 25 kg</p>
+                      <p *ngIf="getLuggageCount(i)" class="amt">{{luggage[0]?.bagInfo.currencyCode + '
+                        '}}{{getAllBagPrice(i)}}</p>
+                      <div class="d-flex justify-content-around mt-2">
+                        <div class="p-2">
+                          <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                          <p>119 × 81 × 119 cm</p>
+                        </div>
+                        <div class="p-2" *ngIf="getLuggageTypeCount(i)>1">
+                          <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                          <p>119 × 81 × 119 cm</p>
+                        </div>
+                        <div class="p-2" *ngIf="getLuggageTypeCount(i)>2">
+                          <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                          <p>119 × 81 × 119 cm</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tableSection">
+                      <table class="table text-center">
+                        <tbody>
+                          <tr style="background: rgba(34, 189, 9, 0.3);" *ngFor="let bag of adultFreeLuggage">
+                            <td class="tdText">
+                              <p> FREE LUGGAGE ALLOWANCE </p>
+                            </td>
+                            <td class="freeBags">
+                              <p> ZAR 0 </p>
+                            </td>
+                            <td>
+                              <div class="d-flex justify-content-around rectangle">
+                                <input style="font-weight: 700;" matInput type="text" readonly value="1"
+                                  *ngIf="selectedFlight.fareHeader.fareHasFreeBaggage" />
+                                <input style="font-weight: 700;" matInput type="text" readonly value="0"
+                                  *ngIf="!selectedFlight.fareHeader.fareHasFreeBaggage" />
+                              </div>
+                            </td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                      <div class="p-3" style="background: rgba(189, 9, 9, 0.3)" *ngIf="adultLuggageArray.length === 0">
+                        <h3 style="margin: 0;" class="text-center">Paid Luggage service not found.</h3>
+                      </div>
+                      <table class="table table-striped text-center">
+                        <tbody>
+                          <tr *ngFor="let bag of adultLuggageArray; let j = index">
+                            <td class="tdText">
+                              <p *ngIf="bag.text != ''"> {{bag.text}}</p>
+                              <p *ngIf="bag.text == ''"> {{bag.bookingCode}}</p>
+                            </td>
+                            <td class="tdPrice" style="text-align:  right;">
+                              <p class="tdPrice"> {{bag.currencyCode}} {{bag.price}} </p>
+                            </td>
+                            <td class="tdBtn">
+                              <div style="width:50px;" class="d-flex justify-content-around rectangle">
+                                <button class="w-25 disble" mat-button mat-icon-button matPrefix aria-label="Remove"
+                                  (click)="decreseLuggageBag(luggageBag.value,j, bag,i)"
+                                  [disabled]="disabledButton(i,j)">
+                                  <i [ngClass]="disabledButton(i,j) == true ? 'disble' :'' "
+                                    class="icon-remove-circle"></i>
+                                </button>
+                                <input style="font-weight: 700;" matInput readonly type="text"
+                                  [value]="getLuggageVal(i,j)" #luggageBag />
+                                <button class="w-25 disble" [disabled]="disabledButton(i,j)" mat-button mat-icon-button
+                                  matSuffix aria-label="Add" (click)="increseLuggageBag(luggageBag.value,j, bag,i)">
+                                  <i [ngClass]="disabledButton(i,j) == true ? 'disble' :'' "
+                                    class="icon-add-circle-outline"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <h4 *ngIf="getLuggageCount(i)" class="tablePrice mt-2">
+                        {{luggage[0]?.bagInfo.currencyCode + ' '}}{{getAllBagPrice(i) | number : '1.2-2'}}</h4>
+                    </div>
+                  </div>
+                  <p class="mt-3"><i class="icon-Vector"></i> &nbsp;Tip: Due to trvelling regulation we only allow Nine
+                    checked baggages per passenger. If you need an extra cabin baggage please contact our customer
+                    Services </p>
+                </div>
+                <!-- adult luggage code end -->
+              </div>
+              <div class="btns container d-flex justify-content-between p-3">
+                <button type="button" class="btnBack" (click)="onPrevious(i)">Back</button>
+                <button type="button" class="btnContinu" (click)="onNext(i)">CONTINUE</button>
+              </div>
+            </div>
+          </mat-card>
+        </mat-tab>
+      </div>
+      <div formArrayName="childArray" [ngClass]="updatedWidth">
+        <mat-tab *ngFor="let traveller of childTravellers().controls; let i = index;">
+          <ng-template mat-tab-label *ngIf="!isBelowLg">
+            <div style="width: 170px;" class="d-flex justify-content-between">
+              <div>
+                <p style="margin: 0;">{{(child.value[i].firstName ? child.value[i].firstName : 'Name '+(i+1)) |
+                  titlecase}}</p>
+                <span class="smallText">Childrean {{i+1}} </span>
+              </div>
+              <img class="validationIcon" *ngIf="child.controls[i].status === 'VALID'"
+                src="../../../../assets/images/rightIcon.png" width="26px" height="26" alt="">
+              <img class="validationIcon" *ngIf="child.controls[i].status === 'INVALID'"
+                src="../../../../assets/images/crossIcon.png" width="26px" height="26" alt="">
+            </div>
+          </ng-template>
+          <mat-card *ngIf="!isBelowLg" style="margin: 1px 2px;" [formGroupName]="i">
+            <div class="container p-2">
+              <div class="adultListWrapper">
+                <div class="container">
+                  <div class="AdultFormWrapper collapse show">
+                    <div class="adultDetailsForm">
+                      <div class="adultDetailsInnner">
+                        <div>
+                          <mat-form-field style="margin-left: 8px;" appearance="outline" *ngIf="isLoggedIn">
+                            <mat-select class="spaceShift" matNativeControl required #mySelect
+                              placeholder="Select Traveller" (selectionChange)="patchSavedTraveller($event,i,'child')">
+                              <mat-option [value]="m" *ngFor="let item of savedTraveller; let m = index">
+                                {{item.firstName + ' ' + item.lastName}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <div class="adultItemRow mt-3">
+                            <div class="d-flex container row justify-content-between bookFormDiv1">
+                              <div class=" col-3 col-lg-1">
+                                <p class="lables w-100"><span>*</span> Prefix</p>
+                                <mat-form-field class="w-100" appearance="outline">
+                                  <mat-select #PrefixBookingForm placeholder="Select Prefix" formControlName="prefix">
+                                    <mat-option value="Mr">Mr</mat-option>
+                                    <mat-option value="Mrs">Mrs</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-lg-2 col-8">
+                                <p class="lables"><span>*</span> First Name</p>
+                                <mat-form-field appearance="outline">
+                                  <input #FirstNameChildBookingForm matInput placeholder="First Name"
+                                    formControlName="firstName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-lg-2 col-6">
+                                <p class="lables"><span>*</span> Middle Name</p>
+                                <mat-form-field appearance="outline">
+                                  <input matInput #middleNameChildBookingForm placeholder="Middle Name"
+                                    formControlName="middleName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-lg-2 col-6">
+                                <p class="lables"><span>*</span> Last Name</p>
+                                <mat-form-field appearance="outline">
+                                  <input #LastNameChildBookingForm matInput placeholder="Last Name"
+                                    formControlName="lastName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-lg-3 col-6 birthdateCalender1"
+                                [ngClass]="{'moreThan': childAge < 12 || childAge > 18}">
+                                <p class="lables"><span>*</span> Birth Date</p>
+
+                                <input #BirthDateChildBookingForm type="text" ngxDaterangepickerMd
+                                  formControlName="dateOfBirth" class="form-control dateRange" name="daterange"
+                                  [showDropdowns]="true" [locale]="{
+                                    customRangeLabel: 'Pick a date...',
+                                    applyLabel: 'Apply',
+                                    clearLabel: 'Clear',
+                                    format: 'DD-MM-YYYY',
+                                    firstDay: 1
+                                  }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                                <span style="color: red;" *ngIf="childAge < 12 || childAge > 18">Child age is greter
+                                  than 12 yrs and less than 18</span>
+                              </div>
+                            </div>
+                          </div>
+                          <h3 class="my-3 p-2">Form of Identification</h3>
+                          <div class="adultItemRow row">
+                            <div class="col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Document Type</p>
+                              <mat-form-field class="w-100" appearance="outline">
+                                <mat-select #DocumentTypeChildBookingForm placeholder="Select Document"
+                                  formControlName="documentType">
+                                  <mat-option value="Passport">Passport</mat-option>
+                                  <mat-option value="Personal ID">Personal ID</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Document ID</p>
+                              <mat-form-field class="w-100" appearance="outline">
+                                <input #DocumentIdChildBookingForm matInput placeholder="Document Id"
+                                  formControlName="documentId" />
+                              </mat-form-field>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Country of Issuing </p>
+                              <mat-form-field class="w-100" appearance="outline">
+                                <mat-select placeholder="Country" #singleSelect formControlName="country">
+                                  <mat-option>
+                                    <ngx-mat-select-search placeholderLabel="Search country..."
+                                      (keyup)="showCountryResult($event)"></ngx-mat-select-search>
+                                  </mat-option>
+                                  <mat-option *ngFor="let country of allCountry" [value]="country.name">
+                                    {{country.name}}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
+                          </div>
+                          <div class="adultItemRow row">
+                            <div class="col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Issued Date</p>
+
+                              <input #IssuedDateChildBookingForm type="text" ngxDaterangepickerMd
+                                formControlName="issuedDate" class="form-control dateRange" name="daterange"
+                                [showDropdowns]="true" [locale]="{
+                                    customRangeLabel: 'Pick a date...',
+                                    applyLabel: 'Apply',
+                                    clearLabel: 'Clear',
+                                    format: 'DD-MM-YYYY',
+                                    firstDay: 1
+                                  }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Valid Till</p>
+
+                              <input #ValidTillChildBookingForm type="text" ngxDaterangepickerMd
+                                formControlName="validTill" class="form-control dateRange" name="daterange"
+                                [showDropdowns]="true" [locale]="{
+                                    customRangeLabel: 'Pick a date...',
+                                    applyLabel: 'Apply',
+                                    clearLabel: 'Clear',
+                                    format: 'DD-MM-YYYY',
+                                    firstDay: 1
+                                  }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-6">
+                              <p class="lables"><span>*</span> Nationality</p>
+                              <mat-form-field class="w-100" appearance="outline">
+                                <mat-select id="NationalityChildBookingForm" placeholder="Nationality" #singleSelect
+                                  formControlName="nationality">
+                                  <mat-option>
+                                    <ngx-mat-select-search placeholderLabel="Search country..."
+                                      (keyup)="showNationalityResult($event)"></ngx-mat-select-search>
+                                  </mat-option>
+                                  <mat-option *ngFor="let nationality of nationality" [value]="nationality.name">
+                                    {{nationality.name}}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="otherList mt-3">
+                </div> -->
+              </div>
+            </div>
+            <div class="container p-2">
+              <h3 class="mt-2 mb-2 amt p-2">Contact Details</h3>
+              <div class="adultDetailsForm">
+                <div class="adultItemRow row contactDetilsContainer">
+                  <div class="col-lg-4 col-md-6 col-12">
+                    <p class="lables"><span>*</span> E-Mail</p>
+                    <mat-form-field class="w-100" appearance="outline">
+                      <input #EMailChildBookingForm matInput placeholder="Email" formControlName="email" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-4 col-md-6  col-12">
+                    <p class="lables"><span>*</span> Phone no</p>
+                    <ngx-intl-tel-input #PhoneNoBookingFormChild [cssClass]="''" formControlName="phone"
+                      [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                      [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                      [selectFirstCountry]="true" [phoneValidation]="true" [separateDialCode]="true" name="phone">
+                    </ngx-intl-tel-input>
+                  </div>
+                  <div class="inputStyle2">
+                    <div class="w-100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container baggage p-2">
+              <h3 class="mt-3 mb-2 amt p-2">Cabin or carry-on baggage</h3>
+              <p>Includes smaller bags that can be taken into the cabin and stored in the overhead locker or under
+                your
+                seat. The personal item’s weight can be up to 10 kg.</p>
+              <!-- child baggage code start -->
+              <div class="d-flex justify-content-between mt-5 p-2">
+                <div class="small-bag align-item-center" *ngIf="freeAdultBaggageArray.length == 0">
+                  <div class="text-center bag">
+                    <h4>1x personal item</h4>
+                    <p>Must fit under front seat </p>
+                    <p class="amt">0</p>
+                    <img class="sbag" src="/assets/images/small-bag.png" width="64px" alt="">
+                  </div>
+                </div>
+                <div class="mediam-bag" *ngIf="freeAdultBaggageArray.length != 0 || adultBaggageArray.length != 0">
+                  <div class="text-center bag ">
+                    <h4 *bgIf="getCabinCount() === 0">{{getCarryBaggageTypeCount(i)}} x Cabin Bag</h4>
+                    <h4 *ngIf="getCabinCount()"> {{getCarryBaggageTypeCount(i) + 1 }} x Cabin Bag</h4>
+                    <p>Must fit under front seat </p>
+                    <p *ngIf="!getCarryBaggageCount(i)" class="amt">ZAR 0</p>
+                    <p *ngIf="getCarryBaggageCount(i)" class="amt">{{baggage[0]?.bagInfo.currencyCode + '
+                      '}}{{getAllCarryOnBagPrice(i)}}</p>
+                    <img class="mbag" src="/assets/images/mediam-bag.png" width="75px" alt="">
+                    <!-- {{getAllCarryOnBagPrice(i)}} -->
+                  </div>
+                </div>
+                <div class="tableSection">
+                  <table class="table text-center freeBaggage">
+                    <tbody>
+                      <tr class="trColor" *ngFor="let bag of freeAdultBaggageArray;">
+                        <td class="tdText">
+                          <p title="{{bag.serviceDescription}}"> {{bag.text}} </p>
+                        </td>
+                        <td class="freeBags">
+                          <p>{{bag.currencyCode}} 0 </p>
+                        </td>
+                        <td>
+                          <div class="d-flex justify-content-around rectangle">
+                            <input style="font-weight: 500;" readonly matInput type="text" value="1" />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table class="table table-striped text-center">
+                    <tbody>
+                      <tr class="trColor" *ngFor="let bag of childBaggageArray; let j = index">
+                        <td>
+                          <p> {{bag.bookingCode}}</p>
+                        </td>
+                        <td>
+                          <p> {{bag.currencyCode}} {{bag.price}} </p>
+                        </td>
+                        <td>
+                          <div class="d-flex justify-content-around rectangle">
+                            <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove"
+                              (click)="decreseChildCarryOnBag(carryOnBag.value,j, bag,i)">
+                              <i class="icon-remove-circle"></i>
+                            </button>
+                            <input style="font-weight: 700;" matInput readonly type="text"
+                              [value]="getChildCarryBaggageVal(i,j)" #carryOnBag />
+                            <button class="w-25" mat-button mat-icon-button matSuffix aria-label="Add"
+                              (click)="increseChildCarryOnBag(carryOnBag.value,j, bag,i)">
+                              <i class="icon-add-circle-outline"></i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="background: rgba(189, 9, 9, 0.3); margin: 0 auto;" class="noBaggage p-3"
+                  *ngIf="freeAdultBaggageArray.length == 0">
+                  <p>No-cabin-bag itineraries................................. for Cabin Bag</p>
+                </div>
+              </div>
+              <!-- child baggage code end -->
+              <div class="mt-3">
+                <p><i class="icon-Vector"></i>&nbsp;&nbsp;Tip: 1)Travel safely by adding a checked bag instead. You
+                  can take less on board and avoid moving around the cabin.</p>
+                <div class="px-5">
+                  <p class="tips">2) Due to trvelling regulation we only allow <span>One</span>
+                    cabin baggage per passenger. If you need an extra cabin
+                    baggage please contact our <span>customer Services</span></p>
+                </div>
+              </div>
+              <!-- child luggage code start -->
+
+              <div class="checkedBaggage mt-5 p-2">
+                <h3 class="amt">Checked Baggage</h3>
+                <p>Includes larger baggage items that you must deposit at the airline check-in counter before going
+                  through security at the airport.</p>
+                <div class="d-flex justify-content-between mt-3">
+                  <div class="text-center" [ngClass]="getChildLuggageCount(i) == 0 ? 'noBaggage' :'bigBag' ">
+                    <h4>{{getChildLuggageCount(i)}} × checked bags</h4>
+                    <p>2xbag 1- 25 kg</p>
+                    <p *ngIf="luggage.length" class="amt">{{luggage[0].bagInfo.currencyCode + '
+                      '}}{{getChildAllBagPrice(i)}}</p>
+                    <div class="d-flex mt-2">
+                      <div class="p-2">
+                        <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                      </div>
+                      <div class="p-2" *ngIf="getChildLuggageTypeCount(i)>1">
+                        <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                      </div>
+                      <div class="p-2" *ngIf="getChildLuggageTypeCount(i)>2">
+                        <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tableSection">
+                    <table *ngIf="freeChildBaggageArray == 0" class="table text-center">
+                      <tbody>
+                        <tr style="background: rgba(34, 189, 9, 0.3);" *ngFor="let bag of childFreeLuggage">
+                          <td class="tdText">
+                            <p> {{bag.text}} </p>
+                          </td>
+                          <td class="freeBags">
+                            <p>ZAR 0 </p>
+                          </td>
+                          <td>
+                            <div class="d-flex justify-content-around rectangle">
+                              <input style="font-weight: 700;" matInput type="text" readonly value="1"
+                                *ngIf="selectedFlight.fareHeader.fareHasFreeBaggage" />
+                              <input style="font-weight: 700;" matInput type="text" readonly value="0"
+                                *ngIf="!selectedFlight.fareHeader.fareHasFreeBaggage" />
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="p-3" style="background: rgba(189, 9, 9, 0.3)" *ngIf="childLuggageArray.length === 0">
+                      <h3 style="margin: 0;" class="text-center">Luggage service not found.</h3>
+                    </div>
+                    <table class="table table-striped text-center">
+                      <tbody>
+                        <tr *ngFor="let bag of childLuggageArray; let j = index">
+                          <td class="tdText">
+                            <p *ngIf="bag.text != ''"> {{bag.text}}</p>
+                            <p *ngIf="bag.text == ''"> {{bag.bookingCode}}</p>
+                          </td>
+                          <td>
+                            <p class="tdPrice"> {{bag.currencyCode}} {{bag.price}} </p>
+                          </td>
+                          <td class="tdBtn">
+                            <div style="width: 50px;" class="d-flex justify-content-around rectangle">
+                              <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove"
+                                (click)="decreseChildLuggageBag(childLuggageBag.value,j, bag,i)"
+                                [disabled]="disabledChildButton(i,j)">
+                                <i [ngClass]="disabledChildButton(i,j) == true ? 'disble' :'' "
+                                  class="icon-remove-circle"></i>
+                              </button>
+                              <input style="font-weight: 700;" matInput readonly type="text"
+                                [value]="getChildLuggageVal(i,j)" #childLuggageBag />
+                              <button class="w-25" [disabled]="getChildLuggageVal(i,j) == 3" mat-button mat-icon-button
+                                matSuffix aria-label="Add"
+                                (click)="increseChildLuggageBag(childLuggageBag.value,j, bag,i)"
+                                [disabled]="disabledChildButton(i,j)">
+                                <i [ngClass]="disabledChildButton(i,j) == true ? 'disble' :'' "
+                                  class="icon-add-circle-outline"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h4 *ngIf="childLuggageArray.length > 0" class="tablePrice mt-2">
+                      {{childLuggage[0]?.bagInfo.currencyCode + ' '}}{{getChildAllBagPrice(i)}}</h4>
+                  </div>
+                </div>
+                <p class="mt-3"><i class="icon-Vector"></i> &nbsp;Tip: Due to trvelling regulation we only allow Nine
+                  checked baggages per passenger. If you need an extra cabin baggage please contact our customer
+                  Services </p>
+              </div>
+              <!-- child luggage code end -->
+            </div>
+
+            <div class="btns container d-flex justify-content-between p-3">
+              <button #BtnBackChild type="button" class="btnBack"
+                (click)="onPrevious(passangerInfo.adultPassengers.passengers.length + i)">Back</button>
+              <button #BtnContinueChild type="button" class="btnContinu"
+                (click)="onNext(passangerInfo.adultPassengers.passengers.length + i)">CONTINUE</button>
+            </div>
+          </mat-card>
+        </mat-tab>
+      </div>
+      <div formArrayName="infantArray" [ngClass]="updatedWidth">
+        <mat-tab label="{{(infant.value[i].firstName ? infant.value[i].firstName : 'Infant '+(i+1)) | titlecase}}"
+          *ngFor="let traveller of infantTravellers().controls; let i = index">
+          <ng-template mat-tab-label *ngIf="!isBelowLg">
+            <div class="d-flex justify-content-between">
+
+              <div style="width: 170px;" class="d-flex justify-content-between">
+                <div>
+                  <p style="margin: 0;">{{(infant.value[i].firstName ? infant.value[i].firstName : 'Name '+(i+1)) |
+                    titlecase}}</p>
+                  <span class="smallText">Infant {{i+1}} </span>
+                </div>
+                <img class="validationIcon" *ngIf="infant.controls[i].status === 'VALID'"
+                  src="../../../../assets/images/rightIcon.png" width="26px" height="26" alt="">
+                <img class="validationIcon" *ngIf="infant.controls[i].status === 'INVALID'"
+                  src="../../../../assets/images/crossIcon.png" width="26px" height="26" alt="">
+              </div>
+
+            </div>
+          </ng-template>
+          <mat-card *ngIf="!isBelowLg" style="margin: 1px 2px;" [formGroupName]="i">
+            <div class="container p-2">
+              <div class="adultListWrapper">
+                <div class="container">
+                  <div class="AdultFormWrapper collapse show">
+                    <div class="adultDetailsForm">
+                      <div class="adultDetailsInnner">
+                        <div>
+                          <mat-form-field style="margin-left: 8px;" appearance="outline" *ngIf="isLoggedIn">
+                            <mat-select class="spaceShift" matNativeControl required #mySelect
+                              placeholder="Select Traveller" (selectionChange)="patchSavedTraveller($event,i,'infant')">
+                              <mat-option [value]="m" *ngFor="let item of savedTraveller; let m = index">
+                                {{item.firstName + ' ' + item.lastName}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <div class="adultItemRow mt-3">
+                            <div class="d-flex container row justify-content-between bookFormDiv1">
+                              <div class="col-3 col-lg-1">
+                                <p class="lables w-100"><span>*</span> Prefix</p>
+                                <mat-form-field class="w-100" appearance="outline">
+                                  <mat-select #PrefixInfantBookingForm placeholder="Select Prefix"
+                                    formControlName="prefix">
+                                    <mat-option value="Mr">Mr</mat-option>
+                                    <mat-option value="Mrs">Mrs</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-8 col-lg-2">
+                                <p class="lables"><span>*</span> First Name</p>
+                                <mat-form-field appearance="outline">
+                                  <input #FirstnameInfantBookingForm matInput placeholder="First Name"
+                                    formControlName="firstName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-6 col-lg-2">
+                                <p class="lables"><span>*</span> Middle Name</p>
+                                <mat-form-field appearance="outline">
+                                  <input #MiddleNameInfantBookingForm matInput placeholder="Middle Name"
+                                    formControlName="middleName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-6 col-lg-2">
+                                <p class="lables"><span>*</span> Last Name</p>
+                                <mat-form-field appearance="outline">
+                                  <input #LastNameInfantBookingForm matInput placeholder="Last Name"
+                                    formControlName="lastName" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-8 col-lg-3 birthdateCalender1"
+                                [ngClass]="{'moreThan': infantAge < 2 || infantAge > 12}">
+                                <p class="lables"><span>*</span> Birth Date</p>
+
+                                <input #BirthDateInfantBookingForm type="text" ngxDaterangepickerMd
+                                  formControlName="dateOfBirth" class="form-control dateRange" name="daterange"
+                                  [showDropdowns]="true" [locale]="{
+                                    customRangeLabel: 'Pick a date...',
+                                    applyLabel: 'Apply',
+                                    clearLabel: 'Clear',
+                                    format: 'DD-MM-YYYY',
+                                    firstDay: 1
+                                  }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+
+                                <span style="color: red;" *ngIf="infantAge < 2 || infantAge > 12">Infant age is greter
+                                  than 2 yrs and less than 12</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="otherList mt-3">
+                </div>
+              </div>
+            </div>
+            <div class="btns container d-flex justify-content-between p-3">
+              <button #BtnBackInfantBookingForm type="button" class="btnBack"
+                (click)="onPrevious(passangerInfo.adultPassengers.passengers.length + passangerInfo.childPassengers.passengers.length + i)">Back</button>
+              <button #BtnContinueInfantBookingForm type="button" class="btnContinu"
+                (click)="onNext(passangerInfo.adultPassengers.passengers.length + passangerInfo.childPassengers.passengers.length + i)">CONTINUE</button>
+            </div>
+          </mat-card>
+        </mat-tab>
+      </div>
+    </form>
+  </mat-tab-group>
+</div>
+
+<section class="travellData mobileExpansionPanelC" *ngIf="isBelowLg">
+  <form [formGroup]="travellerForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="adultArray" [ngClass]="updatedWidth">
+      <div *ngFor="let traveller of adultTravellers().controls; let i = index" (click)="onAdultClick(i);">
+        <mat-accordion *ngIf="isBelowLg">
+          <mat-expansion-panel  style="margin: 3px 0;">
+            <mat-expansion-panel-header>
+              <mat-panel-title >
+                  <div class="expansionContainer d-flex justify-content-between">
+                    <div>
+                      <p style="margin: 0;">{{(adult.value[i].firstName ? adult.value[i].firstName : 'Name '+(i+1)) |
+                        titlecase}}</p>
+                      <span class="smallText">Adult {{i+1}} </span>
+                    </div>
+                    <img class="validationIcon" *ngIf="adult.controls[i].status === 'VALID'"
+                      src="../../../../assets/images/rightIcon.png" width="26px" height="26" alt="">
+                    <img class="validationIcon" *ngIf="adult.controls[i].status === 'INVALID'"
+                      src="../../../../assets/images/crossIcon.png" width="26px" height="26" alt="">
+                  </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-card style="margin: 1px 2px;" [formGroupName]="i">
+              <div class="container p-2">
+                <div class="adultListWrapper">
+                  <div class="container">
+                    <div class="AdultFormWrapper collapse show">
+                      <div class="adultDetailsForm">
+                        <div class="adultDetailsInnner">
+                          <div>
+                            <mat-form-field style="margin-left: 8px;" appearance="outline"
+                              *ngIf="isLoggedIn && savedTraveller.length">
+                              <mat-select class="spaceShift" matNativeControl required #mySelect
+                                placeholder="Select Traveller" (selectionChange)="patchSavedTraveller($event,i,'adult')">
+                                <mat-option [value]="m" *ngFor="let item of savedTraveller; let m = index">
+                                  {{item.firstName + ' ' + item.lastName}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            <div class="mt-3">
+                              <div class="container row justify-content-between bookFormDiv1">
+                                <div class="col-3 col-lg-1">
+                                  <p class="lables w-100"><span>*</span> Prefix</p>
+                                  <mat-form-field #mrmsIdBookingForm class="w-100" appearance="outline">
+                                    <mat-select #mrmsSelectBookingForm placeholder="Select Document" formControlName="prefix"
+                                      [ngClass]="{'invalidField': adult.controls[i].get('prefix')?.status === 'INVALID' && submitted}">
+                                      <mat-option value="Mr">Mr</mat-option>
+                                      <mat-option value="Mrs">Mrs</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-8 col-lg-2">
+                                  <p class="lables"><span>*</span> First Name</p>
+                                  <mat-form-field appearance="outline"
+                                    [ngClass]="{'invalidField': adult.controls[i].get('firstName')?.status === 'INVALID' && submitted}">
+                                    <input #NameBookingForm matInput placeholder="First Name" formControlName="firstName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-6 ml-sm-2 col-lg-2">
+                                  <p class="lables"> &nbsp; Middle Name</p>
+                                  <mat-form-field appearance="outline">
+                                    <input #middleNameBookingForm matInput placeholder="Middle Name" formControlName="middleName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-6 col-lg-2">
+                                  <p class="lables"><span>*</span> Last Name</p>
+                                  <mat-form-field appearance="outline"
+                                    [ngClass]="{'invalidField': adult.controls[i].get('lastName')?.status === 'INVALID' && submitted}">
+                                    <input #LastNameBookingForm matInput placeholder="Last Name" formControlName="lastName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-6 bithDateMobile birthdateCalender1 col-lg-3" [ngClass]="{'moreThan': adultAge < 18}">
+                                  <p class="lables"><span>*</span> Birth Date</p>
+                                  
+                                  <input #BirthDateBookingForm type="text" name="daterange" ngxDaterangepickerMd formControlName="dateOfBirth"
+                                    [showDropdowns]="true" [locale]="calendarLocale1"
+                                    [placeholder]="calendarPlaceholder" class="form-control dateRange"
+                                    [singleDatePicker]="true" />
+                                  <span style="color: red;"
+                                    [ngStyle]="{'display': adultAge >= 18 ? 'none' : 'inline'}">Adult age is greter than
+                                    18 yrs old
+                                  </span>
+                                </div>
+                              </div>
+                              <!-- identification end -->
+                            </div>
+                            <!-- simple info end -->
+                            <!-- identification start -->
+                            <h3 class="my-3 p-2">Form of Identification</h3>
+                            <div class="adultItemRow row">
+                              <div class=" col-lg-4 col-md-6 col-6">
+                                <p class="lables"><span>*</span> Document Type</p>
+                                <mat-form-field class="w-100" appearance="outline"
+                                  [ngClass]="{'invalidField': adult.controls[i].get('documentType')?.status === 'INVALID' && submitted}">
+                                  <mat-select #DocumentTypeBookingForm placeholder="Select Document" formControlName="documentType">
+                                    <mat-option value="Passport">Passport</mat-option>
+                                    <mat-option value="Personal ID">Personal ID</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                              <div class=" col-lg-4 col-md-6 col-6">
+                                <p class="lables"><span>*</span> Document ID</p>
+                                <mat-form-field class="w-100" appearance="outline"
+                                  [ngClass]="{'invalidField': adult.controls[i].get('documentId')?.status === 'INVALID' && submitted}">
+                                  <input #DocumentIdBookingForm matInput placeholder="Document Id" formControlName="documentId" />
+                                </mat-form-field>
+                              </div>
+                              <div class=" col-lg-4 col-md-6 col-6">
+                                <p class="lables"><span>*</span> Country of Issuing </p>
+                                <mat-form-field class="w-100" appearance="outline"
+                                  [ngClass]="{'invalidField': adult.controls[i].get('country')?.status === 'INVALID' && submitted}">
+                                  <mat-select #CountryOfIssuongBookingForm placeholder="Country" #singleSelect formControlName="country">
+                                    <mat-option>
+                                      <ngx-mat-select-search placeholderLabel="Search country..."
+                                        (keyup)="showCountryResult($event)"></ngx-mat-select-search>
+                                    </mat-option>
+                                    <mat-option *ngFor="let country of allCountry" [value]="country.name">
+                                      {{country.name}}
+                                    </mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                              <div *ngIf="isBelowLg" class="col-lg-4 col-md-6 col-6 issuedDateMobile birthdateCalender">
+                                <p class="lables"><span>*</span> Issued Date</p>
+                               
+  
+                                <input #IssuesDateBookingForm type="text" ngxDaterangepickerMd formControlName="issuedDate"
+                                  class="form-control dateRange" name="daterange" [showDropdowns]="true"
+                                  [locale]="{
+                                      customRangeLabel: 'Pick a date...',
+                                      applyLabel: 'Apply',
+                                      clearLabel: 'Clear',
+                                      format: 'DD-MM-YYYY',
+                                      firstDay: 1 }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                              </div>
+                            </div>
+                            <div class="adultItemRow row">
+                              <div *ngIf="!isBelowLg" class="col-lg-4 col-md-6 col-6 issuedDateMobile birthdateCalender">
+                                <p class="lables"><span>*</span> Issued Date</p>
+                                
+                                <input #IssuesDateBookingForm type="text" ngxDaterangepickerMd formControlName="issuedDate"
+                                  class="form-control dateRange" name="daterange" [showDropdowns]="true"
+                                  [locale]="{
+                                      customRangeLabel: 'Pick a date...',
+                                      applyLabel: 'Apply',
+                                      clearLabel: 'Clear',
+                                      format: 'DD-MM-YYYY',
+                                      firstDay: 1 }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                              </div>
+                              <div class="col-lg-4 col-md-6 col-6 birthdateCalender">
+                                <p class="lables"><span>*</span> Valid Till</p>
+
+                                <input #ValidDateBookingForm type="text" ngxDaterangepickerMd formControlName="validTill"
+                                  class="form-control dateRange" name="daterange" [showDropdowns]="true"
+                                   [locale]="{
+                                      customRangeLabel: 'Pick a date...',
+                                      applyLabel: 'Apply',
+                                      clearLabel: 'Clear',
+                                      format: 'DD-MM-YYYY',
+                                      firstDay: 1
+                                    }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                              </div>
+                              <div class="col-lg-4 col-md-6 col-6">
+                                <p class="lables"><span>*</span> Nationality</p>
+                                <mat-form-field class="w-100" appearance="outline"
+                                  [ngClass]="{'invalidField': adult.controls[i].get('nationality')?.status === 'INVALID' && submitted}">
+                                  <mat-select #NationalityBookingForm placeholder="Nationality" #singleSelect formControlName="nationality">
+                                    <mat-option>
+                                      <ngx-mat-select-search placeholderLabel="Search country..."
+                                        (keyup)="showNationalityResult($event)"></ngx-mat-select-search>
+                                    </mat-option>
+                                    <mat-option *ngFor="let nationality of nationality" [value]="nationality.name">
+                                      {{nationality.name}}
+                                    </mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                            </div>
+                            <!-- identification end -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="otherList mt-3">
+                  </div>
+                </div>
+              </div>
+              <div class="container p-2">
+                <div class="container p-2">
+                  <h3 class="mt-2 mb-2 amt p-2">Contact Details</h3>
+                  <div class="adultDetailsForm">
+                    <div class="adultItemRow row ">
+                      <div class="col-lg-4 col-md-6 col-sm-12">
+                        <p class="lables"><span>*</span> E-Mail</p>
+                        <mat-form-field class="w-100" appearance="outline">
+                          <input #EMailBookingForm matInput placeholder="Email" formControlName="email" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-lg-4 col-md-6  col-sm-12">
+                        <p class="lables"><span>*</span> Phone no</p>
+                        <ngx-intl-tel-input #PhoneNoBookingForm [cssClass]="''" formControlName="phone" [enableAutoCountrySelect]="true"
+                          (ngModelChange)="countryChange($event)" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                          [phoneValidation]="true"
+                          [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                          [selectFirstCountry]="true" [phoneValidation]="true" [separateDialCode]="true" name="phone">
+                        </ngx-intl-tel-input>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="p-2 detailsBelowFields">Your booking details will send to this email address and mobile
+                    number.</div>
+                  <div style="border-bottom: 2px dashed #000000; padding-bottom: 30px !important;" class="p-2">
+                    <div class="d-flex row">
+                      <mat-checkbox class="checkInput col-lg-4 col-12" formControlName="Newsletter">
+                        Subscribe
+                        to Wadiia Newsletter</mat-checkbox>
+                      <mat-checkbox class="checkInput col-lg-4 col-12" formControlName="Newsletter">
+                        Save
+                        this
+                        information for next booking</mat-checkbox>
+                      <mat-checkbox class="checkInput col-lg-4 col-12"
+                        formControlName="termAndCondition">I agree to the terms &
+                        conditions
+                        of
+                        Wadiia
+                      </mat-checkbox>
+                    </div>
+                  </div>
+                </div>
+                <div class="container baggage p-2">
+                  <h3 class="mt-3 mb-2 amt p-2">Cabin or carry-on baggage</h3>
+                  <p style="padding-left: 10px;">Includes smaller bags that can be taken into the cabin and stored in the
+                    overhead locker or under
+                    your seat. The personal item’s weight can be up to 10 kg.</p>
+  
+                  <div class="bagge1Container d-flex justify-content-between mt-5 p-2">
+                    <div class="small-bagContainer">
+                      <div class="small-bag align-item-center" *ngIf="freeAdultBaggageArray.length != 0">
+                        <div class="text-center bag">
+                          <h4>1x Personal Item</h4>
+                          <p>Must fit under front seat </p>
+                          <p class="amt">ZAR 0</p>
+                          <img class="sbag" src="/assets/images/small-bag.png" width="64px" alt="">
+                        </div>
+                      </div>
+                      <div class="mediam-bag" *ngIf="freeAdultBaggageArray.length != 0 || adultBaggageArray.length != 0">
+                        <div class="text-center bag ">
+                          <h4 *ngIf="getCabinCount() === 0">{{getCarryBaggageTypeCount(i)}} x Cabin Bag</h4>
+                          <h4 *ngIf="getCabinCount() === 1"> {{getCarryBaggageTypeCount(i) + 1 }} x Cabin Bag</h4>
+                          <p>Must fit under front seat </p>
+                          <p *ngIf="!getCarryBaggageCount(i)" class="amt">ZAR 0</p>
+                          <p *ngIf="getCarryBaggageCount(i)" class="amt">{{baggage[0]?.bagInfo.currencyCode + '
+                            '}}{{getAllCarryOnBagPrice(i)}}</p>
+                          <img class="mbag" src="/assets/images/mediam-bag.png" width="75px" alt="">
+                          <!-- {{getAllCarryOnBagPrice(i)}} -->
+                        </div>
+                      </div>
+                      <div style="background: rgba(189, 9, 9, 0.3);margin: 0 auto;" class="noBaggage p-3"
+                        *ngIf="freeAdultBaggageArray.length == 0">
+                        <p>No-cabin-bag itineraries................................. for Cabin Bag</p>
+                      </div>
+                      <!-- adult free baggage code start -->
+                    </div>
+                    <div class="tableSection">
+                      <!-- <h3 *ngIf="freeAdultBaggageArray.length != 0" class="text-center mb-1">Free Baggage</h3> -->
+                      <table class="table text-center freeBaggage">
+                        <tbody>
+                          <tr class="trColor" *ngFor="let bag of freeAdultBaggageArray;">
+                            <td class="tdText">
+                              <!-- <p title="{{bag.serviceDescription}}"
+                                title="{{bag.serviceDescription}}"> CARRYON HAND BAGGAGE </p> -->
+                              <p title="{{bag.serviceDescription}}" *ngIf="checkBag(bag.text) == 'cabin'"> CABIN BAGGAGE
+                              </p>
+                              <p title="{{bag.serviceDescription}}"> {{bag.text}}
+                              </p>
+                              <!-- <p title="{{bag.serviceDescription}}"> {{bag.DESCRIPTION1 ? bag.DESCRIPTION1 : bag.COMMERCIAL_NAME}} </p> -->
+                            </td>
+                            <td class="freeBags">
+                              <p>ZAR 0 </p>
+                            </td>
+                            <td>
+                              <div class="d-flex justify-content-around rectangle">
+                                <input style="font-weight: 500;" readonly matInput type="text" value="1" />
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- adult baggage code start -->
+                      <table class="table table-striped text-center">
+                        <tbody>
+                          <tr class="trColor" *ngFor="let bag of adultBaggageArray; let j = index">
+                            <td>
+                              <p> {{bag.bookingCode}}</p>
+                            </td>
+                            <td>
+                              <p> {{bag.currencyCode}} {{bag.price}} </p>
+                            </td>
+                            <td>
+                              <div class="d-flex justify-content-around rectangle">
+                                <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove"
+                                  (click)="decreseCarryOnBag(carryOnBag.value,j, bag,i);">
+                                  <i class="icon-remove-circle"></i>
+                                </button>
+                                <input style="font-weight: 700;" matInput readonly type="text"
+                                  [value]="getCarryBaggageVal(i,j)" #carryOnBag />
+                                <button class="w-25" mat-button mat-icon-button matSuffix aria-label="Add"
+                                  (click)="increseCarryOnBag(carryOnBag.value,j, bag,i)">
+                                  <i class="icon-add-circle-outline"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+  
+                      <!-- <h4 class="tablePrice mt-2">MAS 2300.30</h4> -->
+                      <h4 *ngIf="adultBaggageArray.length != 0" class="tablePrice mt-2">
+                        {{baggage[0]?.bagInfo.currencyCode + ' '}}{{getAllCarryOnBagPrice(i)}}
+                      </h4>
+                    </div>
+                    <!-- adult free baggage code end -->
+                  </div>
+  
+                  <div class="mt-3" *ngIf="freeAdultBaggageArray.length != 0 || adultBaggageArray.length != 0">
+                    <p><i class="icon-Vector"></i>&nbsp;&nbsp;Tip: 1)Travel safely by adding a checked bag instead. You
+                      can take less on board and avoid moving around the cabin.</p>
+                    <div class="px-5">
+                      <p class="tips">2) Due to trvelling regulation we only allow <span>One</span>
+                        cabin baggage per passenger. If you need an extra cabin
+                        baggage please contact our <span>customer Services</span></p>
+                    </div>
+                  </div>
+                  <!-- adult luggage code start -->
+                  <div class="checkedBaggage mt-5 p-2">
+                    <h3 class="amt">Checked Baggage</h3>
+                    <p>Includes larger baggage items that you must deposit at the airline check-in counter before going
+                      through security at the airport.</p>
+                    <div class="d-flex bagge2Container justify-content-between mt-3">
+                      <div class="small-bagContainer"> 
+                        <div class="text-center bag2Box" [ngClass]="getLuggageCount(i) == 0 ? 'noBaggage' :'bigBag' ">
+                          <h4>{{getLuggageCount(i)}} × checked bags</h4>
+                          <p>2xbag 1- 25 kg</p>
+                          <p *ngIf="getLuggageCount(i)" class="amt">{{luggage[0]?.bagInfo.currencyCode + '
+                            '}}{{getAllBagPrice(i)}}</p>
+                          <div class="d-flex justify-content-around mt-2">
+                            <div class="p-2">
+                              <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                              <p>119 × 81 × 119 cm</p>
+                            </div>
+                            <div class="p-2" *ngIf="getLuggageTypeCount(i)>1">
+                              <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                              <p>119 × 81 × 119 cm</p>
+                            </div>
+                            <div class="p-2" *ngIf="getLuggageTypeCount(i)>2">
+                              <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                              <p>119 × 81 × 119 cm</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tableSection">
+                        <table class="table text-center">
+                          <tbody>
+                            <tr style="background: rgba(34, 189, 9, 0.3);" *ngFor="let bag of adultFreeLuggage">
+                              <td class="tdText">
+                                <p> FREE LUGGAGE ALLOWANCE </p>
+                              </td>
+                              <td class="freeBags">
+                                <p> ZAR 0 </p>
+                              </td>
+                              <td>
+                                <div class="d-flex justify-content-around rectangle">
+                                  <input style="font-weight: 700;" matInput type="text" readonly value="1"
+                                    *ngIf="selectedFlight.fareHeader.fareHasFreeBaggage" />
+                                  <input style="font-weight: 700;" matInput type="text" readonly value="0"
+                                    *ngIf="!selectedFlight.fareHeader.fareHasFreeBaggage" />
+                                </div>
+                              </td>
+                            </tr>
+  
+                          </tbody>
+                        </table>
+                        <div class="p-3" style="background: rgba(189, 9, 9, 0.3)" *ngIf="adultLuggageArray.length === 0">
+                          <h3 style="margin: 0;" class="text-center">Paid Luggage service not found.</h3>
+                        </div>
+                        <table class="table table-striped text-center">
+                          <tbody>
+                            <tr *ngFor="let bag of adultLuggageArray; let j = index">
+                              <td class="tdText">
+                                <p *ngIf="bag.text != ''"> {{bag.text}}</p>
+                                <p *ngIf="bag.text == ''"> {{bag.bookingCode}}</p>
+                              </td>
+                              <td class="tdPrice" style="text-align:  right;">
+                                <p class="tdPrice"> {{bag.currencyCode}} {{bag.price}} </p>
+                              </td>
+                              <td class="tdBtn">
+                                <div style="width:50px;" class="d-flex justify-content-around rectangle">
+                                  <button class="w-25 disble" mat-button mat-icon-button matPrefix aria-label="Remove"
+                                    (click)="decreseLuggageBag(luggageBag.value,j, bag,i)"
+                                    [disabled]="disabledButton(i,j)">
+                                    <i [ngClass]="disabledButton(i,j) == true ? 'disble' :'' "
+                                      class="icon-remove-circle"></i>
+                                  </button>
+                                  <input style="font-weight: 700;" matInput readonly type="text"
+                                    [value]="getLuggageVal(i,j)" #luggageBag />
+                                  <button class="w-25 disble" [disabled]="disabledButton(i,j)" mat-button mat-icon-button
+                                    matSuffix aria-label="Add" (click)="increseLuggageBag(luggageBag.value,j, bag,i)">
+                                    <i [ngClass]="disabledButton(i,j) == true ? 'disble' :'' "
+                                      class="icon-add-circle-outline"></i>
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h4 *ngIf="getLuggageCount(i)" class="tablePrice mt-2">
+                          {{luggage[0]?.bagInfo.currencyCode + ' '}}{{getAllBagPrice(i) | number : '1.2-2'}}</h4>
+                      </div>
+                    </div>
+                    <p class="mt-3"><i class="icon-Vector"></i> &nbsp;Tip: Due to trvelling regulation we only allow Nine
+                      checked baggages per passenger. If you need an extra cabin baggage please contact our customer
+                      Services </p>
+                  </div>
+                  <!-- adult luggage code end -->
+                </div>
+                <div class="btns container d-flex justify-content-between p-3">
+                  <button type="button" class="btnBack" (click)="onPrevious(i)">Back</button>
+                  <button type="button" class="btnContinu" (click)="onNext(i)">CONTINUE</button>
+                </div>
+              </div>
+            </mat-card>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div formArrayName="childArray" [ngClass]="updatedWidth">
+      <div *ngFor="let traveller of childTravellers().controls; let i = index;">
+        <mat-accordion *ngIf="isBelowLg">
+          <mat-expansion-panel  style="margin: 3px 0;">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="expansionContainer d-flex justify-content-between">
+                  <div>
+                    <p style="margin: 0;">{{(child.value[i].firstName ? child.value[i].firstName : 'Name '+(i+1)) |
+                      titlecase}}</p>
+                    <span class="smallText">Childrean {{i+1}} </span>
+                  </div>
+                  <img class="validationIcon" *ngIf="child.controls[i].status === 'VALID'"
+                    src="../../../../assets/images/rightIcon.png" width="26px" height="26" alt="">
+                  <img class="validationIcon" *ngIf="child.controls[i].status === 'INVALID'"
+                    src="../../../../assets/images/crossIcon.png" width="26px" height="26" alt="">
+                </div>
+
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-card style="margin: 1px 2px;" [formGroupName]="i">
+              <div class="container p-2">
+                <div class="adultListWrapper">
+                  <div class="container">
+                    <div class="AdultFormWrapper collapse show">
+                      <div class="adultDetailsForm">
+                        <div class="adultDetailsInnner">
+                          <div>
+                            <mat-form-field style="margin-left: 8px;" appearance="outline" *ngIf="isLoggedIn">
+                              <mat-select class="spaceShift" matNativeControl required #mySelect
+                                placeholder="Select Traveller"
+                                (selectionChange)="patchSavedTraveller($event,i,'child')">
+                                <mat-option [value]="m" *ngFor="let item of savedTraveller; let m = index">
+                                  {{item.firstName + ' ' + item.lastName}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            <div class="adultItemRow mt-3">
+                              <div class="d-flex container row justify-content-between bookFormDiv1">
+                                <div class=" col-3 col-lg-1">
+                                  <p class="lables w-100"><span>*</span> Prefix</p>
+                                  <mat-form-field class="w-100" appearance="outline">
+                                    <mat-select #PrefixBookingForm placeholder="Select Prefix"
+                                      formControlName="prefix">
+                                      <mat-option value="Mr">Mr</mat-option>
+                                      <mat-option value="Mrs">Mrs</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-lg-2 col-8">
+                                  <p class="lables"><span>*</span> First Name</p>
+                                  <mat-form-field appearance="outline">
+                                    <input #FirstNameChildBookingForm matInput placeholder="First Name"
+                                      formControlName="firstName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-lg-2 col-6">
+                                  <p class="lables"><span>*</span> Middle Name</p>
+                                  <mat-form-field appearance="outline">
+                                    <input matInput #middleNameChildBookingForm placeholder="Middle Name"
+                                      formControlName="middleName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-lg-2 col-6">
+                                  <p class="lables"><span>*</span> Last Name</p>
+                                  <mat-form-field appearance="outline">
+                                    <input #LastNameChildBookingForm matInput placeholder="Last Name"
+                                      formControlName="lastName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-lg-3 col-6 bithDateMobile birthdateCalender1"
+                                  [ngClass]="{'moreThan': childAge < 12 || childAge > 18}">
+                                  <p class="lables"><span>*</span> Birth Date</p>
+                                  <input #BirthDateChildBookingForm type="text" ngxDaterangepickerMd
+                                    formControlName="dateOfBirth" class="form-control dateRange" name="daterange"
+                                    [showDropdowns]="true" [locale]="{
+                                      customRangeLabel: 'Pick a date...',
+                                      applyLabel: 'Apply',
+                                      clearLabel: 'Clear',
+                                      format: 'DD-MM-YYYY',
+                                      firstDay: 1
+                                    }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                                  <span style="color: red;" *ngIf="childAge < 12 || childAge > 18">Child age is greter
+                                    than 12 yrs and less than 18</span>
+                                </div>
+                              </div>
+                            </div>
+                            <h3 class="my-3 p-2">Form of Identification</h3>
+                            <div class="adultItemRow row">
+                              <div class="col-lg-4 col-md-6 col-6">
+                                <p class="lables"><span>*</span> Document Type</p>
+                                <mat-form-field class="w-100" appearance="outline">
+                                  <mat-select #DocumentTypeChildBookingForm placeholder="Select Document"
+                                    formControlName="documentType">
+                                    <mat-option value="Passport">Passport</mat-option>
+                                    <mat-option value="Personal ID">Personal ID</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-lg-4 col-md-6 col-6">
+                                <p class="lables"><span>*</span> Document ID</p>
+                                <mat-form-field class="w-100" appearance="outline">
+                                  <input #DocumentIdChildBookingForm matInput placeholder="Document Id"
+                                    formControlName="documentId" />
+                                </mat-form-field>
+                              </div>
+                              <div class="col-lg-4 col-md-6 col-6">
+                                <p class="lables"><span>*</span> Country of Issuing </p>
+                                <mat-form-field class="w-100" appearance="outline">
+                                  <mat-select placeholder="Country" #singleSelect formControlName="country">
+                                    <mat-option>
+                                      <ngx-mat-select-search placeholderLabel="Search country..."
+                                        (keyup)="showCountryResult($event)"></ngx-mat-select-search>
+                                    </mat-option>
+                                    <mat-option *ngFor="let country of allCountry" [value]="country.name">
+                                      {{country.name}}
+                                    </mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-lg-4 col-md-6 col-6 issuedDateMobile birthdateCalender">
+                                <p class="lables"><span>*</span> Issued Date</p>
+                                <input #IssuedDateChildBookingForm type="text" ngxDaterangepickerMd
+                                  formControlName="issuedDate" class="form-control dateRange" name="daterange"
+                                  [showDropdowns]="true" [locale]="{
+                                      customRangeLabel: 'Pick a date...',
+                                      applyLabel: 'Apply',
+                                      clearLabel: 'Clear',
+                                      format: 'DD-MM-YYYY',
+                                      firstDay: 1
+                                    }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                              </div>
+                            </div>
+                            <div class="adultItemRow row">
+                              
+                              <div class="col-lg-4 col-md-6 col-6 birthdateCalender">
+                                <p class="lables"><span>*</span> Valid Till</p>
+
+                                <input #ValidTillChildBookingForm type="text" ngxDaterangepickerMd
+                                  formControlName="validTill" class="form-control dateRange" name="daterange"
+                                  [showDropdowns]="true" [locale]="{
+                                      customRangeLabel: 'Pick a date...',
+                                      applyLabel: 'Apply',
+                                      clearLabel: 'Clear',
+                                      format: 'DD-MM-YYYY',
+                                      firstDay: 1
+                                    }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+                              </div>
+                              <div class="col-lg-4 col-md-6 col-6">
+                                <p class="lables"><span>*</span> Nationality</p>
+                                <mat-form-field class="w-100" appearance="outline">
+                                  <mat-select id="NationalityChildBookingForm" placeholder="Nationality" #singleSelect
+                                    formControlName="nationality">
+                                    <mat-option>
+                                      <ngx-mat-select-search placeholderLabel="Search country..."
+                                        (keyup)="showNationalityResult($event)"></ngx-mat-select-search>
+                                    </mat-option>
+                                    <mat-option *ngFor="let nationality of nationality" [value]="nationality.name">
+                                      {{nationality.name}}
+                                    </mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="otherList mt-3">
+                  </div> -->
+                </div>
+              </div>
+              <div class="container p-2">
+                <h3 class="mt-2 mb-2 amt p-2">Contact Details</h3>
+                <div class="adultDetailsForm">
+                  <div class="adultItemRow row ">
+                    <div class="col-lg-4 col-md-6 col-12">
+                      <p class="lables"><span>*</span> E-Mail</p>
+                      <mat-form-field class="w-100" appearance="outline">
+                        <input #EMailChildBookingForm matInput placeholder="Email" formControlName="email" />
+                      </mat-form-field>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                      <p class="lables"><span>*</span> Phone no</p>
+                      <ngx-intl-tel-input #PhoneNoBookingFormChild [cssClass]="''" formControlName="phone"
+                        [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                        [selectFirstCountry]="true" [phoneValidation]="true" [separateDialCode]="true" name="phone">
+                      </ngx-intl-tel-input>
+                    </div>
+                    <div class="inputStyle2">
+                      <div class="w-100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container baggage p-2">
+                <h3 class="mt-3 mb-2 amt p-2">Cabin or carry-on baggage</h3>
+                <p>Includes smaller bags that can be taken into the cabin and stored in the overhead locker or under
+                  your
+                  seat. The personal item’s weight can be up to 10 kg.</p>
+                <!-- child baggage code start -->
+                <div class="bagge1Container d-flex justify-content-between mt-5 p-2">
+                  <div class="small-bagContainer">
+                    <div class="small-bag align-item-center" *ngIf="freeAdultBaggageArray.length == 0">
+                      <div class="text-center bag">
+                        <h4>1x personal item</h4>
+                        <p>Must fit under front seat </p>
+                        <p class="amt">0</p>
+                        <img class="sbag" src="/assets/images/small-bag.png" width="64px" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-bagContainer">
+
+                    <div class="mediam-bag"
+                      *ngIf="freeAdultBaggageArray.length != 0 || adultBaggageArray.length != 0">
+                      <div class="text-center bag ">
+                        <h4 *bgIf="getCabinCount() === 0">{{getCarryBaggageTypeCount(i)}} x Cabin Bag</h4>
+                        <h4 *ngIf="getCabinCount()"> {{getCarryBaggageTypeCount(i) + 1 }} x Cabin Bag</h4>
+                        <p>Must fit under front seat </p>
+                        <p *ngIf="!getCarryBaggageCount(i)" class="amt">ZAR 0</p>
+                        <p *ngIf="getCarryBaggageCount(i)" class="amt">{{baggage[0]?.bagInfo.currencyCode + '
+                          '}}{{getAllCarryOnBagPrice(i)}}</p>
+                        <img class="mbag" src="/assets/images/mediam-bag.png" width="75px" alt="">
+                        <!-- {{getAllCarryOnBagPrice(i)}} -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tableSection">
+                    <table class="table text-center freeBaggage">
+                      <tbody>
+                        <tr class="trColor" *ngFor="let bag of freeAdultBaggageArray;">
+                          <td class="tdText">
+                            <p title="{{bag.serviceDescription}}"> {{bag.text}} </p>
+                          </td>
+                          <td class="freeBags">
+                            <p>{{bag.currencyCode}} 0 </p>
+                          </td>
+                          <td>
+                            <div class="d-flex justify-content-around rectangle">
+                              <input style="font-weight: 500;" readonly matInput type="text" value="1" />
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table class="table table-striped text-center">
+                      <tbody>
+                        <tr class="trColor" *ngFor="let bag of childBaggageArray; let j = index">
+                          <td>
+                            <p> {{bag.bookingCode}}</p>
+                          </td>
+                          <td>
+                            <p> {{bag.currencyCode}} {{bag.price}} </p>
+                          </td>
+                          <td>
+                            <div class="d-flex justify-content-around rectangle">
+                              <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove"
+                                (click)="decreseChildCarryOnBag(carryOnBag.value,j, bag,i)">
+                                <i class="icon-remove-circle"></i>
+                              </button>
+                              <input style="font-weight: 700;" matInput readonly type="text"
+                                [value]="getChildCarryBaggageVal(i,j)" #carryOnBag />
+                              <button class="w-25" mat-button mat-icon-button matSuffix aria-label="Add"
+                                (click)="increseChildCarryOnBag(carryOnBag.value,j, bag,i)">
+                                <i class="icon-add-circle-outline"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div style="background: rgba(189, 9, 9, 0.3); margin: 0 auto;" class="noBaggage p-3"
+                    *ngIf="freeAdultBaggageArray.length == 0">
+                    <p>No-cabin-bag itineraries................................. for Cabin Bag</p>
+                  </div>
+                </div>
+                <!-- child baggage code end -->
+                <div class="mt-3">
+                  <p><i class="icon-Vector"></i>&nbsp;&nbsp;Tip: 1)Travel safely by adding a checked bag instead. You
+                    can take less on board and avoid moving around the cabin.</p>
+                  <div class="px-5">
+                    <p class="tips">2) Due to trvelling regulation we only allow <span>One</span>
+                      cabin baggage per passenger. If you need an extra cabin
+                      baggage please contact our <span>customer Services</span></p>
+                  </div>
+                </div>
+                <!-- child luggage code start -->
+
+                <div class="checkedBaggage mt-5 p-2">
+                  <h3 class="amt">Checked Baggage</h3>
+                  <p>Includes larger baggage items that you must deposit at the airline check-in counter before going
+                    through security at the airport.</p>
+                  <div class="bagge2Container d-flex justify-content-between mt-3">
+                    <div class="small-bagContainer">
+                      <div class="text-center" [ngClass]="getChildLuggageCount(i) == 0 ? 'noBaggage' :'bigBag' ">
+                        <h4>{{getChildLuggageCount(i)}} × checked bags</h4>
+                        <p>2xbag 1- 25 kg</p>
+                        <p *ngIf="luggage.length" class="amt">{{luggage[0].bagInfo.currencyCode + '
+                          '}}{{getChildAllBagPrice(i)}}</p>
+                        <div class="d-flex mt-2">
+                          <div class="p-2">
+                            <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                          </div>
+                          <div class="p-2" *ngIf="getChildLuggageTypeCount(i)>1">
+                            <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                          </div>
+                          <div class="p-2" *ngIf="getChildLuggageTypeCount(i)>2">
+                            <img class="sbag" src="/assets/images/bigBag.png" width="100px" alt="">
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="tableSection">
+                      <table *ngIf="freeChildBaggageArray == 0" class="table text-center">
+                        <tbody>
+                          <tr style="background: rgba(34, 189, 9, 0.3);" *ngFor="let bag of childFreeLuggage">
+                            <td class="tdText">
+                              <p> {{bag.text}} </p>
+                            </td>
+                            <td class="freeBags">
+                              <p>ZAR 0 </p>
+                            </td>
+                            <td>
+                              <div class="d-flex justify-content-around rectangle">
+                                <input style="font-weight: 700;" matInput type="text" readonly value="1"
+                                  *ngIf="selectedFlight.fareHeader.fareHasFreeBaggage" />
+                                <input style="font-weight: 700;" matInput type="text" readonly value="0"
+                                  *ngIf="!selectedFlight.fareHeader.fareHasFreeBaggage" />
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="p-3" style="background: rgba(189, 9, 9, 0.3)"
+                        *ngIf="childLuggageArray.length === 0">
+                        <h3 style="margin: 0;" class="text-center">Luggage service not found.</h3>
+                      </div>
+                      <table class="table table-striped text-center">
+                        <tbody>
+                          <tr *ngFor="let bag of childLuggageArray; let j = index">
+                            <td class="tdText">
+                              <p *ngIf="bag.text != ''"> {{bag.text}}</p>
+                              <p *ngIf="bag.text == ''"> {{bag.bookingCode}}</p>
+                            </td>
+                            <td>
+                              <p class="tdPrice"> {{bag.currencyCode}} {{bag.price}} </p>
+                            </td>
+                            <td class="tdBtn">
+                              <div style="width: 50px;" class="d-flex justify-content-around rectangle">
+                                <button class="w-25" mat-button mat-icon-button matPrefix aria-label="Remove"
+                                  (click)="decreseChildLuggageBag(childLuggageBag.value,j, bag,i)"
+                                  [disabled]="disabledChildButton(i,j)">
+                                  <i [ngClass]="disabledChildButton(i,j) == true ? 'disble' :'' "
+                                    class="icon-remove-circle"></i>
+                                </button>
+                                <input style="font-weight: 700;" matInput readonly type="text"
+                                  [value]="getChildLuggageVal(i,j)" #childLuggageBag />
+                                <button class="w-25" [disabled]="getChildLuggageVal(i,j) == 3" mat-button
+                                  mat-icon-button matSuffix aria-label="Add"
+                                  (click)="increseChildLuggageBag(childLuggageBag.value,j, bag,i)"
+                                  [disabled]="disabledChildButton(i,j)">
+                                  <i [ngClass]="disabledChildButton(i,j) == true ? 'disble' :'' "
+                                    class="icon-add-circle-outline"></i>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <h4 *ngIf="childLuggageArray.length > 0" class="tablePrice mt-2">
+                        {{childLuggage[0]?.bagInfo.currencyCode + ' '}}{{getChildAllBagPrice(i)}}</h4>
+                    </div>
+                  </div>
+                  <p class="mt-3"><i class="icon-Vector"></i> &nbsp;Tip: Due to trvelling regulation we only allow
+                    Nine
+                    checked baggages per passenger. If you need an extra cabin baggage please contact our customer
+                    Services </p>
+                </div>
+                <!-- child luggage code end -->
+              </div>
+
+              <div class="btns container d-flex justify-content-between p-3">
+                <button #BtnBackChild type="button" class="btnBack"
+                  (click)="onPrevious(passangerInfo.adultPassengers.passengers.length + i)">Back</button>
+                <button #BtnContinueChild type="button" class="btnContinu"
+                  (click)="onNext(passangerInfo.adultPassengers.passengers.length + i)">CONTINUE</button>
+              </div>
+            </mat-card>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div formArrayName="infantArray" [ngClass]="updatedWidth">
+      <div *ngFor="let traveller of infantTravellers().controls; let i = index">
+        <mat-accordion *ngIf="isBelowLg">
+          <mat-expansion-panel style="margin: 3px 0;">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="expansionContainer d-flex justify-content-between">
+                    <div>
+                      <p style="margin: 0;">{{(infant.value[i].firstName ? infant.value[i].firstName : 'Name '+(i+1))
+                        |
+                        titlecase}}</p>
+                      <span class="smallText">Infant {{i+1}} </span>
+                    </div>
+                    <img class="validationIcon" *ngIf="infant.controls[i].status === 'VALID'"
+                      src="../../../../assets/images/rightIcon.png" width="26px" height="26" alt="">
+                    <img class="validationIcon" *ngIf="infant.controls[i].status === 'INVALID'"
+                      src="../../../../assets/images/crossIcon.png" width="26px" height="26" alt="">
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-card style="margin: 1px 2px;" [formGroupName]="i">
+              <div class="container p-2">
+                <div class="adultListWrapper">
+                  <div class="container">
+                    <div class="AdultFormWrapper collapse show">
+                      <div class="adultDetailsForm">
+                        <div class="adultDetailsInnner">
+                          <div>
+                            <mat-form-field style="margin-left: 8px;" appearance="outline" *ngIf="isLoggedIn">
+                              <mat-select class="spaceShift" matNativeControl required #mySelect
+                                placeholder="Select Traveller"
+                                (selectionChange)="patchSavedTraveller($event,i,'infant')">
+                                <mat-option [value]="m" *ngFor="let item of savedTraveller; let m = index">
+                                  {{item.firstName + ' ' + item.lastName}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            <div class="adultItemRow mt-3">
+                              <div class="d-flex container row justify-content-between bookFormDiv1">
+                                <div class="col-3 col-lg-1">
+                                  <p class="lables w-100"><span>*</span> Prefix</p>
+                                  <mat-form-field class="w-100" appearance="outline">
+                                    <mat-select #PrefixInfantBookingForm placeholder="Select Prefix"
+                                      formControlName="prefix">
+                                      <mat-option value="Mr">Mr</mat-option>
+                                      <mat-option value="Mrs">Mrs</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-8 col-lg-2">
+                                  <p class="lables"><span>*</span> First Name</p>
+                                  <mat-form-field appearance="outline">
+                                    <input #FirstnameInfantBookingForm matInput placeholder="First Name"
+                                      formControlName="firstName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-6 col-lg-2">
+                                  <p class="lables"><span>*</span> Middle Name</p>
+                                  <mat-form-field appearance="outline">
+                                    <input #MiddleNameInfantBookingForm matInput placeholder="Middle Name"
+                                      formControlName="middleName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-6 col-lg-2">
+                                  <p class="lables"><span>*</span> Last Name</p>
+                                  <mat-form-field appearance="outline">
+                                    <input #LastNameInfantBookingForm matInput placeholder="Last Name"
+                                      formControlName="lastName" />
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-8 col-lg-3 infantDateMobile birthdateCalender1"
+                                  [ngClass]="{'moreThan': infantAge < 2 || infantAge > 12}">
+                                  <p class="lables"><span>*</span> Birth Date</p>
+
+                                  <input #BirthDateInfantBookingForm type="text" ngxDaterangepickerMd
+                                    formControlName="dateOfBirth" class="form-control dateRange" name="daterange"
+                                    [showDropdowns]="true" [locale]="{
+                                      customRangeLabel: 'Pick a date...',
+                                      applyLabel: 'Apply',
+                                      clearLabel: 'Clear',
+                                      format: 'DD-MM-YYYY',
+                                      firstDay: 1
+                                    }" [placeholder]="calendarPlaceholder" [singleDatePicker]="true" />
+
+                                  <span style="color: red;" *ngIf="infantAge < 2 || infantAge > 12">Infant age is
+                                    greter
+                                    than 2 yrs and less than 12</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="otherList mt-3">
+                  </div>
+                </div>
+              </div>
+              <div class="btns container d-flex justify-content-between p-3">
+                <button #BtnBackInfantBookingForm type="button" class="btnBack"
+                  (click)="onPrevious(passangerInfo.adultPassengers.passengers.length + passangerInfo.childPassengers.passengers.length + i)">Back</button>
+                <button #BtnContinueInfantBookingForm type="button" class="btnContinu"
+                  (click)="onNext(passangerInfo.adultPassengers.passengers.length + passangerInfo.childPassengers.passengers.length + i)">CONTINUE</button>
+              </div>
+            </mat-card>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </form>
+</section>

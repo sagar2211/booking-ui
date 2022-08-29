@@ -1,0 +1,104 @@
+<section class="container">
+  <h2>Create Your Accountssss</h2>
+  <div class="pt-3">
+    <div class="">
+      <form class="example-form" [formGroup]="user_form" (ngSubmit)="onSubmit()">
+        <div class="d-flex justify-content-between">
+          <mat-form-field class="p-2" appearance="outline">
+            <mat-label>Prefix</mat-label>
+            <mat-select formControlName="prefix" required>
+              <mat-option value="Mr">Mr</mat-option>
+              <mat-option value="Mrs">Mrs</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width p-2" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput aria-label="firstName" formControlName="firstName" appAlphabetOnly />
+          </mat-form-field>
+        </div>
+        <div class="d-flex">
+          <mat-form-field class="example-full-width p-2" appearance="outline">
+            <mat-label>Middle Name</mat-label>
+            <input matInput aria-label="middleName" formControlName="middleName" appAlphabetOnly />
+          </mat-form-field>
+          <mat-form-field class="example-full-width p-2" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput aria-label="lastName" formControlName="lastName" appAlphabetOnly />
+          </mat-form-field>
+        </div>
+        <div class="d-flex">
+          <!-- <mat-form-field class="example-full-width p-2" appearance="outline">
+              <mat-label>Mobile</mat-label>
+              <input
+                matInput
+                type="mobile"
+                aria-label="mobile"
+                formControlName="mobile"
+                appNumberOnly
+              />
+            </mat-form-field> -->
+          <div class="">
+            <ngx-intl-tel-input #PhoneNoBookingForm [cssClass]="''" formControlName="mobile"
+              [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+              [searchCountryFlag]="true" [phoneValidation]="true"
+              [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="true"
+              [phoneValidation]="true" [separateDialCode]="true" name="phone">
+            </ngx-intl-tel-input>
+          </div>
+          <mat-form-field class="example-full-width p-2" appearance="outline">
+            <mat-label>Email Id</mat-label>
+            <input matInput type="email" aria-label="email" formControlName="email" />
+          </mat-form-field>
+        </div>
+        <div class="d-flex">
+          <div class="flight">
+            <mat-form-field class="example-full-width p-2" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" aria-label="password" formControlName="password" min="6" />
+            </mat-form-field>
+            <p *ngIf="user_form.value.password.length > 3 && user_form.value.password.length < 6 "
+              style="color: red;font-size: 10px;">Password length must be greater than or equal 6.</p>
+          </div>
+          <div class="flight">
+            <mat-form-field class="example-full-width p-2" appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput type="password" aria-label="password" formControlName="confirmPassword"
+                (keydown)="onConfirmPassword()" min="6" />
+            </mat-form-field>
+            <p *ngIf="user_form.value.confirmPassword.length > 3 && !passMatch" style="color: red;font-size: 10px;">
+              Password doesn't match</p>
+          </div>
+        </div>
+        <!-- <div class="d-flex justify-content-between passwordbtn p-2">
+            <mat-checkbox  formControlName="newsLetter" class="example-margin black">Subscribe to Wadiia News Letter</mat-checkbox>
+          </div> -->
+        <section class="passwordbtn p-2">
+          <button class="btn btn-danger p-2">
+            <span class="send-code-btn"><i class="icon-user-plus"></i>
+              <span>SIGN UP</span>
+            </span>
+          </button>
+        </section>
+      </form>
+    </div>
+    <div class="">
+      <div class="container pt-5">
+        <div class="separator">
+          or continue with
+        </div>
+        <div class="d-flex justify-content-evenly pt-4">
+          <div class="icon">
+            <img src="/assets/images/google.png" width="50%" alt="">
+          </div>
+          <div class="icon">
+            <img src="/assets/images/facebook1.png" width="50%" alt="">
+          </div>
+          <div class="icon">
+            <img src="/assets/images/img4.png" width="50%" alt="">
+          </div>
+        </div>
+        <!-- <p class="pt-5 text-center signUp">Already A Member? <a class="text-danger" routerLink="/user/login">Sign In</a></p> -->
+      </div>
+    </div>
+  </div>
+</section>

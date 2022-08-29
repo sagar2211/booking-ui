@@ -1,0 +1,112 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "./assets//css/poppinsFont.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+  font-family: "Brush Script MT";
+  src        : url("./assets/custom_fonts/BRUSHSCI.TTF");
+}
+
+* {
+  margin     : 0;
+  padding    : 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing : border-box;
+}
+
+:root {
+  --font-size-extra-small     : 16px;
+  --font-size-small           : 18px;
+  --font-size-medium          : 20px;
+  --font-size-large           : 30px;
+  --breadcrumb-box-color      : #336699;
+  --box-color                 : #336699;
+  --primary-text-color        : #336699;
+  --secondary-text-color      : #ffffff;
+  --form-section-background   : #f6f9fe;
+  --input-placeholder-color   : #7e7e7e;
+  --body-text-color           : #000000;
+  --card-background-color     : #284d83;
+  --button-color              : #ff0000;
+  --accordian-background-color: #c3c7d2;
+  --footer-background-color   : #245489;
+  --footer-text-color         : #e3bb59;
+  --box-background-color      : #f6f9fe;
+  --borderbox-color           : #274d83;
+}
+
+input[type="text"],
+select {
+  width           : 100%;
+  padding         : 12px 20px;
+  margin          : 8px 0;
+  display         : inline-block;
+  border          : 1px solid #ccc;
+  border-radius   : 4px;
+  box-sizing      : border-box;
+  background-color: transparent;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin     : 0;
+  padding    : 0;
+  font-family: "Poppins", sans-serif;
+}
+
+// .mat-datepicker-toggle, .mat-datepicker-content .mat-calendar-next-button, .mat-datepicker-content .mat-calendar-previous-button {
+// color: #5a5a59 !important;
+// }
+
+fa-icon {
+  position : relative;
+  font-size: 24px;
+}
+
+.danger-snackbar {
+  background: #cf2323;
+  color     : #fff;
+  margin    : 0 !important;
+  position  : absolute;
+  right     : 25px;
+  top       : 90px;
+}
+
+.success-snackbar {
+  background: #04752f;
+  color     : #fff;
+  margin    : 0 !important;
+  position  : absolute;
+  right     : 25px;
+  top       : 90px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-danger {
+  background : #eb2533 !important;
+  color      : #f2f3f6 !important;
+  padding    : 15px 25px;
+  font-weight: 600;
+}
+
+.subscr-btn {
+  padding         : 10px !important;
+  font-size       : 14px;
+  font-weight     : 500;
+  border-radius   : 5px;
+  background-color: #eb2533 !important;
+}
+
+#seachAgain {
+  position: relative;
+  bottom  : 1px;
+}

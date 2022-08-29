@@ -1,0 +1,171 @@
+<section>
+    <div class="d-flex justify-content-between">
+        <h2 *ngIf="!travellerInfo">Add Trveller’s Info</h2>
+        <h2 *ngIf="travellerInfo">Update Trveller’s Info</h2>
+        <div class="close-icon" [mat-dialog-close]="true"><i class="icon-wrong"></i></div>
+    </div>
+    <div class="popUp">
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="BASIC  INFO">
+                <form [formGroup]="travellerForm" (ngSubmit)="onSubmit()">
+                    <div class="row mt-2 traveller-input">
+                        <div class="col-4 col-md-4 col-lg-3">
+                            <mat-label>Prefix</mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-select formControlName="prefix" placeholder="Prefix">
+                                    <mat-option value="Mr">Mr</mat-option>
+                                    <mat-option value="Mrs">Mrs</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-8 col-md-8 col-lg-3">
+                            <mat-label>First Name </mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <input matInput placeholder="First Name" formControlName="firstName">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-3">
+                            <mat-label>Middle Name </mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <input matInput placeholder="Middle Name" formControlName="middleName">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-3">
+                            <mat-label>Last Name </mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <input matInput placeholder="Last Name" formControlName="lastName">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 traveller-input">
+                        <div class="col-6 col-md-6 col-lg-6  input-col">
+                            <mat-label>Gender </mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-select placeholder="Gender" formControlName="gender" required>
+                                    <mat-option value="Male">Male</mat-option>
+                                    <mat-option value="Female">Female</mat-option>
+                                    <mat-option value="Female">Transgender</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 input-col">
+                            <mat-label>Email Id </mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <input matInput placeholder="Email Id" formControlName="email" *ngIf="!travellerInfo">
+                                <input matInput placeholder="Email Id" formControlName="email" *ngIf="travellerInfo"
+                                    readonly>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row mt-2 traveller-input">
+                        <div class="col-12 col-md-6 col-lg-6 input-col">
+                            <div class="my-2">
+                                <mat-label>Phone No </mat-label>
+                                <ngx-intl-tel-input [cssClass]="''" [enableAutoCountrySelect]="true"
+                                    [enablePlaceholder]="true" [searchCountryFlag]="true"
+                                    [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                    [selectFirstCountry]="true" [phoneValidation]="true" [separateDialCode]="true"
+                                    name="phone" formControlName="phone">
+                                </ngx-intl-tel-input>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 input-col">
+                            <div class="my-2">
+                                <mat-label>Date of Birth </mat-label>
+                                <input type="text" name="daterange" formControlName="dateOfBirth" ngxDaterangepickerMd
+                                    [showDropdowns]="true" [(ngModel)]="selectedRange" [locale]="calendarLocale"
+                                    [placeholder]="calendarPlaceholder" class="form-control"
+                                    [singleDatePicker]="true" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <hr>
+                    <h3 class="passport_details">Passport Details </h3>
+                    <p class="booking_experience">Add your Passport details for afaster booking experience </p>
+                    <div class="row mt-1 traveller-input">
+                        <div class="col-12 col-md-6 col-sm-6 input-col">
+                            <mat-label>Passport Number</mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <input matInput placeholder="Passport Number" formControlName="passportNo">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-md-6 col-sm-6 input-col">
+                            <mat-label>Select Country</mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-select placeholder="Country" #singleSelect
+                                    formControlName="passportIssuingCountry">
+                                    <mat-option>
+                                        <ngx-mat-select-search placeholderLabel="Search country..."
+                                            (keyup)="showCountryResult($event)"></ngx-mat-select-search>
+                                    </mat-option>
+                                    <mat-option *ngFor="let country of allCountry" [value]="country">
+                                        {{country.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row mt-1 traveller-input">
+                        <div class="col-12 col-md-6 col-sm-6 input-col passportExpiry">
+                            <mat-label>Expiry Date</mat-label>
+                            <input type="text" name="daterange" formControlName="passportExpiry" ngxDaterangepickerMd
+                                [showDropdowns]="true" [(ngModel)]="selectedRange1" [locale]="calendarLocale"
+                                [placeholder]="calendarPlaceholder" class="form-control" [singleDatePicker]="true" />
+                        </div>
+                    </div> -->
+                    <button mat-raised-button type="submit" *ngIf="!travellerInfo" [disabled]="submitted"
+                        class="submitBtn">Submit</button>
+                    <button mat-raised-button type="button" *ngIf="travellerInfo" [disabled]="submitted"
+                        class="submitBtn" (click)="updateTraveller()">Update</button>
+                    <button mat-raised-button type="button" *ngIf="travellerInfo" (click)="deleteTraveller()"
+                        [disabled]="submitted" class="mx-5 mb-2 deleteBtn">Delete</button>
+                </form>
+            </mat-tab>
+            <mat-tab label="PASSPORT">
+                <form [formGroup]="travellerForm" (ngSubmit)="onSubmit()">
+                    <hr>
+                    <h3 class="passport_details">Passport Details </h3>
+                    <p class="booking_experience">Add your Passport details for afaster booking experience </p>
+                    <div class="row mt-1 traveller-input">
+                        <div class="col-12 col-md-6 col-sm-6 input-col">
+                            <mat-label>Passport Number</mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <input matInput placeholder="Passport Number" formControlName="passportNo">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-md-6 col-sm-6 input-col">
+                            <mat-label>Select Country</mat-label>
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-select placeholder="Country" #singleSelect
+                                    formControlName="passportIssuingCountry">
+                                    <mat-option>
+                                        <ngx-mat-select-search placeholderLabel="Search country..."
+                                            (keyup)="showCountryResult($event)"></ngx-mat-select-search>
+                                    </mat-option>
+                                    <mat-option *ngFor="let country of allCountry" [value]="country">
+                                        {{country.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row mt-1 traveller-input">
+                        <div class="col-12 col-md-6 col-sm-6 input-col passportExpiry">
+                            <mat-label>Expiry Date</mat-label>
+                            <input type="text" name="daterange" formControlName="passportExpiry" ngxDaterangepickerMd
+                                [showDropdowns]="true" [(ngModel)]="selectedRange1" [locale]="calendarLocale"
+                                [placeholder]="calendarPlaceholder" class="form-control" [singleDatePicker]="true" />
+                        </div>
+                    </div>
+                    <button mat-raised-button type="submit" *ngIf="!travellerInfo" [disabled]="submitted"
+                        class="submitBtn">Submit</button>
+                    <button mat-raised-button type="button" *ngIf="travellerInfo" [disabled]="submitted"
+                        class="submitBtn" (click)="updateTraveller()">Update</button>
+                    <button mat-raised-button type="button" *ngIf="travellerInfo" (click)="deleteTraveller()"
+                        [disabled]="submitted" class="mx-5 mb-2 deleteBtn">Delete</button>
+                </form>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</section>

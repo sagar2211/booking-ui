@@ -1,0 +1,118 @@
+{
+    "search" : [
+        {
+            "path" : "searchFlight",
+            "class" : "theme1",
+            "component" : "SearchFlightComponent",
+            "footer" : "footer1"
+        }
+    ],
+    "flight-list" : [
+        {
+            "path" : "flights",
+            "class" : "theme2",
+            "component" : "FlightComponent",
+            "footer" : "footer2"
+        }
+    ],
+    "flight-booking" : [
+        {
+            "path" : "review-booking",
+            "class" : "theme2",
+            "component" : "ReviewBookingComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "ancillaries-info",
+            "class" : "theme2",
+            "component" : "ancillariesComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "hepstar-service",
+            "class" : "theme2",
+            "component" : "HepstarComponent",
+            "footer" : "footer2"
+        }
+    ],
+    "user" : [
+        {
+            "path" : "login",
+            "class" : "theme3",
+            "component" : "SignInComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "signUp",
+            "class" : "theme3",
+            "component" : "SignUpComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "changePassword",
+            "class" : "theme3",
+            "component" : "ChangePasswordComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "forgotPassword",
+            "class" : "theme3",
+            "component" : "ForgotPasswordComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "updateProfile",
+            "class" : "theme2",
+            "component" : "UpdateProfileComponent",
+            "footer" : "footer2"
+        }
+    ],
+    "payment" : [
+        {
+            "path" : "payment-form",
+            "class" : "theme2",
+            "component" : "PaymentFormComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "payment-success",
+            "class" : "theme2",
+            "component" : "paymentsuccessComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "payment-unsuccess",
+            "class" : "theme2",
+            "component" : "PaymentUnsuccessComponent",
+            "footer" : "footer2"
+        }
+    ],
+    "traveller" : [
+        {
+            "path" : "travel-history",
+            "class" : "theme2",
+            "component" : "TravelHistoryComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "refund",
+            "class" : "theme2",
+            "component" : "RefundPopupComponent",
+            "footer" : "footer2"
+        }
+    ],
+    "error" : [
+        {
+            "path" : "404",
+            "class" : "theme2",
+            "component" : "NotFoundComponent",
+            "footer" : "footer2"
+        },
+        {
+            "path" : "something-went-wrong",
+            "class" : "theme2",
+            "component" : "SomethingWentWrongComponent",
+            "footer" : "footer2"
+        }
+    ]
+}

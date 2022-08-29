@@ -1,0 +1,60 @@
+{
+    "FNAME": [
+        {
+            "TYPE": "required",
+            "MESSAGE": "First Name is required."
+        }
+    ],
+    "LNAME": [
+        {
+            "TYPE": "required",
+            "MESSAGE": "Last Name is required."
+        }
+    ],
+    "EMAIL": [
+        {
+            "TYPE": "required",
+            "MESSAGE": "Email is required."
+        },
+        {
+            "TYPE": "minlength",
+            "MESSAGE": "Email length."
+        },
+        {
+            "TYPE": "maxlength",
+            "MESSAGE": "Email length."
+        },
+        {
+            "TYPE": "required",
+            "MESSAGE": "please enter a valid email address."
+        }
+    ],
+    "PASSWORD": [
+        {
+            "TYPE": "required",
+            "MESSAGE": "password is required."
+        },
+        {
+            "TYPE": "minlength",
+            "MESSAGE": "password length."
+        },
+        {
+            "TYPE": "maxlength",
+            "MESSAGE": "password length."
+        }
+    ],
+    "CONFIRMPASSWORD": [
+        {
+            "TYPE": "required",
+            "MESSAGE": "password is required."
+        },
+        {
+            "TYPE": "minlength",
+            "MESSAGE": "password length."
+        },
+        {
+            "TYPE": "maxlength",
+            "MESSAGE": "password length."
+        }
+    ]
+}

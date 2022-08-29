@@ -1,0 +1,327 @@
+<div class="d-flex justify-content-around container flights mt-5">
+  <div class="filter-filght">
+    <!-- filter flight start-->
+    <app-filter-filght *ngIf="!isBelowLg"></app-filter-filght>
+    <!-- filter flight end -->
+  </div>
+  <div class="one-way-list w-100 oneWaycontainer">
+    <div *ngIf="!isBelowSm" class="container">
+      <h3 class="flightHead mt-2">Why Book flights with <span> Wadiia ?</span> <i style="margin-left: 5px;"
+          class="icon-info"
+          matTooltip="We'll save you money, time, energy, and stress. We're available 24/7,before, after, and during your trip. So, book flights with Wadiia with confidence!"
+          matTooltipPosition="above"></i></h3>
+      <div class="container mt-3 mb-3">
+        <div class="d-flex justify-content-between">
+          <div class="intro">
+            <i class="icon-Union"></i>
+            <p>We're always here for you.</p>
+          </div>
+          <div class="intro">
+            <i class="icon-doller"></i>
+            <p>We provide the most bang for your buck.</p>
+          </div>
+          <div class="intro">
+            <i class="icon-thumb"></i>
+            <p>We follow through on our promises & commitments.</p>
+          </div>
+          <div class="intro ">
+            <i class="icon-clockTime"></i>
+            <p>We work quickly to resolve problems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- flight sort start -->
+    <app-flight-sort *ngIf="flightData !== null" [flightData]="flightData"></app-flight-sort>
+    <!-- flight sort end -->
+    <!-- Filter-flight-component start -->
+    <div class="d-flex">
+      <div>
+        <button (click)="openDialog()" *ngIf="isBelowLg" mat-raised-button
+          class="mt-2 mb-2 btn filterBtn">Filter</button>
+      </div>
+      <div class="filterKeys" *ngIf="isBelowLg && fliterKeys != undefined">
+        <div *ngFor="let key of fliterKeys.stopArray">
+          <span class="filterName" *ngIf="key.checked">{{key.name}}</span>
+        </div>
+        <div *ngFor="let key1 of fliterKeys.cabinArray">
+          <span class="filterName" *ngIf="key1.checked">{{key1.name}}</span>
+        </div>
+        <div *ngFor="let key2 of fliterKeys.arivalairPortArray">
+          <span class="filterName" *ngIf="key2.checked">{{key2.name}}</span>
+        </div>
+        <div *ngFor="let key3 of fliterKeys.airlineArray">
+          <span class="filterName" *ngIf="key3.checked">{{key3.airline}}</span>
+        </div>
+        <div *ngFor="let key4 of fliterKeys.departAirPortArray">
+          <span class="filterName" *ngIf="key4.checked">{{key4.name}}</span>
+        </div>
+        <div *ngFor="let key5 of fliterKeys.departStartArray">
+          <span class="filterName" *ngIf="key5.checked">{{key5.minValue}} - {{key5.maxValue}}</span>
+        </div>
+        <div *ngFor="let key5 of fliterKeys.departEndArray">
+          <span class="filterName" *ngIf="key5.checked">{{key5.minValue}} - {{key5.maxValue}}</span>
+        </div>
+        <div *ngFor="let key6 of fliterKeys.ArivalStartArray">
+          <span class="filterName" *ngIf="key6.checked">{{key6.minValue}} - {{key6.maxValue}}</span>
+        </div>
+        <div *ngFor="let key7 of fliterKeys.ArivalEndArray">
+          <span class="filterName" *ngIf="key7.checked">{{key7.minValue}} - {{key7.maxValue}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter-flight-component end-->
+    <div class="w-filters-details-wprapper" *ngIf="flightData === null">
+      <div class="no-result container">
+        <a class="logo" href="/"><img src="https://newdemo.wadiia.com/images/icon_no_result.png" width="200" /></a>
+        <h1 class="no-result__heading text-danger">
+          There were no flights found for this route and date combination
+        </h1>
+        <p>We suggest you modify your search and try again.</p>
+      </div>
+      <div class="text-center seachBtn">
+        <a routerLink="/" class="btn btn-danger subscr-btn"><i class="icon-search_24px_outlined"></i> <span
+            id="seachAgain">SEARCH AGAIN</span></a>
+      </div>
+    </div>
+    <mat-card *ngFor="let item of flightData; let i = index"
+      [ngClass]="{'noBaggage': item.fareHeader.fareHasFreeBaggage === false,'Baggage': item.fareHeader.fareHasFreeBaggage } ">
+      <mat-card-content id="flightDetailsCard-{{i}}" class="flightsDetails">
+        <div class="flight-outerContainer">
+          <div class="row">
+            <div class="images col-md-4">
+              <img src="/assets/airlineLogos/Rectangular/{{item.legs[0].platingCarrier.code}}.png" width="103px"
+                alt="" />
+              <p>
+                {{ item.legs[0].platingCarrier.code }}
+                {{ item.legs[0].connections[0].segments[0].flightNumber }}
+              </p>
+              <div class="baggageSection">
+                <span class="luggage-cart" *ngIf="item.fareHeader.fareHasFreeBaggage">
+                  <i class="icon-baggage2" matTooltip="This fare has free baggage allowance for atleast one connection."
+                    matTooltipPosition="above"></i>
+                  <i class="icon-b-red" matTooltip="This fare has free baggage allowance for atleast one connection."
+                    matTooltipPosition="above"></i>
+                </span>
+                <span class="luggage-cart" *ngIf="!item.fareHeader.fareHasFreeBaggage">
+                  <i class="icon-baggage2" matTooltip="This fare has no free baggage allowance."
+                    matTooltipPosition="above"></i>
+                  <i class="icon-b-green" matTooltip="This fare has no free baggage allowance."
+                    matTooltipPosition="above"></i>
+                </span> <br>
+              </div>
+            </div>
+            <div class="departure col-md-2">
+              <div class="atCenter">
+                <h4>
+                  {{
+                  item.legs[0].connections[0].connectionHeader.departureDisplayTime
+                  }}
+                </h4>
+                <p>
+                  {{
+                  item.legs[0].connections[0].connectionHeader
+                  .departureDate
+                  }}
+                </p>
+                <p>
+                  {{
+                  item.legs[0].connections[0].segments[0].departureAirport
+                  .cityName
+                  }}
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 stops">
+              <div class="travel-time d-flex justify-content-center">
+                <span [ngClass]="addStopClass(item)">
+                  {{
+                  updateNumber(item.legs[0].connections[0].connectionHeader.legTravelTime.addHours)
+                  }}
+                  <span> h</span>
+                  {{
+                  updateNumber(item.legs[0].connections[0].connectionHeader.legTravelTime.minutes)
+                  }}
+                  <span> m</span>
+                </span>
+              </div>
+              <div class="divider" *ngIf="item.legs[0].connections[0].connectionHeader.travelStopps == 0"><span
+                  class="direct">Non stop</span></div>
+              <p *ngIf="item.legs[0].connections[0].connectionHeader.via.length">
+                {{
+                item.legs[0].connections[0].connectionHeader.travelStopps
+                }}
+                stop via
+                {{
+                item.legs[0].connections[0].connectionHeader.via[0].cityName
+                }}
+              </p>
+              <div class="atCenter">
+                <span class="cabin-class">{{item.legs[0].connections[0].segments[0].cabinClassName}}</span>
+                <span
+                  *ngIf="item.legs[0].connections[0].segments[1] && item.legs[0].connections[0].segments[0].cabinClassName !== item.legs[0].connections[0].segments[1].cabinClassName"
+                  class="cabin-class">&nbsp;/ {{item.legs[0].connections[0].segments[1].cabinClassName}}</span>
+              </div>
+            </div>
+            <div class="arival col-md-2">
+              <div class="atCenter">
+                <h4>
+                  {{
+                  item.legs[0].connections[0].connectionHeader.arrivalDisplayTime
+                  }}
+                  <span class="dayIndicator">{{item.legs[0].connections[0].connectionHeader.dayIndicator}}</span>
+                </h4>
+                <p>
+                  {{
+                  item.legs[0].connections[0].connectionHeader.arrivalDate
+                  }}
+                </p>
+                <p>
+                  {{
+                  item.legs[0].connections[0].segments[item.legs[0].connections[0].segments.length -
+                  1].arrivalAirport.cityName
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="item.legs[1]" class="w-75 separator">Round Trip</div>
+          <div class="row" *ngIf="item.legs[1]">
+            <div class="images col-md-4">
+              <img src="/assets/airlineLogos/Rectangular/{{item.legs[1].platingCarrier.code}}.png" width="103px"
+                alt="" />
+              <p>
+                {{ item.legs[1].platingCarrier.code }}
+                {{
+                item.legs[1].connections[0].segments[0].flightNumber
+                }}</p>
+              <div class="baggageSection">
+                <span class="luggage-cart" *ngIf="item.fareHeader.fareHasFreeBaggage">
+                  <i class="icon-baggage2" matTooltip="This fare has free baggage allowance for atleast one connection."
+                    matTooltipPosition="above"></i>
+                  <i class="icon-b-red" matTooltip="This fare has free baggage allowance for atleast one connection."
+                    matTooltipPosition="above"></i>
+                </span>
+                <span class="luggage-cart" *ngIf="!item.fareHeader.fareHasFreeBaggage">
+                  <i class="icon-baggage2" matTooltip="This fare has no free baggage allowance."
+                    matTooltipPosition="above"></i>
+                  <i class="icon-b-green" matTooltip="This fare has no free baggage allowance."
+                    matTooltipPosition="above"></i>
+                </span> <br>
+              </div>
+            </div>
+            <div class="departure col-md-2">
+              <div class="atCenter">
+                <h4>
+                  {{
+                  item.legs[1].connections[0].connectionHeader
+                  .departureDisplayTime
+                  }}
+                </h4>
+                <p>
+                  {{
+                  item.legs[1].connections[0].connectionHeader
+                  .departureDate
+                  }}
+                </p>
+                <p>
+                  {{
+                  item.legs[1].connections[0].segments[0].departureAirport
+                  .cityName
+                  }}
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 stops">
+              <div class="travel-time d-flex justify-content-center">
+                <span [ngClass]="addStopClass2(item)">
+                  {{
+                  updateNumber(item.legs[1].connections[0].connectionHeader.legTravelTime.addHours)
+                  }}
+                  <span> h</span>
+                  {{
+                  updateNumber(item.legs[1].connections[0].connectionHeader.legTravelTime.minutes)
+                  }}
+                  <span> m</span>
+                </span>
+
+              </div>
+              <div class="divider" *ngIf="item.legs[1].connections[0].connectionHeader.travelStopps == 0"><span
+                  class="direct">Non stop</span></div>
+              <p *ngIf="item.legs[1].connections[0].connectionHeader.via.length">
+                {{
+                item.legs[1].connections[0].connectionHeader.travelStopps
+                }}
+                stop via
+                {{
+                item.legs[1].connections[0].connectionHeader.via[0].cityName
+                }}
+              </p>
+              <div class="atCenter">
+                <span class="cabin-class">{{item.legs[0].connections[0].segments[0].cabinClassName}}</span>
+                <span
+                  *ngIf="item.legs[0].connections[0].segments[1] && item.legs[0].connections[0].segments[0].cabinClassName !== item.legs[0].connections[0].segments[1].cabinClassName"
+                  class="cabin-class">&nbsp;/ {{item.legs[0].connections[0].segments[1].cabinClassName}}</span>
+              </div>
+            </div>
+            <div class="arival col-md-2">
+              <div class="atCenter">
+                <h4>
+                  {{
+                  item.legs[1].connections[0].connectionHeader
+                  .arrivalDisplayTime
+                  }}
+                  <span class="dayIndicator">{{item.legs[1].connections[0].connectionHeader.dayIndicator}}</span>
+                </h4>
+                <p>
+                  {{ item.legs[1].connections[0].connectionHeader.arrivalDate }}
+                </p>
+                <p>
+                  {{
+                  item.legs[1].connections[0].segments[
+                  item.legs[1].connections[0].segments.length - 1
+                  ].arrivalAirport.cityName
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr *ngIf="isBelowSm">
+        <div *ngIf="isBelowSm" class="cardBottomContainer" [ngClass]="{'twoWayChange': item.legs[1] }">
+          <div style="width: 100%;" class="p-2" [ngClass]="{'twoWayChangeBtn': item.legs[1] }">
+            <div class="d-flex justify-content-between align-items-center">
+              <p id="flightDetailsLink-{{i}}" class="detailBtn" (click)="toggleFlightDetailPanel(i)">
+                View Flight <br> Details
+              </p>
+              <h3>
+                {{ item.currency }}
+                {{ item.totalPrice | number }}
+              </h3>
+              <button id="flightDetailsBookNowBtn-{{i}}" class="btn btn-danger btn-sm subscr-btn"
+                (click)="bookFlight(flightData[i])">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isBelowSm == false" class="cardBottomContainer d-flex" [ngClass]="{'twoWayChange': item.legs[1] }">
+          <div class="bookFlight min-vh-20  col-4 p-2" [ngClass]="{'twoWayChangeBtn': item.legs[1] }">
+            <h3>
+              {{ item.currency }}
+              {{ item.totalPrice | number }}
+            </h3>
+            <button id="flightDetailsBookNowBtn-{{i}}" class="btn btn-danger btn-sm subscr-btn"
+              (click)="bookFlight(flightData[i])">Book Now</button>
+            <p id="flightDetailsLink-{{i}}" class="detailBtn" (click)="toggleFlightDetailPanel(i)">
+              View Flight Details
+            </p>
+          </div>
+        </div>
+      </mat-card-content>
+      <div class="container" *ngIf="flightDetailPanel[i]">
+        <app-flight-details [item]="item" [flightDetailIndex]="i" [selectedFlight]="selectedFlight">
+        </app-flight-details>
+      </div>
+    </mat-card>
+  </div>
+</div>

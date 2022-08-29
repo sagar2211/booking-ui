@@ -1,0 +1,103 @@
+.signup-form {
+  background-image: linear-gradient(90deg, white 55%, #d1d1d16b 100%), url('/assets/images/mask-image.jpg');
+  background-size: contain;
+  padding: 40px 30px;
+  box-shadow: 0px 1px 4px 0px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  color: #666666;
+  font-size: 14px;
+}
+
+.signup,.social{
+  width: 50%;
+}
+
+.signup-form h2{
+  font-family: 'Poppins', sans-serif;
+  color: #0057B9;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+form mat-form-field {
+  width: 100%;
+}
+
+.passwordbtn {
+  display: flex;
+  justify-content: center;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.btn-danger {
+  background: #eb2533 !important;
+  color: #f2f3f6 !important;
+  width: 50%;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+.icon{
+  padding: 10px 1px;
+  margin: 0 auto;
+  border-radius: 12px;
+  text-align: center; 
+  background-color: #EEEEEE;
+}
+
+.signUp{
+  font-size: 16px;
+}
+
+.send-code-btn i {
+  float: left;
+  margin-top: 5px;
+  font-size: large;
+}
+
+.send-code-btn span {
+  
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  padding-right: 15px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.flight{
+  width: 50%;
+  height: 90px;
+}
+.flight p{
+  margin: -10px 0px 0px 10px ;
+}

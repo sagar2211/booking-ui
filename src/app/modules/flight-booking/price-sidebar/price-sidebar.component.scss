@@ -1,0 +1,395 @@
+.pageRightContainer {
+  top       : 70px;
+  overflow-y: auto;
+}
+
+.fareSummary {
+  width           : 318px;
+  margin          : 0 auto;
+  background-color: #fff;
+  border-radius   : 8px;
+  padding-bottom  : 7px;
+  box-shadow      : 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.totalDivider {
+  border-bottom: 1px solid #dfdfdf;
+  padding      : 0;
+}
+
+.fareFooter {
+  background-color: #0057B9;
+  margin          : 0px 12px;
+  border-radius   : 6px;
+}
+
+.fareFooter p {
+  margin     : 0px !important;
+  color      : white;
+  padding    : 15px;
+  font-size  : 18px !important;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-style : normal;
+}
+
+.checkout {
+  font-family: "Poppins", sans-serif;
+  font-size  : 24px !important;
+}
+
+.fareTax p {
+  padding      : 0px 15px;
+  font-family  : "Poppins", sans-serif;
+  font-weight  : 500;
+  font-size    : 14px;
+  margin-bottom: 9px;
+}
+
+.blueFont {
+  color      : #0057b9;
+  padding    : 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size  : 16px;
+}
+
+.totalPrice {
+  font-family: "Poppins", sans-serif;
+  color      : black;
+}
+
+.totalPrice p {
+  padding    : 12px 15px 0px;
+  font-weight: 500;
+  font-size  : 18px;
+}
+
+//traveller details
+
+.bookingDetailsForm {
+  border-top   : 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding      : 20px;
+  border-radius: 0 0 2px 2px;
+}
+
+.customCheckbox {
+  position: relative;
+  display : flex;
+}
+
+.customCheckbox .box {
+  background   : #fff;
+  border       : 2px solid #9b9b9b;
+  border-radius: 3px;
+  display      : inline-block;
+  height       : 18px;
+  position     : relative;
+  width        : 18px;
+}
+
+.customCheckbox .box .check {
+  -webkit-border-image    : none;
+  border-image            : none;
+  border-color            : #fff;
+  border-style            : none solid solid none;
+  border-width            : medium 1px 1px medium;
+  height                  : 11px;
+  left                    : 7px;
+  opacity                 : 0;
+  position                : absolute;
+  top                     : 2px;
+  -webkit-transform       : scale(1) rotate(45deg);
+  transform               : scale(1) rotate(45deg);
+  -webkit-transition-delay: 0.1s;
+  transition-delay        : 0.1s;
+  width                   : 5px;
+  z-index                 : 1;
+}
+
+.extraPadBtn {
+  padding: 10px 35px;
+  height : 44px;
+}
+
+.buttonPrimary {
+  background-image: linear-gradient(97deg, #53b2fe, #065af3 130%);
+}
+
+.button {
+  display        : flex;
+  border-radius  : 35px;
+  box-shadow     : 0 1px 7px 0 rgb(0 0 0 / 22%);
+  cursor         : pointer;
+  color          : #fff;
+  align-items    : center;
+  justify-content: center;
+  text-transform : uppercase;
+  height         : 32px;
+  padding        : 0 20px;
+  border         : none;
+  outline        : none !important;
+  font-weight    : 900;
+}
+
+
+.offers {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgb(40 35 1 / 47%)),
+    url("/assets/images/deals1.png");
+  background-position: center center;
+  background-size    : cover;
+  background-repeat  : no-repeat;
+  height             : 500px;
+  display            : inline-block;
+  border-radius      : 8px;
+
+  h3 {
+    position      : relative;
+    top           : 40%;
+    font-family   : "Poppins";
+    font-style    : normal;
+    font-weight   : 500;
+    font-size     : 26px;
+    line-height   : 45px;
+    display       : flex;
+    align-items   : center;
+    text-align    : center;
+    color         : #ffffff;
+    vertical-align: middle;
+  }
+
+  button {
+    position: relative;
+    top     : 40%;
+    left    : 27%;
+  }
+}
+
+.guidlines {
+  h3 {
+    font-family: "Poppins";
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 16px;
+    line-height: 24px;
+    display    : flex;
+    align-items: center;
+    color      : #0057b9;
+  }
+
+  p {
+    text-align: justify;
+
+    i {
+      font-size: 22px;
+      position : relative;
+      top      : 5px;
+    }
+
+    span {
+      font-style : normal;
+      font-weight: 500;
+      font-size  : 13px;
+      line-height: 20px;
+      color      : #292929;
+    }
+  }
+}
+
+.offersBtn {
+  padding      : 15px 22px;
+  background   : #eb2533;
+  border-radius: 5px;
+  font-family  : "Poppins";
+  font-style   : normal;
+  font-weight  : bold;
+  font-size    : 16px;
+  text-align   : center;
+  color        : #ffffff;
+  border       : none;
+}
+
+.leftbar {
+  width           : 72px;
+  height          : 2px;
+  background-color: #aeaeae;
+  margin-top      : 15px;
+}
+
+.leftbar::before {
+  content         : "";
+  height          : 5px;
+  width           : 5px;
+  background-color: #aeaeae;
+  border-radius   : 50%;
+  display         : inline-block;
+  position        : relative;
+  top             : -11px;
+  right           : 38px;
+}
+
+.rightbar {
+  width           : 72px;
+  height          : 2px;
+  background-color: #aeaeae;
+  margin-top      : 15px;
+}
+
+.rightbar::after {
+  content         : "";
+  height          : 5px;
+  width           : 5px;
+  background-color: #aeaeae;
+  border-radius   : 50%;
+  display         : inline-block;
+  position        : relative;
+  top             : -11px;
+  left            : 38px;
+}
+
+.icoStop {
+  position: relative;
+  top     : 8px;
+}
+
+.stop-text {
+  position: relative;
+  bottom  : 2px;
+}
+
+.flights {
+  font-size: 12px;
+  padding  : 1px;
+  position : relative;
+  top      : 1px;
+}
+
+.travelbar.icon-flight:before {
+  content  : "\e91d";
+  color    : #22bd09;
+  font-size: 15px;
+}
+
+.travelbar1.icon-flight:before {
+  content  : "\e91d";
+  color    : #efd912;
+  font-size: 15px;
+}
+
+.travelbar2.icon-flight:before {
+  content  : "\e91d";
+  color    : #eb2533;
+  font-size: 15px;
+}
+
+.fareRefund {
+  font-family: 'Poppins';
+  font-style : normal;
+  font-weight: 400 !important;
+  font-size  : 12px !important;
+  color      : #000000;
+}
+
+// .addSticky {
+//   position: fixed;
+//   top     : 0;
+//   z-index : 1;
+// }
+.btnPriceFloat{
+  background: #0057B9;
+  padding: 10px 16px;
+  gap: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 40px;
+  border-radius: 5px;
+  font-family  : "Poppins";
+  font-style   : normal;
+  font-weight  : 400;
+  font-size    : 16px;
+  text-align   : center;
+  border       : none;
+}
+.btnPriceFloat p {
+  margin-bottom: 0px;
+}
+.floatdetailBarCInA{
+  animation-name: CardSwitch;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out
+}
+.floatdetailBarCOutA{
+  animation-name: CardSwitchO;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards !important;
+}
+.floatdetailBarC{
+  background: rgba(0, 87, 185, 0.8);
+  box-shadow: 0px 1px 20px rgb(0 0 0 / 25%);
+  color: #fff;
+}
+.floatdetailBarC p {
+  color: #fff;
+}
+
+.priceBAr{
+  position: relative;
+}
+
+.priceMarginT{
+  margin-top: -180px;
+}
+
+.positionBtnT{
+  position: absolute;
+  top: -21px;
+  right: 40%;
+}
+
+.dNone{
+  display: none;
+}
+
+
+//animation
+@keyframes CardSwitch {
+  0%   {
+    width: 200px;
+  }
+  25%  {
+    width: 250px;
+    
+  }
+  50%  {
+    width: 280px;
+    
+  }
+  100% {
+    width: 335px;
+  }
+
+}
+
+@keyframes CardSwitchO {
+  0%   {
+    width: 335px;
+    margin-top: -180px;
+  }
+  50%  {
+    width: 150px;
+    margin-top: -180px;
+    visibility: collapse;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    margin-top:0px;
+    visibility: collapse;
+  }
+}

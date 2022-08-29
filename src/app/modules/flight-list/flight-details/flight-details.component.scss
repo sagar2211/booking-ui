@@ -1,0 +1,379 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+mat-accordion {
+  margin: 30px !important;
+  background-color: #f6f9fe !important;
+}
+
+.flightDetails .mat-tab-body-content {
+  background-color: white;
+  opacity: 1;
+  border-radius: 10px;
+}
+
+.flight-details-header strong {
+  margin-top: unset;
+}
+
+.arival,
+.departure {
+  h4,
+  p {
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.arival,
+.departure {
+  h4 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+
+.cabin,
+.baggageSec {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+p,
+h3,
+h4 {
+  margin: 0;
+}
+
+.images {
+  text-align: center;
+}
+
+.flight-details-header {
+  height: 22px;
+  background-color: #19579c;
+}
+
+.flight-details-header strong {
+  margin-top: unset;
+}
+
+.flight-details-header .cityName,
+.flight-details-header .duration {
+  font-weight: 500;
+  font-size: 10px;
+  color: #fff;
+  padding: 5px;
+}
+
+.images p {
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.airlineImg .images p {
+  font-weight: 600;
+  font-size: 12px;
+  color: #000;
+}
+
+.FareCalculation div p {
+  font-weight: 500;
+  font-size: 12px;
+  color: #7c7c7c;
+}
+.FareCalculation div strong {
+  font-weight: 600;
+  font-size: 12px;
+  color: #000000;
+  margin: 0px;
+}
+
+.top-border {
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+// ANCILLARIES
+.accordion {
+  margin: 20px 0 40px;
+}
+
+.flightDetails .mat-expansion-panel-header {
+  margin: 3px;
+}
+
+.baggage {
+  font-size: 18px;
+}
+.flightDetails ::ng-deep .mat-tab-label {
+  font-family: "Poppins", sans-serif !important;
+  opacity: 1 !important;
+  color: black;
+  text-align: center;
+}
+
+.flightDetails ::ng-deep .mat-tab-label-active {
+  opacity: 0.1;
+  color: #eb2533;
+  text-align: center;
+}
+
+.FareCalculation {
+  padding: 10px;
+  border: 1px dashed #656565;
+  border-radius: 3px;
+}
+
+.divider {
+  text-align: center;
+  margin: 2px auto;
+  width: 100px;
+  height: 2px;
+  background-color: #aeaeae;
+}
+
+.divider::after,
+.divider::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50px;
+  background-color: #aeaeae;
+  position: relative;
+  bottom: 9px;
+  flex: 1;
+}
+
+.divider::after {
+  right: -45px;
+}
+
+.divider::before {
+  left: -45px;
+}
+
+.separatorUp,
+.separatorDown {
+  margin: 0 auto;
+  text-align: center;
+  width: 2px !important;
+  height: 30px !important;
+  background-color: #aeaeae;
+}
+
+.separatorUp::before,
+.separatorDown::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50px;
+  background-color: #aeaeae;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.separatorUp::before {
+  position: relative;
+  bottom: 9px;
+  left: -2px;
+}
+
+.separatorDown::after {
+  position: relative;
+  top: 20px;
+  left: -2px;
+}
+
+.deviderSection {
+  margin-left: 100px;
+  p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 14px;
+    text-align: center;
+    color: #f14336;
+  }
+}
+
+/* To show the lines on right 
+and left sides of the text */
+// .divider::before {
+//   height: 5px !important;
+//   width: 5px  !important;
+//   background-color: #efd912  !important;
+//   border-radius: 50%  !important;
+//   display: inline-block  !important;
+//   position: relative !important;
+//   top: 10px !important;
+//   left: 40px !important;
+// }
+
+.stops {
+  font-family: "Poppins";
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  color: #f14336;
+}
+
+.stop {
+  color: #484848;
+}
+
+.direct {
+  color: #009da7;
+  padding: 0px 5px;
+}
+
+.flight-Icon {
+  color: #3e3d3d !important;
+  font-size: 16px;
+}
+
+.details .col-md-2 {
+  padding: 0px;
+}
+
+.luggage-cart {
+  position: relative;
+}
+
+.luggage-cart .check-circle,
+.luggage-cart .check-circle {
+  position: absolute;
+  top: 5px;
+  left: 1px;
+  font-size: 10px;
+  color: rgb(64 207 64);
+}
+
+.luggage-cart .fa-times-circle,
+.luggage-cart .fa-times-circle {
+  position: absolute;
+  top: 6px;
+  left: 1px;
+  font-size: 10px;
+  color: rgb(241, 39, 39);
+}
+
+.fa-luggage-cart:before {
+  content: "\f59d";
+  font-size: 14px;
+}
+.flight-details a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+.services .fa-luggage-cart:before {
+  font-size: small;
+}
+
+.noBaggage {
+  border-left: 5px solid #f14336;
+}
+.Baggage {
+  border-left: 5px solid #22bd09;
+}
+
+.rulesHead {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: #000000;
+}
+
+.fli-list-fare_details__left-heading p span {
+  position: relative;
+  bottom: 7px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 15px;
+}
+
+.fli-list-fare_details__left-heading p i {
+  font-size: 25px !important;
+}
+
+.icon-baggage2 {
+  font-size: 23px;
+}
+
+.icon-b-red:before {
+  font-size: 10px;
+  content: "\e903";
+  color: #22bd09;
+  position: relative;
+  left: -12px;
+}
+
+.icon-b-green:before {
+  font-size: 10px;
+  content: "\e904";
+  color: #f00;
+  position: relative;
+  left: -14px;
+}
+
+.dayIndicator{
+  color: #eb2533;
+  font-size: 10px;
+  position: relative;
+  bottom: 8px;
+}
+
+::ng-deep .mat-tab-body-content {
+  background: rgba(239, 217, 18, 0.15);
+}
+
+
+@media (max-width:600px){
+  .divider {
+    width: 60px;
+  }
+  .divider::after {
+    right: -31px;
+  }
+  
+  .divider::before {
+    left: -31px;
+  }
+  .matTabContainer{
+    min-height: 100px !important;
+   height: auto !important;
+  }
+  .airlineImg{
+    display: none;
+  }
+  .fareSummaryContainer{
+    flex-direction: column;
+  }
+  .FareCalculation{
+    width: 100% !important;
+  }  
+}

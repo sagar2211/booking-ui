@@ -1,0 +1,124 @@
+<div style="margin: 20px;">
+  <section class="container signup-form">
+    <h2>Create Your Account</h2>
+    <div class="d-flex pt-3 signUpContainer">
+      <div class="signup">
+        <form class="example-form" [formGroup]="user_form" (ngSubmit)="onSubmit()" name="createUserForm">
+          <div class="d-flex justify-content-between container row">
+            <mat-form-field class="p-2 col-12 col-md-6 " appearance="outline">
+              <mat-label>Prefix</mat-label>
+              <mat-select formControlName="prefix" required>
+                <mat-option value="Mr">Mr</mat-option>
+                <mat-option value="Mrs">Mrs</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="col-12 col-md-6  p-2" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput aria-label="firstName" formControlName="firstName" name="first_name" appAlphabetOnly />
+            </mat-form-field>
+          </div>
+          <div class="d-flex container row">
+            <mat-form-field class=" col-12 col-md-6 p-2" appearance="outline">
+              <mat-label>Middle Name</mat-label>
+              <input matInput aria-label="middleName" formControlName="middleName" appAlphabetOnly />
+            </mat-form-field>
+            <mat-form-field class=" col-12 col-md-6 p-2" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput aria-label="lastName" formControlName="lastName" name="last_name" appAlphabetOnly />
+            </mat-form-field>
+          </div>
+          <div class="d-flex container row">
+            <!-- <mat-form-field class="example-full-width p-2" appearance="outline">
+              <mat-label>Mobile</mat-label>
+              <input matInput type="mobile" aria-label="mobile" formControlName="mobile" appNumberOnly />
+            </mat-form-field> -->
+            <div class="col-12 col-md-6 mb-3" style="padding-left: 0px;">
+              <ngx-intl-tel-input #PhoneNoBookingForm [cssClass]="''" formControlName="mobile" 
+                [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                [phoneValidation]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                [selectFirstCountry]="true" [phoneValidation]="true" [separateDialCode]="true" name="mobile_number">
+              </ngx-intl-tel-input>
+            </div>
+            <mat-form-field class="col-12 col-md-6  p-2" appearance="outline">
+              <mat-label>Email Id</mat-label>
+              <input type="email" title="Work email" name="email" matInput class="email-form" placeholder=" "
+                required="" data-email-required="Email is required"
+                data-email-invalid="Please enter a valid email address" id="email-29863499679432"
+                data-disable-prefill="false" aria-labelledby="email-29863499679432-label" aria-invalid="false"
+                aria-errormessage="email-err-29863499679432" formControlName="email">
+            </mat-form-field>
+          </div>
+          <div class="d-flex container row">
+            <div class="col-12 col-md-6" style="padding: 0px 6px;">
+              <mat-form-field class="" style="width: 100%;" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input [type]="passwordType" matInput type="password" aria-label="password" formControlName="password"
+                  min="6" />
+                <span class="ps-viewer" (click)="changePasswordType()">
+                  <i class="fa fa-eye" *ngIf="passwordType === 'password'" aria-hidden="true"></i>
+                  <i class="fa fa-eye-slash" *ngIf="passwordType === 'search'" aria-hidden="true"></i>
+                </span>
+              </mat-form-field>
+              <!-- <p *ngIf="user_form.value.password.length > 3 && user_form.value.password.length < 6 "
+                style="color: red;font-size: 10px;">Password length must be greater than or equal 6.</p> -->
+              <p *ngIf="user_form.value.password.length > 3 && user_form.controls['password'].invalid && (user_form.controls['password'].dirty || user_form.controls['password'].touched)"
+                class="spanErr">
+                passward should be contains one alphanumeric one capital letter and special symboll.
+              </p>
+            </div>
+            <div class="col-12 col-md-6" style="padding: 0px 6px;">
+              <mat-form-field class="" style="width: 100%;" appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input [type]="passwordType" matInput type="password" aria-label="password"
+                  formControlName="confirmPassword" (keydown)="onConfirmPassword()" min="6" />
+                <span class="ps-viewer" (click)="changePasswordType()">
+                  <i class="fa fa-eye" *ngIf="passwordType === 'password'" aria-hidden="true"></i>
+                  <i class="fa fa-eye-slash" *ngIf="passwordType === 'search'" aria-hidden="true"></i>
+                </span>
+              </mat-form-field>
+              <p *ngIf="user_form.value.confirmPassword.length > 3 && !passMatch" style="color: red;font-size: 10px;">
+                Password doesn't match</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between passwordbtn p-2">
+            <mat-checkbox formControlName="newsLetter" class="example-margin black">Subscribe to Wadiia News Letter
+            </mat-checkbox>
+          </div>
+          <div class="d-flex justify-content-between passwordbtn p-2">
+            <mat-checkbox formControlName="termAndCondition" class="example-margin black">I accept <a
+                href="https://www.google.com" style="text-decoration: underline;">Term & Condition</a></mat-checkbox>
+          </div>
+          <section class="passwordbtn p-2">
+            <button type="submit" class="btn btn-danger p-2">
+              <span class="send-code-btn"><i class="icon-user-plus"></i>
+                <span>SIGN UP</span>
+              </span>
+            </button>
+          </section>
+
+        </form>
+      </div>
+      <div class="social">
+        <div class="container p-5">
+          <div *ngIf="!isBelowLg" class="separator">
+            or continue with
+          </div>
+          <div *ngIf="!isBelowLg" class="d-flex justify-content-evenly pt-4">
+            <div class="icon">
+              <img src="/assets/images/google.png" width="50%" alt="">
+            </div>
+            <div class="icon">
+              <img src="/assets/images/facebook1.png" width="50%" alt="">
+            </div>
+            <div class="icon">
+              <img src="/assets/images/img4.png" width="50%" alt="">
+            </div>
+          </div>
+          <p class="pt-5 text-center signUp">Already A Member? <a class="text-danger" routerLink="/user/login">Sign
+              In</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

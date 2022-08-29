@@ -1,0 +1,1158 @@
+.main-section {
+    background     : linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/assets/images/travel-hist-bg.png");
+    background-size: cover;
+    height         : 1070px;
+}
+
+.main-container {
+    width   : 1200px;
+    position: relative;
+    bottom  : 25px;
+}
+
+.left-panel {
+    width   : 791px;
+    position: relative;
+    top     : 5px;
+}
+
+.right-panel {
+    width     : 387px;
+    margin-top: 23px;
+}
+
+.adjust-width {
+    width: 387px;
+}
+
+.flight-heading {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 18px;
+    color      : #000000;
+}
+
+.single-card {
+    width  : 790px;
+    padding: unset !important;
+}
+
+.upper-card-shadow {
+    padding: 20px 16px 8px 12px !important;
+    background   : #FFFFFF;
+    box-shadow   : 0px 1px 10px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 8px 8px 0px 0px !important;
+}
+
+.lower-card-shadow {
+    padding      : 20px 32px 8px 32px !important;
+    background   : #FFFFFF;
+    box-shadow   : 0px 1px 10px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 0px 0px 8px 8px !important;
+}
+
+.booking-id {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 16px;
+    color      : #000000;
+}
+
+.trip-type {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 16px;
+    color      : #525252;
+}
+
+.depart-flight {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 14px;
+    color      : #525252;
+}
+
+.in-days {
+    font-family     : 'Poppins';
+    font-style      : normal;
+    font-weight     : 400;
+    font-size       : 14px;
+    color           : #000000;
+    padding         : 4px;
+    background-color: #7CC2C0;
+    border-radius   : 4px;
+}
+
+.depart-date {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 14px;
+    color      : #000000;
+}
+
+.depart-time {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 14px;
+    color      : #000000;
+}
+
+.depart-flname {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 14px;
+    color      : #000000;
+    padding-top: 8px;
+}
+
+.fl-name {
+    font-family : 'Poppins';
+    font-style  : normal;
+    font-weight : 500;
+    font-size   : 14px;
+    color       : #000000;
+    padding-left: 10px;
+}
+
+.icon-email,
+.icon-print {
+    font-size: 14px;
+}
+
+.icon-arrowStroke {
+    margin     : 0 8px;
+    font-size  : 16px;
+    font-weight: 600;
+}
+
+.icon-arrowStroke:before {
+    color: #000000;
+}
+
+.icon-email:before,
+.icon-print:before {
+    color: #FFFFFF;
+}
+
+.resend-print-btn {
+    background   : #0057B9;
+    border-radius: 6px;
+    padding-right: 16px;
+}
+
+.cancellation-note {
+    font-family   : 'Roboto';
+    font-style    : normal;
+    font-weight   : 400;
+    font-size     : 14px;
+    line-height   : 16px;
+    color         : #525252;
+    padding-top   : 9px !important;
+    padding-bottom: 4px;
+    padding-top: 30px !important;
+}
+
+.single-card ::ng-deep {
+    .mat-tab-header {
+        border-bottom: 3px solid rgba(0, 0, 0, .12);
+        width        : 61%;
+        margin       : 0 32px;
+    }
+
+    .mat-tab-group.mat-primary .mat-ink-bar,
+    .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+        color           : #38A169;
+        background-color: #38A169;
+        height          : 3px;
+    }
+}
+
+
+.more-of-wadiia {
+    font-family: 'Inter';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 24px;
+    color      : #000000;
+}
+
+.wadiia-color {
+    font-family: 'Inter';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 24px;
+    color      : #eb2533;
+}
+
+// carosoul css 
+.item {
+    background   : #EDF2F7;
+    box-sizing   : border-box;
+    box-shadow   : 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    height       : auto !important;
+}
+
+.leftRs {
+    position        : relative;
+    top             : 750px;
+    bottom          : 0;
+    width           : 30px;
+    height          : 30px;
+    box-shadow      : 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius   : 999px;
+    left            : 160px;
+    z-index         : 1;
+    background-color: #FFFFFF;
+}
+
+.rightRs {
+    position        : absolute;
+    margin          : auto;
+    top             : 0px;
+    bottom          : 750px;
+    width           : 30px;
+    height          : 30px;
+    box-shadow      : 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius   : 999px;
+    left            : 160px;
+    background-color: #FFFFFF;
+}
+
+.heading {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 18px;
+    text-align : center;
+}
+
+.content {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 12px;
+    text-align : center;
+}
+
+// cancelled tab css
+.total-pay {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 18px;
+    color      : #525252;
+}
+
+.cancel-price {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 16px;
+    color      : #208467;
+}
+
+.initiated-btn {
+    position     : relative;
+    top          : 20px;
+    background   : #0057B9;
+    border-radius: 20px;
+}
+
+.iconSize12 {
+    font-size: 12px;
+}
+
+.addSticky {
+    position: fixed;
+    z-index : 1;
+    top     : 0;
+}
+
+.addStatic {
+    position: fixed;
+    top     : -150px;
+}
+
+
+// print page css
+
+#print-section{
+    display: none;
+}
+
+.print {
+    display: block;
+    .page-header,
+    .page-header-space {
+        margin-top: 13px;
+        // height    : 30px;
+        border    : none;
+    }
+
+    .page-footer,
+    .page-footer-space {
+        margin-top: 11px;
+        height    : 30px;
+        border    : none;
+        width     : 100%;
+    }
+
+    .page-footer {
+        position: fixed;
+        bottom  : 0;
+        width   : 100%;
+        border  : none;
+    }
+
+    .page-header {
+        position: fixed;
+        top     : 0mm;
+        width   : 100%;
+        border  : none;
+    }
+
+    .page {
+        page-break-after: always;
+
+        // topText
+        .topText {
+            font-family: 'poppins';
+            font-style : normal;
+            font-weight: 400;
+            font-size  : 12px;
+            line-height: 15px;
+            color      : #000000;
+        }
+
+        // confirm Ticket
+        .confirmTicket {
+            p {
+                font-family: 'Poppins';
+                font-style : normal;
+                font-weight: 500;
+                font-size  : 12px;
+                line-height: 18px;
+                align-items: center;
+                color      : #0057B9;
+                margin     : 0;
+            }
+        }
+
+        // ticket 
+        .rute {
+            div {
+                padding: 0 34px;
+            }
+
+            .airlineImg {
+
+                .airlineName,
+                .airlineNo {
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 10px;
+                    line-height: 15px;
+                    display    : flex;
+                    align-items: center;
+                    color      : #525252;
+                }
+            }
+
+            .depart {
+                h2 {
+                    margin     : 0;
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 600;
+                    font-size  : 24px;
+                    line-height: 36px;
+                    text-align : right;
+                    color      : #0057B9;
+                }
+
+                .cityName {
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 12px;
+                    line-height: 18px;
+                    text-align : right;
+                    color      : #0057B9
+                }
+
+                .time {
+                    margin-top   : 12px;
+                    font-family  : 'Poppins';
+                    font-style   : normal;
+                    font-weight  : 500;
+                    font-size    : 12px;
+                    line-height  : 18px;
+                    text-align   : right;
+                    border-top   : 1px solid #D4D4D4;
+                    border-bottom: 1px solid #D4D4D4;
+                    padding      : 10px 0;
+                }
+
+                .airport {
+                    width      : 102px;
+                    margin-top : 12px;
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 10px;
+                    line-height: 15px;
+                    text-align : right;
+                }
+
+                .terminal {
+                    margin-top : 12px;
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 12px;
+                    line-height: 18px;
+                    text-align : right;
+                    color      : #000000;
+                }
+            }
+
+            .cabinSection {
+                margin-top: 41px;
+
+                p {
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 400;
+                    font-size  : 10px;
+                    line-height: 15px;
+                    text-align : center;
+                    color      : #525252;
+                    margin     : 0 !important;
+                    padding    : 3px 0;
+                }
+
+                .line {
+                    // margin: 0;
+                    width : 80px;
+                    height: 1px;
+                    border: 1px solid #0057B9;
+                }
+            }
+
+            .return {
+                h2 {
+                    margin     : 0;
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 600;
+                    font-size  : 24px;
+                    line-height: 36px;
+                    text-align : left;
+                    color      : #0057B9;
+                }
+
+                .cityName {
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 12px;
+                    line-height: 18px;
+                    text-align : left;
+                    color      : #0057B9
+                }
+
+                .time {
+                    margin-top   : 12px;
+                    font-family  : 'Poppins';
+                    font-style   : normal;
+                    font-weight  : 500;
+                    font-size    : 12px;
+                    line-height  : 18px;
+                    text-align   : left;
+                    border-top   : 1px solid #D4D4D4;
+                    border-bottom: 1px solid #D4D4D4;
+                    padding      : 10px 0;
+                }
+
+                .airport {
+                    width      : 102px;
+                    margin-top : 12px;
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 10px;
+                    line-height: 15px;
+                    text-align : left;
+                }
+
+                .terminal {
+                    margin-top : 12px;
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 12px;
+                    line-height: 18px;
+                    text-align : left;
+                    color      : #000000;
+                }
+            }
+        }
+
+        // pasanger
+        .passenger,
+        .baggage {
+            .table> :not(caption)>*>* {
+                border-bottom-width: 0px !important;
+            }
+
+            .table>thead {
+                vertical-align  : bottom;
+                background-color: rgba(188, 213, 243, 0.4);
+            }
+
+            .table> :not(:first-child) {
+                border-top: 0px !important;
+            }
+
+            tbody .total {
+                border-top: 2px solid #D4D4D4;
+            }
+
+            p {
+                font-family: 'poppins';
+                font-style : normal;
+                font-weight: 400;
+                font-size  : 12px;
+                line-height: 15px;
+                color      : #000000;
+            }
+        }
+
+        .fentBlue {
+            padding                   : 10px 10px;
+            margin                    : 0;
+            background                : rgba(188, 213, 243, 0.4);
+            color                     : #0057B9;
+            font-family               : 'Poppins';
+            font-style                : normal;
+            font-weight               : 600;
+            font-size                 : 22px;
+            line-height               : 18px;
+            display                   : flex;
+            align-items               : center;
+            -webkit-print-color-adjust: exact
+        }
+
+        // extra service
+        .extra {
+            p {
+                font-family: 'poppins';
+                font-style : normal;
+                font-weight: 400;
+                font-size  : 12px;
+                line-height: 15px;
+                color      : #000000;
+            }
+        }
+
+    }
+
+    .top {
+        padding    : 10px 30px;
+        margin     : 0;
+        background : linear-gradient(270deg, #0057B9 0%, rgba(0, 87, 185, 0.2) 98.85%);
+        color      : white;
+        font-family: 'Poppins';
+        font-style : normal;
+        font-weight: 600;
+        font-size  : 12px;
+        line-height: 18px;
+        align-items: center;
+
+        h3 {
+            margin     : 0;
+            text-align : center !important;
+            font-weight: 500;
+            font-size  : 18px;
+        }
+    }
+
+    .head {
+        margin     : 0;
+        font-family: 'Poppins';
+        font-style : normal;
+        font-weight: 500;
+        font-size  : 16px;
+        color      : #0057B9;
+
+        p {
+            font-size: 16px !important;
+        }
+    }
+
+    .fentBlue {
+        padding    : 10px 10px;
+        margin     : 0;
+        background : rgba(188, 213, 243, 0.4);
+        color      : #0057B9;
+        font-family: 'Poppins';
+        font-style : normal;
+        font-weight: 600;
+        font-size  : 12px;
+        line-height: 18px;
+        display    : flex;
+        align-items: center;
+    }
+
+    thead {
+        width  : 100%;
+        display: table-header-group;
+    }
+
+    tfoot {
+        width  : 100%;
+        display: table-footer-group;
+    }
+
+    button {
+        display: none;
+    }
+
+    tbody {
+        margin: 0px;
+    }
+
+    footer {
+        width                     : 100%;
+        display                   : block;
+        position                  : fixed;
+        bottom                    : 0;
+        background-color          : #0057B9;
+        -webkit-print-color-adjust: exact
+    }
+
+    header {
+        // padding                   : 0 20px;
+        width                     : 100%;
+        display                   : block;
+        position                  : fixed;
+        top                       : 0;
+        background-color          : #0057B9;
+        -webkit-print-color-adjust: exact;
+
+        div{
+            p{
+                margin: 0;
+            }
+        }
+    }
+
+    table {
+        page-break-after: auto;
+        margin-bottom   : 5px !important;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        page-break-after : auto
+    }
+
+    td {
+        page-break-inside: avoid;
+        page-break-after : auto
+    }
+
+    thead {
+        display                   : table-header-group;
+        -webkit-print-color-adjust: exact
+    }
+
+    .underTable {
+        thead tr {
+            background                : rgba(188, 213, 243, 0.4);
+            -webkit-print-color-adjust: exact
+        }
+    }
+
+
+    // .fentBlue {
+    //     padding                   : 10px 10px;
+    //     margin                    : 0;
+    //     background                : rgba(188, 213, 243, 0.4) !important;
+    //     color                     : #0057B9;
+    //     font-family               : 'Poppins';
+    //     font-style                : normal;
+    //     font-weight               : 600;
+    //     font-size                 : 12px;
+    //     line-height               : 18px;
+    //     display                   : flex;
+    //     align-items               : center;
+    //     -webkit-print-color-adjust: exact
+    // }
+}
+
+@media screen{
+    .page-header,
+        .page-header-space {
+            display: none;
+        }
+        .page-footer,
+        .page-footer-space {
+            display: none;
+        }
+        .page-footer {
+            display:none;
+        }
+    
+        .page-header {
+           display: none;
+        }
+
+        .page{
+            height: 475px;
+            scroll-behavior: auto;
+        }
+  }
+
+@media print {
+
+    .print {
+        display: block;
+        .page-header,
+        .page-header-space {
+            margin-top: 13px;
+            height    : 30px;
+            border    : none;
+        }
+        .page-footer,
+        .page-footer-space {
+            margin-top: 11px;
+            height    : 30px;
+            border    : none;
+            width     : 100%;
+        }
+    
+        .page-footer {
+            position: fixed;
+            bottom  : 0;
+            width   : 100%;
+            border  : none;
+        }
+    
+        .page-header {
+            position: fixed;
+            top     : 0mm;
+            width   : 100%;
+            border  : none;
+        }
+    
+        .page {
+            page-break-after: always;
+            // topText
+            .topText {
+                font-family: 'poppins';
+                font-style : normal;
+                font-weight: 400;
+                font-size  : 12px;
+                line-height: 15px;
+                color      : #000000;
+            }
+    
+            // confirm Ticket
+            .confirmTicket {
+                p {
+                    font-family: 'Poppins';
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 12px;
+                    line-height: 18px;
+                    align-items: center;
+                    color      : #0057B9;
+                    margin     : 0;
+                }
+            }
+    
+            // ticket 
+            .rute {
+                div {
+                    padding: 0 34px;
+                }
+    
+                .airlineImg {
+    
+                    .airlineName,
+                    .airlineNo {
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 500;
+                        font-size  : 10px;
+                        line-height: 15px;
+                        display    : flex;
+                        align-items: center;
+                        color      : #525252;
+                    }
+                }
+    
+                .depart {
+                    h2 {
+                        margin     : 0;
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 600;
+                        font-size  : 24px;
+                        line-height: 36px;
+                        text-align : right;
+                        color      : #0057B9;
+                    }
+    
+                    .cityName {
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 500;
+                        font-size  : 12px;
+                        line-height: 18px;
+                        text-align : right;
+                        color      : #0057B9
+                    }
+    
+                    .time {
+                        margin-top   : 12px;
+                        font-family  : 'Poppins';
+                        font-style   : normal;
+                        font-weight  : 500;
+                        font-size    : 12px;
+                        line-height  : 18px;
+                        text-align   : right;
+                        border-top   : 1px solid #D4D4D4;
+                        border-bottom: 1px solid #D4D4D4;
+                        padding      : 10px 0;
+                    }
+    
+                    .airport {
+                        width      : 102px;
+                        margin-top : 12px;
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 500;
+                        font-size  : 10px;
+                        line-height: 15px;
+                        text-align : right;
+                    }
+    
+                    .terminal {
+                        margin-top : 12px;
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 500;
+                        font-size  : 12px;
+                        line-height: 18px;
+                        text-align : right;
+                        color      : #000000;
+                    }
+                }
+    
+                .cabinSection {
+                    margin-top: 41px;
+    
+                    p {
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 400;
+                        font-size  : 10px;
+                        line-height: 15px;
+                        text-align : center;
+                        color      : #525252;
+                        margin     : 0 !important;
+                        padding    : 3px 0;
+                    }
+    
+                    .line {
+                        // margin: 0;
+                        width : 80px;
+                        height: 1px;
+                        border: 1px solid #0057B9;
+                    }
+                }
+    
+                .return {
+                    h2 {
+                        margin     : 0;
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 600;
+                        font-size  : 24px;
+                        line-height: 36px;
+                        text-align : left;
+                        color      : #0057B9;
+                    }
+    
+                    .cityName {
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 500;
+                        font-size  : 12px;
+                        line-height: 18px;
+                        text-align : left;
+                        color      : #0057B9
+                    }
+    
+                    .time {
+                        margin-top   : 12px;
+                        font-family  : 'Poppins';
+                        font-style   : normal;
+                        font-weight  : 500;
+                        font-size    : 12px;
+                        line-height  : 18px;
+                        text-align   : left;
+                        border-top   : 1px solid #D4D4D4;
+                        border-bottom: 1px solid #D4D4D4;
+                        padding      : 10px 0;
+                    }
+    
+                    .airport {
+                        width      : 102px;
+                        margin-top : 12px;
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 500;
+                        font-size  : 10px;
+                        line-height: 15px;
+                        text-align : left;
+                    }
+    
+                    .terminal {
+                        margin-top : 12px;
+                        font-family: 'Poppins';
+                        font-style : normal;
+                        font-weight: 500;
+                        font-size  : 12px;
+                        line-height: 18px;
+                        text-align : left;
+                        color      : #000000;
+                    }
+                }
+            }
+
+            .extra{
+                page-break-after: auto;
+                .table> :not(caption)>*>* {
+                    border-bottom-width: 0px !important;
+                    page-break-after: always;
+                }
+            }
+    
+            // pasanger
+            .passenger,
+            .baggage {
+                page-break-after: auto;
+                .table> :not(caption)>*>* {
+                    border-bottom-width: 0px !important;
+                    page-break-after: always;
+                }
+    
+                .table>thead {
+                    vertical-align  : bottom;
+                    background-color: rgba(188, 213, 243, 0.4);
+                }
+    
+                .table> :not(:first-child) {
+                    border-top: 0px !important;
+                }
+    
+                tbody .total {
+                    page-break-after: always;
+                    border-top: 2px solid #D4D4D4;
+                }
+    
+                p {
+                    font-family: 'poppins';
+                    font-style : normal;
+                    font-weight: 400;
+                    font-size  : 12px;
+                    line-height: 15px;
+                    color      : #000000;
+                }
+            }
+    
+            .fentBlue {
+                padding                   : 10px 10px;
+                margin                    : 0;
+                background                : rgba(188, 213, 243, 0.4);
+                color                     : #0057B9;
+                font-family               : 'Poppins';
+                font-style                : normal;
+                font-weight               : 600;
+                font-size                 : 22px;
+                line-height               : 18px;
+                display                   : flex;
+                align-items               : center;
+                -webkit-print-color-adjust: exact
+            }
+    
+            // extra service
+            .extra {
+                page-break-after: auto;
+                p {
+                    font-family: 'poppins';
+                    font-style : normal;
+                    font-weight: 400;
+                    font-size  : 12px;
+                    line-height: 15px;
+                    color      : #000000;
+                }
+            }
+    
+        }
+    
+        .top {
+            padding    : 10px 30px;
+            margin     : 0;
+            background : linear-gradient(270deg, #0057B9 0%, rgba(0, 87, 185, 0.2) 98.85%);
+            color      : white;
+            font-family: 'Poppins';
+            font-style : normal;
+            font-weight: 600;
+            font-size  : 12px;
+            line-height: 18px;
+            align-items: center;
+    
+            h3 {
+                margin     : 0;
+                text-align : center !important;
+                font-weight: 500;
+                font-size  : 18px;
+            }
+        }
+    
+        .head {
+            margin     : 0;
+            font-family: 'Poppins';
+            font-style : normal;
+            font-weight: 500;
+            font-size  : 16px;
+            color      : #0057B9;
+    
+            p {
+                font-size: 16px !important;
+            }
+        }
+    
+        .fentBlue {
+            padding    : 10px 10px;
+            margin     : 0;
+            background : rgba(188, 213, 243, 0.4);
+            color      : #0057B9;
+            font-family: 'Poppins';
+            font-style : normal;
+            font-weight: 600;
+            font-size  : 12px;
+            line-height: 18px;
+            display    : flex;
+            align-items: center;
+        }
+    
+        thead {
+            width  : 100%;
+            display: table-header-group;
+        }
+    
+        tfoot {
+            width  : 100%;
+            display: table-footer-group;
+        }
+    
+        button {
+            display: none;
+        }
+    
+        tbody {
+            margin: 0px;
+        }
+    
+        footer {
+            width                     : 100%;
+            display                   : block;
+            position                  : fixed;
+            bottom                    : 0;
+            background-color          : #0057B9;
+            -webkit-print-color-adjust: exact
+        }
+    
+        header {
+            // padding                   : 0 20px;
+            width                     : 100%;
+            display                   : block;
+            position                  : fixed;
+            top                       : 0;
+            background-color          : #0057B9;
+            -webkit-print-color-adjust: exact;
+
+            div{
+                p{
+                    margin: 0;
+                }
+            }
+        }
+    
+        table {
+            page-break-after: auto;
+            margin-bottom   : 5px !important;
+        }
+    
+        tr {
+            page-break-inside: avoid;
+            page-break-after : auto
+        }
+    
+        td {
+            page-break-inside: avoid;
+            page-break-after : auto
+        }
+    
+        thead {
+            display                   : table-header-group;
+            -webkit-print-color-adjust: exact
+        }
+    
+        .underTable {
+            thead tr {
+                background                : rgba(188, 213, 243, 0.4);
+                -webkit-print-color-adjust: exact
+            }
+        }
+    
+    }
+}
+
+//media Query
+
+    @media(max-width:1000px){
+        .single-card{
+            width: 100% !important;
+        }
+        .booking-id{
+            padding-left: 2px;
+        }
+    }
+
+    @media(min-width:600px) and (max-width:780px){
+        .tripTypeText{
+            width: 37%;
+        }
+    }
+
+    @media(max-width:600px){
+        .tripTypeText{
+            width: 80%;
+        }
+    }
+   

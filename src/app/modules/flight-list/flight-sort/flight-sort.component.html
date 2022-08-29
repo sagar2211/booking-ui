@@ -1,0 +1,19 @@
+<section class="container flightSort">
+  <div class="row">
+    <div class="col-4 col-md-4 sort p-3" [ngClass]="{'activeSort': step ==='step1'}" value="recommended" (click)="sortCommonData('recommended'); step='step1'">
+      <p>Recommended</p>
+      <h3>{{showBest().currency}} {{ showBest().price | number}}</h3>
+      <p class="small">{{showBest().duration}}</p>
+    </div>
+    <div class="col-4 col-md-4 sort p-3" [ngClass]="{'activeSort': step ==='step2'}" value="cheapest" (click)="sortCommonData('cheapest'); step='step2'">
+      <p>Lowest Fare</p>
+      <h3>{{ showPrice().currency}} {{ showPrice().price | number}}</h3>
+      <p class="small">{{ showPrice().duration}}</p>
+    </div>
+    <div class="col-4 col-md-4 sort p-3" [ngClass]="{'activeSort': step ==='step3'}" value="fastest" (click)="sortCommonData('fastest');step='step3'">
+      <p>Fastest</p>
+      <h3>{{getMinmumDuration().currency}} {{ getMinmumDuration().price | number}}</h3>
+      <p class="small"> {{ getMinmumDuration().duration }}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,507 @@
+<section>
+    <div class="container main-container">
+        <div class="left-panel">
+            <p class="trip-heading">Extra convenience for your trip!</p>
+            <mat-card class="mt-4 card-container">
+                <div class="d-flex justify-content-between p-3">
+                    <p class="card-heading">Bundle Up & Save More All-Inclusive Travel Protection</p>
+                    <p class="card-heading"> ZAR 24.00</p>
+                </div>
+
+                <div class="d-flex p-3">
+                    <div>
+                        <img src="/assets/images/hepstar_1.png" alt="" />
+                        <div class="mt-5 radio-part">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="service-context">
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get up to ZAR10,000 in compensation for airline delays or
+                                cancellations via AirHelp Plus</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get up to ZAR 165000 if the airline goes out of business (goes
+                                bankrupt or liquidates). </p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get paid up to ZAR 15,000 if your luggage is misplaced and not
+                                returned within 96 hours (4 days) of your flight arrival.</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Secure the money you spent on flights in the event of unexpected
+                                occurrences, and get full refund if you cancel your flight for any reason*</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get access to a lounge that offers comfort, complementary food and
+                                drink, and free Wi-Fi while you wait for your delayed flight.</p>
+                        </div>
+                        <p class="terms"><a href="">All terms & conditions apply!</a></p>
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card class="mt-4 card-container">
+                <div class="d-flex justify-content-between p-3">
+                    <p class="card-heading">Flight Delay Compensation</p>
+                    <p class="card-heading"> ZAR 24.00</p>
+                </div>
+
+                <div class="d-flex p-3">
+                    <div>
+                        <img src="/assets/images/hepstar_2.png" alt="" />
+                        <div class="mt-5 radio-part">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="service-context">
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get up to ZAR10,000 in compensation for airline delays or
+                                cancellations.</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get up to access to a 24-hour emergency hotline as well as real-time
+                                flight updates if a flight is delayed.</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Read AirHelp’s Terms Apply.</p>
+                        </div>
+                        <div class="read-more-text" *ngIf="delayCompansation">
+                            <p>If your flight is delayed, cancelled, or you are denied boarding, you will be
+                                compensated.
+                                Simply visit the Airhelp website, put in your information, and wait. Regular updates
+                                will be
+                                sent to you, and if you are eligible for compensation, you will be paid as quickly as
+                                possible - up to ZAR 10,000. Additionally, Airhelp will assist you in obtaining
+                                reimbursement of up to ZAR 100,000 for expenses incurred as a result of a delay, such as
+                                lost baggage and missed reservations (hotels, flights, etc).
+                            </p>
+                            <p>
+                                There is no risk in reporting a flight delay or cancellation, and there are no
+                                additional
+                                expenses, even if you are not entitled to compensation. Please note that this service
+                                will
+                                not be refunded if you do not get compensation from the airline.
+                            </p>
+                        </div>
+                        <p class="terms" *ngIf="!delayCompansation" (click)="delayCompansation = true"><a
+                                href="javascript:void(0)">READ MORE</a></p>
+                        <p class="terms" *ngIf="delayCompansation" (click)="delayCompansation = false"><a
+                                href="javascript:void(0)">READ LESS >></a></p>
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card class="mt-4 card-container">
+                <div class="d-flex justify-content-between p-3">
+                    <p class="card-heading"> Airline Failure Protection</p>
+                    <p class="card-heading"> ZAR 24.00</p>
+                </div>
+
+                <div class="d-flex p-3">
+                    <div>
+                        <img src="/assets/images/hepstar_3.png" alt="" />
+                        <div class="mt-5 radio-part">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="service-context">
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">You’ll be covered or protected if the airline goes out of business
+                                (goes bankrupt or liquidates)</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">For all the scheduled flights we sell, this service protects you
+                                against cancellation.</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Each individual is covered up to the amount of their flight ticket,
+                                which is up to ZAR 165000.</p>
+                        </div>
+                        <div class="read-more-text" *ngIf="failureProtection">
+                            <p>
+                                If an airline enters into receivership, all of its flights will be cancelled. As a
+                                traveller, you don't want to be stranded or have your flight reservations disrupted.
+                            </p>
+                            <p>
+                                This Airline Failure Protection will reimburse you the cost of your tickets if your
+                                airline
+                                goes out of business before you fly. You'll be compensated for the cost of new flights
+                                if
+                                the airline liquidates or goes bankrupt while you're already abroad.
+                            </p>
+                        </div>
+                        <p class="terms" *ngIf="!failureProtection" (click)="failureProtection = true"><a
+                                href="javascript:void(0)">READ MORE</a></p>
+                        <p class="terms" *ngIf="failureProtection" (click)="failureProtection = false"><a
+                                href="javascript:void(0)">READ LESS >></a></p>
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card class="mt-4 card-container">
+                <div class="d-flex justify-content-between p-3">
+                    <p class="card-heading">Flight Cancellation Protection </p>
+                    <p class="card-heading"> ZAR 24.00</p>
+                </div>
+
+                <div class="d-flex p-3">
+                    <div>
+                        <img src="/assets/images/hepstar_4.png" alt="" />
+                        <div class="mt-5 radio-part">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="service-context">
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Cancel your flight for any reason* with this Flight Cancellation
+                                Protection.</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Secure the money you spent on flights in the event of unexpected
+                                occurrences.</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get peace of mind in the event of unforeseen circumstances leading
+                                up to your scheduled flight departure.</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info" style="color: #0057B9;">Flight Cancellation Protection Terms &
+                                Conditions Apply!</p>
+                        </div>
+                        <div class="read-more-text" *ngIf="cancellationProtection">
+                            <p>
+                                This Flight Cancellation Protection is available up to ZAR 70,000 per person and per
+                                trip.
+                                This covers the portion of pre-paid travel expenditures that are not refunded by the
+                                airline
+                                or travel supplier for a covered event that occurs prior to the flight departure date,
+                                subject to policy limitations and exclusions.
+                            </p>
+                            <p>
+                                Here are a few events that this Flight Cancellation Protection can cover:
+                            </p>
+                            <p>
+                                Natural disasters that occur unexpectedly at home or at the destination, rendering them
+                                uninhabitable.
+                            </p>
+                            <p>Any major injury or unanticipated medical condition that renders you or your travel
+                                partner
+                                unable to travel (by order of licensed physician).
+                                Strikes or extreme weather that prevents travel services from operating.
+                                Your or your travelling companion's death, or a non-traveling family member's death.
+                                Jury duty or being issued with a court order or subpoena are examples of legal
+                                obligation</p>
+                        </div>
+                        <p class="terms" *ngIf="!cancellationProtection" (click)="cancellationProtection = true"><a
+                                href="javascript:void(0)">READ MORE</a></p>
+                        <p class="terms" *ngIf="cancellationProtection" (click)="cancellationProtection = false"><a
+                                href="javascript:void(0)">READ LESS >></a></p>
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card class="mt-4 card-container">
+                <div class="d-flex justify-content-between p-3">
+                    <p class="card-heading">Airport Delay Coverage - SMARTDELAY™</p>
+                    <p class="card-heading"> ZAR 24.00</p>
+                </div>
+
+                <div class="d-flex p-3">
+                    <div>
+                        <img src="/assets/images/hepstar_5.png" alt="" />
+                        <div class="mt-5 radio-part">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="service-context">
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get access to a lounge that offers comfort, complementary food and
+                                drink, and free Wi-Fi while you wait for your delayed flight.</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Ease the pain and stress of flight delays with a luxury lounge
+                                access</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get Access to a network of over 1,100 lounges across the world. </p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info" style="color: #0057B9;">Terms & Conditions Apply! </p>
+                        </div>
+                        <div class="read-more-text" *ngIf="delayCoverage">
+                            <p>
+                                This Flight Cancellation Protection is available up to ZAR 70,000 per person and per
+                                trip.
+                                This covers the portion of pre-paid travel expenditures that are not refunded by the
+                                airline
+                                or travel supplier for a covered event that occurs prior to the flight departure date,
+                                subject to policy limitations and exclusions.
+                            </p>
+                            <p>
+                                Here are a few events that this Flight Cancellation Protection can cover:
+                            </p>
+                            <p>
+                                Natural disasters that occur unexpectedly at home or at the destination, rendering them
+                                uninhabitable.
+                            </p>
+                            <p>
+                                Any major injury or unanticipated medical condition that renders you or your travel
+                                partner
+                                unable to travel (by order of licensed physician).
+                            </p>
+                            <p>
+                                Strikes or extreme weather that prevents travel services from operating.
+                                Your or your travelling companion's death, or a non-traveling family member's death.
+                                Jury duty or being issued with a court order or subpoena are examples of legal
+                                obligation
+                            </p>
+
+                        </div>
+                        <p class="terms" *ngIf="!delayCoverage" (click)="delayCoverage = true"><a
+                                href="javascript:void(0)">READ MORE</a></p>
+                        <p class="terms" *ngIf="delayCoverage" (click)="delayCoverage = false"><a
+                                href="javascript:void(0)">READ LESS >></a></p>
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card class="mt-4 card-container">
+                <div class="d-flex justify-content-between p-3">
+                    <p class="card-heading">Flight Refund Protection</p>
+                    <p class="card-heading"> ZAR 24.00</p>
+                </div>
+
+                <div class="d-flex p-3">
+                    <div>
+                        <img src="/assets/images/hepstar_6.png" alt="" />
+                        <div class="mt-5 radio-part">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="service-context">
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">GBuy non-refundable flight tickets with confidence</p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Apply for full refund for your flight tickets if certain unforeseen
+                                circumstances occur and you can no longer travel. </p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info">Get the flexibility and security you need when you want to travel.
+                            </p>
+                        </div>
+                        <div class="d-flex">
+                            <p class="right-tick"><i class="icon-check"></i></p>
+                            <p class="service-info" style="color: #0057B9;">Terms & Conditions Apply! </p>
+                        </div>
+                        <div class="read-more-text" *ngIf="refundProtection">
+                            <p>
+                                If you are unable to fly and can show us one of the numerous reasons listed in the Terms
+                                and
+                                Conditions, which you accept when you choose the Flight Refund Protection when booking,
+                                you
+                                will receive a full refund (including the event and any extras if purchased as part of a
+                                package). Our partner manages all refund applications and refunds to customers.
+                            </p>
+                            <p>
+                                Some of the scenarios discussed include, but are not limited to:
+                                Having a Pre-Existing Medical Problem
+                                Injuries / Illnesses
+                                Complications During Pregnancy
+                                Flight Delay Due to Bad Weather
+                                Failure of a private car (excluding tow/transporter vehicles)
+                                Emergency Services & Armed Forces Jury Service Should Be Recalled
+                                And many more.
+                            </p>
+                            <p>
+                                Please read Terms & conditions here. Note that any claim would require verification of
+                                the
+                                situation to be supplied with the application. For instance, if a private car or your
+                                personal car breaks down, a call should be made.
+                            </p>
+
+                        </div>
+                        <p class="terms" *ngIf="!refundProtection" (click)="refundProtection = true"><a
+                                href="javascript:void(0)">READ MORE</a></p>
+                        <p class="terms" *ngIf="refundProtection" (click)="refundProtection = false"><a
+                                href="javascript:void(0)">READ LESS >></a></p>
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card class="mt-4 card-container">
+                <div class="p-3">
+                    <p class="card-heading">Wadiia Support Package (Upgrade your level of Wadiia services)</p>
+                    <p class="support-pkg-text"> Every passenger requires varying levels of support & assistance; select
+                        the package that best meets your needs. After booking, you'll get faster service, shorter wait
+                        times, and lower fees on additional requests.</p>
+                </div>
+
+                <mat-radio-group aria-label="Select an option">
+                    <div class="d-flex justify-content-between p-3 support-container">
+                        <mat-card class="support-card">
+                            <img src="/assets/images/hepstar_rectangle_1.png" width="280px" alt="" />
+                            <div class="text-center price-header">
+                                <p class="standard">Standard</p>
+                                <p class="included">Included</p>
+                            </div>
+
+                            <div class="support-context">
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Basic services provided.</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Response time is standard.</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Flight updates by SMS</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Email support</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Online Check-in</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Full Support on Additional Services</p>
+                                </div>
+                            </div>
+                            <div class="text-center pb-3">
+                                <mat-radio-button value="Standard" (change)="onRadioChange($event)">Continue with
+                                    Standard </mat-radio-button>
+                            </div>
+                        </mat-card>
+                        <mat-card class="support-card">
+                            <img src="/assets/images/hepstar_rectangle_2.png" width="280px" alt="" />
+                            <div class="text-center price-header">
+                                <p class="standard">Premium</p>
+                                <p class="included">ZAR 400</p>
+                            </div>
+
+                            <div class="support-context">
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Response Time is Fast </p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Medium Priority by phone</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Flight updates by SMS</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Email support</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Online Check-in</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Full Support on Additional Services</p>
+                                </div>
+                            </div>
+                            <div class="text-center pb-3">
+                                <mat-radio-button value="Premium" (change)="onRadioChange($event)">Continue with Premium
+                                </mat-radio-button>
+                            </div>
+                        </mat-card>
+                        <mat-card class="support-card">
+                            <img src="/assets/images/hepstar_rectangle_3.png" width="280px" alt="" />
+                            <div class="text-center price-header">
+                                <p class="standard">Supreme</p>
+                                <p class="included">ZAR 500 </p>
+                            </div>
+
+                            <div class="support-context">
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Response time is the fastest</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">High Priority by phone</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Flight updates by SMS &
+                                        WhatsApp</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Email support</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Online Check-in</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="green-tick"><i class="icon-check"></i></p>
+                                    <p class="support-text">Full Support on Additional Services</p>
+                                </div>
+                            </div>
+                            <div class="text-center pb-5">
+                                <mat-radio-button value="Supreme" (change)="onRadioChange($event)">Continue with Supreme
+                                </mat-radio-button>
+                            </div>
+                        </mat-card>
+                    </div>
+                </mat-radio-group>
+            </mat-card>
+        </div>
+        <div class="right-panel">
+            <app-price-sidebar>
+            </app-price-sidebar>
+        </div>
+    </div>
+</section>

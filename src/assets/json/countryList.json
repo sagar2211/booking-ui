@@ -1,0 +1,3394 @@
+[{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d77"
+  },
+  "id": "1",
+  "code": "AF",
+  "name": "AFGHANISTAN",
+  "description": "AFGHANISTAN",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "AFG",
+  "num_code": "4",
+  "phone_code": "93"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d78"
+  },
+  "id": "2",
+  "code": "AL",
+  "name": "ALBANIA",
+  "description": "Albania",
+  "currency_code": "ALB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "8",
+  "phone_code": "355"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d79"
+  },
+  "id": "3",
+  "code": "DZ",
+  "name": "ALGERIA",
+  "description": "Algeria",
+  "currency_code": "DZA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "12",
+  "phone_code": "213"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d7a"
+  },
+  "id": "4",
+  "code": "AS",
+  "name": "AMERICAN SAMOA",
+  "description": "American Samoa",
+  "currency_code": "ASM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "16",
+  "phone_code": "1684"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d7b"
+  },
+  "id": "5",
+  "code": "AD",
+  "name": "ANDORRA",
+  "description": "Andorra",
+  "currency_code": "AND",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "20",
+  "phone_code": "376"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d7c"
+  },
+  "id": "6",
+  "code": "AO",
+  "name": "ANGOLA",
+  "description": "Angola",
+  "currency_code": "AGO",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "24",
+  "phone_code": "244"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d7d"
+  },
+  "id": "7",
+  "code": "AI",
+  "name": "ANGUILLA",
+  "description": "Anguilla",
+  "currency_code": "AIA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "660",
+  "phone_code": "1264"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d7e"
+  },
+  "id": "8",
+  "code": "AQ",
+  "name": "ANTARCTICA",
+  "description": "Antarctica",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "0"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d7f"
+  },
+  "id": "9",
+  "code": "AG",
+  "name": "ANTIGUA AND BARBUDA",
+  "description": "Antigua and Barbuda",
+  "currency_code": "ATG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "28",
+  "phone_code": "1268"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d80"
+  },
+  "id": "10",
+  "code": "AR",
+  "name": "ARGENTINA",
+  "description": "Argentina",
+  "currency_code": "ARG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "32",
+  "phone_code": "54"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d81"
+  },
+  "id": "11",
+  "code": "AM",
+  "name": "ARMENIA",
+  "description": "Armenia",
+  "currency_code": "ARM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "51",
+  "phone_code": "374"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d82"
+  },
+  "id": "12",
+  "code": "AW",
+  "name": "ARUBA",
+  "description": "Aruba",
+  "currency_code": "ABW",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "533",
+  "phone_code": "297"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d83"
+  },
+  "id": "13",
+  "code": "AU",
+  "name": "AUSTRALIA",
+  "description": "Australia",
+  "currency_code": "AUS",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "36",
+  "phone_code": "61"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d84"
+  },
+  "id": "14",
+  "code": "AT",
+  "name": "AUSTRIA",
+  "description": "Austria",
+  "currency_code": "AUT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "40",
+  "phone_code": "43"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d85"
+  },
+  "id": "15",
+  "code": "AZ",
+  "name": "AZERBAIJAN",
+  "description": "Azerbaijan",
+  "currency_code": "AZE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "31",
+  "phone_code": "994"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d86"
+  },
+  "id": "16",
+  "code": "BS",
+  "name": "BAHAMAS",
+  "description": "Bahamas",
+  "currency_code": "BHS",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "44",
+  "phone_code": "1242"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d87"
+  },
+  "id": "17",
+  "code": "BH",
+  "name": "BAHRAIN",
+  "description": "Bahrain",
+  "currency_code": "BHR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "48",
+  "phone_code": "973"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d88"
+  },
+  "id": "18",
+  "code": "BD",
+  "name": "BANGLADESH",
+  "description": "Bangladesh",
+  "currency_code": "BGD",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "50",
+  "phone_code": "880"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d89"
+  },
+  "id": "19",
+  "code": "BB",
+  "name": "BARBADOS",
+  "description": "Barbados",
+  "currency_code": "BRB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "52",
+  "phone_code": "1246"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d8a"
+  },
+  "id": "20",
+  "code": "BY",
+  "name": "BELARUS",
+  "description": "Belarus",
+  "currency_code": "BLR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "112",
+  "phone_code": "375"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d8b"
+  },
+  "id": "21",
+  "code": "BE",
+  "name": "BELGIUM",
+  "description": "Belgium",
+  "currency_code": "BEL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "56",
+  "phone_code": "32"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d8c"
+  },
+  "id": "22",
+  "code": "BZ",
+  "name": "BELIZE",
+  "description": "Belize",
+  "currency_code": "BLZ",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "84",
+  "phone_code": "501"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d8d"
+  },
+  "id": "23",
+  "code": "BJ",
+  "name": "BENIN",
+  "description": "Benin",
+  "currency_code": "BEN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "204",
+  "phone_code": "229"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d8e"
+  },
+  "id": "24",
+  "code": "BM",
+  "name": "BERMUDA",
+  "description": "Bermuda",
+  "currency_code": "BMU",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "60",
+  "phone_code": "1441"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d8f"
+  },
+  "id": "25",
+  "code": "BT",
+  "name": "BHUTAN",
+  "description": "Bhutan",
+  "currency_code": "BTN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "64",
+  "phone_code": "975"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d90"
+  },
+  "id": "26",
+  "code": "BO",
+  "name": "BOLIVIA",
+  "description": "Bolivia",
+  "currency_code": "BOL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "68",
+  "phone_code": "591"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d91"
+  },
+  "id": "27",
+  "code": "BA",
+  "name": "BOSNIA AND HERZEGOVINA",
+  "description": "Bosnia and Herzegovina",
+  "currency_code": "BIH",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "70",
+  "phone_code": "387"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d92"
+  },
+  "id": "28",
+  "code": "BW",
+  "name": "BOTSWANA",
+  "description": "Botswana",
+  "currency_code": "BWA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "72",
+  "phone_code": "267"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d93"
+  },
+  "id": "29",
+  "code": "BV",
+  "name": "BOUVET ISLAND",
+  "description": "Bouvet Island",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "0"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d94"
+  },
+  "id": "30",
+  "code": "BR",
+  "name": "BRAZIL",
+  "description": "Brazil",
+  "currency_code": "BRA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "76",
+  "phone_code": "55"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d95"
+  },
+  "id": "31",
+  "code": "IO",
+  "name": "BRITISH INDIAN OCEAN TERRITORY",
+  "description": "British Indian Ocean Territory",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "246"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d96"
+  },
+  "id": "32",
+  "code": "BN",
+  "name": "BRUNEI DARUSSALAM",
+  "description": "Brunei Darussalam",
+  "currency_code": "BRN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "96",
+  "phone_code": "673"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d97"
+  },
+  "id": "33",
+  "code": "BG",
+  "name": "BULGARIA",
+  "description": "Bulgaria",
+  "currency_code": "BGR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "100",
+  "phone_code": "359"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d98"
+  },
+  "id": "34",
+  "code": "BF",
+  "name": "BURKINA FASO",
+  "description": "Burkina Faso",
+  "currency_code": "BFA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "854",
+  "phone_code": "226"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d99"
+  },
+  "id": "35",
+  "code": "BI",
+  "name": "BURUNDI",
+  "description": "Burundi",
+  "currency_code": "BDI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "108",
+  "phone_code": "257"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d9a"
+  },
+  "id": "36",
+  "code": "KH",
+  "name": "CAMBODIA",
+  "description": "Cambodia",
+  "currency_code": "KHM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "116",
+  "phone_code": "855"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d9b"
+  },
+  "id": "37",
+  "code": "CM",
+  "name": "CAMEROON",
+  "description": "Cameroon",
+  "currency_code": "CMR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "120",
+  "phone_code": "237"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d9c"
+  },
+  "id": "38",
+  "code": "CA",
+  "name": "CANADA",
+  "description": "Canada",
+  "currency_code": "CAN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "124",
+  "phone_code": "1"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d9d"
+  },
+  "id": "39",
+  "code": "CV",
+  "name": "CAPE VERDE",
+  "description": "Cape Verde",
+  "currency_code": "CPV",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "132",
+  "phone_code": "238"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d9e"
+  },
+  "id": "40",
+  "code": "KY",
+  "name": "CAYMAN ISLANDS",
+  "description": "Cayman Islands",
+  "currency_code": "CYM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "136",
+  "phone_code": "1345"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7d9f"
+  },
+  "id": "41",
+  "code": "CF",
+  "name": "CENTRAL AFRICAN REPUBLIC",
+  "description": "Central African Republic",
+  "currency_code": "CAF",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "140",
+  "phone_code": "236"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da0"
+  },
+  "id": "42",
+  "code": "TD",
+  "name": "CHAD",
+  "description": "Chad",
+  "currency_code": "TCD",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "148",
+  "phone_code": "235"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da1"
+  },
+  "id": "43",
+  "code": "CL",
+  "name": "CHILE",
+  "description": "Chile",
+  "currency_code": "CHL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "152",
+  "phone_code": "56"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da2"
+  },
+  "id": "44",
+  "code": "CN",
+  "name": "CHINA",
+  "description": "China",
+  "currency_code": "CHN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "156",
+  "phone_code": "86"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da3"
+  },
+  "id": "45",
+  "code": "CX",
+  "name": "CHRISTMAS ISLAND",
+  "description": "Christmas Island",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "61"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da4"
+  },
+  "id": "46",
+  "code": "CC",
+  "name": "COCOS (KEELING) ISLANDS",
+  "description": "Cocos (Keeling) Islands",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "672"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da5"
+  },
+  "id": "47",
+  "code": "CO",
+  "name": "COLOMBIA",
+  "description": "Colombia",
+  "currency_code": "COL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "170",
+  "phone_code": "57"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da6"
+  },
+  "id": "48",
+  "code": "KM",
+  "name": "COMOROS",
+  "description": "Comoros",
+  "currency_code": "COM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "174",
+  "phone_code": "269"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da7"
+  },
+  "id": "49",
+  "code": "CG",
+  "name": "CONGO",
+  "description": "Congo",
+  "currency_code": "COG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "178",
+  "phone_code": "242"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da8"
+  },
+  "id": "50",
+  "code": "CD",
+  "name": "CONGO, THE DEMOCRATIC REPUBLIC OF THE",
+  "description": "Congo, the Democratic Republic of the",
+  "currency_code": "COD",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "180",
+  "phone_code": "242"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7da9"
+  },
+  "id": "51",
+  "code": "CK",
+  "name": "COOK ISLANDS",
+  "description": "Cook Islands",
+  "currency_code": "COK",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "184",
+  "phone_code": "682"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7daa"
+  },
+  "id": "52",
+  "code": "CR",
+  "name": "COSTA RICA",
+  "description": "Costa Rica",
+  "currency_code": "CRI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "188",
+  "phone_code": "506"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dab"
+  },
+  "id": "53",
+  "code": "CI",
+  "name": "COTE D'IVOIRE",
+  "description": "Cote D'Ivoire",
+  "currency_code": "CIV",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "384",
+  "phone_code": "225"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dac"
+  },
+  "id": "54",
+  "code": "HR",
+  "name": "CROATIA",
+  "description": "Croatia",
+  "currency_code": "HRV",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "191",
+  "phone_code": "385"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dad"
+  },
+  "id": "55",
+  "code": "CU",
+  "name": "CUBA",
+  "description": "Cuba",
+  "currency_code": "CUB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "192",
+  "phone_code": "53"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dae"
+  },
+  "id": "56",
+  "code": "CY",
+  "name": "CYPRUS",
+  "description": "Cyprus",
+  "currency_code": "CYP",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "196",
+  "phone_code": "357"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7daf"
+  },
+  "id": "57",
+  "code": "CZ",
+  "name": "CZECH REPUBLIC",
+  "description": "Czech Republic",
+  "currency_code": "CZE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "203",
+  "phone_code": "420"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db0"
+  },
+  "id": "58",
+  "code": "DK",
+  "name": "DENMARK",
+  "description": "Denmark",
+  "currency_code": "DNK",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "208",
+  "phone_code": "45"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db1"
+  },
+  "id": "59",
+  "code": "DJ",
+  "name": "DJIBOUTI",
+  "description": "Djibouti",
+  "currency_code": "DJI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "262",
+  "phone_code": "253"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db2"
+  },
+  "id": "60",
+  "code": "DM",
+  "name": "DOMINICA",
+  "description": "Dominica",
+  "currency_code": "DMA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "212",
+  "phone_code": "1767"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db3"
+  },
+  "id": "61",
+  "code": "DO",
+  "name": "DOMINICAN REPUBLIC",
+  "description": "Dominican Republic",
+  "currency_code": "DOM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "214",
+  "phone_code": "1809"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db4"
+  },
+  "id": "62",
+  "code": "TP",
+  "name": "East Timor",
+  "description": "East Timor",
+  "currency_code": "TP",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "670",
+  "phone_code": "670"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db5"
+  },
+  "id": "63",
+  "code": "EC",
+  "name": "ECUADOR",
+  "description": "Ecuador",
+  "currency_code": "ECU",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "218",
+  "phone_code": "593"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db6"
+  },
+  "id": "64",
+  "code": "EG",
+  "name": "EGYPT",
+  "description": "Egypt",
+  "currency_code": "EGY",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "818",
+  "phone_code": "20"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db7"
+  },
+  "id": "65",
+  "code": "SV",
+  "name": "EL SALVADOR",
+  "description": "El Salvador",
+  "currency_code": "SLV",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "222",
+  "phone_code": "503"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db8"
+  },
+  "id": "66",
+  "code": "GQ",
+  "name": "EQUATORIAL GUINEA",
+  "description": "Equatorial Guinea",
+  "currency_code": "GNQ",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "226",
+  "phone_code": "240"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7db9"
+  },
+  "id": "67",
+  "code": "ER",
+  "name": "ERITREA",
+  "description": "Eritrea",
+  "currency_code": "ERI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "232",
+  "phone_code": "291"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dba"
+  },
+  "id": "68",
+  "code": "EE",
+  "name": "ESTONIA",
+  "description": "Estonia",
+  "currency_code": "EST",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "233",
+  "phone_code": "372"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dbb"
+  },
+  "id": "69",
+  "code": "ET",
+  "name": "ETHIOPIA",
+  "description": "Ethiopia",
+  "currency_code": "ETH",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "231",
+  "phone_code": "251"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dbc"
+  },
+  "id": "70",
+  "code": "XA",
+  "name": "External Territories of Australia",
+  "description": "External Territories of Australia",
+  "currency_code": "XA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "61",
+  "phone_code": "61"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dbd"
+  },
+  "id": "71",
+  "code": "FK",
+  "name": "FALKLAND ISLANDS (MALVINAS)",
+  "description": "Falkland Islands (Malvinas)",
+  "currency_code": "FLK",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "238",
+  "phone_code": "500"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dbe"
+  },
+  "id": "72",
+  "code": "FO",
+  "name": "FAROE ISLANDS",
+  "description": "Faroe Islands",
+  "currency_code": "FRO",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "234",
+  "phone_code": "298"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dbf"
+  },
+  "id": "73",
+  "code": "FJ",
+  "name": "FIJI",
+  "description": "Fiji",
+  "currency_code": "FJI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "242",
+  "phone_code": "679"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc0"
+  },
+  "id": "74",
+  "code": "FI",
+  "name": "FINLAND",
+  "description": "Finland",
+  "currency_code": "FIN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "246",
+  "phone_code": "358"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc1"
+  },
+  "id": "75",
+  "code": "FR",
+  "name": "FRANCE",
+  "description": "France",
+  "currency_code": "FRA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "250",
+  "phone_code": "33"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc2"
+  },
+  "id": "76",
+  "code": "GF",
+  "name": "FRENCH GUIANA",
+  "description": "French Guiana",
+  "currency_code": "GUF",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "254",
+  "phone_code": "594"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc3"
+  },
+  "id": "77",
+  "code": "PF",
+  "name": "FRENCH POLYNESIA",
+  "description": "French Polynesia",
+  "currency_code": "PYF",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "258",
+  "phone_code": "689"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc4"
+  },
+  "id": "78",
+  "code": "TF",
+  "name": "FRENCH SOUTHERN TERRITORIES",
+  "description": "French Southern Territories",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "0"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc5"
+  },
+  "id": "79",
+  "code": "GA",
+  "name": "GABON",
+  "description": "Gabon",
+  "currency_code": "GAB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "266",
+  "phone_code": "241"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc6"
+  },
+  "id": "80",
+  "code": "GM",
+  "name": "GAMBIA",
+  "description": "Gambia",
+  "currency_code": "GMB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "270",
+  "phone_code": "220"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc7"
+  },
+  "id": "81",
+  "code": "GE",
+  "name": "GEORGIA",
+  "description": "Georgia",
+  "currency_code": "GEO",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "268",
+  "phone_code": "995"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc8"
+  },
+  "id": "82",
+  "code": "DE",
+  "name": "GERMANY",
+  "description": "Germany",
+  "currency_code": "DEU",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "276",
+  "phone_code": "49"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dc9"
+  },
+  "id": "83",
+  "code": "GH",
+  "name": "GHANA",
+  "description": "Ghana",
+  "currency_code": "GHA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "288",
+  "phone_code": "233"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dca"
+  },
+  "id": "84",
+  "code": "GI",
+  "name": "GIBRALTAR",
+  "description": "Gibraltar",
+  "currency_code": "GIB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "292",
+  "phone_code": "350"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dcb"
+  },
+  "id": "85",
+  "code": "GR",
+  "name": "GREECE",
+  "description": "Greece",
+  "currency_code": "GRC",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "300",
+  "phone_code": "30"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dcc"
+  },
+  "id": "86",
+  "code": "GL",
+  "name": "GREENLAND",
+  "description": "Greenland",
+  "currency_code": "GRL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "304",
+  "phone_code": "299"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dcd"
+  },
+  "id": "87",
+  "code": "GD",
+  "name": "GRENADA",
+  "description": "Grenada",
+  "currency_code": "GRD",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "308",
+  "phone_code": "1473"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dce"
+  },
+  "id": "88",
+  "code": "GP",
+  "name": "GUADELOUPE",
+  "description": "Guadeloupe",
+  "currency_code": "GLP",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "312",
+  "phone_code": "590"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dcf"
+  },
+  "id": "89",
+  "code": "GU",
+  "name": "GUAM",
+  "description": "Guam",
+  "currency_code": "GUM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "316",
+  "phone_code": "1671"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd0"
+  },
+  "id": "90",
+  "code": "GT",
+  "name": "GUATEMALA",
+  "description": "Guatemala",
+  "currency_code": "GTM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "320",
+  "phone_code": "502"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd1"
+  },
+  "id": "91",
+  "code": "XU",
+  "name": "Guernsey and Alderney",
+  "description": "Guernsey and Alderney",
+  "currency_code": "GIN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "44",
+  "phone_code": "44"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd2"
+  },
+  "id": "92",
+  "code": "GN",
+  "name": "GUINEA",
+  "description": "Guinea",
+  "currency_code": "GIN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "324",
+  "phone_code": "224"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd3"
+  },
+  "id": "93",
+  "code": "GW",
+  "name": "GUINEA-BISSAU",
+  "description": "Guinea-Bissau",
+  "currency_code": "GNB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "624",
+  "phone_code": "245"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd4"
+  },
+  "id": "94",
+  "code": "GY",
+  "name": "GUYANA",
+  "description": "Guyana",
+  "currency_code": "GUY",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "328",
+  "phone_code": "592"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd5"
+  },
+  "id": "95",
+  "code": "HT",
+  "name": "HAITI",
+  "description": "Haiti",
+  "currency_code": "HTI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "332",
+  "phone_code": "509"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd6"
+  },
+  "id": "96",
+  "code": "HM",
+  "name": "HEARD ISLAND AND MCDONALD ISLANDS",
+  "description": "Heard Island and Mcdonald Islands",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "0"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd7"
+  },
+  "id": "97",
+  "code": "HN",
+  "name": "HONDURAS",
+  "description": "Honduras",
+  "currency_code": "HND",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "340",
+  "phone_code": "504"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd8"
+  },
+  "id": "98",
+  "code": "HK",
+  "name": "HONG KONG",
+  "description": "Hong Kong",
+  "currency_code": "HKG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "344",
+  "phone_code": "852"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dd9"
+  },
+  "id": "99",
+  "code": "HU",
+  "name": "HUNGARY",
+  "description": "Hungary",
+  "currency_code": "HUN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "348",
+  "phone_code": "36"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dda"
+  },
+  "id": "100",
+  "code": "IS",
+  "name": "ICELAND",
+  "description": "Iceland",
+  "currency_code": "ISL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "352",
+  "phone_code": "354"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7ddb"
+  },
+  "id": "101",
+  "code": "IN",
+  "name": "INDIA",
+  "description": "India",
+  "currency_code": "IND",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "356",
+  "phone_code": "91"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7ddc"
+  },
+  "id": "102",
+  "code": "ID",
+  "name": "INDONESIA",
+  "description": "Indonesia",
+  "currency_code": "IDN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "360",
+  "phone_code": "62"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7ddd"
+  },
+  "id": "103",
+  "code": "IR",
+  "name": "IRAN, ISLAMIC REPUBLIC OF",
+  "description": "Iran, Islamic Republic of",
+  "currency_code": "IRN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "364",
+  "phone_code": "98"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dde"
+  },
+  "id": "104",
+  "code": "IQ",
+  "name": "IRAQ",
+  "description": "Iraq",
+  "currency_code": "IRQ",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "368",
+  "phone_code": "964"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7ddf"
+  },
+  "id": "105",
+  "code": "IE",
+  "name": "IRELAND",
+  "description": "Ireland",
+  "currency_code": "IRL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "372",
+  "phone_code": "353"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de0"
+  },
+  "id": "106",
+  "code": "IL",
+  "name": "ISRAEL",
+  "description": "Israel",
+  "currency_code": "ISR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "376",
+  "phone_code": "972"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de1"
+  },
+  "id": "107",
+  "code": "IT",
+  "name": "ITALY",
+  "description": "Italy",
+  "currency_code": "ITA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "380",
+  "phone_code": "39"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de2"
+  },
+  "id": "108",
+  "code": "JM",
+  "name": "JAMAICA",
+  "description": "Jamaica",
+  "currency_code": "JAM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "388",
+  "phone_code": "1876"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de3"
+  },
+  "id": "109",
+  "code": "JP",
+  "name": "JAPAN",
+  "description": "Japan",
+  "currency_code": "JPN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "392",
+  "phone_code": "81"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de4"
+  },
+  "id": "110",
+  "code": "XJ",
+  "name": "Jersey",
+  "description": "Jersey",
+  "currency_code": "JPN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "44",
+  "phone_code": "44"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de5"
+  },
+  "id": "111",
+  "code": "JO",
+  "name": "JORDAN",
+  "description": "Jordan",
+  "currency_code": "JOR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "400",
+  "phone_code": "962"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de6"
+  },
+  "id": "112",
+  "code": "KZ",
+  "name": "KAZAKHSTAN",
+  "description": "Kazakhstan",
+  "currency_code": "KAZ",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "398",
+  "phone_code": "7"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de7"
+  },
+  "id": "113",
+  "code": "KE",
+  "name": "KENYA",
+  "description": "Kenya",
+  "currency_code": "KEN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "404",
+  "phone_code": "254"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de8"
+  },
+  "id": "114",
+  "code": "KI",
+  "name": "KIRIBATI",
+  "description": "Kiribati",
+  "currency_code": "KIR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "296",
+  "phone_code": "686"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7de9"
+  },
+  "id": "115",
+  "code": "KP",
+  "name": "KOREA, DEMOCRATIC PEOPLES REPUBLIC OF",
+  "description": "Korea, Democratic Peoples Republic of",
+  "currency_code": "PRK",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "408",
+  "phone_code": "850"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dea"
+  },
+  "id": "116",
+  "code": "KR",
+  "name": "KOREA, REPUBLIC OF",
+  "description": "Korea, Republic of",
+  "currency_code": "KOR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "410",
+  "phone_code": "82"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7deb"
+  },
+  "id": "117",
+  "code": "KW",
+  "name": "KUWAIT",
+  "description": "Kuwait",
+  "currency_code": "KWT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "414",
+  "phone_code": "965"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dec"
+  },
+  "id": "118",
+  "code": "KG",
+  "name": "KYRGYZSTAN",
+  "description": "Kyrgyzstan",
+  "currency_code": "KGZ",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "417",
+  "phone_code": "996"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7ded"
+  },
+  "id": "119",
+  "code": "LA",
+  "name": "LAO PEOPLES DEMOCRATIC REPUBLIC",
+  "description": "Lao Peoples Democratic Republic",
+  "currency_code": "LAO",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "418",
+  "phone_code": "856"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dee"
+  },
+  "id": "120",
+  "code": "LV",
+  "name": "LATVIA",
+  "description": "Latvia",
+  "currency_code": "LVA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "428",
+  "phone_code": "371"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7def"
+  },
+  "id": "121",
+  "code": "LB",
+  "name": "LEBANON",
+  "description": "Lebanon",
+  "currency_code": "LBN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "422",
+  "phone_code": "961"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df0"
+  },
+  "id": "122",
+  "code": "LS",
+  "name": "LESOTHO",
+  "description": "Lesotho",
+  "currency_code": "LSO",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "426",
+  "phone_code": "266"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df1"
+  },
+  "id": "123",
+  "code": "LR",
+  "name": "LIBERIA",
+  "description": "Liberia",
+  "currency_code": "LBR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "430",
+  "phone_code": "231"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df2"
+  },
+  "id": "124",
+  "code": "LY",
+  "name": "LIBYAN ARAB JAMAHIRIYA",
+  "description": "Libyan Arab Jamahiriya",
+  "currency_code": "LBY",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "434",
+  "phone_code": "218"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df3"
+  },
+  "id": "125",
+  "code": "LI",
+  "name": "LIECHTENSTEIN",
+  "description": "Liechtenstein",
+  "currency_code": "LIE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "438",
+  "phone_code": "423"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df4"
+  },
+  "id": "126",
+  "code": "LT",
+  "name": "LITHUANIA",
+  "description": "Lithuania",
+  "currency_code": "LTU",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "440",
+  "phone_code": "370"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df5"
+  },
+  "id": "127",
+  "code": "LU",
+  "name": "LUXEMBOURG",
+  "description": "Luxembourg",
+  "currency_code": "LUX",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "442",
+  "phone_code": "352"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df6"
+  },
+  "id": "128",
+  "code": "MO",
+  "name": "MACAO",
+  "description": "Macao",
+  "currency_code": "MAC",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "446",
+  "phone_code": "853"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df7"
+  },
+  "id": "129",
+  "code": "MK",
+  "name": "MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF",
+  "description": "Macedonia, the Former Yugoslav Republic of",
+  "currency_code": "MKD",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "807",
+  "phone_code": "389"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df8"
+  },
+  "id": "130",
+  "code": "MG",
+  "name": "MADAGASCAR",
+  "description": "Madagascar",
+  "currency_code": "MDG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "450",
+  "phone_code": "261"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7df9"
+  },
+  "id": "131",
+  "code": "MW",
+  "name": "MALAWI",
+  "description": "Malawi",
+  "currency_code": "MWI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "454",
+  "phone_code": "265"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dfa"
+  },
+  "id": "132",
+  "code": "MY",
+  "name": "MALAYSIA",
+  "description": "Malaysia",
+  "currency_code": "MYS",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "458",
+  "phone_code": "60"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dfb"
+  },
+  "id": "133",
+  "code": "MV",
+  "name": "MALDIVES",
+  "description": "Maldives",
+  "currency_code": "MDV",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "462",
+  "phone_code": "960"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dfc"
+  },
+  "id": "134",
+  "code": "ML",
+  "name": "MALI",
+  "description": "Mali",
+  "currency_code": "MLI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "466",
+  "phone_code": "223"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dfd"
+  },
+  "id": "135",
+  "code": "MT",
+  "name": "MALTA",
+  "description": "Malta",
+  "currency_code": "MLT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "470",
+  "phone_code": "356"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dfe"
+  },
+  "id": "136",
+  "code": "XM",
+  "name": "Man (Isle of)",
+  "description": "Man (Isle of)",
+  "currency_code": "MHL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "44",
+  "phone_code": "44"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7dff"
+  },
+  "id": "137",
+  "code": "MH",
+  "name": "MARSHALL ISLANDS",
+  "description": "Marshall Islands",
+  "currency_code": "MHL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "584",
+  "phone_code": "692"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e00"
+  },
+  "id": "138",
+  "code": "MQ",
+  "name": "MARTINIQUE",
+  "description": "Martinique",
+  "currency_code": "MTQ",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "474",
+  "phone_code": "596"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e01"
+  },
+  "id": "139",
+  "code": "MR",
+  "name": "MAURITANIA",
+  "description": "Mauritania",
+  "currency_code": "MRT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "478",
+  "phone_code": "222"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e02"
+  },
+  "id": "140",
+  "code": "MU",
+  "name": "MAURITIUS",
+  "description": "Mauritius",
+  "currency_code": "MUS",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "480",
+  "phone_code": "230"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e03"
+  },
+  "id": "141",
+  "code": "YT",
+  "name": "MAYOTTE",
+  "description": "Mayotte",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "269"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e04"
+  },
+  "id": "142",
+  "code": "MX",
+  "name": "MEXICO",
+  "description": "Mexico",
+  "currency_code": "MEX",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "484",
+  "phone_code": "52"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e05"
+  },
+  "id": "143",
+  "code": "FM",
+  "name": "MICRONESIA, FEDERATED STATES OF",
+  "description": "Micronesia, Federated States of",
+  "currency_code": "FSM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "583",
+  "phone_code": "691"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e06"
+  },
+  "id": "144",
+  "code": "MD",
+  "name": "MOLDOVA, REPUBLIC OF",
+  "description": "Moldova, Republic of",
+  "currency_code": "MDA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "498",
+  "phone_code": "373"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e07"
+  },
+  "id": "145",
+  "code": "MC",
+  "name": "MONACO",
+  "description": "Monaco",
+  "currency_code": "MCO",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "492",
+  "phone_code": "377"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e08"
+  },
+  "id": "146",
+  "code": "MN",
+  "name": "MONGOLIA",
+  "description": "Mongolia",
+  "currency_code": "MNG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "496",
+  "phone_code": "976"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e09"
+  },
+  "id": "147",
+  "code": "MS",
+  "name": "MONTSERRAT",
+  "description": "Montserrat",
+  "currency_code": "MSR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "500",
+  "phone_code": "1664"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e0a"
+  },
+  "id": "148",
+  "code": "MA",
+  "name": "MOROCCO",
+  "description": "Morocco",
+  "currency_code": "MAR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "504",
+  "phone_code": "212"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e0b"
+  },
+  "id": "149",
+  "code": "MZ",
+  "name": "MOZAMBIQUE",
+  "description": "Mozambique",
+  "currency_code": "MOZ",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "508",
+  "phone_code": "258"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e0c"
+  },
+  "id": "150",
+  "code": "MM",
+  "name": "MYANMAR",
+  "description": "Myanmar",
+  "currency_code": "MMR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "104",
+  "phone_code": "95"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e0d"
+  },
+  "id": "151",
+  "code": "NA",
+  "name": "NAMIBIA",
+  "description": "Namibia",
+  "currency_code": "NAM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "516",
+  "phone_code": "264"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e0e"
+  },
+  "id": "152",
+  "code": "NR",
+  "name": "NAURU",
+  "description": "Nauru",
+  "currency_code": "NRU",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "520",
+  "phone_code": "674"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e0f"
+  },
+  "id": "153",
+  "code": "NP",
+  "name": "NEPAL",
+  "description": "Nepal",
+  "currency_code": "NPL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "524",
+  "phone_code": "977"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e10"
+  },
+  "id": "154",
+  "code": "AN",
+  "name": "NETHERLANDS ANTILLES",
+  "description": "Netherlands Antilles",
+  "currency_code": "ANT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "530",
+  "phone_code": "599"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e11"
+  },
+  "id": "155",
+  "code": "NL",
+  "name": "NETHERLANDS",
+  "description": "Netherlands",
+  "currency_code": "NLD",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "528",
+  "phone_code": "31"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e12"
+  },
+  "id": "156",
+  "code": "NC",
+  "name": "NEW CALEDONIA",
+  "description": "New Caledonia",
+  "currency_code": "NCL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "540",
+  "phone_code": "687"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e13"
+  },
+  "id": "157",
+  "code": "NZ",
+  "name": "NEW ZEALAND",
+  "description": "New Zealand",
+  "currency_code": "NZL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "554",
+  "phone_code": "64"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e14"
+  },
+  "id": "158",
+  "code": "NI",
+  "name": "NICARAGUA",
+  "description": "Nicaragua",
+  "currency_code": "NIC",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "558",
+  "phone_code": "505"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e15"
+  },
+  "id": "159",
+  "code": "NE",
+  "name": "NIGER",
+  "description": "Niger",
+  "currency_code": "NER",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "562",
+  "phone_code": "227"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e16"
+  },
+  "id": "160",
+  "code": "NG",
+  "name": "NIGERIA",
+  "description": "Nigeria",
+  "currency_code": "NGA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "566",
+  "phone_code": "234"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e17"
+  },
+  "id": "161",
+  "code": "NU",
+  "name": "NIUE",
+  "description": "Niue",
+  "currency_code": "NIU",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "570",
+  "phone_code": "683"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e18"
+  },
+  "id": "162",
+  "code": "NF",
+  "name": "NORFOLK ISLAND",
+  "description": "Norfolk Island",
+  "currency_code": "NFK",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "574",
+  "phone_code": "672"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e19"
+  },
+  "id": "163",
+  "code": "MP",
+  "name": "NORTHERN MARIANA ISLANDS",
+  "description": "Northern Mariana Islands",
+  "currency_code": "MNP",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "580",
+  "phone_code": "1670"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e1a"
+  },
+  "id": "164",
+  "code": "NO",
+  "name": "NORWAY",
+  "description": "Norway",
+  "currency_code": "NOR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "578",
+  "phone_code": "47"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e1b"
+  },
+  "id": "165",
+  "code": "OM",
+  "name": "OMAN",
+  "description": "Oman",
+  "currency_code": "OMN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "512",
+  "phone_code": "968"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e1c"
+  },
+  "id": "166",
+  "code": "PK",
+  "name": "PAKISTAN",
+  "description": "Pakistan",
+  "currency_code": "PAK",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "586",
+  "phone_code": "92"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e1d"
+  },
+  "id": "167",
+  "code": "PW",
+  "name": "PALAU",
+  "description": "Palau",
+  "currency_code": "PLW",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "585",
+  "phone_code": "680"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e1e"
+  },
+  "id": "168",
+  "code": "PS",
+  "name": "PALESTINIAN TERRITORY, OCCUPIED",
+  "description": "Palestinian Territory, Occupied",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "970"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e1f"
+  },
+  "id": "169",
+  "code": "PA",
+  "name": "PANAMA",
+  "description": "Panama",
+  "currency_code": "PAN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "591",
+  "phone_code": "507"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e20"
+  },
+  "id": "170",
+  "code": "PG",
+  "name": "PAPUA NEW GUINEA",
+  "description": "Papua New Guinea",
+  "currency_code": "PNG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "598",
+  "phone_code": "675"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e21"
+  },
+  "id": "171",
+  "code": "PY",
+  "name": "PARAGUAY",
+  "description": "Paraguay",
+  "currency_code": "PRY",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "600",
+  "phone_code": "595"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e22"
+  },
+  "id": "172",
+  "code": "PE",
+  "name": "PERU",
+  "description": "Peru",
+  "currency_code": "PER",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "604",
+  "phone_code": "51"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e23"
+  },
+  "id": "173",
+  "code": "PH",
+  "name": "PHILIPPINES",
+  "description": "Philippines",
+  "currency_code": "PHL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "608",
+  "phone_code": "63"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e24"
+  },
+  "id": "174",
+  "code": "PN",
+  "name": "PITCAIRN",
+  "description": "Pitcairn",
+  "currency_code": "PCN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "612",
+  "phone_code": "0"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e25"
+  },
+  "id": "175",
+  "code": "PL",
+  "name": "POLAND",
+  "description": "Poland",
+  "currency_code": "POL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "616",
+  "phone_code": "48"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e26"
+  },
+  "id": "176",
+  "code": "PT",
+  "name": "PORTUGAL",
+  "description": "Portugal",
+  "currency_code": "PRT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "620",
+  "phone_code": "351"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e27"
+  },
+  "id": "177",
+  "code": "PR",
+  "name": "PUERTO RICO",
+  "description": "Puerto Rico",
+  "currency_code": "PRI",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "630",
+  "phone_code": "1787"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e28"
+  },
+  "id": "178",
+  "code": "QA",
+  "name": "QATAR",
+  "description": "Qatar",
+  "currency_code": "QAT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "634",
+  "phone_code": "974"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e29"
+  },
+  "id": "179",
+  "code": "RE",
+  "name": "REUNION",
+  "description": "Reunion",
+  "currency_code": "REU",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "638",
+  "phone_code": "262"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e2a"
+  },
+  "id": "180",
+  "code": "RO",
+  "name": "ROMANIA",
+  "description": "Romania",
+  "currency_code": "ROM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "642",
+  "phone_code": "40"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e2b"
+  },
+  "id": "181",
+  "code": "RU",
+  "name": "RUSSIAN FEDERATION",
+  "description": "Russian Federation",
+  "currency_code": "RUS",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "643",
+  "phone_code": "70"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e2c"
+  },
+  "id": "182",
+  "code": "RW",
+  "name": "RWANDA",
+  "description": "Rwanda",
+  "currency_code": "RWA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "646",
+  "phone_code": "250"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e2d"
+  },
+  "id": "183",
+  "code": "SH",
+  "name": "SAINT HELENA",
+  "description": "Saint Helena",
+  "currency_code": "SHN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "654",
+  "phone_code": "290"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e2e"
+  },
+  "id": "184",
+  "code": "KN",
+  "name": "SAINT KITTS AND NEVIS",
+  "description": "Saint Kitts and Nevis",
+  "currency_code": "KNA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "659",
+  "phone_code": "1869"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e2f"
+  },
+  "id": "185",
+  "code": "LC",
+  "name": "SAINT LUCIA",
+  "description": "Saint Lucia",
+  "currency_code": "LCA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "662",
+  "phone_code": "1758"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e30"
+  },
+  "id": "186",
+  "code": "PM",
+  "name": "SAINT PIERRE AND MIQUELON",
+  "description": "Saint Pierre and Miquelon",
+  "currency_code": "SPM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "666",
+  "phone_code": "508"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e31"
+  },
+  "id": "187",
+  "code": "VC",
+  "name": "SAINT VINCENT AND THE GRENADINES",
+  "description": "Saint Vincent and the Grenadines",
+  "currency_code": "VCT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "670",
+  "phone_code": "1784"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e32"
+  },
+  "id": "188",
+  "code": "WS",
+  "name": "SAMOA",
+  "description": "Samoa",
+  "currency_code": "WSM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "882",
+  "phone_code": "684"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e33"
+  },
+  "id": "189",
+  "code": "SM",
+  "name": "SAN MARINO",
+  "description": "San Marino",
+  "currency_code": "SMR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "674",
+  "phone_code": "378"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e34"
+  },
+  "id": "190",
+  "code": "ST",
+  "name": "SAO TOME AND PRINCIPE",
+  "description": "Sao Tome and Principe",
+  "currency_code": "STP",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "678",
+  "phone_code": "239"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e35"
+  },
+  "id": "191",
+  "code": "SA",
+  "name": "SAUDI ARABIA",
+  "description": "Saudi Arabia",
+  "currency_code": "SAU",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "682",
+  "phone_code": "966"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e36"
+  },
+  "id": "192",
+  "code": "SN",
+  "name": "SENEGAL",
+  "description": "Senegal",
+  "currency_code": "SEN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "686",
+  "phone_code": "221"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e37"
+  },
+  "id": "193",
+  "code": "CS",
+  "name": "SERBIA AND MONTENEGRO",
+  "description": "Serbia and Montenegro",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "381"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e38"
+  },
+  "id": "194",
+  "code": "SC",
+  "name": "SEYCHELLES",
+  "description": "Seychelles",
+  "currency_code": "SYC",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "690",
+  "phone_code": "248"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e39"
+  },
+  "id": "195",
+  "code": "SL",
+  "name": "SIERRA LEONE",
+  "description": "Sierra Leone",
+  "currency_code": "SLE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "694",
+  "phone_code": "232"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e3a"
+  },
+  "id": "196",
+  "code": "SG",
+  "name": "SINGAPORE",
+  "description": "Singapore",
+  "currency_code": "SGP",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "702",
+  "phone_code": "65"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e3b"
+  },
+  "id": "197",
+  "code": "SK",
+  "name": "SLOVAKIA",
+  "description": "Slovakia",
+  "currency_code": "SVK",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "703",
+  "phone_code": "421"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e3c"
+  },
+  "id": "198",
+  "code": "SI",
+  "name": "SLOVENIA",
+  "description": "Slovenia",
+  "currency_code": "SVN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "705",
+  "phone_code": "386"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e3d"
+  },
+  "id": "199",
+  "code": "XG",
+  "name": "Smaller Territories of the UK",
+  "description": "Smaller Territories of the UK",
+  "currency_code": "XG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "44",
+  "phone_code": "44"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e3e"
+  },
+  "id": "200",
+  "code": "SB",
+  "name": "SOLOMON ISLANDS",
+  "description": "Solomon Islands",
+  "currency_code": "SLB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "90",
+  "phone_code": "677"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e3f"
+  },
+  "id": "201",
+  "code": "SO",
+  "name": "SOMALIA",
+  "description": "Somalia",
+  "currency_code": "SOM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "706",
+  "phone_code": "252"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e40"
+  },
+  "id": "202",
+  "code": "ZA",
+  "name": "SOUTH AFRICA",
+  "description": "South Africa",
+  "currency_code": "ZAF",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "710",
+  "phone_code": "27"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e41"
+  },
+  "id": "203",
+  "code": "GS",
+  "name": "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS",
+  "description": "South Georgia and the South Sandwich Islands",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "0"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e42"
+  },
+  "id": "204",
+  "code": "SS",
+  "name": "South Sudan",
+  "description": "South Sudan",
+  "currency_code": "SDN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "211",
+  "phone_code": "211"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e43"
+  },
+  "id": "205",
+  "code": "ES",
+  "name": "SPAIN",
+  "description": "Spain",
+  "currency_code": "ESP",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "724",
+  "phone_code": "34"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e44"
+  },
+  "id": "206",
+  "code": "LK",
+  "name": "SRI LANKA",
+  "description": "Sri Lanka",
+  "currency_code": "LKA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "144",
+  "phone_code": "94"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e45"
+  },
+  "id": "207",
+  "code": "SD",
+  "name": "SUDAN",
+  "description": "Sudan",
+  "currency_code": "SDN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "736",
+  "phone_code": "249"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e46"
+  },
+  "id": "208",
+  "code": "SR",
+  "name": "SURINAME",
+  "description": "Suriname",
+  "currency_code": "SUR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "740",
+  "phone_code": "597"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e47"
+  },
+  "id": "209",
+  "code": "SJ",
+  "name": "SVALBARD AND JAN MAYEN",
+  "description": "Svalbard and Jan Mayen",
+  "currency_code": "SJM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "744",
+  "phone_code": "47"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e48"
+  },
+  "id": "210",
+  "code": "SZ",
+  "name": "SWAZILAND",
+  "description": "Swaziland",
+  "currency_code": "SWZ",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "748",
+  "phone_code": "268"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e49"
+  },
+  "id": "211",
+  "code": "SE",
+  "name": "SWEDEN",
+  "description": "Sweden",
+  "currency_code": "SWE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "752",
+  "phone_code": "46"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e4a"
+  },
+  "id": "212",
+  "code": "CH",
+  "name": "SWITZERLAND",
+  "description": "Switzerland",
+  "currency_code": "CHE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "756",
+  "phone_code": "41"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e4b"
+  },
+  "id": "213",
+  "code": "SY",
+  "name": "SYRIAN ARAB REPUBLIC",
+  "description": "Syrian Arab Republic",
+  "currency_code": "SYR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "760",
+  "phone_code": "963"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e4c"
+  },
+  "id": "214",
+  "code": "TW",
+  "name": "TAIWAN, PROVINCE OF CHINA",
+  "description": "Taiwan, Province of China",
+  "currency_code": "TWN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "158",
+  "phone_code": "886"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e4d"
+  },
+  "id": "215",
+  "code": "TJ",
+  "name": "TAJIKISTAN",
+  "description": "Tajikistan",
+  "currency_code": "TJK",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "762",
+  "phone_code": "992"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e4e"
+  },
+  "id": "216",
+  "code": "TZ",
+  "name": "TANZANIA, UNITED REPUBLIC OF",
+  "description": "Tanzania, United Republic of",
+  "currency_code": "TZA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "834",
+  "phone_code": "255"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e4f"
+  },
+  "id": "217",
+  "code": "TH",
+  "name": "THAILAND",
+  "description": "Thailand",
+  "currency_code": "THA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "764",
+  "phone_code": "66"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e50"
+  },
+  "id": "218",
+  "code": "TL",
+  "name": "TIMOR-LESTE",
+  "description": "Timor-Leste",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "670"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e51"
+  },
+  "id": "219",
+  "code": "TK",
+  "name": "TOKELAU",
+  "description": "Tokelau",
+  "currency_code": "TKL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "772",
+  "phone_code": "690"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e52"
+  },
+  "id": "220",
+  "code": "TO",
+  "name": "TONGA",
+  "description": "Tonga",
+  "currency_code": "TON",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "776",
+  "phone_code": "676"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e53"
+  },
+  "id": "221",
+  "code": "TT",
+  "name": "TRINIDAD AND TOBAGO",
+  "description": "Trinidad and Tobago",
+  "currency_code": "TTO",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "780",
+  "phone_code": "1868"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e54"
+  },
+  "id": "222",
+  "code": "TN",
+  "name": "TUNISIA",
+  "description": "Tunisia",
+  "currency_code": "TUN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "788",
+  "phone_code": "216"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e55"
+  },
+  "id": "223",
+  "code": "TR",
+  "name": "TURKEY",
+  "description": "Turkey",
+  "currency_code": "TUR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "792",
+  "phone_code": "90"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e56"
+  },
+  "id": "224",
+  "code": "TM",
+  "name": "TURKMENISTAN",
+  "description": "Turkmenistan",
+  "currency_code": "TKM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "795",
+  "phone_code": "7370"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e57"
+  },
+  "id": "225",
+  "code": "TC",
+  "name": "TURKS AND CAICOS ISLANDS",
+  "description": "Turks and Caicos Islands",
+  "currency_code": "TCA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "796",
+  "phone_code": "1649"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e58"
+  },
+  "id": "226",
+  "code": "TV",
+  "name": "TUVALU",
+  "description": "Tuvalu",
+  "currency_code": "TUV",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "798",
+  "phone_code": "688"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e59"
+  },
+  "id": "227",
+  "code": "UG",
+  "name": "UGANDA",
+  "description": "Uganda",
+  "currency_code": "UGA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "800",
+  "phone_code": "256"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e5a"
+  },
+  "id": "228",
+  "code": "UA",
+  "name": "UKRAINE",
+  "description": "Ukraine",
+  "currency_code": "UKR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "804",
+  "phone_code": "380"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e5b"
+  },
+  "id": "229",
+  "code": "AE",
+  "name": "UNITED ARAB EMIRATES",
+  "description": "United Arab Emirates",
+  "currency_code": "ARE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "784",
+  "phone_code": "971"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e5c"
+  },
+  "id": "230",
+  "code": "GB",
+  "name": "UNITED KINGDOM",
+  "description": "United Kingdom",
+  "currency_code": "GBR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "826",
+  "phone_code": "44"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e5d"
+  },
+  "id": "231",
+  "code": "US",
+  "name": "UNITED STATES",
+  "description": "United States",
+  "currency_code": "USA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "840",
+  "phone_code": "1"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e5e"
+  },
+  "id": "232",
+  "code": "UM",
+  "name": "UNITED STATES MINOR OUTLYING ISLANDS",
+  "description": "United States Minor Outlying Islands",
+  "currency_code": "NULL",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "NULL",
+  "phone_code": "1"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e5f"
+  },
+  "id": "233",
+  "code": "UY",
+  "name": "URUGUAY",
+  "description": "Uruguay",
+  "currency_code": "URY",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "858",
+  "phone_code": "598"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e60"
+  },
+  "id": "234",
+  "code": "UZ",
+  "name": "UZBEKISTAN",
+  "description": "Uzbekistan",
+  "currency_code": "UZB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "860",
+  "phone_code": "998"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e61"
+  },
+  "id": "235",
+  "code": "VU",
+  "name": "VANUATU",
+  "description": "Vanuatu",
+  "currency_code": "VUT",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "548",
+  "phone_code": "678"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e62"
+  },
+  "id": "236",
+  "code": "VA",
+  "name": "Vatican City",
+  "description": "Vatican City State (Holy See)",
+  "currency_code": "VA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "862",
+  "phone_code": "58"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e63"
+  },
+  "id": "237",
+  "code": "VE",
+  "name": "VENEZUELA",
+  "description": "Venezuela",
+  "currency_code": "VEN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "862",
+  "phone_code": "58"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e64"
+  },
+  "id": "238",
+  "code": "VN",
+  "name": "VIET NAM",
+  "description": "Viet Nam",
+  "currency_code": "VNM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "704",
+  "phone_code": "84"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e65"
+  },
+  "id": "239",
+  "code": "VG",
+  "name": "VIRGIN ISLANDS, BRITISH",
+  "description": "Virgin Islands, British",
+  "currency_code": "VGB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "92",
+  "phone_code": "1284"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e66"
+  },
+  "id": "240",
+  "code": "VI",
+  "name": "VIRGIN ISLANDS, U.S.",
+  "description": "Virgin Islands, U.s.",
+  "currency_code": "VIR",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "850",
+  "phone_code": "1340"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e67"
+  },
+  "id": "241",
+  "code": "WF",
+  "name": "WALLIS AND FUTUNA",
+  "description": "Wallis and Futuna",
+  "currency_code": "WLF",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "876",
+  "phone_code": "681"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e68"
+  },
+  "id": "242",
+  "code": "EH",
+  "name": "WESTERN SAHARA",
+  "description": "Western Sahara",
+  "currency_code": "ESH",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "732",
+  "phone_code": "212"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e69"
+  },
+  "id": "243",
+  "code": "YE",
+  "name": "YEMEN",
+  "description": "Yemen",
+  "currency_code": "YEM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "887",
+  "phone_code": "967"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e6a"
+  },
+  "id": "244",
+  "code": "YU",
+  "name": "Yugoslavia",
+  "description": "Yugoslavia",
+  "currency_code": "YUG",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "38",
+  "phone_code": "38"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e6b"
+  },
+  "id": "245",
+  "code": "ZM",
+  "name": "ZAMBIA",
+  "description": "Zambia",
+  "currency_code": "ZMB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "894",
+  "phone_code": "260"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e6c"
+  },
+  "id": "246",
+  "code": "ZW",
+  "name": "ZIMBABWE",
+  "description": "Zimbabwe",
+  "currency_code": "ZWE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "716",
+  "phone_code": "263"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e6d"
+  },
+  "id": "247",
+  "code": "RS",
+  "name": "SERBIA",
+  "description": "Serbia",
+  "currency_code": "SRB",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "688",
+  "phone_code": "381"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e6e"
+  },
+  "id": "248",
+  "code": "AP",
+  "name": "ASIA PACIFIC REGION",
+  "description": "Asia / Pacific Region",
+  "currency_code": "0",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "0",
+  "phone_code": "0"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e6f"
+  },
+  "id": "249",
+  "code": "ME",
+  "name": "MONTENEGRO",
+  "description": "Montenegro",
+  "currency_code": "MNE",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "499",
+  "phone_code": "382"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e70"
+  },
+  "id": "250",
+  "code": "AX",
+  "name": "ALAND ISLANDS",
+  "description": "Aland Islands",
+  "currency_code": "ALA",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "248",
+  "phone_code": "358"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e71"
+  },
+  "id": "251",
+  "code": "BQ",
+  "name": "BONAIRE, SINT EUSTATIUS AND SABA",
+  "description": "Bonaire, Sint Eustatius and Saba",
+  "currency_code": "BES",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "535",
+  "phone_code": "599"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e72"
+  },
+  "id": "252",
+  "code": "CW",
+  "name": "CURACAO",
+  "description": "Curacao",
+  "currency_code": "CUW",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "531",
+  "phone_code": "599"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e73"
+  },
+  "id": "253",
+  "code": "GG",
+  "name": "GUERNSEY",
+  "description": "Guernsey",
+  "currency_code": "GGY",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "831",
+  "phone_code": "44"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e74"
+  },
+  "id": "254",
+  "code": "IM",
+  "name": "ISLE OF MAN",
+  "description": "Isle of Man",
+  "currency_code": "IMN",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "833",
+  "phone_code": "44"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e75"
+  },
+  "id": "255",
+  "code": "JE",
+  "name": "JERSEY",
+  "description": "Jersey",
+  "currency_code": "JEY",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "832",
+  "phone_code": "44"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e76"
+  },
+  "id": "256",
+  "code": "XK",
+  "name": "KOSOVO",
+  "description": "Kosovo",
+  "currency_code": "---",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "0",
+  "phone_code": "381"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e77"
+  },
+  "id": "257",
+  "code": "BL",
+  "name": "SAINT BARTHELEMY",
+  "description": "Saint Barthelemy",
+  "currency_code": "BLM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "652",
+  "phone_code": "590"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e78"
+  },
+  "id": "258",
+  "code": "MF",
+  "name": "SAINT MARTIN",
+  "description": "Saint Martin",
+  "currency_code": "MAF",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "663",
+  "phone_code": "590"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e79"
+  },
+  "id": "259",
+  "code": "SX",
+  "name": "SINT MAARTEN",
+  "description": "Sint Maarten",
+  "currency_code": "SXM",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "534",
+  "phone_code": "1"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e7a"
+  },
+  "id": "260",
+  "code": "SS",
+  "name": "SOUTH SUDAN",
+  "description": "South Sudan",
+  "currency_code": "SSD",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "728",
+  "phone_code": "211"
+},{
+  "_id": {
+    "$oid": "624d4440229b955b0b7b7e7b"
+  },
+  "id": "261",
+  "code": "SZ",
+  "name": "eSwatini",
+  "description": "Eswatini",
+  "currency_code": "L",
+  "currency": "NULL",
+  "iso_3": "NULL",
+  "num_code": "748",
+  "phone_code": "268"
+}]

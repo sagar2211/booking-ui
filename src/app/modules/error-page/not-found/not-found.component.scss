@@ -1,0 +1,41 @@
+.error-bg {
+    // background-image: linear-gradient(90deg, white 55%, #d1d1d16b 100%), url('/assets/images/sky.png');
+    background-image: url("/assets/images/sky.png");
+    background-size: 100%;
+    // height: 579px;
+    background-repeat: no-repeat;
+    padding: 130px 0;
+
+}
+.error-404{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    color: #FFFFFF;
+}
+.error-content{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    color: #2D2D2D;
+    line-height: 54px;
+    padding-top: 56px;
+}
+.main-container{
+    position: relative;
+    bottom: 55px;
+}
+.btnBack{
+    padding      : 15px 24px !important;
+    font-family  : "Poppins";
+    font-style   : normal;
+    font-weight  : bold;
+    font-size    : 18px;
+    background   : #eb2533;
+    border-radius: 5px;
+    color        : #ffffff;
+    border       : none;
+    margin-top: 43px;
+}

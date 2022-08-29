@@ -1,0 +1,27 @@
+<div style="background-color: #ffffff;" class="pt-3">
+    <section class="main-section">
+        <div class="container text-center pb-3">
+            <i class="icon-sentiment-dissatisfied"></i>
+            <h1 class="thankYou pt-3">Oh NO! Your <span class="redWadiia"> Payment Failed</span></h1>
+            <div class="refrence mt-3">
+                <h3>Payment ID: <span>PAY8639742</span></h3>
+                <h3>Amount: <span>ZAR 13,450</span></h3>
+            </div>
+            <div>
+                {{errorObj.error.errorReason?.errorMessage}}
+                {{errorObj.error.status?.description}}
+                {{errorObj.error.status?.errors[0]}}
+            </div>
+            <p class="confirm mt-3"> Don’t you worry, <span> it happens sometimes, <br>
+                    and</span> <span class="greenConfirm"> we’ve got you. <i
+                        class="icon-sentiment-satisfied"></i></span></p>
+            <p class="ticket">The good news is, you can try again </p>
+            <button class="btn btn-danger">Please Try Again</button>
+            <div class="services my-3">
+                <p>In case your money has already been debited from your account, it will be
+                    credited to your bank account within 3-7 business days, If you need our help
+                    straightening this out, drop us a line at <span> Support@wadiia.com</span></p>
+            </div>
+        </div>
+    </section>
+</div>

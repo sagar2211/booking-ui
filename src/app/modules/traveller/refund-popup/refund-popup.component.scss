@@ -1,0 +1,263 @@
+.main-section {
+    background     : linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/assets/images/travel-hist-bg.png");
+    background-size: cover;
+    height         : 797px;
+}
+
+.main-container {
+    position: relative;
+    bottom  : 25px;
+}
+
+.main-card {
+    background   : #FFFFFF;
+    box-shadow   : 0px 1px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding      : unset;
+}
+
+.first-row {
+    padding: 35px 58px 15px 38px;
+}
+
+.summary {
+    padding: 35px 58px 0px 38px;
+}
+
+.track-refund {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 20px;
+    color      : #000000;
+}
+
+.second-row {
+    background: #F4F4F4;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 25%);
+    padding   : 13px 58px 11px 45px;
+    margin    : unset;
+}
+
+.cancelled-btn {
+    font-family  : 'Poppins';
+    font-style   : normal;
+    font-weight  : 500;
+    font-size    : 12px;
+    color        : #FFFFFF;
+    background   : #EB2533;
+    border-radius: 20px;
+    padding      : 4px 12px;
+    border       : unset;
+    margin-left  : 8px;
+}
+
+.booking-id {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 18px;
+    color      : #000000;
+}
+
+.manage-top-space {
+    margin-top: 8px;
+}
+
+.back-to-trip {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 14px;
+    color      : #0057B9;
+}
+
+.pre-book-text {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 12px;
+    color      : #000000;
+}
+
+.price {
+    font-family  : 'Poppins';
+    font-style   : normal;
+    font-weight  : 600;
+    font-size    : 16px;
+    color        : #208467;
+    padding-right: 8px;
+}
+
+.process-btn {
+    font-family  : 'Poppins';
+    font-style   : normal;
+    font-weight  : 500;
+    font-size    : 12px;
+    color        : #FFFFFF;
+    background   : #0057B9;
+    border-radius: 20px;
+    padding      : 4px 12px;
+    border       : unset;
+    margin-left  : 8px;
+}
+
+.refund-summary {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 20px;
+    color      : #000000;
+}
+
+.refund-amount {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 14px;
+    color      : #000000;
+}
+
+.booked-info {
+    background: #F4F4F4;
+    padding   : 20px 30px 20px 39px;
+}
+
+.booked-date {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 12px;
+    color      : #000000;
+}
+
+.remove-margin {
+    margin: unset;
+}
+
+.remove-space {
+    padding: unset;
+}
+
+.amt-refnd {
+    font-family  : 'Poppins';
+    font-style   : normal;
+    font-weight  : 500;
+    font-size    : 18px;
+    color        : #525252;
+    padding-right: 43px;
+}
+
+.payment-mode {
+    font-family  : 'Poppins';
+    font-style   : normal;
+    font-weight  : 400;
+    font-size    : 12px;
+    color        : #000000;
+    margin-bottom: 8px;
+}
+
+.pay-mode {
+    padding: 16px 0 8px 39px;
+}
+
+.transaction-date {
+    font-family: 'Poppins';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 12px;
+    color      : #000000;
+}
+
+.initiated {
+    padding-left: 8px;
+}
+
+.icon-check {
+    border       : 1px solid #22be69;
+    border-radius: 50%;
+    padding      : 6px;
+    font-size    : 16px;
+    font-weight  : bold;
+}
+
+.pay-step {
+    padding-top: 16px;
+    width      : 730px;
+}
+
+.initiated-refund {
+    font-family : 'Poppins';
+    font-style  : normal;
+    font-weight : 500;
+    font-size   : 14px;
+    color       : rgba(0, 0, 0, 0.45);
+    margin-top  : 4px;
+    padding-left: 38px;
+    width       : 200px;
+}
+
+// .initiated::after{
+//     content: '';
+//     width: 300px;
+//     color: #22be69;
+//     height: 1px;
+//     border: 1.5px solid #22be69;
+// }
+
+.active-step {
+    border          : unset;
+    border-radius   : 50%;
+    padding         : 5px 10px;
+    font-size       : 14px;
+    color           : #FFFFFF;
+    background-color: #208467;
+}
+
+.processing {
+    font-family : 'Poppins';
+    font-style  : normal;
+    font-weight : 400;
+    font-size   : 16px;
+    color       : rgba(0, 0, 0, 0.85);
+    padding-left: 8px;
+}
+
+.process-refund {
+    font-family : 'Poppins';
+    font-style  : normal;
+    font-weight : 500;
+    font-size   : 14px;
+    color       : rgba(0, 0, 0, 0.85);
+    padding-left: 38px;
+    width       : 200px;
+}
+
+.next-step {
+    border          : 1px solid rgba(0, 0, 0, 0.25);
+    border-radius   : 50%;
+    padding         : 5px 10px;
+    font-size       : 14px;
+    color           : rgba(0, 0, 0, 0.25);
+    background-color: #FFFFFF;
+}
+
+.divider {
+    width        : 100px;
+    border-bottom: 2px solid #208467;
+    position     : relative;
+    left         : 125px;
+    bottom       : 10px;
+}
+
+.divider1 {
+    width   : 100px;
+    border  : 1px solid #F0F0F0;
+    position: relative;
+    left    : 155px;
+    bottom  : 10px;
+}
+
+.second-step {
+    margin-left: -20px;
+}

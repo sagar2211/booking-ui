@@ -1,0 +1,529 @@
+<div class="review">
+  <div class="container review-content d-flex">
+    <div class="spacing" *ngIf="!isBelowLg">
+      <!-- oneway trip -->
+      <mat-card class="pb-5" [ngClass]="updateWidth()">
+        <h3 class="timeZone">
+          Total Time :
+          {{
+          selectedFlight.legs[0].connections[0].connectionHeader.legTravelTime
+          .addHours
+          }}h
+          {{
+          selectedFlight.legs[0].connections[0].connectionHeader.legTravelTime
+          .minutes
+          }}m
+        </h3>
+        <div class="row align-middle flightDtlHdr h-100">
+          <div style="align-self: center; width: 20px" class="col-md-1">
+            <div class="departureBlock align-middle">DEPARTURE</div>
+          </div>
+          <div class="col-md-11">
+            <div
+              *ngFor="let flight of selectedFlight.legs[0].connections[0].segments; let j = index;let lastItem = last">
+              <div class="row align-items-center w-100" *ngIf="selectedFlight.legs[0]">
+                <div class="col-md-3 images">
+                  <div class="jumbotron d-flex flex-column align-items-center min-vh-10">
+                    <img src="{{ H_URL }}/publicservices/images/airline/{{
+                        selectedFlight.legs[0].platingCarrier.code
+                      }}" width="120px" alt="" />
+                  </div>
+                  <h3>{{ selectedFlight.legs[0].platingCarrier.hint }}</h3>
+                  <p>{{ flight.carrier.code }}{{ flight.flightNumber }}</p>
+                  <p> Operated By {{ selectedFlight.legs[0].platingCarrier.hint }} </p>
+                  <div class="px-3">
+                    <i class="icon-fastfood flight-Icon p-1"></i>
+                    <i class="icon-free-breakfast flight-Icon p-1"></i>
+                    <i class="icon-videogame-asset flight-Icon p-1"></i>
+                    <i class="icon-wifi1 flight-Icon p-1"></i>
+                  </div>
+                </div>
+                <div class="col-md-2 departure">
+                  <p>
+                    {{ flight.departureAirport.cityName }}
+                  </p>
+                  <h4>
+                    {{ updateFlightTime(flight.departureDate) }}
+                  </h4>
+                  <p>
+                    {{ updateDate(flight.departureDate) }}
+                  </p>
+                  <p>
+                    {{ flight.departureAirport.name }}, T-{{
+                    flight.departureTerminal
+                    }}
+                  </p>
+                </div>
+                <div class="col-md-5 flightIcons">
+                  <p style="position: relative;top: 5px;">
+                    {{
+                    selectedFlight.legs[0].connections[0].connectionHeader
+                    .legTravelTime.addHours
+                    }}h
+                    {{
+                    selectedFlight.legs[0].connections[0].connectionHeader
+                    .legTravelTime.minutes
+                    }}m | {{ flight.cabinClassName }}
+                  </p>
+                  <div class="d-flex justify-content-center align-items-center divider-bar">
+                    <div class="leftbar"></div>
+                    <div class="p-2">
+                      <p class="icoStop"><i class="icon-frame_203 flights"
+                          [ngClass]="addStopClass(selectedFlight)"></i><span class="stop-text"> Flight</span></p>
+                    </div>
+                    <div class="rightbar"></div>
+                  </div>
+                  <p class="mt-2">
+                    2 Piece |
+                    <span style="color: #0765ce; cursor: pointer;" (click)="viewDetails = !this.viewDetails"> View Fare
+                      Details </span> |
+                    <span style="color: #0765ce">Visa Details</span>
+                  </p>
+                </div>
+                <div class="col-md-2 arival">
+                  <p>
+                    {{ flight.arrivalAirport.cityName }}
+                  </p>
+                  <h4>
+                    {{ updateFlightTime(flight.arrivalDate) }}
+                  </h4>
+                  <p>
+                    {{ updateDate(flight.arrivalDate) }}
+                  </p>
+                  <p>
+                    {{ flight.arrivalAirport.name }}, T-{{
+                    flight.arrivalTerminal
+                    }}
+                  </p>
+                </div>
+              </div>
+              <div class="separator" *ngIf="!lastItem">
+                Change Planes at {{ flight.arrivalAirport.cityName }},
+                {{ flight.arrivalAirport.countryName }}
+                {{ "(" + flight.arrivalAirport.iata + ")" }}, Connecting Time
+                {{
+                getDuration(selectedFlight.legs[0].connections[0].segments, j)
+                }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <!-- one way trip end -->
+      <!-- round trip -->
+      <mat-card class="pb-5 mt-3" *ngIf="selectedFlight.legs[1]" [ngClass]="updateWidth()">
+        <h3 class="timeZone">
+          Total Time :
+          {{
+          selectedFlight.legs[1].connections[0].connectionHeader.legTravelTime
+          .addHours
+          }}h
+          {{
+          selectedFlight.legs[1].connections[0].connectionHeader.legTravelTime
+          .minutes
+          }}m
+        </h3>
+        <div class="row align-middle flightDtlHdr h-100">
+          <div style="align-self: center; width: 20px" class="col-md-1">
+            <div class="departureBlock align-middle">ARRIVAL</div>
+          </div>
+          <!-- <div class="col-md-1">
+            <div class="line"></div>
+          </div> -->
+          <div class="col-md-11">
+            <div
+              *ngFor="let flight of selectedFlight.legs[1].connections[0].segments;let j = index;let lastItem = last">
+              <div class="row align-items-center w-100" *ngIf="selectedFlight.legs[0]">
+                <div class="col-md-3 images">
+                  <div class="jumbotron d-flex flex-column align-items-center min-vh-10">
+                    <img src="{{ H_URL }}/publicservices/images/airline/{{
+                        selectedFlight.legs[1].platingCarrier.code
+                      }}" width="120px" alt="" />
+                  </div>
+                  <h3>{{ selectedFlight.legs[1].platingCarrier.hint }}</h3>
+                  <p>{{ flight.carrier.code }}{{ flight.flightNumber }}</p>
+                  <p>
+                    Operated By {{ selectedFlight.legs[1].platingCarrier.hint }}
+                  </p>
+                  <div class="px-3">
+                    <i class="icon-fastfood flight-Icon p-1"></i>
+                    <i class="icon-free-breakfast flight-Icon p-1"></i>
+                    <i class="icon-videogame-asset flight-Icon p-1"></i>
+                    <i class="icon-wifi1 flight-Icon p-1"></i>
+                  </div>
+                </div>
+                <div class="col-md-2 departure">
+                  <p>
+                    {{ flight.departureAirport.cityName }}
+                    <!-- {{ flight.departureAirport.countryName }} -->
+                  </p>
+                  <h4>
+                    {{ updateFlightTime(flight.departureDate) }}
+                  </h4>
+                  <p>
+                    {{ updateDate(flight.departureDate) }}
+                  </p>
+                  <p>
+                    {{ flight.departureAirport.name }}, T-{{
+                    flight.departureTerminal
+                    }}
+                  </p>
+                </div>
+                <div class="col-md-5 flightIcons">
+                  <p style="position: relative;top: 5px;">
+                    {{
+                    selectedFlight.legs[1].connections[0].connectionHeader
+                    .legTravelTime.addHours
+                    }}h
+                    {{
+                    selectedFlight.legs[1].connections[0].connectionHeader
+                    .legTravelTime.minutes
+                    }}m | {{ flight.cabinClassName }}
+                  </p>
+
+                  <div class="d-flex justify-content-center align-items-center divider-bar">
+                    <div class="leftbar"></div>
+                    <div class="p-2">
+                      <p class="icoStop"><i class="icon-frame_203 flights"
+                          [ngClass]="addStopClass(selectedFlight)"></i><span class="stop-text"> Flight</span></p>
+                    </div>
+                    <div class="rightbar"></div>
+                  </div>
+                  <p class="mt-2">
+                    2 Piece |
+                    <span style="color: #0765ce; cursor: pointer;" (click)="viewDetails = !this.viewDetails"> View Fare
+                      Details </span> |
+                    <span style="color: #0765ce"> Visa Details</span>
+                  </p>
+                </div>
+                <div class="col-md-2 arival">
+                  <p>
+                    {{ flight.arrivalAirport.cityName }}
+                    <!-- {{ flight.arrivalAirport.countryName }} -->
+                  </p>
+                  <h4>
+                    {{ updateFlightTime(flight.arrivalDate) }}
+                  </h4>
+                  <p>
+                    {{ updateDate(flight.arrivalDate) }}
+                  </p>
+                  <p>
+                    {{ flight.arrivalAirport.name }}, T-{{
+                    flight.arrivalTerminal
+                    }}
+                  </p>
+                </div>
+              </div>
+              <div class="separator" *ngIf="!lastItem">
+                Change Planes at {{ flight.arrivalAirport.cityName }},
+                {{ flight.arrivalAirport.countryName }}
+                {{ "(" + flight.arrivalAirport.iata + ")" }}, Connecting Time
+                {{
+                getDuration(selectedFlight.legs[1].connections[0].segments, j)
+                }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <!-- round trip end -->
+      <app-flight-details [ngClass]="viewDetails === true ? 'showDetails':'hideDetails' " [item]="selectedFlight"
+        [flightDetailIndex]="flightDetailIndex" [selectedFlight]="selectedFlight">
+      </app-flight-details>
+    </div>
+    <div class="spacingMobile" *ngIf="isBelowLg">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3 style="font-size:16px;color:#0057B9;margin: 0px;font-weight: 600;">Trip summary</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngIf="selectedFlight.legs[0]">
+          <div *ngFor="let flightData of selectedFlight.legs[0].connections[0].segments">
+            <div style="display: flex;justify-content:flex-start;margin-bottom: 16px;">
+              <div style="font-size: 16px;font-weight:600" class="fromDes">
+                {{ flightData.departureAirport.cityName }}
+              </div>
+              <div class="Img" style="padding: 0px 4px;">
+                <img src="../../../../assets/images/arrowRight.svg" alt="" srcset="">
+              </div>
+              <div style="font-size: 16px;font-weight:600" class="toDes">
+                {{ flightData.arrivalAirport.cityName }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <mat-card *ngIf="selectedFlight.legs[0]">
+          <div *ngFor="let flight of selectedFlight.legs[0].connections[0].segments; let j = index;let lastItem = last">
+            <div class="cardContainerDiv">
+              <div class="timeColumn">
+                <div class="fromTime">
+                  <div style="font-size: 18px;font-weight:500;line-height:27px">
+                    {{ updateFlightTime(flight.departureDate) }}
+                  </div>
+                  <div style="font-size: 10px;font-weight:500;line-height:15px;color:#666666">
+                    {{ updateDate(flight.departureDate) }}
+                  </div>
+                </div>
+                <div style="font-size: 14px;font-weight:500" class="totalTimeJ">
+                  {{
+                  selectedFlight.legs[0].connections[0].connectionHeader
+                  .legTravelTime.addHours
+                  }}h
+                  {{
+                  selectedFlight.legs[0].connections[0].connectionHeader
+                  .legTravelTime.minutes
+                  }}m
+                </div>
+                <div class="toTime">
+                  <div style="font-size: 18px;font-weight:500;line-height:27px">
+                    {{ updateFlightTime(flight.arrivalDate) }}
+                  </div>
+                  <div style="font-size: 10px;font-weight:500;line-height:15px;color:#666666">
+                    {{ updateDate(flight.arrivalDate) }}
+                  </div>
+                </div>
+              </div>
+              <div class="arrowImg d-flex justify-content-between align-items-center divider-bar">
+                <div class="leftbar"></div>
+                <div class="p-2">
+                  <p class="icoStop"><i class="icon-frame_203 flights"
+                      [ngClass]="addStopClass(selectedFlight)"></i><span class="stop-text"> </span></p>
+                </div>
+                <div class="rightbar"></div>
+              </div>
+              <div class="locationDetails">
+                <div class="fromTime">
+                  <div style="font-size: 18px;font-weight:500;line-height:27px">
+                    {{ flight.departureAirport.cityName }}. {{ flight.departureAirport.cityCode }}
+                  </div>
+                  <div style="font-size: 10px;font-weight:500;line-height:15px;color:#666666">
+                    {{ flight.departureAirport.name }}, T-{{
+                    flight.departureTerminal
+                    }}
+                  </div>
+                </div>
+                <div class="totalTimeJ">
+                  <div style="position: absolute;top:15%;font-size: 14px;font-weight:500">
+                    <img src="{{ H_URL }}/publicservices/images/airline/{{
+                  selectedFlight.legs[0].platingCarrier.code
+                }}" width="120px" alt="" />
+                  </div>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="expansionDetailsCard">
+                      <p style="font-size: 10px;color:#727272;font-weight:500">Operated By {{
+                        selectedFlight.legs[0].platingCarrier.hint }}</p>
+                      <p style="font-size: 10px;color:#727272;font-weight:500">Connection No {{
+                        flight.carrier.code }}-{{ flight.flightNumber }} </p>
+                    </div>
+                  </mat-expansion-panel>
+                </div>
+                <div class="toTime">
+                  <div style="font-size: 18px;font-weight:500;line-height:27px">
+                    {{ flight.arrivalAirport.cityName }}. {{ flight.arrivalAirport.cityCode }}
+                  </div>
+                  <div style="font-size: 10px;font-weight:500;line-height:15px;color:#666666">
+                    {{ flight.arrivalAirport.name }}, T-{{
+                    flight.arrivalTerminal
+                    }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separatorMob" *ngIf="!lastItem">
+              <span> Change Planes at {{ flight.arrivalAirport.cityName }},
+                {{ flight.arrivalAirport.countryName }}
+                {{ "(" + flight.arrivalAirport.iata + ")" }},
+                {{
+                getDuration(selectedFlight.legs[0].connections[0].segments, j)
+                }}
+              </span>
+            </div>
+          </div>
+        </mat-card>
+        <div class="mt-2" *ngIf="selectedFlight.legs[1]">
+          <div *ngFor="let flightData of selectedFlight.legs[1].connections[0].segments">
+            <div style="display: flex;justify-content:flex-start;margin-bottom: 16px;">
+              <div style="font-size: 16px;font-weight:600" class="fromDes">
+                {{ flightData.departureAirport.cityName }}
+              </div>
+              <div class="Img" style="padding: 0px 4px;">
+                <img src="../../../../assets/images/arrowRight.svg" alt="" srcset="">
+              </div>
+              <div style="font-size: 16px;font-weight:600" class="toDes">
+                {{ flightData.arrivalAirport.cityName }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <mat-card *ngIf="selectedFlight.legs[1]">
+          <div
+            *ngFor="let flight of selectedFlight.legs[1].connections[0].segments; let j = index; let lastItem = last">
+            <div class="cardContainerDiv">
+              <div class="timeColumn">
+                <div class="fromTime">
+                  <div style="font-size: 18px;font-weight:500;line-height:27px">
+                    {{ updateFlightTime(flight.departureDate) }}
+                  </div>
+                  <div style="font-size: 10px;font-weight:500;line-height:15px;color:#666666">
+                    {{ updateDate(flight.departureDate) }}
+                  </div>
+                </div>
+                <div style="font-size: 14px;font-weight:500" class="totalTimeJ">
+                  {{
+                  selectedFlight.legs[0].connections[0].connectionHeader
+                  .legTravelTime.addHours
+                  }}h
+                  {{
+                  selectedFlight.legs[0].connections[0].connectionHeader
+                  .legTravelTime.minutes
+                  }}m
+                </div>
+                <div class="toTime">
+                  <div style="font-size: 18px;font-weight:500;line-height:27px">
+                    {{ updateFlightTime(flight.arrivalDate) }}
+                  </div>
+                  <div style="font-size: 10px;font-weight:500;line-height:15px;color:#666666">
+                    {{ updateDate(flight.arrivalDate) }}
+                  </div>
+                </div>
+              </div>
+              <div class="arrowImg d-flex justify-content-between align-items-center divider-bar">
+                <div class="leftbar"></div>
+                <div class="p-2">
+                  <p class="icoStop"><i class="icon-frame_203 flights"
+                      [ngClass]="addStopClass(selectedFlight)"></i><span class="stop-text"> </span></p>
+                </div>
+                <div class="rightbar"></div>
+              </div>
+              <div class="locationDetails">
+                <div class="fromTime">
+                  <div style="font-size: 18px;font-weight:500;line-height:27px">
+                    {{ flight.departureAirport.cityName }}. {{ flight.departureAirport.cityCode }}
+                  </div>
+                  <div style="font-size: 10px;font-weight:500;line-height:15px;color:#666666">
+                    {{ flight.departureAirport.name }}, T-{{
+                    flight.departureTerminal
+                    }}
+                  </div>
+                </div>
+                <div class="totalTimeJ">
+                  <div style="position: absolute;top:15%;font-size: 14px;font-weight:500">
+                    <img src="{{ H_URL }}/publicservices/images/airline/{{
+                  selectedFlight.legs[0].platingCarrier.code
+                }}" width="120px" alt="" />
+                  </div>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="expansionDetailsCard">
+                      <p style="font-size: 10px;color:#727272;font-weight:500">Operated By {{
+                        selectedFlight.legs[0].platingCarrier.hint }}</p>
+                      <p style="font-size: 10px;color:#727272;font-weight:500">Connection No {{
+                        flight.carrier.code }}-{{ flight.flightNumber }} </p>
+                    </div>
+                  </mat-expansion-panel>
+                </div>
+                <div class="toTime">
+                  <div style="font-size: 18px;font-weight:500;line-height:27px">
+                    {{ flight.arrivalAirport.cityName }}. {{ flight.arrivalAirport.cityCode }}
+                  </div>
+                  <div style="font-size: 10px;font-weight:500;line-height:15px;color:#666666">
+                    {{ flight.arrivalAirport.name }}, T-{{
+                    flight.arrivalTerminal
+                    }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separatorMob" *ngIf="!lastItem">
+              <span> Change Planes at {{ flight.arrivalAirport.cityName }},
+                {{ flight.arrivalAirport.countryName }}
+                {{ "(" + flight.arrivalAirport.iata + ")" }},
+                {{
+                getDuration(selectedFlight.legs[0].connections[0].segments, j)
+                }}
+              </span>
+            </div>
+          </div>
+        </mat-card>
+      </mat-expansion-panel>
+    </div>
+    <div class="mobileFloat">
+      <app-price-sidebar class="" [selectedFlight]="selectedFlight" [scrollPosition]="scrollPosition"
+        [baggagePrice]="baggagePrice">
+      </app-price-sidebar>
+    </div>
+    <!-- <div *ngIf="isBelowLg" class="mobileFloat">
+      <app-price-sidebar class="" [selectedFlight]="selectedFlight" [scrollPosition]="scrollPosition"
+        [baggagePrice]="baggagePrice">
+      </app-price-sidebar>
+  </div> -->
+  </div>
+  <div class="container p-0 mr-2">
+    <!-- travel detailss start-->
+    <app-booking-form [updatedWidth]="updateWidth()" [travellData]="travellData" [selectedFlight]="selectedFlight"
+      (newItemEvent)="addItem($event)"></app-booking-form>
+    <!-- travel detailss start-->
+    <div class="guidlines mt-3 pb-3">
+      <mat-card class="">
+        <h3>
+          <i class="icon-infoVector p-1"></i> Compulsory Guidlines For Passengers
+        </h3>
+        <p>
+          <i style="position:relative;bottom: 8px;" class="icon-flight_24px p-1"></i>
+          <span>Please note, we are operating simply as an intermediary in relation to all services offered on our
+            website including flights. The existing suppliers provide our prices and availability directly. But be rest
+            assured that when you book directly with us, we guarantee the lowest pricing</span>
+        </p>
+        <p>
+          <i style="position:relative;bottom: 15px;" class="icon-flight_24px p-1"></i>
+          <span>
+            Tickets are non-refundable and non-transferable. Name changes are not allowed. Taxes and fees are included
+            in the total ticket cost. Cancellations, routing and date changes are subject to (fare rules) and our
+            (fees), should these changes be allowed by the airline. Prices may or may not include (baggage fees) or
+            other fees charged directly by the airline. Fares are not guaranteed until ticketed. Service fees are
+            non-refundable.
+          </span>
+        </p>
+        <p>
+          <i class="icon-flight_24px p-1"></i>
+          <span> If you have any specific requirements, such as accessibility help, golf or sports bags, extra leg room,
+            additional or selective baggage, etc. please contact our customer support on
+          </span>
+        </p>
+        <p>
+          <i style="position:relative;bottom: 8px;" class="icon-flight_24px p-1"></i>
+          <span>
+            Restrictions, limits, and exclusions apply. By purchasing our Travel Insurance at Wadiia, you accept that
+            you have read and understand the Insurance Conditions before deciding to buy this insurance. The Insurer is
+            (We name the Insurer).
+          </span>
+        </p>
+        <hr />
+        <h3><i class="icon-infoVector p-1"></i> For International travel</h3>
+        <div>
+          <p>
+            <i style="position:relative;bottom: 15px;" class="icon-flight_24px p-1"></i>
+            <span>
+              Any expenditures or expenses incurred as a result of a government or public health authority's required
+              quarantine or isolation order placed on You as a result of cross-area, border, region, or territory travel
+              are not covered. This exclusion solely applies to COVID-19, and it applies regardless of whether you have
+              been diagnosed with COVID-19 or have been ordered into quarantine by a local public health authority
+              because
+              you have had close contact with someone who has been diagnosed with COVID-19.
+            </span>
+          </p>
+        </div>
+
+      </mat-card>
+    </div>
+  </div>
+  <div #fixme></div>
+</div>

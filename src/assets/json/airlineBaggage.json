@@ -1,0 +1,492 @@
+[
+  {
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a805"
+},
+"NO": 228,
+"SUBCODE": "0LN",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"COMMERCIAL_NAME": "CARRYON HAND BAGGAGE ALLOWANCE",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a806"
+},
+"NO": 229,
+"SUBCODE": "0L5",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"COMMERCIAL_NAME": "CARRY ON HAND BAGGAGE",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a807"
+}
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a808"
+},
+"NO": 230,
+"SUBCODE": "08G",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "02 - Up to 10lb",
+"COMMERCIAL_NAME": "CARRY ON 10LB",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a809"
+},
+"NO": 231,
+"SUBCODE": "077",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "03 - Up to 7 lb/3 kg",
+"COMMERCIAL_NAME": "CARRY ON 3KG 7LB",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a80a"
+},
+"NO": 232,
+"SUBCODE": "0M4",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "04 - Up to 9 lb/4 kg",
+"DESCRIPTION2": "4R - Up to 41 li/105 lcm",
+"COMMERCIAL_NAME": "CARRY4KG 9LB UPTO41LI 105LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a80b"
+},
+"NO": 233,
+"SUBCODE": "09U",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "05 - Up to 11 lb/5 kg",
+"DESCRIPTION2": "3G - Up to 35 cm(L) X 25\ncm(W) X 17\ncm(H)",
+"COMMERCIAL_NAME": "CARRY5KG 11LB UPTO35LX25WX17H",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a80c"
+},
+"NO": 234,
+"SUBCODE": "09O",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "05 - Up to 11 lb/5 kg",
+"DESCRIPTION2": "3R - Up to 35 li/90 lcm",
+"COMMERCIAL_NAME": "CARRY5KG 11LB UPTO 35LI 90LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a80d"
+},
+"NO": 235,
+"SUBCODE": "0ML",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "05 - Up to 11 lb/5 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY5KG 11LBUPTO 45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a80e"
+},
+"NO": 236,
+"SUBCODE": "0MP",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "06 - Up to 13 lb/6 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY6KG 13LB UPTO 45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a80f"
+},
+"NO": 237,
+"SUBCODE": "0MZ",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "06 - Up to 13 lb/6 kg",
+"DESCRIPTION2": "4Y - Up to 46 li/118 lcm",
+"COMMERCIAL_NAME": "CARRY6KG 13LB UPTO 46LI 118LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a810"
+},
+"NO": 238,
+"SUBCODE": "0M2",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "07 - Up to 15 lb/7 kg",
+"DESCRIPTION2": "4R - Up to 41 li/105 lcm",
+"COMMERCIAL_NAME": "CARRY7KG 15LB UPTO41LI 105LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a811"
+},
+"NO": 239,
+"SUBCODE": "0M3",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "07 - Up to 15 lb/7 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY7KG 15LB UPTO45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a812"
+},
+"NO": 240,
+"SUBCODE": "09P",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "08 - Up to 18 lb/8 kg",
+"COMMERCIAL_NAME": "CARRY ON 8KG 18LB",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a813"
+},
+"NO": 241,
+"SUBCODE": "0MQ",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "08 - Up to 18 lb/8 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY8KG 18LB UPTO 45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a814"
+},
+"NO": 242,
+"SUBCODE": "015",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "08 - Up to 18 lb/8 kg",
+"DESCRIPTION2": "4V - Up to 43 li/110 lcm",
+"COMMERCIAL_NAME": "CARRY8KG 18LB UPTO 43LI 110LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a815"
+},
+"NO": 243,
+"SUBCODE": "0M1",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "08 - Up to 18 lb/8 kg",
+"DESCRIPTION2": "4Y - Up to 46 li/118 lcm",
+"COMMERCIAL_NAME": "CARRY8KG 18LB UPTO 46LI 118LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a816"
+},
+"NO": 244,
+"SUBCODE": "01R",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "09 - Up to 20 lb/9 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY 9KG 45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a817"
+},
+"NO": 245,
+"SUBCODE": "0M5",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "10 - Up to 22 lb/10 kg",
+"DESCRIPTION2": "4Q - Up to 39 li/100 lcm",
+"COMMERCIAL_NAME": "CARRY 10KG 22LB UPTO39LI 100LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a818"
+},
+"NO": 246,
+"SUBCODE": "0MJ",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "10 - Up to 22 lb/10 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY 10KG 22LB UPTO 45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a819"
+},
+"NO": 247,
+"SUBCODE": "07J",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "10 - Up to 22 lb/10 kg",
+"DESCRIPTION2": "4Y - Up to 46 li/118 lcm",
+"COMMERCIAL_NAME": "CARRY 10KG 22LB UPTO 46LI",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a81a"
+},
+"NO": 248,
+"SUBCODE": "010",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "10 - Up to 22 lb/10 kg",
+"DESCRIPTION2": "5C - Up to 50 li/127 lcm",
+"COMMERCIAL_NAME": "CARRY ON BAGGAGE",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a81b"
+},
+"NO": 249,
+"SUBCODE": "09V",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "10 - Up to 22 lb/10 kg",
+"DESCRIPTION2": "5S - 55L x\n40W x 23H\ncm",
+"COMMERCIAL_NAME": "CARRY10KG22LB UPTO 55LX40WX23H",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a81c"
+},
+"NO": 250,
+"SUBCODE": "08A",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "10 - Up to 22 lb/10 kg",
+"DESCRIPTION2": "55 -\n55LX40WX25 H",
+"COMMERCIAL_NAME": "CARRY 10KG 22LB UPTO 55L X 40W X 25H",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a81d"
+}
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a81e"
+},
+"NO": 251,
+"SUBCODE": "0MR",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "12 - Up to 26 lb/12 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY 12KG 26LB UPTO45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a81f"
+},
+"NO": 252,
+"SUBCODE": "0MY",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "12 - Up to 26 lb/12 kg",
+"DESCRIPTION2": "4Y - Up to 46 li/118 lcm",
+"COMMERCIAL_NAME": "CARRY12KG 26LB UPTO46LI 118LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a820"
+},
+"NO": 253,
+"SUBCODE": "0MK",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "15 - Up to 33 lb/15 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY15KG 33LBUPTO 45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a821"
+},
+"NO": 254,
+"SUBCODE": "09W",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "15 - Up to 33 lb/15 kg",
+"DESCRIPTION2": "5S - 55L x\n40W x 23H\ncm",
+"COMMERCIAL_NAME": "CARRY15KG33LB UPTO 55LX40WX23H",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a822"
+},
+"NO": 255,
+"SUBCODE": "08B",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "15 - Up to 33 lb/15 kg",
+"DESCRIPTION2": "55 -\n55LX40WX25 H",
+"COMMERCIAL_NAME": "CARRY 15KG 33LB UPTO 55L X 40W X 25H",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a823"
+},
+"NO": 256,
+"SUBCODE": "0MT",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "16 - Up to 35 lb/16 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY 16KG 35LB UPTO45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a824"
+},
+"NO": 257,
+"SUBCODE": "0MX",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "16 - Up to 35 lb/16 kg",
+"DESCRIPTION2": "4Y - Up to 46 li/118 lcm",
+"COMMERCIAL_NAME": "CARRY 16KG 35LB UPTO46LI 118LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a825"
+},
+"NO": 258,
+"SUBCODE": "076",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "16 - Up to 35 lb/16 kg",
+"DESCRIPTION2": "4Z - Up to 51 li/130 lcm",
+"COMMERCIAL_NAME": "CARRY 16KG 35LB UPTO 51LI 130LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a826"
+},
+"NO": 259,
+"SUBCODE": "0MS",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "18 - Up to 40 lb/18 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY 18KG 40LB UPTO45LI 115LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a827"
+},
+"NO": 260,
+"SUBCODE": "05D",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "20 - Up to 44 lb/20 kg",
+"DESCRIPTION2": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY 20KG UPTO 55X40X20CM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a828"
+},
+"NO": 261,
+"SUBCODE": "0MO",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "23 - Up to 50 lb/23 kg",
+"DESCRIPTION2": "5C - Up to 50 li/127 lcm",
+"COMMERCIAL_NAME": "CARRY UPTO 50LB 23KG AND 50LI 127CM",
+"RFI_C": "C"
+},
+
+{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a82a"
+},
+"NO": 263,
+"SUBCODE": "0MW",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "3T - Up to 36 li/92 lcm",
+"COMMERCIAL_NAME": "CARRY ON UP TO 36 LI 92 LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a82b"
+},
+"NO": 264,
+"SUBCODE": "098",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "3J - 36 X 30 X 27\ncm",
+"COMMERCIAL_NAME": "CARRY ON UPTO 36 X 30 X 27 CM",
+"RFI_C": "C"
+},
+{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a82c"
+},
+"NO": 265,
+"SUBCODE": "0MM",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "4S - Up to 40 li/101 lcm",
+"COMMERCIAL_NAME": "CARRY ON UP TO 40LI 101 LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a82d"
+},
+"NO": 266,
+"SUBCODE": "0MU",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "4U - Up to 45 li/115 lcm",
+"COMMERCIAL_NAME": "CARRY ON UP TO 45 LI 115 LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a82e"
+},
+"NO": 267,
+"SUBCODE": "09Q",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry On Hand Baggage",
+"DESCRIPTION1": "4Y - Up to 46 li/118 lcm",
+"COMMERCIAL_NAME": "CARRY ON UP TO 46LI 118LCM",
+"RFI_C": "C"
+},{
+"_id": {
+  "$oid": "6295bda16e0a4c3a4051a82f"
+},
+"NO": 268,
+"SUBCODE": "0NO",
+"GROUP": "BG - Baggage",
+"SUBGROUP": "CY - Carry-on Hand Baggage",
+"DESCRIPTION1": "CB - Special Cabin Baggage",
+"COMMERCIAL_NAME": "SPECIAL CABIN BAGGAGE",
+"RFI_C": "C"
+},{
+  "_id": {
+    "$oid": "6295bda16e0a4c3a4051a82f"
+  },
+  "NO": 268,
+  "SUBCODE": "0NO",
+  "GROUP": "BG - Baggage",
+  "SUBGROUP": "CY - Carry-on Hand Baggage",
+  "DESCRIPTION1": "CB - Special Cabin Baggage",
+  "COMMERCIAL_NAME": "SPECIAL CABIN BAGGAGE",
+  "RFI_C": "C"
+}
+]

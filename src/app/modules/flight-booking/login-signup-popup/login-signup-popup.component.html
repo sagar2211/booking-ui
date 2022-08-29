@@ -1,0 +1,8 @@
+<mat-tab-group animationDuration="0ms" [(selectedIndex)]="selectedTabIndex">
+    <mat-tab label="Login">
+        <app-sign-in (signInResObj)='getResponse($event)'></app-sign-in>
+    </mat-tab>
+    <mat-tab label="Sign Up">
+        <app-sign-up (signUpResObj)='getSignUpResponse($event)'></app-sign-up>
+    </mat-tab>
+</mat-tab-group>

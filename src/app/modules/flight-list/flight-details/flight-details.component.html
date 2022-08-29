@@ -1,0 +1,354 @@
+<mat-tab-group mat-align-tabs="center" class="flightDetails">
+  <!-- FLIGHT DETAILS -->
+  <mat-tab label="FLIGHT DETAILS">
+    <div class="container py-1 matTabContainer">
+      <div class="flight-details-header d-flex justify-content-between align-items-center min-vh-10">
+        <strong class="cityName">{{
+          item.legs[0].connections[0].segments[0].departureAirport.cityName
+          }}
+          to
+          {{
+          item.legs[0].connections[0].segments[
+          item.legs[0].connections[0].segments.length - 1
+          ].arrivalAirport.cityName
+          }}
+          {{
+          ", " +
+          displayDate(
+          item.legs[0].connections[0].connectionHeader.departureDate
+          )
+          }}
+        </strong>
+        <strong class="duration">
+          {{
+          item.legs[0].connections[0].connectionHeader.legTravelTime.addHours
+          }}
+          h
+          {{
+          item.legs[0].connections[0].connectionHeader.legTravelTime.minutes
+          }}
+          m
+        </strong>
+      </div>
+      <div *ngFor="
+          let flight of item.legs[0].connections[0].segments;
+          let j = index;
+          let lastItem = last
+        ">
+        <div class="row pt-3 details" *ngIf="item.legs[0]">
+          <div class="col-md-2 images">
+            <div class="jumbotron d-flex flex-column align-items-center min-vh-10">
+              <img src="/assets/airlineLogos/Rectangular/{{
+                  item.legs[0].platingCarrier.code
+                }}.png" width="100px" alt="" />
+            </div>
+            <p>{{ flight.carrier.code }}{{ flight.flightNumber }}</p>
+          </div>
+          <div style="width: 100px" class="col-md-2 departure">
+            <h4>
+              {{ updateFlightTime(flight.departureDate) }}
+            </h4>
+            <p>
+              {{ flight.departureAirport.cityCode | titlecase }},
+              {{ flight.departureAirport.countryCode | titlecase }}
+            </p>
+          </div>
+          <div class="col-md-2 mt-2 stops">
+            {{
+            item.legs[0].connections[0].connectionHeader.legTravelTime
+            .addHours
+            }}
+            h
+            {{
+            item.legs[0].connections[0].connectionHeader.legTravelTime.minutes
+            }}
+            m
+            <div class="divider"></div>
+          </div>
+          <div style="width: 100px" class="col-md-2 arival">
+            <h4>
+              {{ updateFlightTime(flight.arrivalDate) }}
+              <span class="dayIndicator">{{item.legs[0].connections[0].connectionHeader.dayIndicator}}</span>
+            </h4>
+            <p>
+              {{ flight.arrivalAirport.cityCode| titlecase }},
+              {{ flight.arrivalAirport.countryCode | titlecase }}
+            </p>
+          </div>
+          <div class="col-md-2 cabin">
+            <p class="mt-3">Cabin: {{ flight.cabinClassName }}</p>
+          </div>
+          <div class="col-md-2 baggageSec">
+            <div class="d-flex mt-3">
+              <div class="px-3">
+                <i class="icon-fastfood flight-Icon p-1"></i>
+                <i class="icon-free-breakfast flight-Icon p-1"></i>
+                <i class="icon-videogame-asset flight-Icon p-1"></i>
+                <i class="icon-wifi1 flight-Icon p-1"></i>
+              </div>
+
+              <div class="baggageSection">
+                <span class="luggage-cart" *ngIf="item.fareHeader.fareHasFreeBaggage">
+                  <i class="icon-baggage2" matTooltip="This fare has free baggage allowance for atleast one connection."
+                    matTooltipPosition="above"></i>
+                  <i class="icon-b-red" matTooltip="This fare has free baggage allowance for atleast one connection."
+                    matTooltipPosition="above"></i>
+                </span>
+                <span class="luggage-cart" *ngIf="!item.fareHeader.fareHasFreeBaggage">
+                  <i class="icon-baggage2" matTooltip="This fare has no free baggage allowance."
+                    matTooltipPosition="above"></i>
+                  <i class="icon-b-green" matTooltip="This fare has no free baggage allowance."
+                    matTooltipPosition="above"></i>
+                </span>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-50 deviderSection">
+          <div class="separatorUp" *ngIf="!lastItem"></div>
+          <p class="text-center" *ngIf="!lastItem">
+            Plane Change {{ flight.arrivalAirport.cityName }},
+            {{ flight.arrivalAirport.countryName }} <br />
+            {{ "(" + flight.arrivalAirport.iata + ")" }} |
+            {{ getDuration(item.legs[0].connections[0].segments, j) }}
+          </p>
+          <div class="separatorDown" *ngIf="!lastItem"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container pt-3" *ngIf="item.legs[1]">
+      <div class="flight-details-header d-flex justify-content-between align-items-center min-vh-10">
+        <strong class="cityName">{{
+          item.legs[1].connections[0].segments[0].departureAirport.cityName
+          }}
+          to
+          {{
+          item.legs[1].connections[0].segments[
+          item.legs[1].connections[0].segments.length - 1
+          ].arrivalAirport.cityName
+          }}
+          {{
+          ", " +
+          displayDate(
+          item.legs[1].connections[0].connectionHeader.departureDate
+          )
+          }}
+        </strong>
+        <strong class="duration">
+          {{
+          item.legs[1].connections[0].connectionHeader.legTravelTime.addHours
+          }}
+          h
+          {{
+          item.legs[1].connections[0].connectionHeader.legTravelTime.minutes
+          }}
+          m
+        </strong>
+      </div>
+      <div *ngFor="
+          let flight of item.legs[1].connections[0].segments;
+          let j = index;
+          let lastItem = last
+        ">
+        <div class="row pt-3 details" *ngIf="item.legs[1]">
+          <div class="col-md-2 images">
+            <div class="jumbotron d-flex flex-column align-items-center min-vh-10">
+              <img src="/assets/airlineLogos/Rectangular/{{
+                  item.legs[1].platingCarrier.code
+                }}.png" width="120px" alt="" />
+            </div>
+            <!-- <span>{{ item.legs[1].platingCarrier.hint }}</span
+            ><br /> -->
+            <p>{{ flight.carrier.code }}{{ flight.flightNumber }}</p>
+          </div>
+          <div style="width: 100px" class="col-md-2 departure">
+            <div class="jumbotron">
+              <h4>
+                {{ updateFlightTime(flight.departureDate) }}
+              </h4>
+              <!-- <p>
+                {{ updateDate(flight.departureDate) }}
+              </p> -->
+            </div>
+            <p>
+              {{ flight.departureAirport.cityCode | titlecase }},
+              {{ flight.departureAirport.countryCode| titlecase }}
+            </p>
+          </div>
+          <div class="col-md-2 mt-2 stops">
+            {{
+            item.legs[1].connections[0].connectionHeader.legTravelTime
+            .addHours
+            }}
+            h
+            {{
+            item.legs[1].connections[0].connectionHeader.legTravelTime.minutes
+            }}
+            m
+            <div class="divider"></div>
+          </div>
+          <div style="width: 100px" class="col-md-2 arival">
+            <div class="jumbotron">
+              <h4>
+                {{ updateFlightTime(flight.arrivalDate) }}
+                <span class="dayIndicator">{{item.legs[1].connections[0].connectionHeader.dayIndicator}}</span>
+              </h4>
+              <!-- <p>
+                {{ updateDate(flight.arrivalDate) }}
+              </p> -->
+            </div>
+            <p>
+              {{ flight.arrivalAirport.cityCode | titlecase }},
+              {{ flight.arrivalAirport.countryCode | titlecase }}
+            </p>
+          </div>
+          <div class="col-md-2 cabin">
+            <p class="mt-3">Cabin: {{ flight.cabinClassName }}</p>
+          </div>
+          <div class="col-md-2 baggageSec">
+            <div class="d-flex mt-3">
+              <div class="px-3">
+                <i class="icon-fastfood flight-Icon p-1"></i>
+                <i class="icon-free-breakfast flight-Icon p-1"></i>
+                <i class="icon-videogame-asset flight-Icon p-1"></i>
+                <i class="icon-wifi1 flight-Icon p-1"></i>
+              </div>
+              <div class="baggageSection">
+                <span class="luggage-cart" *ngIf="item.fareHeader.fareHasFreeBaggage">
+                  <i class="icon-baggage2" matTooltip="This fare has free baggage allowance for atleast one connection."
+                    matTooltipPosition="above"></i>
+                  <i class="icon-b-red" matTooltip="This fare has free baggage allowance for atleast one connection."
+                    matTooltipPosition="above"></i>
+                </span>
+                <span class="luggage-cart" *ngIf="!item.fareHeader.fareHasFreeBaggage">
+                  <i class="icon-baggage2" matTooltip="This fare has no free baggage allowance."
+                    matTooltipPosition="above"></i>
+                  <i class="icon-b-green" matTooltip="This fare has no free baggage allowance."
+                    matTooltipPosition="above"></i>
+                </span>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-50 deviderSection">
+          <div class="separatorUp" *ngIf="!lastItem"></div>
+          <p class="text-center" *ngIf="!lastItem">
+            Plane Change {{ flight.arrivalAirport.cityName }},
+            {{ flight.arrivalAirport.countryName }} <br />
+            {{ "(" + flight.arrivalAirport.iata + ")" }} |
+            {{ getDuration(item.legs[1].connections[0].segments, j) }}
+          </p>
+          <div class="separatorDown" *ngIf="!lastItem"></div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <!-- SUMMARY -->
+  <mat-tab label="FARE SUMMARY">
+    <div class="fli-list-fare_details__left-heading m-b-15">
+      <p class="rulesHead pt-3">Fare Rules</p>
+      <hr style="margin-top: -1px" />
+      <p>
+        <i class="icon-flight_24px p-1"></i>
+        <span>Lorem Ipsum is dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s,</span>
+      </p>
+      <p>
+        <i class="icon-flight_24px p-1"></i>
+        <span>Lorem Ipsum is dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s,</span>
+      </p>
+      <p>
+        <i class="icon-flight_24px p-1"></i>
+        <span>Lorem Ipsum is dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s,</span>
+      </p>
+    </div>
+    <div class="mt-2">
+      <p class="rulesHead pt-3">Fare breakup</p>
+      <hr style="margin-top: -1px" />
+    </div>
+    <div class="fare">
+      <div class="d-flex justify-content-between align-items-center p-3 airlineImg">
+        <div class="airlineImg">
+          <div class="images">
+            <img src="/assets/airlineLogos/Rectangular/{{
+              item.legs[0].platingCarrier.code
+            }}.png" width="120px" alt="" />
+            <p>{{ item.currency }} {{ item.totalPrice | number }}</p>
+          </div>
+        </div>
+        <div class="FareCalculation w-75">
+          <div class="d-flex align-items-start justify-content-between">
+            <p>Base Rate</p>
+            <p class="flight-list__summary">
+              <span *ngIf="ancillariesData">{{ item.currency }} {{ item.totalPrice | number }} *
+                {{
+                item.calculationResult.calculationsByPassengerType[0]
+                .passengerAmount
+                }}
+                {{
+                item.calculationResult.calculationsByPassengerType[0]
+                .passengerType
+                }}
+                =
+                {{ item.currency }}
+                {{
+                item.calculationResult.totals.rawValues.gross| number
+                }}</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-start justify-content-between">
+            <p>Subcharges &amp; Tax</p>
+            <p class="flight-list__summary">
+              <span *ngIf="ancillariesData">{{ item.currency }} {{ item.totalTax | number }} *
+                {{
+                item.calculationResult.calculationsByPassengerType[0]
+                .passengerAmount
+                }}
+                {{
+                item.calculationResult.calculationsByPassengerType[0]
+                .passengerType
+                }}
+                = {{ item.currency }}
+                {{
+                  item.calculationResult.totals.rawValues.taxes_PerPerson | number
+                }}</span>
+            </p>
+          </div>
+            <div *ngFor="let serviceItm of serviceArray; let i = index">
+              <div class="d-flex align-items-start justify-content-between"
+                *ngFor="let object of serviceItm['passengerIndex' + [i + 1]]">
+                <p>{{ object.text ? object.text : "" }}</p>
+                <p>{{ getPrice(object?.referenceIDs[0].priceID) }}</p>
+              </div>
+            </div>
+          <div class="d-flex align-items-center justify-content-between top-border">
+            <p><strong> TOTAL </strong>:</p>
+
+            <strong>
+              <span>
+                {{ item.currency }}
+                {{
+                item.totalPrice | number
+                }}
+              </span>
+              <strong *ngIf="
+                  item.calculationResult.calculationsByPassengerType[0]
+                    .passengerAmount == 0
+                ">
+                {{ item.currency }}
+                {{ item.totalPrice | number }}
+              </strong>
+            </strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

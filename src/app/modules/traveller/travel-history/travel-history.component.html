@@ -1,0 +1,40 @@
+<div style="background-color: #ffffff;">
+    <section class="main-section">
+        <div class="container">
+            <mat-card class="historyContainerDiv d-flex justify-content-between main-container p-0">
+                <mat-tab-group animationDuration="0ms" class="left-panel">
+                    <mat-tab label="UPCOMING">
+                        <app-upcoming-history class="cancelDiv" [bookingHistory]="bookingHistory"></app-upcoming-history>
+                    </mat-tab>
+                    <mat-tab label="CANCELLED">
+                        <app-cancelled-history class="cancelDiv" [bookingHistory]="bookingHistory"></app-cancelled-history>
+                    </mat-tab>
+                    <mat-tab label="COMPLETED">
+                        <app-completed-history class="cancelDiv" [bookingHistory]="bookingHistory"></app-completed-history>
+                    </mat-tab>
+                </mat-tab-group>
+                <div class="right-panel">
+                    <div class="text-center mb-4 carouselTitle">
+                        <span class="more-of-wadiia">MORE OF </span><span class="wadiia-color">WADIIA</span>
+                    </div>
+                    <mat-card [ngClass]="{'addSticky': scrollPosition >= 130,'addStatic': scrollPosition >= 390}" class="adjust-width">
+                        <ngu-carousel class="historyCarouselDiv" #myCarousel [inputs]="isBelowLg ? carouselConfigMobile:carouselConfig" [dataSource]="carouselItems" (carouselLoad)="carouselTileLoad($event)">
+                            <mat-card *nguCarouselDef="let item;let i of index" class="item my-2" [style.border]="'2px solid '+ item.color">
+                                <div class="d-flex">
+                                    <img src="/assets/images/{{item.image}}" width="121px" height="122px" alt="">
+                                    <div>
+                                        <p class="heading" [style.color]="item.color">{{item.heading}}</p>
+                                        <p class="content">{{item.content}}</p>
+                                    </div>
+                                </div>
+                            </mat-card>
+                            <button NguCarouselPrev class="leftRs">v</button>
+                            <button NguCarouselNext class="rightRs">^</button>
+                        </ngu-carousel>
+                    </mat-card>
+                </div>
+                
+            </mat-card>
+        </div>    
+    </section>
+</div>

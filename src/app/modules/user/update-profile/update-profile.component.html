@@ -1,0 +1,333 @@
+<section class="main-section webPage">
+    <div class="container container-block">
+        <div class="d-flex profile">
+            <mat-card class="profile-sidebar">
+                <div class="profile-img">
+                    <button class="btn primary file-upload-button">
+                        <input type="file" accept="image/png,image/jpeg,image/x-png" #fileInput
+                            (change)="selectFiles($event)">
+                        <i class="fa fa-solid fa-pen"></i>
+                    </button>
+                    <img src="{{profilePic}}" *ngIf="profilePic" width="100%" alt="">
+                    <img src="/assets/images/download.png" *ngIf="!profilePic" width="100%" alt="">
+                </div>
+                <div class="userDetail">
+                    <p class="username">{{userInfo?.prefix + '. ' + userInfo.firstName}}</p>
+                    <p class="personal-profile">Personal Profile</p>
+                </div>
+                <ul class="profile-tabs">
+                    <li [ngClass]="clicked === 0 ? 'active' : ''" (click)="selectedTab(0)"><span>Profile</span></li>
+                    <li [ngClass]="clicked === 1 ? 'active' : ''" (click)="selectedTab(1)"><span>Login Details </span>
+                    </li>
+                    <li [ngClass]="clicked === 2 ? 'active' : ''" (click)="selectedTab(2)"><span>Save Travellers </span>
+                    </li>
+                    <li [ngClass]="clicked === 3 ? 'active' : ''" routerLink="/traveller/travel-history"
+                        (click)="selectedTab(3)"><span>Traveller History </span>
+                    </li>
+                    <li [ngClass]="clicked === 4 ? 'active' : ''" (click)="logout()"><span>Logout </span></li>
+                </ul>
+            </mat-card>
+
+            <div class="main-container">
+                <mat-card class="card-container">
+                    <div class="progressbar-container">
+                        <div class="d-flex justify-content-between progress-label">
+                            <span class="complete-profile">Complete your Profile </span>
+                            <span class="percent">{{progress}} % </span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar"
+                                [ngStyle]="{'width': progress + '%'}" aria-valuenow="progress" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <span class="wadiia-text pb-2">get the best of wadiia by adding the remaimimg details !</span>
+                    <div class="d-flex justify-content-between py-4 my-2 verified-process">
+                        <div class="verifiedIcon">
+                            <i class="icon-b-red"></i>
+                            <span class="inComplete-process">Verified Email ID</span>
+                        </div>
+                        <div class="verifiedIcon">
+                            <i class="icon-b-red"></i>
+                            <span class="inComplete-process">Verified Mobile No</span>
+                        </div>
+                        <div class="basic-info">
+                            <span class="basic-info-plus">+</span>
+                            <span class="complete-process">Complete Basic Info</span>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card class="card-container my-3">
+                    <div class="d-flex justify-content-between">
+                        <div class="profile-first-block">
+                            <p class="profile-header pt-3">Profile</p>
+                            <p class="booking-exp">basic info, for a faster booking experience</p>
+                        </div>
+                        <div class="editForm">
+                            <button class="btn btn-light" (click)="openEditPopup('all')"><i
+                                    class="fa fa-solid fa-pen"></i>&nbsp;<span>Edits</span></button>
+                        </div>
+                    </div>
+                    <div class="info-table">
+                        <div class="row">
+                            <label class="col-md-3 info-label">Name</label>
+                            <span class="col-md-9 info-value">{{userInfo?.prefix + '. ' + userInfo.firstName}}</span>
+                            <!-- <div class="verifiedIcon">
+                                <i class="icon-b-red"></i>
+                                <span class="inComplete-process">Verified Email ID</span>
+                            </div> -->
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <label class="col-md-3 info-label">Birthdate</label>
+                            <span class="col-md-9 info-value"
+                                *ngIf="userInfo.dateOfBirth">{{userInfo?.dateOfBirth.endDate | date:
+                                'dd-MM-yyyy'}}</span>
+                            <a href="javascript:void(0)" class="col-md-9 add-value" *ngIf="!userInfo.dateOfBirth"
+                                (click)="openEditPopup('BirthDate')">+Add</a>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <label class="col-md-3 info-label">Gender</label>
+                            <span class="col-md-9 info-value" *ngIf="userInfo.gender">{{userInfo.gender}}</span>
+                            <a href="javascript:void(0)" class="col-md-9 add-value" *ngIf="!userInfo.gender"
+                                (click)="openEditPopup('gender')">+Add</a>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card class="card-container my-3">
+                    <div class="profile-first-block">
+                        <p class="profile-header pt-3">Login Details </p>
+                        <p class="booking-exp">Manage your email address mobile number and password </p>
+                    </div>
+                    <div class="info-table">
+                        <div class="row">
+                            <label class="col-md-3 info-label">Mobile Number</label>
+                            <span class="col-md-9 info-value" *ngIf="userInfo.mobile"></span>
+                            <p> {{userInfo.mobile.internationalNumber}} &nbsp;<i class="icon-b-red"></i><span
+                                    class="inComplete-process verified">Verified</span></p>
+                            <a href="javascript:void(0)" *ngIf="!userInfo.mobile" class="col-md-3 add-value">+Add</a>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <label class="col-md-3 info-label">Email ID</label>
+                            <p class="col-md-9 info-value" *ngIf="userInfo.email">{{userInfo.email}} &nbsp;<i
+                                    class="icon-b-red"></i><span class="inComplete-process verified">Verified</span></p>
+                            <a href="javascript:void(0)" *ngIf="!userInfo.email" class="col-md-3 add-value">+Add</a>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <label class="col-md-3 info-label">Password </label>
+                            <span class="col-md-3 info-value" *ngIf="userInfo.password">******</span>
+                            <a href="javascript:void(0)" *ngIf="!userInfo.password" class="col-md-3 add-value">+Add</a>
+                            <span style="text-align: right;" class="col-md-6 "><a style="text-decoration: none;"
+                                    href="javascript:void(0)">Change password</a></span>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card class="card-container my-3">
+                    <div class="d-flex justify-content-between">
+                        <div class="profile-first-block">
+                            <p class="profile-header pt-3">Save Travellers</p>
+                            <p class="booking-exp">You have {{userInfo.travellerArray.length}} Travellers</p>
+                        </div>
+                        <div>
+                            <button mat-stroked-button class="add-traveller" (click)="addTravellerPopup()">Add
+                                Traveller</button>
+                        </div>
+                    </div>
+                    <div *ngFor="let traveller of userInfo.travellerArray; let i = index; let last = last;">
+                        <div class="d-flex justify-content-between">
+
+                            <div class="d-flex">
+                                <div class="profileImg px-3">
+                                    <div class="proIcon bg-success p-3">{{traveller.firstName | uppercase |
+                                        slice:0:1}}{{traveller.lastName | uppercase | slice:0:1}}</div>
+                                </div>
+                                <div class="info pt-1">
+                                    <span class="p-2"><Strong>{{traveller.prefix + ' ' +traveller.firstName + ' '
+                                            +traveller.lastName}}</Strong>({{traveller.gender+ ', ' +
+                                        calculateAge(traveller.dateOfBirth.startDate) + ' '}}, Years)</span><span
+                                        class="p-2">{{userInfo.mobile.internationalNumber}}</span><span
+                                        class="p-2">{{traveller.email}}</span>
+                                    <br>
+                                    <span><strong class="p-2">Passport Number:</strong>{{traveller.passportNo}} (Expiry:
+                                        {{traveller.passportExpiry.startDate | date : 'dd/MM/YYYY'}})</span>
+                                </div>
+                            </div>
+                            <div class="editTraveller">
+                                <button class="btn" (click)="editTraveller(userInfo.travellerArray[i])"><i
+                                        class="fa fa-solid fa-pen"></i>&nbsp;<span>Edits</span></button>
+                            </div>
+                        </div>
+                        <hr class="travellerDivider" *ngIf="!last">
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main-section Mob">
+    <div class="container-block container shodws">
+        <div class="profilePic w-25">
+            <div class="profile-img">
+                <button class="btn primary file-upload-button">
+                    <input type="file" accept="image/png,image/jpeg,image/x-png" #fileInput
+                        (change)="selectFiles($event)">
+                    <i class="fa fa-solid fa-pen"></i>
+                </button>
+                <img src="{{profilePic}}" *ngIf="profilePic" width="100%" alt="">
+                <img src="/assets/images/download.png" *ngIf="!profilePic" width="100%" alt="">
+            </div>
+            <div class="userDetail">
+                <p class="username">{{userInfo?.prefix + '. ' + userInfo.firstName}}</p>
+                <p class="personal-profile">Personal Profile</p>
+            </div>
+        </div>
+        <mat-accordion class="example-headers-align mobileCollapseP" multi>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">person icon</mat-icon>
+                        Profile
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card class="card-containerM">
+                    <div style="margin-bottom: 24px;" class="d-flex justify-content-between">
+                            <div class="profile-first-block">
+                                <p class="profile-header pt-3">Profile</p>
+                                <p class="booking-exp">basic info, for a faster booking experience</p>
+                            </div>
+                        <div class="editForm">
+                            <button class="btn btn-light" (click)="openEditPopup('all')"><i
+                                    class="fa fa-solid fa-pen"></i>&nbsp;<span>Edits</span></button>
+                        </div>
+                    </div>
+                    <div class="info-table">
+                        <div style="display: flex;align-items: center;justify-content: space-between;" >
+                            <label style="font-weight: 400;
+                            font-size: 18px;" class="info-label">Name</label>
+                            <span style="font-weight: 500;
+                            font-size: 18px;" class=" info-value profileN">{{userInfo?.prefix + '. ' + userInfo.firstName}}</span>
+                            <!-- <div class="verifiedIcon">
+                                <i class="icon-b-red"></i>
+                                <span class="inComplete-process">Verified Email ID</span>
+                            </div> -->
+                        </div>
+                        <hr>
+                        <div style="display: flex;align-items: center;justify-content: space-between;" >
+                            <label style="font-weight: 400;
+                            font-size: 18px;" class="info-label">Birthdate</label>
+                            <span class="info-value"
+                                *ngIf="userInfo.dateOfBirth">{{userInfo?.dateOfBirth.endDate | date:
+                                'dd-MM-yyyy'}}</span>
+                            <a style="font-weight: 500;
+                            font-size: 18px;margin-right: 30px;" href="javascript:void(0)" class="add-value profileB" *ngIf="!userInfo.dateOfBirth"
+                                (click)="openEditPopup('BirthDate')">+Add</a>
+                        </div>
+                        <hr>
+                        <div style="display: flex;align-items: center;justify-content: space-between;" >
+                            <label style="font-weight: 400;
+                            font-size: 18px;" class="info-label">Gender</label>
+                            <span class=" info-value" *ngIf="userInfo.gender">{{userInfo.gender}}</span>
+                            <a style="font-weight: 500;
+                            font-size: 18px;margin-right: 30px;" href="javascript:void(0)" class="add-value profileG" *ngIf="!userInfo.gender"
+                                (click)="openEditPopup('gender')">+Add</a>
+                        </div>
+                    </div>
+                </mat-card>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="mt-3">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <i class="icon-ic_outline-logout"></i> &nbsp;
+                        Login Details
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card class="card-containerM">
+                    <div class="profile-first-block">
+                        <p class="profile-header pt-3">Login Details </p>
+                        <p class="booking-exp">Manage your email address mobile number and password </p>
+                    </div>
+                    <div class="info-table">
+                        <div style="display: flex;align-items: center;justify-content: space-between;" >
+                            <label class="info-label">Mobile Number</label>
+                            <span class="info-value" *ngIf="userInfo.mobile"></span>
+                            <p> {{userInfo.mobile.internationalNumber}} &nbsp;<i class="icon-b-red"></i><span
+                                    class="inComplete-process verified">Verified</span></p>
+                            <a href="javascript:void(0)" *ngIf="!userInfo.mobile" class="col-md-3 add-value">+Add</a>
+                        </div>
+                        <hr>
+                        <div style="display: flex;align-items: center;justify-content: space-between;" >
+                            <label class="info-label">Email ID</label>
+                            <p class="info-value" *ngIf="userInfo.email">{{userInfo.email}} &nbsp;<i
+                                    class="icon-b-red"></i><span class="inComplete-process verified">Verified</span></p>
+                            <a href="javascript:void(0)" *ngIf="!userInfo.email" class="col-md-3 add-value">+Add</a>
+                        </div>
+                        <hr>
+                        <div style="display: flex;align-items: center;justify-content: space-between;" >
+                            <label class=" info-label">Password </label>
+                            <span class=" info-value" *ngIf="userInfo.password">******</span>
+                            <a href="javascript:void(0)" *ngIf="!userInfo.password" class="col-md-3 add-value">+Add</a>
+                            <span style="text-align: right;font-weight: 600;
+                            font-size: 12px;
+                            line-height: 16px;" ><a style="text-decoration: none;"
+                                    href="javascript:void(0)">Change password</a></span>
+                        </div>
+                    </div>
+                </mat-card>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="mt-3">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <i class="icon-group"></i> &nbsp;
+                        Save Travellers 
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card class="card-containerM">
+                    <div class="d-flex justify-content-between">
+                        <div class="profile-first-block">
+                            <p class="profile-header pt-3">Save Travellers</p>
+                            <p class="booking-exp">You have {{userInfo.travellerArray.length}} Travellers</p>
+                        </div>
+                        <div>
+                            <button mat-stroked-button class="add-traveller" (click)="addTravellerPopup()">Add
+                                Traveller</button>
+                        </div>
+                    </div>
+                    <div *ngFor="let traveller of userInfo.travellerArray; let i = index; let last = last;">
+                        <div class="d-flex justify-content-between">
+
+                            <div class="d-flex">
+                                <div class="profileImg px-3">
+                                    <div class="proIcon bg-success p-3">{{traveller.firstName | uppercase |
+                                        slice:0:1}}{{traveller.lastName | uppercase | slice:0:1}}</div>
+                                </div>
+                                <div class="info pt-1">
+                                    <span class="p-2"><Strong>{{traveller.prefix + ' ' +traveller.firstName + ' '
+                                            +traveller.lastName}}</Strong>({{traveller.gender+ ', ' +
+                                        calculateAge(traveller.dateOfBirth.startDate) + ' '}}, Years)</span><span
+                                        class="p-2">{{userInfo.mobile.internationalNumber}}</span><span
+                                        class="p-2">{{traveller.email}}</span>
+                                    <br>
+                                    <span><strong class="p-2">Passport Number:</strong>{{traveller.passportNo}} (Expiry:
+                                        {{traveller.passportExpiry.startDate | date : 'dd/MM/YYYY'}})</span>
+                                </div>
+                            </div>
+                            <div class="editTraveller">
+                                <button class="btn" (click)="editTraveller(userInfo.travellerArray[i])"><i
+                                        class="fa fa-solid fa-pen"></i>&nbsp;<span>Edits</span></button>
+                            </div>
+                        </div>
+                        <hr class="travellerDivider" *ngIf="!last">
+                    </div>
+                </mat-card>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div class="logout">
+            <p [ngClass]="clicked === 4 ? 'active' : ''" (click)="logout()"><span><i class="icon-ic_outline-logout"></i> &nbsp; Logout </span></p>
+        </div>
+
+    </div>
+</section>

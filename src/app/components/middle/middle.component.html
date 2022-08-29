@@ -1,0 +1,198 @@
+<section class="container-fluid book-flights" *ngIf="isSearchExists && isSpinner == false">
+  <div class="container mt-5">
+    <h3>Why Book flights with Wadiia ?</h3>
+    <div class="container row whyBookWadia-MT">
+      <div class="intro col-lg-3 col-6 col-md-4">
+        <i class="icon-Union"></i>
+        <p>We're always here for you.</p>
+      </div>
+      <div class="intro col-lg-3 col-6 col-md-4">
+        <i class="icon-doller"></i>
+        <p>We provide the most bang for your buck.</p>
+      </div>
+      <div class="intro col-lg-3 col-6 col-md-4">
+        <i class="icon-thumb"></i>
+        <p>We follow through on our promises & commitments.</p>
+      </div>
+      <div class="intro col-lg-3 col-6 col-md-4">
+        <i class="icon-clockTime">
+        </i>
+        <p>We work quickly to resolve problems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slider" *ngIf="isSearchExists && isSpinner == false">
+  <div class="slideText">
+    <p><strong>Border Reopening:</strong> Covid - 19 tests no longer required for travel to Singapur, UK, Australia and
+      Malaysia!</p>
+  </div>
+  <carousel [arrows]="!isBelowLg" [dots]="isBelowLg" [cellsToShow]="isBelowLg ? 1 : 3">
+    <div class="carousel-cell slide">
+      <img src="/assets/images/frame399.png" alt="">
+    </div>
+    <div class="carousel-cell slide">
+      <img src="/assets/images/frame400.png" alt="">
+    </div>
+    <div class="carousel-cell slide">
+      <img style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" src="/assets/images/frame397.png" alt="">
+    </div>
+    <div class="carousel-cell slide">
+      <img src="/assets/images/frame401.png" alt="">
+    </div>
+  </carousel>
+</section>
+
+<section class="autoChangeWidth destination" *ngIf="isSearchExists && isSpinner == false">
+  <div class="d-flex container-column-reverse mobView">
+    <div class="pop-destination">
+      <div style="padding: 0%;" class="container">
+        <div class="d-flex justify-content-between popularDestinations">
+          <h3>Popular Destinations</h3>
+          <p>Show More >></p>
+        </div>
+        <div class="container row d-flex justify-content-evenly flex-wrap calImg">
+          <mat-card class="example-card col-12">
+            <i class="icon-rectangle1247 labels">
+              <span>
+                From MAS 50000
+              </span>
+            </i>
+            <img mat-card-image src="/assets/images/cover.png" alt="Photo of a Shiba Inu" />
+            <mat-card-content>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h2>Seattle</h2>
+                  <p>$523</p>
+                </div>
+                <div style="align-self: end;" class="">
+                  <button class="btn btn-dangers mb-2">Book Now</button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="example-card col-12">
+            <i class="icon-rectangle1247 labels">
+              <span>
+                From MAS 50000
+              </span>
+            </i>
+            <img mat-card-image src="/assets/images/cover.png" alt="Photo of a Shiba Inu" />
+            <mat-card-content>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h2>Seattle</h2>
+                  <p>$523</p>
+                </div>
+                <div style="align-self: end;" class="">
+                  <button class="btn btn-dangers mb-2">Book Now</button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="example-card col-12">
+            <i class="icon-rectangle1247 labels">
+              <span>
+                From MAS 50000
+              </span>
+            </i>
+            <img mat-card-image src="/assets/images/cover.png" alt="Photo of a Shiba Inu" />
+            <mat-card-content>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h2>Seattle</h2>
+                  <p>$523</p>
+                </div>
+                <div style="align-self: end;" class="">
+                  <button class="btn btn-dangers mb-2">Book Now</button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="example-card col-12">
+            <i class="icon-rectangle1247 labels">
+              <span>
+                From MAS 50000
+              </span>
+            </i>
+            <img mat-card-image src="/assets/images/cover.png" alt="Photo of a Shiba Inu" />
+            <mat-card-content>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h2>Seattle</h2>
+                  <p>$523</p>
+                </div>
+                <div style="align-self: end;" class="">
+                  <button class="btn btn-dangers mb-2">Book Now</button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center viewBtnNng">
+        <button class="btn btn-danger p-2" color="warn">
+          <span class="send-code-btn">
+            <i class="icon-blocks"></i> &nbsp;
+            <span>VIEW ALL</span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="rectangle">
+      <div class="offers">
+        <h1>Looking for the best deals and offers?</h1>
+        <button class="btn btn-danger send-code-btn" color="warn">
+          <span class="">
+            <i class="icon-best-deal"></i> &nbsp;
+            <span>BEST DEALS</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container-fluid more-of-wadiia" *ngIf="isSearchExists && isSpinner == false">
+  <div class="container">
+    <h3 class="moreWadiaText">More of Wadiia</h3>
+    <div class="d-md-flex justify-content-between container row morewadiaContainer">
+      <div class="block blues">
+        <img src="/assets/images/travelstory.png" width="100%" alt="" />
+        <h4 class="pt-3">Travel Stories</h4>
+        <p>
+          Read inspiring travel experience tales of life-changing journey to amazing destination, featuring immersive
+          travel guides and tips for your next holiday.
+        </p>
+        <button class="btn cityBtn" color="warn">Get Inspired</button>
+      </div>
+      <div class="block yellows">
+        <img src="/assets/images/travelToolkit.png" width="100%" alt="" />
+        <h4 class="pt-3">Products/Services</h4>
+        <p>
+          Need help planning your next trip or holiday? Our travel toolkit features all our exclusive product and
+          services to help you get started and ensure that everything regarding your trip run as smoothly as possible.
+        </p>
+        <button class="btn cityBtn" color="warn">
+          Get Started
+        </button>
+      </div>
+      <div class="block greens">
+        <img src="/assets/images/travelFAQ.png" width="100%" alt="" />
+        <h4 class="pt-3">City Trip Information</h4>
+        <p>
+          Get answers to the frequently asked questions on flights, airline tickets, COVID-19 travel, general topic on
+          cacellation, payment and refund, visas, check-in etc.
+        </p>
+        <button class="btn cityBtn" color="warn">
+          Get Answers
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="countries container-fluid" *ngIf="isSearchExists && isSpinner == false">
+  <div class="container">
+    <app-carousel></app-carousel>
+  </div>
+</section>
